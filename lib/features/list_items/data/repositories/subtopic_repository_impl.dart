@@ -1,4 +1,4 @@
-import 'package:rutacode/core/database/database_helper.dart';
+import 'package:rutacode/core/database/old_database_helper.dart';
 import 'package:rutacode/features/list_items/data/model/subtopic_model.dart';
 import 'package:rutacode/features/list_items/domain/repositories/subtopic_repository.dart';
 import 'package:sqflite/sqflite.dart';
