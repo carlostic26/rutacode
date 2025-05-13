@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:rutacode/features/common/presentation/provider/reset_app_service_provider.dart';
+import 'package:rutacode/common/presentation/provider/reset_app_service_provider.dart';
 
 class DeleteProgressWidget extends ConsumerStatefulWidget {
   const DeleteProgressWidget({super.key});

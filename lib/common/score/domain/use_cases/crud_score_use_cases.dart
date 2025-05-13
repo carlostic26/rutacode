@@ -1,4 +1,4 @@
-import 'package:rutacode/core/score/domain/repository/score_repository.dart';
+import 'package:rutacode/common/score/domain/repository/score_repository.dart';
 
 class ScoreUseCases {
   late final ScoreRepository scoreRepository;

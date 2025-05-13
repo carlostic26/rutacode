@@ -1,5 +1,5 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:rutacode/features/common/domain/services/reset_app_service.dart';
+import 'package:rutacode/common/domain/services/reset_app_service.dart';
 import 'package:rutacode/features/level/presentation/state/completed_levels_shp_provider.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
 import 'package:rutacode/features/progress/data/datasources/progress_local_database.dart';

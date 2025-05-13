@@ -1,9 +1,9 @@
-import 'package:rutacode/core/database/inserts/insert_data_java.dart';
-import 'package:rutacode/core/database/inserts/insert_data_python.dart';
+import 'package:rutacode/common/data/datasources/inserts/insert_data_java.dart';
+import 'package:rutacode/common/data/datasources/inserts/insert_data_python.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
-class LocalDatabaseHelper {
+class LocalContentDatabaseHelper {
   Database? _database;
   int dbVersion = 1;
 

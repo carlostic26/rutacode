@@ -1,4 +1,4 @@
-import 'package:rutacode/core/score/domain/entity/score_entity.dart';
+import 'package:rutacode/common/score/domain/entity/score_entity.dart';
 
 class ScoreModel extends Score {
   ScoreModel({
