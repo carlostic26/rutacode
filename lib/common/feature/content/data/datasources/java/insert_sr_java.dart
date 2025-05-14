@@ -910,4 +910,379 @@ pedido2.procesarPedido(); // Sin envío
   });
 }
 
-Future<void> insertSrLevel2Data(Database db) async {}
+Future<void> insertSrLevel2Data(Database db) async {
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 2,
+    'tittle_level': 'Rendimiento y Optimización',
+    'topic': 'JVM Internals',
+    'subtopic': 'Modelo de memoria de Java',
+    'definition': '''
+El modelo de memoria de Java es como el plano arquitectónico que define cómo la JVM organiza y gestiona la memoria durante la ejecución de un programa. Es fundamental entenderlo para escribir código eficiente y evitar problemas como memory leaks.
+
+¿Alguna vez te has preguntado por qué tu aplicación consume más memoria de la esperada? La respuesta suele estar en cómo interactúas con este modelo de memoria.
+
+La JVM divide la memoria en varias áreas clave: el Heap (donde van los objetos), el Stack (para llamadas a métodos y variables locales), el Metaspace (antes PermGen, para clases y métodos), y otros espacios más especializados. Cada uno tiene su propósito y reglas de gestión. El Heap a su vez se divide en Generaciones (Young, Old) que permiten a la JVM optimizar la recolección de basura. Entender esta estructura te ayuda a tomar decisiones como cuándo usar tipos primitivos vs objetos, o cómo configurar los tamaños de memoria al lanzar tu aplicación.
+''',
+    'code_example': '''
+// Ejemplo de configuración de memoria al iniciar la JVM
+// Esto se hace con parámetros de línea de comandos
+public class MemoryDemo {
+    public static void main(String[] args) {
+        // -Xms512m -Xmx1024m -XX:MaxMetaspaceSize=256m
+        System.out.println("Ejemplo de configuración de memoria");
+    }
+}
+
+// Ejemplo problemático - Creación innecesaria de objetos
+public class MemoryProblem {
+    public static void main(String[] args) {
+        while(true) {
+            String s = new String("Hello"); // Mal: crea un nuevo objeto cada vez
+            // Mejor: String s = "Hello";
+        }
+    }
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 2,
+    'tittle_level': 'Rendimiento y Optimización',
+    'topic': 'JVM Internals',
+    'subtopic': 'Recolectores de basura (GC)',
+    'definition': '''
+El recolector de basura (Garbage Collector o GC) es el sistema de limpieza automática de Java que libera memoria ocupada por objetos que ya no son necesarios. Es una de las características más poderosas de Java, pero también una de las más malentendidas.
+
+¿Sabías que elegir el GC adecuado puede mejorar el rendimiento de tu aplicación hasta en un 50%? No todos los recolectores funcionan igual para todos los casos de uso.
+
+Java ofrece varios tipos de GC: Serial GC (simple pero lento), Parallel GC (usa múltiples hilos), CMS (Concurrent Mark Sweep), G1 (Garbage First, el predeterminado desde Java 9), y ZGC/Shenandoah (para heaps enormes). Cada uno hace compromisos diferentes entre throughput (cantidad de trabajo realizado), latencia (tiempo de pausa), y uso de CPU. Por ejemplo, G1 intenta balancear estos factores dividiendo el heap en regiones, mientras que ZGC está diseñado para pausas extremadamente cortas incluso con terabytes de memoria.
+''',
+    'code_example': '''
+// Ejemplo de configuración del Garbage Collector
+public class GCDemo {
+    public static void main(String[] args) {
+        // Usar G1 GC (predeterminado desde Java 9)
+        // -XX:+UseG1GC
+        
+        // Configurar tamaño máximo de pausa deseado
+        // -XX:MaxGCPauseMillis=200
+        
+        System.out.println("Ejemplo de configuración GC");
+    }
+}
+
+// Ejemplo que puede causar problemas de GC
+public class GCProblem {
+    public static void main(String[] args) {
+        List<byte[]> list = new ArrayList<>();
+        while(true) {
+            list.add(new byte[1024 * 1024]); // Llena el heap rápidamente
+            // Sin control, puede forzar GC frecuentes
+        }
+    }
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 2,
+    'tittle_level': 'Rendimiento y Optimización',
+    'topic': 'JVM Internals',
+    'subtopic': 'JIT compilation',
+    'definition': '''
+La compilación JIT (Just-In-Time) es uno de los secretos mejor guardados del rendimiento en Java. A diferencia de los lenguajes compilados tradicionalmente, Java convierte el bytecode en código nativo en tiempo de ejecución, justo cuando se necesita.
+
+¿Te has preguntado cómo Java puede competir en rendimiento con lenguajes como C++? La magia está en el JIT y sus optimizaciones adaptativas.
+
+El compilador JIT (como C1 y C2 en HotSpot) analiza el código mientras se ejecuta y aplica optimizaciones agresivas a los métodos más usados (los "hot spots"). Algunas técnicas incluyen: inline de métodos pequeños, eliminación de código muerto, o incluso desoptimización si las suposiciones cambian. Esto permite que Java tenga la portabilidad del bytecode pero con rendimiento cercano al nativo. El JIT aprende del comportamiento real de tu aplicación, por eso los benchmarks deben incluir fases de calentamiento.
+''',
+    'code_example': '''
+// Ejemplo donde el JIT puede optimizar
+public class JITExample {
+    public static void main(String[] args) {
+        for (int i = 0; i < 10_000; i++) {
+            calculate(); // Después de muchas iteraciones, el JIT compilará este método
+        }
+    }
+    
+    private static void calculate() {
+        // Método pequeño que puede ser inlined por el JIT
+        int result = 2 + 2;
+    }
+}
+
+// Ejemplo que dificulta la optimización
+public class JITProblem {
+    public static void main(String[] args) {
+        for (int i = 0; i < 10_000; i++) {
+            // Método grande con muchas ramas dificulta el JIT
+            complexCalculation(i);
+        }
+    }
+    
+    private static void complexCalculation(int n) {
+        if (n % 2 == 0) {
+            // Muchas ramas diferentes
+        } else {
+            // Código alternativo
+        }
+    }
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 2,
+    'tittle_level': 'Rendimiento y Optimización',
+    'topic': 'JVM Internals',
+    'subtopic': 'Herramientas de monitoreo (jvisualvm, jconsole)',
+    'definition': '''
+jvisualvm y jconsole son las navajas suizas para cualquier desarrollador Java que necesite entender qué está pasando dentro de su aplicación en tiempo real. Son herramientas oficiales de Oracle incluidas en el JDK.
+
+¿Alguna vez has tenido que solucionar un problema de rendimiento sin poder detener la aplicación? Estas herramientas te permiten conectarte a procesos Java en ejecución para obtener insights valiosos.
+
+jvisualvm (la más completa) ofrece: monitoreo de CPU y memoria, profiling de métodos, análisis de heap para encontrar memory leaks, y hasta sampler de CPU. jconsole es más básica pero más ligera, ideal para monitoreo remoto. Ambas se conectan via JMX y pueden mostrar información detallada sobre threads, GC activity, y consumo de clases. Para producción, muchas empresas usan versiones adaptadas de estas herramientas conectadas a sus sistemas de monitoreo centralizados.
+''',
+    'code_example': '''
+// Ejemplo de cómo habilitar JMX para monitoreo remoto
+public class JMXEnabledApp {
+    public static void main(String[] args) {
+        // Parámetros comunes para habilitar JMX:
+        // -Dcom.sun.management.jmxremote
+        // -Dcom.sun.management.jmxremote.port=9010
+        // -Dcom.sun.management.jmxremote.authenticate=false
+        // -Dcom.sun.management.jmxremote.ssl=false
+        
+        while(true) {
+            // Aplicación en ejecución que puede ser monitoreada
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+// No hay ejemplo incorrecto para este tema, pero un error común es
+// no habilitar JMX en producción cuando se necesita monitoreo
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 2,
+    'tittle_level': 'Rendimiento y Optimización',
+    'topic': 'Optimización',
+    'subtopic': 'Benchmarking con JMH',
+    'definition': '''
+JMH (Java Microbenchmark Harness) es la herramienta estándar para medir el rendimiento de pequeños fragmentos de código Java. Es especialmente útil cuando necesitas comparar diferentes implementaciones para encontrar la más eficiente.
+
+¿Por qué no simplemente medir con System.currentTimeMillis()? Porque el JIT, la optimización en tiempo de ejecución y otros factores pueden distorsionar completamente tus resultados.
+
+JMH maneja automáticamente el calentamiento de la JVM (warmup), ejecuta múltiples iteraciones, y contrarresta optimizaciones engañosas. Para usarlo, defines métodos anotados con @Benchmark y JMH se encarga de ejecutarlos en condiciones controladas. Puedes medir throughput (operaciones por tiempo), tiempo promedio, o incluso detalles a nivel de nanosegundos. Es la herramienta que usan los desarrolladores del JDK para optimizar Java mismo.
+''',
+    'code_example': '''
+// Ejemplo básico de benchmark con JMH
+@BenchmarkMode(Mode.Throughput)
+@OutputTimeUnit(TimeUnit.SECONDS)
+@State(Scope.Thread)
+public class StringConcatBenchmark {
+    private String a = "Hello";
+    private String b = "World";
+    
+    @Benchmark
+    public String concatWithPlus() {
+        return a + " " + b;  // Usa StringBuilder internamente
+    }
+    
+    @Benchmark
+    public String concatWithBuilder() {
+        return new StringBuilder().append(a).append(" ").append(b).toString();
+    }
+}
+
+// Para ejecutar:
+// mvn clean install
+// java -jar target/benchmarks.jar
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 2,
+    'tittle_level': 'Rendimiento y Optimización',
+    'topic': 'Optimización',
+    'subtopic': 'Memory leaks',
+    'definition': '''
+Un memory leak en Java ocurre cuando objetos ya no necesarios siguen siendo referenciados, impidiendo que el garbage collector los libere. A diferencia de lenguajes sin GC, en Java los leaks son más sutiles y difíciles de detectar.
+
+¿Te ha pasado que tu aplicación Java consume cada vez más memoria hasta que finalmente crashea? Eso suele ser un memory leak clásico.
+
+Los leaks comunes incluyen: colecciones estáticas que nunca se limpian, listeners que no se desregistran, caches sin límite de tamaño, o hilos que no terminan. Herramientas como VisualVM o YourKit pueden ayudarte a identificar estos problemas mostrando qué objetos están ocupando memoria y qué los mantiene referenciados. La clave está en buscar objetos que deberían haber sido recolectados pero su número sigue creciendo. A veces la solución es tan simple como usar WeakReference o limpiar colecciones manualmente en momentos estratégicos.
+''',
+    'code_example': '''
+// Ejemplo clásico de memory leak
+public class LeakyClass {
+    private static final List<byte[]> LEAK = new ArrayList<>();
+    
+    public void leakMemory() {
+        while(true) {
+            LEAK.add(new byte[1024 * 1024]); // Los bytes se añaden pero nunca se eliminan
+        }
+    }
+}
+
+// Solución: Limitar el tamaño o limpiar periódicamente
+public class FixedClass {
+    private static final int MAX_SIZE = 100;
+    private static final List<byte[]> CACHE = new ArrayList<>();
+    
+    public void addToCache(byte[] data) {
+        if(CACHE.size() >= MAX_SIZE) {
+            CACHE.clear(); // Limpiamos cuando llega al límite
+        }
+        CACHE.add(data);
+    }
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 2,
+    'tittle_level': 'Rendimiento y Optimización',
+    'topic': 'Optimización',
+    'subtopic': 'Optimización de colecciones',
+    'definition': '''
+Elegir la colección adecuada puede marcar la diferencia entre una aplicación rápida y una que se arrastra. Java ofrece una amplia variedad de estructuras de datos en el Collections Framework, cada una con sus fortalezas y debilidades.
+
+¿Sabías que usar un ArrayList donde necesitas frecuentes inserciones/eliminaciones en medio puede ser hasta 1000 veces más lento que una LinkedList? Pero en la mayoría de casos, ArrayList es la mejor opción.
+
+Las claves para optimizar colecciones son: entender los patrones de acceso (más lecturas que escrituras?), el tamaño esperado de los datos, y la concurrencia. Por ejemplo, HashMap es genérico pero LinkedHashMap mantiene orden de inserción, EnumMap es ultra-rápido para enums, y ConcurrentSkipListMap escala mejor con muchos hilos. Para casos extremos, a veces la mejor "colección" es un simple array primitivo. También considera colecciones inmutables cuando los datos no cambian - son más seguras y a veces más eficientes.
+''',
+    'code_example': '''
+// Ejemplo de selección óptima de colecciones
+public class CollectionChoices {
+    public static void main(String[] args) {
+        // Caso 1: Muchas búsquedas por clave
+        Map<String, User> userCache = new HashMap<>(); 
+        
+        // Caso 2: Necesitas orden de inserción
+        Map<String, User> loggedInUsers = new LinkedHashMap<>();
+        
+        // Caso 3: Concurrencia alta
+        Map<String, User> concurrentUsers = new ConcurrentHashMap<>();
+        
+        // Caso 4: Rangos frecuentes (floor, ceiling)
+        NavigableSet<Integer> sortedIds = new TreeSet<>();
+    }
+}
+
+// Ejemplo problemático
+public class BadCollectionChoice {
+    public static void main(String[] args) {
+        // LinkedList para acceso aleatorio frecuente
+        List<Data> dataList = new LinkedList<>(); 
+        for (int i = 0; i < 10000; i++) {
+            dataList.get(i); // O(n) cada vez - muy lento!
+        }
+    }
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 2,
+    'tittle_level': 'Rendimiento y Optimización',
+    'topic': 'Optimización',
+    'subtopic': 'Caching strategies',
+    'definition': '''
+El caching es una de las técnicas más efectivas para mejorar el rendimiento, almacenando resultados costosos para reutilizarlos después. Pero implementar un buen sistema de cache no es tan simple como parece.
+
+¿Por qué no cachear todo entonces? Porque el caching tiene sus propios problemas: consumo de memoria, consistencia de datos, y complejidad añadida.
+
+Java ofrece varias opciones para caching: desde simples HashMaps sincronizados (para casos básicos), hasta soluciones avanzadas como Caffeine o Ehcache con expiración por tiempo, tamaño, o referencia. La estrategia adecuada depende de tu caso: cachear resultados de bases de datos, respuestas HTTP, o cálculos intensivos. También debes decidir políticas como LRU (Least Recently Used) o FIFO (First In First Out) para gestionar el espacio. Spring Cache abstrae mucho de esta complejidad con anotaciones como @Cacheable, pero entender lo que ocurre bajo el capó es crucial para evitar problemas.
+''',
+    'code_example': '''
+// Ejemplo básico de cache con HashMap
+public class SimpleCache<K, V> {
+    private final Map<K, V> cache = new HashMap<>();
+    
+    public synchronized V get(K key, Supplier<V> supplier) {
+        return cache.computeIfAbsent(key, k -> supplier.get());
+    }
+}
+
+// Ejemplo con Caffeine (librería moderna de caching)
+public class AdvancedCache {
+    private final Cache<String, Data> cache = Caffeine.newBuilder()
+        .maximumSize(1000)
+        .expireAfterWrite(1, TimeUnit.HOURS)
+        .build();
+        
+    public Data getData(String id) {
+        return cache.get(id, this::loadDataFromDatabase);
+    }
+    
+    private Data loadDataFromDatabase(String id) {
+        // Operación costosa
+    }
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 2,
+    'tittle_level': 'Rendimiento y Optimización',
+    'topic': 'Optimización',
+    'subtopic': 'Memory leaks',
+    'definition': '''
+Un memory leak en Java ocurre cuando objetos ya no necesarios siguen siendo referenciados, impidiendo que el garbage collector los libere. A diferencia de lenguajes sin GC, en Java los leaks son más sutiles y difíciles de detectar.
+
+¿Te ha pasado que tu aplicación Java consume cada vez más memoria hasta que finalmente crashea? Eso suele ser un memory leak clásico.
+
+Los leaks comunes incluyen: colecciones estáticas que nunca se limpian, listeners que no se desregistran, caches sin límite de tamaño, o hilos que no terminan. Herramientas como VisualVM o YourKit pueden ayudarte a identificar estos problemas mostrando qué objetos están ocupando memoria y qué los mantiene referenciados. La clave está en buscar objetos que deberían haber sido recolectados pero su número sigue creciendo. A veces la solución es tan simple como usar WeakReference o limpiar colecciones manualmente en momentos estratégicos.
+''',
+    'code_example': '''
+// Ejemplo clásico de memory leak
+public class LeakyClass {
+    private static final List<byte[]> LEAK = new ArrayList<>();
+    
+    public void leakMemory() {
+        while(true) {
+            LEAK.add(new byte[1024 * 1024]); // Los bytes se añaden pero nunca se eliminan
+        }
+    }
+}
+
+// Solución: Limitar el tamaño o limpiar periódicamente
+public class FixedClass {
+    private static final int MAX_SIZE = 100;
+    private static final List<byte[]> CACHE = new ArrayList<>();
+    
+    public void addToCache(byte[] data) {
+        if(CACHE.size() >= MAX_SIZE) {
+            CACHE.clear(); // Limpiamos cuando llega al límite
+        }
+        CACHE.add(data);
+    }
+}
+'''
+  });
+}
