@@ -18,6 +18,7 @@ class InsertJavaData {
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Sintaxis Básica',
       'subtopic': 'Estructura de un programa Java',
       'definition': '''
@@ -41,6 +42,7 @@ public class MiPrograma {
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Sintaxis Básica',
       'subtopic': 'Comentarios',
       'definition': '''
@@ -67,6 +69,7 @@ de múltiples líneas
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Sintaxis Básica',
       'subtopic': 'Puntos y comas',
       'definition': '''
@@ -87,6 +90,7 @@ int numero = 5 // Incorrecto: falta el punto y coma
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Sintaxis Básica',
       'subtopic': 'Bloques de código',
       'definition': '''
@@ -108,6 +112,7 @@ if (condicion) {
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Tipos de Datos y Variables',
       'subtopic': 'Tipos primitivos',
       'definition': '''
@@ -134,6 +139,7 @@ char inicial = 'J';
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Tipos de Datos y Variables',
       'subtopic': 'Tipos de referencia',
       'definition': '''
@@ -158,6 +164,7 @@ MiClase objeto = new MiClase();
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Tipos de Datos y Variables',
       'subtopic': 'Declaración e inicialización de variables',
       'definition': '''
@@ -185,6 +192,7 @@ altura = 170; // Inicialización posterior
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Tipos de Datos y Variables',
       'subtopic': 'Ámbito de variables',
       'definition': '''
@@ -218,6 +226,7 @@ public class EjemploAmbito {
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Operadores',
       'subtopic': 'Operadores aritméticos (+, -, *, /, %)',
       'definition': '''
@@ -248,6 +257,7 @@ int modulo = a % b;      // Resultado: 1
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Operadores',
       'subtopic': 'Operadores de comparación (==, !=, >, <, etc.)',
       'definition': '''
@@ -280,6 +290,7 @@ System.out.println(a <= b); // true
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Operadores',
       'subtopic': 'Operadores lógicos (&&, ||, !)',
       'definition': '''
@@ -306,6 +317,7 @@ System.out.println(!a);     // false
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Operadores',
       'subtopic': 'Operadores de asignación (=, +=, -=, etc.)',
       'definition': '''
@@ -336,6 +348,7 @@ a %= 5; // a = a % 5; Resultado: 1
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Estructuras de control',
       'subtopic': 'Sentencias condicionales (if, else if, else)',
       'definition': '''
@@ -365,6 +378,7 @@ if (numero > 0) {
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Estructuras de control',
       'subtopic': 'Sentencia switch-case',
       'definition': '''
@@ -407,6 +421,7 @@ System.out.println("El día es: " + nombreDia);
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Estructuras de control',
       'subtopic': 'Bucles (for, while, do-while)',
       'definition': '''
@@ -445,6 +460,7 @@ do {
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Estructuras de control',
       'subtopic': 'Break y continue',
       'definition': '''
@@ -484,8 +500,6 @@ for (int i = 1; i <= 5; i++) {
 //         Valor de i: 5
 '''
     });
-
-    
   }
 
   //---- MID LEVEL ----//
@@ -496,6 +510,7 @@ for (int i = 1; i <= 5; i++) {
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Variables',
       'subtopic': 'String',
       'definition': '''
@@ -512,6 +527,7 @@ String apellido = new String("Pérez");
       'language': 'Java',
       'module': 'Jr',
       'level': 1,
+      'tittle_level': '',
       'topic': 'Variables',
       'subtopic': 'int',
       'definition': '''
