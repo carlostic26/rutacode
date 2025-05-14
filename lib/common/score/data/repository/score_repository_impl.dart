@@ -1,5 +1,5 @@
 // data/repository/score_repository_impl.dart
-import 'package:rutacode/common/data/datasources/old_database_helper.dart';
+import 'package:rutacode/common/feature/content/data/datasources/old_database_helper.dart';
 import 'package:rutacode/common/score/domain/repository/score_repository.dart';
 import 'package:sqflite/sqflite.dart';
 

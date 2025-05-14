@@ -1,5 +1,5 @@
-import 'package:rutacode/common/data/datasources/inserts/insert_data_java.dart';
-import 'package:rutacode/common/data/datasources/inserts/insert_data_python.dart';
+import 'package:rutacode/common/feature/content/data/datasources/inserts/insert_data_java.dart';
+import 'package:rutacode/common/feature/content/data/datasources/inserts/insert_data_python.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 

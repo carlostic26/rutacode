@@ -1,6 +1,6 @@
-import 'package:rutacode/common/data/datasources/db_helper.dart';
-import 'package:rutacode/common/data/model/content_model.dart';
-import 'package:rutacode/common/domain/repositories/content_repository.dart';
+import 'package:rutacode/common/feature/content/data/datasources/db_helper.dart';
+import 'package:rutacode/common/feature/content/data/model/content_model.dart';
+import 'package:rutacode/common/feature/content/domain/repositories/content_repository.dart';
 import 'package:sqflite_common/sqlite_api.dart';
 
 class DetailRepositoryImpl implements ContentRepository {

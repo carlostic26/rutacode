@@ -1,4 +1,4 @@
-import 'package:rutacode/common/data/datasources/old_database_helper.dart';
+import 'package:rutacode/common/feature/content/data/datasources/old_database_helper.dart';
 import 'package:rutacode/features/progress/data/datasources/progress_local_database.dart';
 import 'package:rutacode/features/progress/data/model/progress_model.dart';
 import 'package:rutacode/features/progress/domain/repositories/progress_repository.dart';

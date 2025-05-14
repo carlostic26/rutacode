@@ -4,6 +4,7 @@ class InsertJavaData {
   static Future<void> insertJavaData(Database db) async {
     await _insertJrLevelData(db);
     await _insertMidLevelData(db);
+    // await _insertSrLevelData(db);
   }
 
   static Future<void> _insertJrLevelData(Database db) async {

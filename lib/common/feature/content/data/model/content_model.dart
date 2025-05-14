@@ -1,4 +1,4 @@
-import 'package:rutacode/common/domain/entities/content_entity.dart';
+import 'package:rutacode/common/feature/content/domain/entities/content_entity.dart';
 
 class ContentModel extends ContentEntity {
   ContentModel({

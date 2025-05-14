@@ -1,4 +1,4 @@
-import 'package:rutacode/common/data/model/content_model.dart';
+import 'package:rutacode/common/feature/content/data/model/content_model.dart';
 
 abstract class ContentRepository {
   Future<ContentModel> getContentByCompositeKey({
@@ -15,11 +15,13 @@ abstract class ContentRepository {
     required String language,
     required String module,
   });
+
   Future<List<String>> getTopicsByContent({
     required String language,
     required String module,
     required int level,
   });
+
   Future<List<String>> getSubtopicsByContent({
     required String language,
     required String module,
