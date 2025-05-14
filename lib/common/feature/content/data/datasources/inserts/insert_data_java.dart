@@ -8,6 +8,11 @@ class InsertJavaData {
   }
 
   static Future<void> _insertJrLevelData(Database db) async {
+    await _insertJrLevel1Data(db);
+    //await _insertJrLevel2Data(db);
+  }
+
+  static Future<void> _insertJrLevel1Data(Database db) async {
     // Ejemplo de inserción para nivel Junior
     await db.insert('programming_content', {
       'language': 'Java',
