@@ -1,6 +1,6 @@
 import 'package:sqflite_common/sqlite_api.dart';
 
-Future<void> insertSrLevel1Data(Database db) async {
+Future<void> insertPythonSrLevel1Data(Database db) async {
   await db.insert('programming_content', {
     'language': 'Java',
     'module': 'Sr',
@@ -910,7 +910,7 @@ pedido2.procesarPedido(); // Sin envío
   });
 }
 
-Future<void> insertSrLevel2Data(Database db) async {
+Future<void> insertPythonSrLevel2Data(Database db) async {
   await db.insert('programming_content', {
     'language': 'Java',
     'module': 'Sr',
@@ -1287,7 +1287,7 @@ public class FixedClass {
   });
 }
 
-Future<void> insertSrLevel3Data(Database db) async {
+Future<void> insertPythonSrLevel3Data(Database db) async {
   await db.insert('programming_content', {
     'language': 'Java',
     'module': 'Sr',
@@ -1814,7 +1814,7 @@ public class ConfiguracionAuditoria {
   });
 }
 
-Future<void> insertSrLevel4Data(Database db) async {
+Future<void> insertPythonSrLevel4Data(Database db) async {
   await db.insert('programming_content', {
     'language': 'Java',
     'module': 'Sr',
@@ -2573,7 +2573,7 @@ public class OrderProjection {
   });
 }
 
-Future<void> insertSrLevel5Data(Database db) async {
+Future<void> insertPythonSrLevel5Data(Database db) async {
   await db.insert('programming_content', {
     'language': 'Java',
     'module': 'Sr',
@@ -2840,7 +2840,7 @@ public class MiFuncionHandler implements RequestHandler<Map<String, Object>, Str
   });
 }
 
-Future<void> insertSrLevel6Data(Database db) async {
+Future<void> insertPythonSrLevel6Data(Database db) async {
   await db.insert('programming_content', {
     'language': 'Java',
     'module': 'Sr',
