@@ -104,7 +104,7 @@ class _HomePageScreenState extends ConsumerState<HomePageScreen> {
         },
         children: const [
           _HomeContent(),
-          PathContent(),
+          PathLevelWidget(),
         ],
       ),
       bottomNavigationBar: _buildAdBanner(adState),
@@ -147,8 +147,8 @@ class _HomeContent extends ConsumerWidget {
 }
 
 // PathContent solo contiene el contenido sin Scaffold
-class PathContent extends ConsumerWidget {
-  const PathContent({super.key});
+class PathLevelWidget extends ConsumerWidget {
+  const PathLevelWidget({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

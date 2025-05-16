@@ -7,7 +7,7 @@ class InsertJavaData {
   static Future<void> insertJavaData(Database db) async {
     await _insertJrLevelData(db);
     await _insertMidLevelData(db);
-    await _insertSrLevelData(db);
+    await _insertPythonSrLevelData(db);
   }
 
   static Future<void> _insertJrLevelData(Database db) async {
@@ -27,8 +27,12 @@ class InsertJavaData {
     await insertMidLevel6Data(db);
   }
 
-  static Future<void> _insertSrLevelData(Database db) async {
-    await insertSrLevel1Data(db);
-    await insertSrLevel2Data(db);
+  static Future<void> _insertPythonSrLevelData(Database db) async {
+    await insertPythonSrLevel1Data(db);
+    await insertPythonSrLevel2Data(db);
+    await insertPythonSrLevel3Data(db);
+    await insertPythonSrLevel4Data(db);
+    await insertPythonSrLevel5Data(db);
+    await insertPythonSrLevel6Data(db);
   }
 }
