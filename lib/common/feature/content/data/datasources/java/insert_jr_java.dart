@@ -1386,3 +1386,678 @@ public class CopiarArchivo {
 '''
   });
 }
+
+Future<void> insertJrLevel4Data(Database db) async {
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Jr',
+    'level': 4,
+    'title_level': 'Manejo de Excepciones',
+    'topic': 'Tipos de Excepciones',
+    'subtopic': 'Excepciones verificadas vs no verificadas',
+    'definition': '''
+En Java, las excepciones se dividen en dos grandes grupos: las **verificadas (checked)** y las **no verificadas (unchecked)**. Esta clasificación afecta directamente cómo el compilador y tú, como desarrollador, deben manejarlas.
+
+¿Te estás preguntando por qué esto importa?
+
+Pensemos por un momento en cómo Java maneja los errores. Las **excepciones verificadas** son aquellas que el compilador obliga a manejar, ya sea mediante un bloque `try-catch` o declarando su posible lanzamiento con la cláusula `throws`. Estas excepciones suelen representar condiciones fuera del control del programa, como errores de entrada/salida o problemas de red. Ejemplos comunes incluyen `IOException` y `SQLException`.
+
+Por otro lado, las **excepciones no verificadas** son aquellas que el compilador no exige manejar explícitamente. Generalmente, derivan de errores de programación, como referencias nulas o índices fuera de rango. Ejemplos comunes incluyen `NullPointerException` y `ArrayIndexOutOfBoundsException`.
+
+Es esencial comprender esta distinción para escribir código robusto y evitar errores inesperados durante la ejecución.
+''',
+    'code_example': '''
+// Ejemplo de excepción verificada
+import java.io.FileReader;
+import java.io.IOException;
+
+public class EjemploChecked {
+    public static void main(String[] args) {
+        try {
+            FileReader lector = new FileReader("archivo.txt");
+            lector.close();
+        } catch (IOException e) {
+            System.out.println("Ocurrió una excepción verificada: " + e.getMessage());
+        }
+    }
+}
+
+// Ejemplo de excepción no verificada
+public class EjemploUnchecked {
+    public static void main(String[] args) {
+        int[] numeros = {1, 2, 3};
+        System.out.println(numeros[5]); // Esto lanzará ArrayIndexOutOfBoundsException
+    }
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Jr',
+    'level': 4,
+    'title_level': 'Manejo de Excepciones',
+    'topic': 'Tipos de Excepciones',
+    'subtopic': 'Jerarquía de excepciones',
+    'definition': '''
+La jerarquía de excepciones en Java está estructurada de manera que todas las excepciones derivan de la clase base `Throwable`. Esta clase tiene dos subclases principales: `Error` y `Exception`.
+
+¿Te estás preguntando cómo esta jerarquía afecta el manejo de excepciones?
+
+Pensemos por un momento en cómo capturar múltiples excepciones. Puedes usar bloques `catch` separados para diferentes tipos de excepciones o un solo bloque `catch` para una superclase común. Sin embargo, es importante ordenar los bloques `catch` del más específico al más general para evitar que las excepciones específicas sean capturadas por bloques generales antes de tiempo.
+
+Entender esta jerarquía te permite manejar las excepciones de manera más precisa y efectiva.
+''',
+    'code_example': '''
+// Ejemplo de jerarquía de excepciones
+public class JerarquiaExcepciones {
+    public static void main(String[] args) {
+        try {
+            String texto = null;
+            System.out.println(texto.length()); // Esto lanzará NullPointerException
+        } catch (NullPointerException e) {
+            System.out.println("Capturada NullPointerException");
+        } catch (RuntimeException e) {
+            System.out.println("Capturada RuntimeException");
+        } catch (Exception e) {
+            System.out.println("Capturada Exception");
+        }
+    }
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Jr',
+    'level': 4,
+    'title_level': 'Manejo de Excepciones',
+    'topic': 'Tipos de Excepciones',
+    'subtopic':
+        'Excepciones comunes (NullPointerException, ArrayIndexOutOfBoundsException, etc.)',
+    'definition': '''
+En Java, algunas excepciones son especialmente comunes y es fundamental comprenderlas:
+
+- **NullPointerException**: Ocurre cuando se intenta usar una referencia que apunta a `null`, como acceder a métodos o propiedades de un objeto no inicializado.
+
+- **ArrayIndexOutOfBoundsException**: Se lanza cuando se intenta acceder a un índice fuera del rango válido de un arreglo.
+
+- **ArithmeticException**: Resulta de operaciones aritméticas ilegales, como dividir por cero.
+
+- **ClassCastException**: Se produce al intentar convertir un objeto a una subclase de la cual no es una instancia.
+
+- **IllegalArgumentException**: Indica que un método ha recibido un argumento inapropiado.
+
+¿Te estás preguntando cómo prevenir estas excepciones?
+
+Pensemos por un momento en la importancia de validar datos antes de usarlos. Verificar si un objeto es `null` antes de acceder a sus métodos, asegurarse de que los índices estén dentro de los límites del arreglo y validar los argumentos de los métodos son prácticas esenciales para evitar estas excepciones.
+''',
+    'code_example': '''
+// Ejemplo de NullPointerException
+public class EjemploNullPointer {
+    public static void main(String[] args) {
+        String texto = null;
+        System.out.println(texto.length()); // Lanza NullPointerException
+    }
+}
+
+// Ejemplo de ArrayIndexOutOfBoundsException
+public class EjemploArrayIndex {
+    public static void main(String[] args) {
+        int[] numeros = {1, 2, 3};
+        System.out.println(numeros[5]); // Lanza ArrayIndexOutOfBoundsException
+    }
+}
+
+// Ejemplo de ArithmeticException
+public class EjemploArithmetic {
+    public static void main(String[] args) {
+        int resultado = 10 / 0; // Lanza ArithmeticException
+    }
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Jr',
+    'level': 4,
+    'title_level': 'Manejo de Excepciones',
+    'topic': 'Manejo de Errores',
+    'subtopic': 'Try-catch-finally',
+    'definition': '''
+El bloque `try-catch-finally` en Java es la forma básica de manejar errores durante la ejecución del programa. Permite intentar ejecutar código que podría lanzar una excepción, capturar esa excepción si ocurre y ejecutar código adicional independientemente de si ocurrió una excepción o no.
+
+¿Te estás preguntando cómo funciona cada parte?
+
+Pensemos por un momento en las tres secciones:
+
+- **try**: Aquí colocas el código que podría lanzar una excepción.
+- **catch**: Si ocurre una excepción en el bloque try, se captura aquí y puedes manejarla adecuadamente.
+- **finally**: Este bloque se ejecuta siempre, haya o no una excepción. Es ideal para liberar recursos o realizar tareas de limpieza.
+
+Por ejemplo, si estás leyendo un archivo, puedes colocar la lectura en el bloque try, manejar posibles errores en el catch y cerrar el archivo en el finally para asegurarte de que se cierre correctamente sin importar lo que ocurra.
+''',
+    'code_example': '''
+// Ejemplo de try-catch-finally
+import java.io.*;
+
+public class EjemploTryCatchFinally {
+    public static void main(String[] args) {
+        BufferedReader lector = null;
+        try {
+            lector = new BufferedReader(new FileReader("archivo.txt"));
+            String linea = lector.readLine();
+            System.out.println("Contenido: " + linea);
+        } catch (IOException e) {
+            System.out.println("Ocurrió un error al leer el archivo: " + e.getMessage());
+        } finally {
+            try {
+                if (lector != null) {
+                    lector.close();
+                    System.out.println("Archivo cerrado correctamente.");
+                }
+            } catch (IOException e) {
+                System.out.println("Error al cerrar el archivo: " + e.getMessage());
+            }
+        }
+    }
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Jr',
+    'level': 4,
+    'title_level': 'Manejo de Excepciones',
+    'topic': 'Manejo de Errores',
+    'subtopic': 'Multi-catch',
+    'definition': '''
+El bloque `multi-catch` en Java permite capturar múltiples tipos de excepciones en un solo bloque catch, reduciendo la redundancia cuando diferentes excepciones requieren el mismo manejo.
+
+¿Te estás preguntando cuándo usar multi-catch?
+
+Pensemos por un momento en una situación donde diferentes métodos pueden lanzar distintas excepciones, pero todas deben manejarse de la misma manera. En lugar de escribir múltiples bloques catch con el mismo código, puedes combinarlos usando el operador `|`.
+
+Esto no solo hace que el código sea más limpio y fácil de mantener, sino que también reduce la posibilidad de errores al duplicar código en múltiples bloques catch.
+''',
+    'code_example': '''
+// Ejemplo de multi-catch
+public class EjemploMultiCatch {
+    public static void main(String[] args) {
+        try {
+            String texto = null;
+            System.out.println(texto.length()); // Esto lanzará NullPointerException
+        } catch (NullPointerException | ArithmeticException e) {
+            System.out.println("Se capturó una excepción: " + e.getClass().getSimpleName());
+        }
+    }
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Jr',
+    'level': 4,
+    'title_level': 'Manejo de Excepciones',
+    'topic': 'Manejo de Errores',
+    'subtopic': 'Try-with-resources',
+    'definition': '''
+El bloque `try-with-resources` en Java simplifica el manejo de recursos como archivos o conexiones, asegurando que se cierren automáticamente al finalizar el bloque, sin necesidad de un bloque finally explícito.
+
+¿Te estás preguntando cómo mejora esto el manejo de recursos?
+
+Pensemos por un momento en cómo se manejaban los recursos antes: tenías que asegurarte de cerrarlos manualmente en un bloque finally, lo que podía ser propenso a errores si olvidabas hacerlo. Con `try-with-resources`, cualquier objeto que implemente la interfaz `AutoCloseable` se cerrará automáticamente al salir del bloque try, incluso si ocurre una excepción.
+
+Esto no solo reduce el código necesario, sino que también minimiza el riesgo de fugas de recursos, haciendo que tu aplicación sea más robusta y eficiente.
+''',
+    'code_example': '''
+// Ejemplo de try-with-resources
+import java.io.*;
+
+public class EjemploTryWithResources {
+    public static void main(String[] args) {
+        try (BufferedReader lector = new BufferedReader(new FileReader("archivo.txt"))) {
+            String linea = lector.readLine();
+            System.out.println("Contenido: " + linea);
+        } catch (IOException e) {
+            System.out.println("Ocurrió un error al leer el archivo: " + e.getMessage());
+        }
+        // No es necesario cerrar el lector; se cierra automáticamente
+    }
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Jr',
+    'level': 4,
+    'title_level': 'Manejo de Excepciones',
+    'topic': 'Manejo de Errores',
+    'subtopic': 'Creación de excepciones personalizadas',
+    'definition': '''
+Crear excepciones personalizadas en Java te permite definir errores específicos para tu aplicación, proporcionando mensajes más claros y un manejo de errores más preciso.
+
+¿Te estás preguntando cuándo deberías crear tus propias excepciones?
+
+Pensemos por un momento en una aplicación bancaria. Si un usuario intenta retirar más dinero del que tiene en su cuenta, podrías lanzar una excepción personalizada como `FondosInsuficientesException` en lugar de una genérica `Exception`. Esto hace que el código sea más legible y que el manejo de errores sea más específico y controlado.
+
+Para crear una excepción personalizada, simplemente extiende la clase `Exception` (para excepciones verificadas) o `RuntimeException` (para no verificadas) y, opcionalmente, agrega constructores personalizados para mensajes de error.
+''',
+    'code_example': '''
+// Definición de una excepción personalizada
+public class FondosInsuficientesException extends Exception {
+    public FondosInsuficientesException(String mensaje) {
+        super(mensaje);
+    }
+}
+
+// Uso de la excepción personalizada
+public class CuentaBancaria {
+    private double saldo = 1000.0;
+
+    public void retirar(double cantidad) throws FondosInsuficientesException {
+        if (cantidad > saldo) {
+            throw new FondosInsuficientesException("Fondos insuficientes para retirar " + cantidad);
+        }
+        saldo -= cantidad;
+    }
+
+    public static void main(String[] args) {
+        CuentaBancaria cuenta = new CuentaBancaria();
+        try {
+            cuenta.retirar(1500.0);
+        } catch (FondosInsuficientesException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
+'''
+  });
+}
+
+Future<void> insertJrLevel5Data(Database db) async {
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Jr',
+    'level': 5,
+    'title_level': 'Herramientas Básicas',
+    'topic': 'Entorno de Desarrollo',
+    'subtopic': 'Instalación de JDK',
+    'definition': '''
+El JDK (Java Development Kit) es el paquete esencial para desarrollar aplicaciones en Java. Incluye herramientas como el compilador `javac` y la máquina virtual de Java (JVM), que son fundamentales para escribir y ejecutar programas en este lenguaje.
+
+¿Te preguntas cómo instalarlo?
+
+Primero, visita la página oficial de Oracle y descarga la versión más reciente del JDK para tu sistema operativo. Una vez descargado, ejecuta el instalador y sigue las instrucciones. Por defecto, el JDK se instalará en una ruta como `C:\\Program Files\\Java\\jdk-21`.
+
+Después de la instalación, es importante configurar las variables de entorno para que el sistema reconozca los comandos de Java desde cualquier ubicación en la terminal. Esto se logra estableciendo las variables `JAVA_HOME` y actualizando el `PATH`.
+''',
+    'code_example': '''
+// Verificar la instalación del JDK
+// Abre la terminal y ejecuta:
+java -version
+// Deberías ver algo como:
+// java version "21.0.1" 2025-05-15
+// Java(TM) SE Runtime Environment (build 21.0.1+9-LTS)
+// Java HotSpot(TM) 64-Bit Server VM (build 21.0.1+9-LTS, mixed mode)
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Jr',
+    'level': 5,
+    'title_level': 'Herramientas Básicas',
+    'topic': 'Entorno de Desarrollo',
+    'subtopic': 'Configuración de variables de entorno',
+    'definition': '''
+Configurar las variables de entorno es un paso crucial para que el sistema operativo pueda localizar las herramientas de Java desde cualquier ubicación en la terminal.
+
+¿Te preguntas cómo hacerlo?
+
+Primero, necesitas establecer la variable `JAVA_HOME`, que apunta al directorio donde se instaló el JDK. Luego, debes agregar `%JAVA_HOME%\\bin` al final de la variable `PATH` para que los comandos como `java` y `javac` estén disponibles globalmente.
+
+Este proceso varía ligeramente según el sistema operativo, pero en Windows, puedes acceder a las variables de entorno a través de las propiedades del sistema.
+''',
+    'code_example': '''
+// Configurar JAVA_HOME y PATH en Windows
+// 1. Abre el Panel de Control y ve a "Sistema" > "Configuración avanzada del sistema" > "Variables de entorno".
+// 2. En "Variables del sistema", haz clic en "Nueva" y crea JAVA_HOME con el valor:
+//    C:\\Program Files\\Java\\jdk-21
+// 3. Busca la variable PATH, haz clic en "Editar" y agrega al final:
+//    %JAVA_HOME%\\bin
+// 4. Acepta los cambios y reinicia la terminal para que surtan efecto.
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Jr',
+    'level': 5,
+    'title_level': 'Herramientas Básicas',
+    'topic': 'Entorno de Desarrollo',
+    'subtopic': 'Uso de IDE (IntelliJ IDEA, Eclipse)',
+    'definition': '''
+Un Entorno de Desarrollo Integrado (IDE) facilita la escritura, compilación y depuración de código. IntelliJ IDEA y Eclipse son dos de los IDEs más populares para Java.
+
+¿Te preguntas cuál elegir?
+
+IntelliJ IDEA es conocido por su interfaz moderna y potentes herramientas de análisis de código, mientras que Eclipse es valorado por su extensibilidad y amplia comunidad. Ambos ofrecen características como autocompletado, navegación entre clases y depuración paso a paso.
+
+La elección depende de tus preferencias y necesidades específicas del proyecto.
+''',
+    'code_example': '''
+// Crear un nuevo proyecto en IntelliJ IDEA:
+// 1. Abre IntelliJ IDEA y selecciona "New Project".
+// 2. Elige "Java" como tipo de proyecto y configura el JDK.
+// 3. Define el nombre y la ubicación del proyecto.
+// 4. Haz clic en "Finish" y comienza a escribir tu código en la clase Main.
+
+// Crear un nuevo proyecto en Eclipse:
+// 1. Abre Eclipse y selecciona "File" > "New" > "Java Project".
+// 2. Ingresa el nombre del proyecto y configura el JDK.
+// 3. Haz clic en "Finish" y crea una nueva clase Java dentro del proyecto.
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Jr',
+    'level': 5,
+    'title_level': 'Herramientas Básicas',
+    'topic': 'Entorno de Desarrollo',
+    'subtopic': 'Compilación y ejecución desde terminal',
+    'definition': '''
+Compilar y ejecutar programas Java desde la terminal es una habilidad esencial que te permite comprender mejor el proceso de desarrollo sin depender de un IDE.
+
+¿Te preguntas cómo hacerlo?
+
+Primero, escribe tu código en un archivo con extensión `.java`, por ejemplo, `HolaMundo.java`. Luego, abre la terminal, navega hasta el directorio donde se encuentra el archivo y utiliza el compilador de Java (`javac`) para compilar el código. Esto generará un archivo `.class` que puedes ejecutar con el comando `java`.
+
+Este método es especialmente útil para scripts simples o cuando trabajas en entornos donde no hay un IDE disponible.
+''',
+    'code_example': '''
+// Compilar y ejecutar un programa Java desde la terminal
+// 1. Abre la terminal y navega al directorio del archivo:
+//    cd C:\\Ruta\\Al\\Proyecto
+// 2. Compila el archivo Java:
+//    javac HolaMundo.java
+// 3. Ejecuta el programa compilado:
+//    java HolaMundo
+
+// Asegúrate de que el archivo HolaMundo.java contiene una clase pública con un método main:
+// public class HolaMundo {
+//     public static void main(String[] args) {
+//         System.out.println("Hola, mundo");
+//     }
+// }
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Jr',
+    'level': 5,
+    'title_level': 'Herramientas Básicas',
+    'topic': 'Control de Versiones',
+    'subtopic': 'Introducción a Git',
+    'definition': '''
+Git es básicamente un sistema que guarda un registro de todos los cambios que le haces a tus archivos. Imagínalo como un "control + z" ilimitado y súper poderoso, pero para todo tu proyecto.
+
+Seguramente te estarás preguntando: "¿Por qué necesito esto?". Bueno, piensa en lo siguiente: ¿Alguna vez has borrado algo importante por accidente? ¿O has querido volver a una versión anterior de tu trabajo? Git te rescata de esos dramas.
+
+Git te permite trabajar en equipo sin que se arme un caos. Cada persona puede tener su propia "copia" del proyecto y luego combinar los cambios de todos de forma ordenada. Es como tener un libro donde cada autor escribe en su propia hoja y luego se juntan todas las historias en una sola.  Además, plataformas como GitHub y GitLab usan Git, así que aprenderlo te abre las puertas a colaborar con otros programadores y mostrar tu trabajo al mundo 🌎.
+''',
+    'code_example': '''
+// Inicializar un nuevo repositorio Git en la carpeta actual
+git init
+
+// Agregar un archivo al "área de preparación" (staging area)
+git add mi_archivo.java
+
+// Guardar los cambios con un mensaje descriptivo
+git commit -m "Agregué la clase MiArchivo"
+
+// Enviar los cambios al repositorio remoto (por ejemplo, GitHub)
+git push origin main
+
+// Ejemplo de un error común: olvidar agregar el archivo antes de commitear
+// git commit -m "Intento guardar el archivo" // ¡Este commit estará vacío si no hiciste 'git add'!
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Jr',
+    'level': 5,
+    'title_level': 'Herramientas Básicas',
+    'topic': 'Control de Versiones',
+    'subtopic': 'Comandos básicos (init, add, commit, push, pull)',
+    'definition': '''
+Dominar los comandos básicos de Git es como aprender los hechizos de un mago: te dan el poder de controlar el tiempo... ¡del código!  Estos comandos son los que usarás casi a diario, así que vale la pena entenderlos bien.
+
+¿Te preguntas por qué son tan importantes?  Pues, piensa en un trabajo en equipo.  Sin estos comandos, sería un desastre: archivos duplicados, cambios perdidos, ¡un caos total!  Git pone orden y te permite colaborar fluidamente.
+
+Aquí te dejo un desglose de los "hechizos" más comunes:
+
+* **`git init`**:  Este es el comando para "crear" un nuevo repositorio Git en una carpeta. Es como decir: "¡Oye, Git, voy a empezar a rastrear los cambios aquí!".
+* **`git add`**:  Imagina que tienes varios archivos, pero no quieres guardar *todos* los cambios. `git add` te permite elegir qué archivos o cambios específicos quieres "guardar" en el próximo "snapshot" (commit). Es como seleccionar qué fotos quieres subir a Instagram.
+* **`git commit`**:  Este comando toma los cambios que "agregaste" con `git add` y los guarda permanentemente en el historial de Git.  Siempre debes escribir un mensaje descriptivo ("Agregué la función X", "Corregí el bug Y") para saber qué hiciste en ese "snapshot".
+* **`git push`**:  Si estás trabajando con un repositorio remoto (como en GitHub), `git push` envía tus cambios locales al repositorio remoto.  Es como publicar tu trabajo para que otros lo vean.
+* **`git pull`**:  Lo opuesto a `git push`.  `git pull` trae los cambios del repositorio remoto a tu copia local.  Útil para mantenerte al día con el trabajo de otros.
+
+Con estos comandos, ya puedes hacer magia con tu código.
+''',
+    'code_example': '''
+// Inicializa un repositorio
+git init
+
+// Agrega archivos
+git add archivo1.txt archivo2.java
+
+// Crea un "snapshot" de los cambios
+git commit -m "Agregados archivos iniciales"
+
+// Envía los cambios al repositorio remoto
+git push origin main
+
+// Obtiene los últimos cambios del repositorio remoto
+git pull origin main
+
+// Ejemplo incorrecto: Tratar de hacer push sin haber hecho commit
+// git push origin main // Esto fallará si no hay commits locales nuevos
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Jr',
+    'level': 5,
+    'title_level': 'Herramientas Básicas',
+    'topic': 'Control de Versiones',
+    'subtopic': 'Creación de repositorios en GitHub',
+    'definition': '''
+Crear repositorios en GitHub es el primer paso para compartir tu código con el mundo y colaborar con otros desarrolladores. Es como tener tu propio espacio en la nube para guardar y gestionar tus proyectos.
+
+¿Por qué querrías hacer esto?  
+
+Bueno, GitHub no solo es un lugar para guardar código. Es una plataforma social para programadores. Puedes mostrar tu trabajo, recibir feedback, contribuir a proyectos de código abierto y hasta encontrar empleo.
+
+Aquí te explico los pasos básicos para crear un repositorio en GitHub:
+
+1.  **Crea una cuenta en GitHub:** Si aún no tienes una, ve a github.com y regístrate. Es gratis para repositorios públicos.
+2.  **Haz clic en el botón "New":** Lo encontrarás en la página principal o en tu perfil.
+3.  **Dale un nombre a tu repositorio:** Elige un nombre descriptivo y fácil de recordar.
+4.  **Añade una descripción (opcional):** Explica brevemente de qué trata tu proyecto.
+5.  **Elige la visibilidad (público o privado):** Los repositorios públicos son visibles para todos, mientras que los privados solo los pueden ver las personas que invites.
+6.  **Inicializa el repositorio con un README (opcional):** Un archivo README es como la "portada" de tu proyecto.  Puedes agregar información sobre cómo usarlo, cómo contribuir, etc.
+7.  **Haz clic en "Create repository":** ¡Y listo!  Ya tienes tu repositorio en GitHub.
+
+Ahora puedes subir tu código a este repositorio usando Git desde la terminal o usando la interfaz web de GitHub. ¡A compartir tu talento! 🚀
+''',
+    'code_example': '''
+// No hay código para crear el repositorio, se hace en la interfaz web de GitHub
+
+// Pero aquí un ejemplo de cómo enlazar un repositorio local con el remoto:
+
+// 1. Crear el repositorio en GitHub (como se explicó arriba)
+
+// 2. En la terminal, dentro de la carpeta de tu proyecto local:
+
+// Agregar el repositorio remoto como "origin"
+// git remote add origin <URL_DEL_REPOSITORIO_EN_GITHUB>
+
+// Enviar el código local al repositorio remoto
+// git push -u origin main
+
+// Ejemplo de error:  Intentar hacer push a un repositorio remoto inexistente
+// git remote add origin url_incorrecta // Esto dará error al hacer push
+// git push origin main
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Jr',
+    'level': 5,
+    'title_level': 'Herramientas Básicas',
+    'topic': 'Pruebas Unitarias',
+    'subtopic': 'Introducción a JUnit',
+    'definition': '''
+JUnit es un framework de código abierto que facilita la escritura y ejecución de pruebas unitarias en Java. Permite verificar que cada parte del código funcione correctamente de forma aislada.
+
+¿Te preguntas por qué deberías usarlo?
+
+Al implementar pruebas unitarias con JUnit, puedes detectar errores en etapas tempranas del desarrollo, lo que ahorra tiempo y recursos. Además, facilita el mantenimiento del código y mejora la calidad del software.
+
+Para comenzar, necesitas agregar la dependencia de JUnit en tu proyecto y crear clases de prueba con métodos anotados que verifiquen el comportamiento esperado de tu código.
+''',
+    'code_example': '''
+// Ejemplo básico de prueba con JUnit 5
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class CalculadoraTest {
+
+    @Test
+    void testSuma() {
+        Calculadora calc = new Calculadora();
+        int resultado = calc.sumar(2, 3);
+        assertEquals(5, resultado);
+    }
+}
+
+// Clase Calculadora a probar
+class Calculadora {
+    int sumar(int a, int b) {
+        return a + b;
+    }
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Jr',
+    'level': 5,
+    'title_level': 'Herramientas Básicas',
+    'topic': 'Pruebas Unitarias',
+    'subtopic': 'Anotaciones básicas (@Test, @Before, @After)',
+    'definition': '''
+Las anotaciones en JUnit permiten definir el comportamiento de los métodos de prueba y su ciclo de vida. Las más comunes son:
+
+- `@Test`: Indica que el método es una prueba unitaria.
+- `@Before`: Se ejecuta antes de cada método de prueba.
+- `@After`: Se ejecuta después de cada método de prueba.
+
+¿Te preguntas cómo se utilizan?
+
+Estas anotaciones ayudan a preparar el entorno antes de cada prueba y a limpiar recursos después de su ejecución. Por ejemplo, puedes inicializar objetos comunes en `@Before` y cerrarlos en `@After`.
+
+Es importante notar que en JUnit 5, `@Before` y `@After` han sido reemplazadas por `@BeforeEach` y `@AfterEach` respectivamente, para mayor claridad.
+''',
+    'code_example': '''
+// Uso de anotaciones en JUnit 5
+
+import org.junit.jupiter.api.*;
+
+public class BaseDeDatosTest {
+
+    @BeforeEach
+    void conectar() {
+        System.out.println("Conectando a la base de datos...");
+    }
+
+    @Test
+    void testConsulta() {
+        System.out.println("Ejecutando consulta...");
+        Assertions.assertTrue(true);
+    }
+
+    @AfterEach
+    void desconectar() {
+        System.out.println("Desconectando de la base de datos...");
+    }
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Jr',
+    'level': 5,
+    'title_level': 'Herramientas Básicas',
+    'topic': 'Pruebas Unitarias',
+    'subtopic': 'Assertions',
+    'definition': '''
+Las assertions en JUnit son métodos que verifican si una condición específica se cumple durante una prueba. Algunas de las más utilizadas son:
+
+- `assertEquals(expected, actual)`: Verifica que dos valores sean iguales.
+- `assertTrue(condition)`: Verifica que una condición sea verdadera.
+- `assertFalse(condition)`: Verifica que una condición sea falsa.
+- `assertNull(object)`: Verifica que un objeto sea nulo.
+- `assertNotNull(object)`: Verifica que un objeto no sea nulo.
+
+¿Te preguntas cómo aplicarlas?
+
+Estas assertions permiten validar el comportamiento de tu código. Por ejemplo, puedes verificar que una función retorne el valor esperado o que una lista no esté vacía después de una operación.
+
+Utilizar assertions adecuadas mejora la precisión de las pruebas y facilita la detección de errores.
+''',
+    'code_example': '''
+// Ejemplo de assertions en JUnit 5
+
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class UsuarioTest {
+
+    @Test
+    void testNombreUsuario() {
+        Usuario user = new Usuario("Carlos");
+        assertEquals("Carlos", user.getNombre());
+        assertNotNull(user);
+        assertTrue(user.getNombre().startsWith("C"));
+    }
+}
+
+// Clase Usuario a probar
+class Usuario {
+    private String nombre;
+
+    Usuario(String nombre) {
+        this.nombre = nombre;
+    }
+
+    String getNombre() {
+        return nombre;
+    }
+}
+'''
+  });
+}
