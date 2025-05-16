@@ -1,3 +1,3 @@
 import 'package:sqflite_common/sqlite_api.dart';
 
-Future<void> insertMidLevel1Data(Database db) async {}
+Future<void> insertPythonMidLevel1Data(Database db) async {}

@@ -1,6 +1,6 @@
 import 'package:sqflite_common/sqlite_api.dart';
 
-Future<void> insertSrLevel1Data(Database db) async {
+Future<void> insertPythonSrLevel1Data(Database db) async {
   await db.insert('programming_content', {
     'language': 'Python',
     'module': 'Sr',
@@ -496,7 +496,7 @@ boton_despedida.click()  # Adiós, mundo
   });
 }
 
-Future<void> insertSrLevel2Data(Database db) async {
+Future<void> insertPythonSrLevel2Data(Database db) async {
   await db.insert('programming_content', {
     'language': 'Python',
     'module': 'Sr',
@@ -741,7 +741,7 @@ print(c_np)
   });
 }
 
-Future<void> insertSrLevel3Data(Database db) async {
+Future<void> insertPythonSrLevel3Data(Database db) async {
   await db.insert('programming_content', {
     'language': 'Python',
     'module': 'Sr',
@@ -1265,7 +1265,7 @@ if __name__ == "__main__":
   });
 }
 
-Future<void> insertSrLevel4Data(Database db) async {
+Future<void> insertPythonSrLevel4Data(Database db) async {
   await db.insert('programming_content', {
     'language': 'Python',
     'module': 'Sr',
@@ -1783,7 +1783,7 @@ print(f"Resultado: {resultado.get(timeout=10)}")
   });
 }
 
-Future<void> insertSrLevel5Data(Database db) async {
+Future<void> insertPythonSrLevel5Data(Database db) async {
   await db.insert('programming_content', {
     'language': 'Python',
     'module': 'Sr',
@@ -2106,7 +2106,7 @@ def hola_mundo(req: func.HttpRequest) -> func.HttpResponse:
   });
 }
 
-Future<void> insertSrLevel6Data(Database db) async {
+Future<void> insertPythonSrLevel6Data(Database db) async {
   await db.insert('programming_content', {
     'language': 'Python',
     'module': 'Sr',
