@@ -30,9 +30,9 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
         .getLastCompletedLevelByModule(moduleSelected);
 
     // Configuración de posiciones
-    final circleCenterScreen = widthScreen * 0.40;
-    final circleLeftScreen = widthScreen * 0.10;
-    final circleRightScreen = widthScreen * 0.10;
+    final squareCenterScreen = widthScreen * 0.40;
+    final squareLeftScreen = widthScreen * 0.10;
+    final squareRightScreen = widthScreen * 0.10;
 
     // Configuración de colores por módulo
     final moduleColors = {
@@ -64,19 +64,19 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
           final isLevelCompleted = completedLevels.contains(level.order);
           final isLastCompletedLevel = lastCompletedLevel == level.order;
 
-          // Calcular posición del círculo
-          final circleX = _calculateCirclePosition(
+          // Calcular posición del cuadrado
+          final squareX = _calculateSquarePosition(
             i: i,
-            circleCenter: circleCenterScreen,
-            circleLeft: circleLeftScreen,
-            circleRight: circleRightScreen,
+            squareCenter: squareCenterScreen,
+            squareLeft: squareLeftScreen,
+            squareRight: squareRightScreen,
           );
 
           // Añadir línea entre niveles (excepto para el último)
           if (i < levelList.length - 1) {
             final lineData = _calculateLinePosition(
               i: i,
-              circleX: circleX,
+              squareX: squareX,
               currentBottom: currentBottom,
               heightScreen: heightScreen,
               widthScreen: widthScreen,
@@ -96,7 +96,7 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
                               rutaColorLineCompleted, BlendMode.srcIn)
                           : const ColorFilter.mode(
                               rutaColorLineDefault, BlendMode.srcIn),
-                      child: Image.asset('assets/icons/linea_asset.png'),
+                      child: Image.asset('assets/icons/bold_linea_asset.png'),
                     ),
                   ),
                 ),
@@ -104,10 +104,10 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
             );
           }
 
-          // Añadir círculo del nivel
+          // Añadir cuadrado del nivel (con bordes redondeados)
           widgets.add(
             Positioned(
-              left: circleX,
+              left: squareX,
               bottom: currentBottom,
               child: Stack(
                 alignment: Alignment.center,
@@ -115,21 +115,32 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
                   if (isLastCompletedLevel)
                     ConfettiAnimation(isCompleted: isLastCompletedLevel),
                   AnimatedButton(
-                    shape: BoxShape.circle,
-                    height: heightScreen * 0.075,
-                    width: heightScreen * 0.075,
-                    color: isLevelCompleted ? Colors.green : moduleBaseColor,
+                    shadowDegree: ShadowDegree.dark,
+                    duration: 0,
+                    height: heightScreen * 0.07,
+                    width: widthScreen * 0.22,
+                    shape: BoxShape.rectangle,
                     onPressed: () =>
                         _showLevelDialog(context, level, ref, moduleSelected),
-                    enabled: true,
-                    shadowDegree: ShadowDegree.light,
-                    child: Text(
-                      (i + 1).toString(),
-                      style: const TextStyle(
-                        fontSize: 22,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Poppins',
+                    child: Container(
+                      width: widthScreen * 0.3,
+                      height: heightScreen * 0.10,
+                      decoration: BoxDecoration(
+                        color:
+                            isLevelCompleted ? Colors.green : moduleBaseColor,
+                        borderRadius: BorderRadius.circular(
+                            12.0), // Ajusta este valor para cambiar el redondeo
+                      ),
+                      child: Center(
+                        child: Text(
+                          (i + 1).toString(),
+                          style: const TextStyle(
+                            fontSize: 22,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontFamily: 'Poppins',
+                          ),
+                        ),
                       ),
                     ),
                   ),
@@ -164,21 +175,21 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
     );
   }
 
-  double _calculateCirclePosition({
+  double _calculateSquarePosition({
     required int i,
-    required double circleCenter,
-    required double circleLeft,
-    required double circleRight,
+    required double squareCenter,
+    required double squareLeft,
+    required double squareRight,
   }) {
     if (i % 2 == 0) {
-      return i % 4 == 0 ? circleRight * 7 : circleLeft;
+      return i % 4 == 0 ? squareRight * 7 : squareLeft;
     }
-    return circleCenter;
+    return squareCenter;
   }
 
   ({double angle, double left, double bottom}) _calculateLinePosition({
     required int i,
-    required double circleX,
+    required double squareX,
     required double currentBottom,
     required double heightScreen,
     required double widthScreen,
@@ -189,25 +200,25 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
       case 1:
         return (
           angle: pi,
-          left: circleX - widthScreen * 0.225,
+          left: squareX - widthScreen * 0.225,
           bottom: lineBottom,
         );
       case 2:
         return (
           angle: -pi / 2,
-          left: circleX + widthScreen * 0.045,
+          left: squareX + widthScreen * 0.045,
           bottom: lineBottom - heightScreen * 0.019,
         );
       case 3:
         return (
           angle: pi / 2,
-          left: circleX + widthScreen * 0.115,
+          left: squareX + widthScreen * 0.115,
           bottom: lineBottom + heightScreen * 0.005,
         );
       default:
         return (
           angle: 2 * pi,
-          left: circleX - widthScreen * 0.21,
+          left: squareX - widthScreen * 0.21,
           bottom: lineBottom - heightScreen * 0.01,
         );
     }
