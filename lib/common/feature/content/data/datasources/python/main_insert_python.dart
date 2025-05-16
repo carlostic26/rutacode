@@ -1,28 +1,28 @@
-import 'package:rutacode/common/feature/content/data/datasources/java/insert_jr_java.dart';
-import 'package:rutacode/common/feature/content/data/datasources/java/insert_sr_java.dart';
+import 'package:rutacode/common/feature/content/data/datasources/python/insert_jr_python.dart';
+import 'package:rutacode/common/feature/content/data/datasources/python/insert_sr_python.dart';
 import 'package:sqflite/sqflite.dart';
 
-class InsertJavaData {
-  static Future<void> insertJavaData(Database db) async {
+class InsertPythonData {
+  static Future<void> insertPythonData(Database db) async {
     await _insertJrLevelData(db);
     await _insertMidLevelData(db);
-    await _insertSrLevelData(db);
+    await _insertPythonSrLevelData(db);
   }
 
   static Future<void> _insertJrLevelData(Database db) async {
-    await insertJrLevel1Data(db);
-    await insertJrLevel2Data(db);
-    await insertJrLevel3Data(db);
+    await insertPythonJrLevel1Data(db);
+    await insertPythonJrLevel2Data(db);
+    await insertPythonJrLevel3Data(db);
   }
 
   static Future<void> _insertMidLevelData(Database db) async {}
 
-  static Future<void> _insertSrLevelData(Database db) async {
-    await insertSrLevel1Data(db);
-    await insertSrLevel2Data(db);
-    await insertSrLevel3Data(db);
-    await insertSrLevel4Data(db);
-    await insertSrLevel5Data(db);
-    await insertSrLevel6Data(db);
+  static Future<void> _insertPythonSrLevelData(Database db) async {
+    await insertPythonSrLevel1Data(db);
+    await insertPythonSrLevel2Data(db);
+    await insertPythonSrLevel3Data(db);
+    await insertPythonSrLevel4Data(db);
+    await insertPythonSrLevel5Data(db);
+    await insertPythonSrLevel6Data(db);
   }
 }
