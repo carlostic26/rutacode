@@ -2839,3 +2839,455 @@ public class MiFuncionHandler implements RequestHandler<Map<String, Object>, Str
   ''',
   });
 }
+
+Future<void> insertSrLevel6Data(Database db) async {
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Tópicos Avanzados',
+    'topic': 'Java Reactive',
+    'subtopic': '¿Qué es la programación reactiva?',
+    'definition': '''
+La programación reactiva es un enfoque para manejar flujos de datos asincrónicos y sistemas orientados a eventos. En lugar de escribir código que espera respuestas (bloqueante), se trabaja con flujos de datos que reaccionan a los cambios y eventos en tiempo real.
+
+¿Te preguntas por qué esto es relevante?
+
+En aplicaciones modernas, especialmente aquellas que manejan múltiples usuarios o grandes volúmenes de datos, la programación tradicional puede volverse ineficiente. La programación reactiva permite construir sistemas más eficientes y escalables al manejar operaciones de manera no bloqueante y asincrónica.
+
+Los principios clave de la programación reactiva incluyen:
+
+- **Responsividad**: el sistema responde de manera oportuna.
+- **Resiliencia**: el sistema permanece receptivo incluso en caso de fallos.
+- **Elasticidad**: el sistema se adapta a la carga variable.
+- **Orientación a mensajes**: la comunicación se basa en el intercambio de mensajes asincrónicos.
+
+Estos principios ayudan a construir sistemas robustos y escalables, ideales para aplicaciones modernas y distribuidas.
+  ''',
+    'code_example': '''
+// Ejemplo básico de flujo reactivo con RxJava
+
+Observable<String> flujo = Observable.just("Hola", "Mundo");
+
+flujo.subscribe(
+  item -> System.out.println("Recibido: " + item),
+  error -> System.err.println("Error: " + error),
+  () -> System.out.println("Secuencia completada")
+);
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Tópicos Avanzados',
+    'topic': 'Java Reactive',
+    'subtopic': 'RxJava',
+    'definition': '''
+RxJava es una biblioteca para componer programas asincrónicos y basados en eventos utilizando secuencias observables. Permite manejar flujos de datos de manera declarativa y funcional.
+
+¿Te has enfrentado a la complejidad de manejar múltiples hilos y callbacks?
+
+RxJava simplifica este proceso al proporcionar una API basada en observables que permite componer operaciones asincrónicas de manera más legible y mantenible. Ofrece operadores para transformar, combinar y filtrar flujos de datos, facilitando la construcción de aplicaciones reactivas.
+
+RxJava es especialmente útil en aplicaciones Android y sistemas donde la gestión eficiente de recursos y la capacidad de respuesta son cruciales.
+  ''',
+    'code_example': '''
+// Ejemplo de RxJava con operadores
+
+Observable<Integer> numeros = Observable.range(1, 5);
+
+numeros
+  .map(n -> n * n)
+  .filter(n -> n % 2 == 0)
+  .subscribe(
+    item -> System.out.println("Recibido: " + item),
+    error -> System.err.println("Error: " + error),
+    () -> System.out.println("Secuencia completada")
+  );
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Tópicos Avanzados',
+    'topic': 'Java Reactive',
+    'subtopic': 'Project Reactor',
+    'definition': '''
+Project Reactor es una biblioteca para programación reactiva en Java, desarrollada por el equipo de Spring. Proporciona dos tipos principales: `Mono` (para 0 o 1 elemento) y `Flux` (para 0 o N elementos), y está basada en la especificación Reactive Streams.
+
+¿Te preguntas cómo manejar flujos de datos de manera eficiente y no bloqueante?
+
+Project Reactor permite construir aplicaciones que manejan flujos de datos asincrónicos de manera eficiente, con soporte para backpressure y una API fluida y funcional. Es la base de Spring WebFlux y se integra perfectamente con el ecosistema de Spring.
+
+Con Project Reactor, puedes crear pipelines de procesamiento de datos que reaccionan a eventos y cambios, facilitando la construcción de aplicaciones reactivas y escalables.
+  ''',
+    'code_example': '''
+// Ejemplo básico con Project Reactor
+
+Flux<String> flujo = Flux.just("A", "B", "C");
+
+flujo
+  .map(String::toLowerCase)
+  .subscribe(
+    item -> System.out.println("Recibido: " + item),
+    error -> System.err.println("Error: " + error),
+    () -> System.out.println("Secuencia completada")
+  );
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Tópicos Avanzados',
+    'topic': 'Java Reactive',
+    'subtopic': 'Spring WebFlux',
+    'definition': '''
+Spring WebFlux es el módulo reactivo de Spring para construir aplicaciones web no bloqueantes. Utiliza Project Reactor como motor subyacente y permite desarrollar APIs reactivas y escalables.
+
+¿Te gustaría construir aplicaciones web que manejen miles de solicitudes concurrentes sin bloquear hilos?
+
+Con Spring WebFlux, puedes crear controladores que devuelven `Mono` o `Flux`, lo que permite manejar solicitudes de manera asincrónica y eficiente. Es ideal para microservicios y aplicaciones que requieren alta concurrencia y baja latencia.
+
+Spring WebFlux se integra con otras partes del ecosistema Spring, como Spring Security y Spring Data, proporcionando una solución completa para aplicaciones reactivas.
+  ''',
+    'code_example': '''
+// Controlador reactivo con Spring WebFlux
+
+@RestController
+public class UsuarioControlador {
+
+  @GetMapping("/usuarios")
+  public Flux<Usuario> obtenerUsuarios() {
+    return servicioUsuario.obtenerTodos();
+  }
+}
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Tópicos Avanzados',
+    'topic': 'Java Reactive',
+    'subtopic': 'R2DBC (Reactive Relational Database Connectivity)',
+    'definition': '''
+R2DBC es una especificación para acceder a bases de datos relacionales de manera reactiva y no bloqueante. A diferencia de JDBC, que es bloqueante, R2DBC permite integrar bases de datos SQL en aplicaciones reactivas.
+
+¿Te has encontrado con cuellos de botella al acceder a la base de datos en aplicaciones reactivas?
+
+Con R2DBC, puedes realizar operaciones de base de datos de manera asincrónica, manteniendo la naturaleza no bloqueante de tu aplicación. Se integra con Spring Data R2DBC y es compatible con bases de datos como PostgreSQL y MySQL.
+
+Esto permite construir aplicaciones completamente reactivas, desde la capa web hasta la base de datos.
+  ''',
+    'code_example': '''
+// Repositorio reactivo con Spring Data R2DBC
+
+public interface UsuarioRepositorio extends ReactiveCrudRepository<Usuario, Long> {
+  Flux<Usuario> findByNombre(String nombre);
+}
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Tópicos Avanzados',
+    'topic': 'Native Image',
+    'subtopic': 'GraalVM',
+    'definition': '''
+GraalVM es una máquina virtual universal de alto rendimiento que extiende la JVM de Java. Su objetivo principal es hacer que las aplicaciones corran más rápido y consuman menos recursos, pero no solo para Java, ¡también puede ejecutar JavaScript, Python, Ruby, R, y más! Es como la navaja suiza de las máquinas virtuales, optimizando el rendimiento de tus programas a un nivel que otras VMs solo pueden soñar[cite: 19].
+
+¿Te estás preguntando por qué esto importa? Pensemos por un momento en esos momentos en los que necesitas que una aplicación Java arranque al instante o que ocupe muy poca memoria. Tradicionalmente, Java, aunque robusto, tiene una "carga inicial" (startup time) y un consumo de memoria más altos en comparación con lenguajes como C++ o Go. Ahí es donde GraalVM entra en juego, ofreciendo una solución elegante a estos desafíos.
+
+GraalVM mejora el rendimiento de varias maneras. Una de las más destacadas es la "compilación AOT" (Ahead-Of-Time), que permite compilar el código Java directamente a un ejecutable nativo antes de que la aplicación se ejecute. Esto significa que no necesitas una JVM para correr tu aplicación; ya es un archivo ejecutable por sí mismo, como cualquier programa de Windows o Linux. Esto reduce drásticamente el tiempo de inicio y el consumo de memoria, lo cual es ideal para microservicios, funciones serverless o aplicaciones de línea de comandos. Además, GraalVM también incluye un compilador JIT (Just-In-Time) de próxima generación que puede optimizar el código en tiempo de ejecución de una manera más avanzada que la JVM tradicional. Es como tener lo mejor de ambos mundos: la velocidad de la compilación nativa y la flexibilidad de la JVM[cite: 19].
+''',
+    'code_example': '''
+// Ejemplo básico de cómo GraalVM puede compilar una aplicación Java a un ejecutable nativo
+// Primero, asegúrate de tener GraalVM instalado y configurado.
+// Compila tu aplicación Java normalmente:
+// javac MiAplicacion.java
+
+// Luego, usa el comando 'native-image' de GraalVM para crear el ejecutable nativo:
+// native-image -jar MiAplicacion.jar
+
+// Después de esto, tendrás un archivo ejecutable (por ejemplo, MiAplicacion.exe en Windows, o MiAplicacion en Linux)
+// que puedes ejecutar directamente sin necesidad de una JVM instalada.
+
+// MiAplicacion.java
+public class MiAplicacion {
+    public static void main(String[] args) {
+        System.out.println("¡Hola desde un ejecutable nativo de GraalVM!");
+    }
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Tópicos Avanzados',
+    'topic': 'Native Image',
+    'subtopic': 'Compilación nativa con Spring Native',
+    'definition': '''
+La compilación nativa con Spring Native es una extensión del framework Spring que te permite tomar tus aplicaciones Spring Boot y compilarlas en ejecutables nativos usando GraalVM. ¡Es una combinación explosiva! Piensa en toda la potencia de Spring Boot, con su auto-configuración y su ecosistema robusto, ahora con el beneficio adicional de arranques ultrarrápidos y un consumo de memoria mínimo, características intrínsecas de los ejecutables nativos[cite: 19].
+
+¿Pero entonces qué significa eso para tu día a día como desarrollador? Significa que puedes seguir desarrollando tus aplicaciones Spring Boot de la manera que ya conoces y amas, pero con un "superpoder" adicional para la producción. Las aplicaciones Spring tradicionalmente pueden tardar unos segundos en arrancar, lo cual no es un problema para servicios de larga duración, pero en entornos de microservicios o serverless, donde la agilidad es clave, cada segundo cuenta. Spring Native, al aprovechar GraalVM, reduce ese tiempo de arranque a milisegundos, lo que permite escalar más rápidamente y optimizar el uso de recursos[cite: 19].
+
+Bajo el capó, Spring Native hace un trabajo inteligente para que la compilación nativa sea posible y eficiente para las aplicaciones Spring. Spring es conocido por su uso extensivo de reflexión, proxies y generación dinámica de clases, características que pueden ser un desafío para la compilación AOT. Spring Native se encarga de analizar tu aplicación durante la compilación para entender qué partes del código necesitan ser incluidas en el ejecutable nativo y para configurar GraalVM correctamente. Esto incluye optimizaciones para los beans de Spring, las configuraciones, y todas esas convenciones que hacen a Spring tan productivo. Es un proceso que automatiza gran parte de la complejidad de hacer que una aplicación Java, con todas las características de Spring, se comporte como un ejecutable nativo de alto rendimiento[cite: 19].
+''',
+    'code_example': '''
+// Para usar Spring Native, típicamente agregarías la dependencia a tu proyecto Spring Boot
+// y luego usarías el plugin de Maven o Gradle para compilar la imagen nativa.
+
+// En un pom.xml (Maven):
+/*
+<dependency>
+    <groupId>org.springframework.experimental</groupId>
+    <artifactId>spring-native</artifactId>
+    <version>0.11.x</version> // Asegúrate de usar la versión compatible con tu Spring Boot
+</dependency>
+
+<plugin>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-maven-plugin</artifactId>
+    <configuration>
+        <image>
+            <builder>paketobuildpacks/builder-jammy-base:latest</builder>
+        </option>
+    </configuration>
+</plugin>
+*/
+
+// Ejemplo de una clase simple de Spring Boot
+// MiAplicacionSpring.java
+package com.ejemplo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@SpringBootApplication
+@RestController
+public class MiAplicacionSpring {
+
+    public static void main(String[] args) {
+        SpringApplication.run(MiAplicacionSpring.class, args);
+    }
+
+    @GetMapping("/")
+    public String home() {
+        return "¡Hola desde Spring Boot compilado nativamente!";
+    }
+}
+
+// Para compilar a imagen nativa, usarías:
+// mvn spring-boot:build-image
+// Esto generaría una imagen Docker con tu aplicación compilada nativamente.
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Tópicos Avanzados',
+    'topic': 'Native Image',
+    'subtopic': 'Ventajas y limitaciones',
+    'definition': '''
+Cuando hablamos de las "Native Images" en Java, estamos tocando un tema fascinante que trae consigo una serie de ventajas impresionantes, pero como casi todo en tecnología, también tiene sus bemoles. Vamos a desglosarlo para entender bien dónde brilla y dónde debemos ser un poco más cautelosos.
+
+**Ventajas:**
+
+* **Arranque Rapidísimo:** ¡Esta es la estrella del show! Las aplicaciones compiladas nativamente inician en milisegundos. ¿Por qué es esto genial? Imagina microservicios que escalan en segundos o funciones serverless que se ejecutan al instante. Esto es un cambio de juego para la computación en la nube, donde el tiempo de arranque puede afectar los costos y la reactividad[cite: 19].
+* **Menor Consumo de Memoria:** Al no necesitar una JVM completa en tiempo de ejecución, las aplicaciones nativas usan significativamente menos memoria. Esto es crucial para reducir los costos de infraestructura en la nube y para entornos con recursos limitados[cite: 19].
+* **Distribución Simplificada:** Empaquetas tu aplicación en un solo ejecutable binario. ¡Se acabó el "problema de la JVM"! No necesitas asegurarte de que el entorno de destino tenga la versión correcta de Java instalada; simplemente copias y ejecutas el archivo[cite: 19].
+* **Seguridad Mejorada:** Al eliminar la necesidad de la JVM y algunas de sus dependencias dinámicas, la superficie de ataque potencial de tu aplicación puede reducirse.
+
+**Limitaciones:**
+
+* **Tiempo de Compilación Más Largo:** El proceso de compilar una imagen nativa puede ser considerablemente más lento que la compilación estándar de Java. Esto se debe a que GraalVM realiza un análisis exhaustivo de todo el código de la aplicación y sus dependencias para optimizarlo[cite: 19].
+* **Menos Optimización en Tiempo de Ejecución (a veces):** Aunque GraalVM es potente, las JVM tradicionales, con su compilación JIT y su capacidad de adaptarse dinámicamente al comportamiento del programa en tiempo de ejecución, a veces pueden alcanzar picos de rendimiento más altos en aplicaciones de muy larga duración. Para algunas cargas de trabajo muy específicas, la JVM "calentada" podría superar a una imagen nativa[cite: 19].
+* **Restricciones de Reflectividad y Recursos Dinámicos:** Java es muy dinámico. Las imágenes nativas requieren que todo lo que se usa en tiempo de ejecución (como la reflexión, la carga dinámica de clases, o el acceso a recursos externos) sea conocido en tiempo de compilación. Esto significa que a veces necesitas configuraciones especiales (hint files) para "enseñarle" a GraalVM sobre estas partes dinámicas de tu código o de las librerías que usas. ¡No es imposible, pero añade una capa de complejidad!
+* **Soporte Limitado para Algunas Librerías:** Aunque el ecosistema está creciendo rápidamente, no todas las librerías de Java están 100% listas para la compilación nativa sin ajustes. Algunas pueden usar características muy dinámicas que GraalVM no puede optimizar completamente de forma automática.
+''',
+    'code_example': '''
+// Ejemplo conceptual: las ventajas y limitaciones no se representan directamente con código,
+// sino con el comportamiento y la configuración de la aplicación.
+
+// Para ver las ventajas, imagina el arranque de una aplicación Spring Boot:
+// Con JVM estándar:
+// java -jar my-spring-app.jar
+// (Tiempo de arranque: 2-5 segundos, o más)
+
+// Con Native Image (después de compilarla con 'native-image' o Spring Boot build-image):
+// ./my-spring-app-native
+// (Tiempo de arranque: ~50-100 milisegundos)
+
+// Ejemplo de una limitación (reflexión):
+// Si tienes un código que usa reflexión sin los hints adecuados para GraalVM,
+// podría fallar en tiempo de ejecución cuando se compila a nativo.
+
+/*
+// Clase para la que se usa reflexión
+public class MiClaseDinamica {
+    public String mensaje() {
+        return "Hola desde MiClaseDinamica";
+    }
+}
+
+// Código que usa reflexión
+public class ReflexionEjemplo {
+    public static void main(String[] args) throws Exception {
+        Class<?> clazz = Class.forName("MiClaseDinamica");
+        Object instance = clazz.getDeclaredConstructor().newInstance();
+        java.lang.reflect.Method method = clazz.getMethod("mensaje");
+        System.out.println(method.invoke(instance));
+    }
+}
+*/
+// Para que el ejemplo de reflexión funcione en una Native Image,
+// necesitarías un archivo 'reflection-config.json' para GraalVM
+// que le diga que 'MiClaseDinamica' y su método 'mensaje' deben ser
+// accesibles vía reflexión. Esto no es código Java, sino configuración de GraalVM.
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Tópicos Avanzados',
+    'topic': 'Java en la Nube',
+    'subtopic': 'Características de Java para la nube',
+    'definition': '''
+Java ha sido un pilar en el desarrollo de software durante décadas, y su adaptación a la nube no es la excepción. Su filosofía de "escribir una vez, ejecutar en cualquier lugar" facilita la portabilidad de aplicaciones en entornos de nube variados.
+
+¿Te preguntas por qué Java sigue siendo relevante en la era de la computación en la nube?
+
+Además de su portabilidad, Java ofrece características integradas de seguridad, como la verificación de clases y la gestión de permisos, que son esenciales en entornos donde la protección de datos es crítica. Su gestión automática de memoria contribuye a la estabilidad y eficiencia de las aplicaciones desplegadas en la nube.
+
+Estas características hacen de Java una opción sólida para desarrollar aplicaciones escalables, seguras y eficientes en plataformas de nube modernas.
+  ''',
+    'code_example': '''
+// Ejemplo de una clase Java simple que puede ejecutarse en diferentes entornos de nube
+
+public class AplicacionNube {
+  public static void main(String[] args) {
+    System.out.println("Aplicación Java en la nube ejecutándose correctamente.");
+  }
+}
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Tópicos Avanzados',
+    'topic': 'Java en la Nube',
+    'subtopic': 'Contenedores y orquestación',
+    'definition': '''
+El uso de contenedores, como Docker, ha revolucionado la forma en que se despliegan las aplicaciones. Java se integra eficientemente en estos entornos, permitiendo encapsular aplicaciones y sus dependencias de manera consistente.
+
+¿Te has enfrentado a problemas de "funciona en mi máquina" al desplegar aplicaciones?
+
+Con contenedores, puedes crear imágenes que aseguran que tu aplicación Java se ejecute de la misma manera en cualquier entorno. Además, herramientas de orquestación como Kubernetes facilitan la gestión, escalado y monitoreo de estas aplicaciones en producción.
+
+Esta combinación permite una implementación más ágil, escalable y confiable de aplicaciones Java en la nube.
+  ''',
+    'code_example': '''
+// Dockerfile básico para una aplicación Java
+
+FROM openjdk:17-jdk-slim
+COPY target/miapp.jar miapp.jar
+ENTRYPOINT ["java", "-jar", "miapp.jar"]
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Tópicos Avanzados',
+    'topic': 'Java en la Nube',
+    'subtopic': 'Microservicios y arquitecturas desacopladas',
+    'definition': '''
+La arquitectura de microservicios implica dividir una aplicación en componentes pequeños e independientes que se comunican entre sí. Java, con frameworks como Spring Boot y Micronaut, facilita la creación de estos servicios.
+
+¿Te preguntas cómo manejar aplicaciones complejas de manera más eficiente?
+
+Al adoptar microservicios, puedes desarrollar, desplegar y escalar cada componente de forma independiente, lo que mejora la agilidad y la resiliencia de la aplicación. Esta arquitectura es especialmente beneficiosa en entornos de nube, donde la escalabilidad y la disponibilidad son esenciales.
+
+Java proporciona las herramientas necesarias para implementar microservicios robustos y eficientes que se integran perfectamente en ecosistemas de nube modernos.
+  ''',
+    'code_example': '''
+// Ejemplo de un microservicio simple con Spring Boot
+
+@RestController
+public class SaludoControlador {
+
+  @GetMapping("/saludo")
+  public String saludar() {
+    return "¡Hola desde el microservicio!";
+  }
+}
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Tópicos Avanzados',
+    'topic': 'Java en la Nube',
+    'subtopic': 'Integración con servicios en la nube',
+    'definition': '''
+Los principales proveedores de servicios en la nube, como AWS, Azure y Google Cloud, ofrecen SDKs y herramientas que facilitan la integración de aplicaciones Java con sus servicios.
+
+¿Te gustaría aprovechar servicios como almacenamiento, bases de datos o funciones sin servidor en tus aplicaciones Java?
+
+Con las integraciones disponibles, puedes conectar tu aplicación Java a servicios como Amazon S3, Azure Blob Storage o Google Cloud Functions de manera sencilla. Esto permite ampliar las capacidades de tu aplicación sin tener que gestionar la infraestructura subyacente.
+
+Estas integraciones agilizan el desarrollo y despliegue de aplicaciones Java modernas y escalables en la nube.
+  ''',
+    'code_example': '''
+// Ejemplo de uso del SDK de AWS para subir un archivo a S3
+
+AmazonS3 s3 = AmazonS3ClientBuilder.standard().build();
+s3.putObject("mi-bucket", "archivo.txt", new File("archivo.txt"));
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'Java',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Tópicos Avanzados',
+    'topic': 'Java en la Nube',
+    'subtopic': 'Desafíos y consideraciones',
+    'definition': '''
+Aunque Java ofrece muchas ventajas en entornos de nube, también presenta desafíos que deben considerarse para asegurar un rendimiento óptimo.
+
+¿Te has enfrentado a problemas de latencia o consumo de recursos en tus aplicaciones Java en la nube?
+
+Algunos desafíos comunes incluyen la gestión eficiente de la memoria, tiempos de inicio de la aplicación y la necesidad de ajustar la configuración de la JVM para entornos de nube específicos. Además, la migración de aplicaciones legadas a la nube puede requerir refactorización y adaptación a nuevas arquitecturas.
+
+Abordar estos desafíos con buenas prácticas y herramientas adecuadas es esencial para aprovechar al máximo las capacidades de Java en la nube.
+  ''',
+    'code_example': '''
+// Configuración de parámetros de la JVM para optimizar el rendimiento en la nube
+
+java -Xms512m -Xmx1024m -XX:+UseG1GC -jar miapp.jar
+  ''',
+  });
+}
