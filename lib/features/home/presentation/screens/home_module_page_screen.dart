@@ -10,14 +10,14 @@ import 'package:rutacode/features/level/presentation/widgets/generate_route_path
 import 'package:rutacode/features/progress/presentation/screens/progres_score_screen.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-class HomePageScreen extends ConsumerStatefulWidget {
-  const HomePageScreen({super.key});
+class HomeModuleScreen extends ConsumerStatefulWidget {
+  const HomeModuleScreen({super.key});
 
   @override
-  ConsumerState<HomePageScreen> createState() => _HomePageScreenState();
+  ConsumerState<HomeModuleScreen> createState() => _HomeModulePageScreenState();
 }
 
-class _HomePageScreenState extends ConsumerState<HomePageScreen> {
+class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();

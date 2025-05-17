@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:rutacode/features/home/presentation/screens/home_page_screen.dart';
+import 'package:rutacode/features/home/presentation/screens/home_module_page_screen.dart';
 import 'package:rutacode/features/home/presentation/screens/home_screen.dart';
+import 'package:rutacode/features/leanguages/presentation/screens/home_leanguage_screen.dart';
 import 'package:rutacode/features/loading/presentation/screens/welcome_screen.dart';
 import 'package:rutacode/features/loading/presentation/state/button_loading_state_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -44,24 +45,25 @@ class LoadingScreen extends ConsumerWidget {
               height: heightScreen * 0.02,
             ),
             SizedBox(
-              height: heightScreen * 0.02,
+              height: heightScreen * 0.015,
               width: widthScreen * 0.85,
               child: LinearPercentIndicator(
                 alignment: MainAxisAlignment.center,
                 width: widthScreen * 0.65,
-                lineHeight: 7,
-                percent: 100 / 100,
+                lineHeight: 5,
+                percent: 1.0,
                 animation: true,
                 animationDuration: 3000,
                 progressColor: Colors.blueGrey,
+                barRadius: const Radius.circular(10),
                 onAnimationEnd: () =>
                     ref.read(buttonState.notifier).enableButton(),
               ),
             ),
             const Text(
-              "Cargando...",
+              "Cargando recursos y contenidos...",
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 10),
             ),
             SizedBox(
               height: heightScreen * 0.18,
@@ -106,7 +108,7 @@ class LoadingScreen extends ConsumerWidget {
     } else if (firstWelcome == false) {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => const HomePageScreen()),
+        MaterialPageRoute(builder: (context) => const HomeLeanguagePage()),
       );
     }
   }

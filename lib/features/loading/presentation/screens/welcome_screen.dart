@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:rutacode/features/home/presentation/screens/home_page_screen.dart';
+import 'package:rutacode/features/home/presentation/screens/home_module_page_screen.dart';
 import 'package:rutacode/features/home/presentation/screens/home_screen.dart';
+import 'package:rutacode/features/leanguages/presentation/screens/home_leanguage_screen.dart';
 import 'package:rutacode/features/loading/presentation/state/page_view_state_provider.dart';
 import 'package:rutacode/features/loading/presentation/widgets/tutorial_page_widget.dart';
 import 'package:rutacode/features/loading/presentation/widgets/welcome_page_widget.dart';
@@ -49,7 +50,7 @@ class WelcomeScreen extends ConsumerWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const HomePageScreen()));
+                            builder: (context) => const HomeLeanguagePage()));
 
                     setFisrtWelcome();
                   }

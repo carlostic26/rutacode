@@ -1,4 +1,4 @@
-import 'package:rutacode/common/feature/content/data/datasources/java/main_insert_java.dart';
+import 'package:rutacode/common/feature/content/data/datasources/leanguages/java/main_insert_java.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
@@ -30,6 +30,14 @@ class LocalContentDatabaseHelper {
             subtopic TEXT,
             definition TEXT,
             code_example TEXT
+          )
+        ''');
+
+        await db.execute('''
+          CREATE TABLE IF NOT EXISTS leanguage_img (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            language TEXT,
+            ur_img TEXT
           )
         ''');
 
