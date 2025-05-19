@@ -65,10 +65,10 @@ class WelcomePageWidget extends StatelessWidget {
                         ),
                       ),
                       const Text(
-                        'Tu guía de rutas para repasar o aprender programación',
+                        'App gamificada sobre rutas para repasar o aprender tecnologia y lenguajes programación',
                         textAlign: TextAlign.center,
                         style: TextStyle(
-                          fontSize: 14,
+                          fontSize: 12,
                           color: Colors.white70,
                           fontStyle: FontStyle.italic,
                         ),
@@ -96,7 +96,7 @@ class WelcomePageWidget extends StatelessWidget {
             child: Column(
               children: [
                 _buildFeatureItem(
-                    '🌍', 'Repasa cualquier lenguaje de programación'),
+                    '🌍', 'Repaso de temas y lenguaje de programación'),
                 const Divider(color: Colors.white24, height: 20),
                 _buildFeatureItem('🧭', 'Rutas adaptadas a tu nivel actual'),
                 const Divider(color: Colors.white24, height: 20),
@@ -115,7 +115,7 @@ class WelcomePageWidget extends StatelessWidget {
         const Padding(
           padding: EdgeInsets.symmetric(horizontal: 40),
           child: Text(
-            'De la sintaxis básica a conceptos avanzados\n'
+            'Desde cero hasta avanzado\n'
             'Tu viaje de aprendizaje comienza ahora',
             textAlign: TextAlign.center,
             style: TextStyle(

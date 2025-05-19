@@ -43,12 +43,12 @@ class TutorialPageWidget extends StatelessWidget {
 
               // Texto encima del degradado
               Align(
-                alignment: Alignment.center,
+                alignment: Alignment.bottomCenter,
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                   child: Column(
-                    mainAxisSize: MainAxisSize.min,
+                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       ShaderMask(
                         blendMode: BlendMode.srcIn,
@@ -56,7 +56,7 @@ class TutorialPageWidget extends StatelessWidget {
                           colors: [Colors.lightBlueAccent, Colors.blue],
                         ).createShader(bounds),
                         child: const Text(
-                          'RutaCode',
+                          '\nRutaCode',
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: 28,
@@ -68,10 +68,10 @@ class TutorialPageWidget extends StatelessWidget {
                       const Padding(
                         padding: EdgeInsets.only(left: 10, right: 10),
                         child: Text(
-                          'Elije un lenguaje de programación, luego avanza a través de 3 módulos de conocimiento en seniority, con información, ejemplos y evaluaciones para un aprendizaje completo y efectivo sobre cualquier tema seleccionado.',
+                          'Elige un área o lenguaje de programación, luego avanza a través de 3 módulos de conocimiento en seniority, con información, ejemplos y evaluaciones para un aprendizaje completo y efectivo sobre cualquier tema seleccionado.',
                           textAlign: TextAlign.justify,
                           style: TextStyle(
-                            fontSize: 14,
+                            fontSize: 12,
                             color: Colors.white,
                             fontStyle: FontStyle.italic,
                           ),
@@ -94,13 +94,13 @@ class TutorialPageWidget extends StatelessWidget {
                 children: [
                   //flecha 1
                   Positioned(
-                    left: widthScreen * 0.40,
-                    top: heightScreen * 0.07,
+                    left: widthScreen * 0.3,
+                    top: heightScreen * 0.1,
                     child: Align(
                       alignment: Alignment.bottomLeft,
                       child: Container(
-                        width: widthScreen * 0.40,
-                        height: heightScreen * 0.15,
+                        width: widthScreen * 0.4,
+                        height: heightScreen * 0.2,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
                             opacity: 0.5,
@@ -115,13 +115,13 @@ class TutorialPageWidget extends StatelessWidget {
 
                   //flecha 2
                   Positioned(
-                    left: widthScreen * 0.40,
-                    top: heightScreen * 0.345,
+                    left: widthScreen * 0.3,
+                    top: heightScreen * 0.25,
                     child: Transform.rotate(
                       angle: pi / 2,
                       child: Container(
-                        width: widthScreen * 0.42,
-                        height: heightScreen * 0.15,
+                        width: widthScreen * 0.4,
+                        height: heightScreen * 0.2,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
                             opacity: 0.2,
@@ -136,13 +136,14 @@ class TutorialPageWidget extends StatelessWidget {
 
                   //first level
                   Positioned(
-                    left: widthScreen * 0.05,
+                    left: widthScreen * 0.1,
+                    top: heightScreen * 0.06,
                     child: Column(
                       children: [
                         const Padding(
                           padding: EdgeInsets.only(bottom: 10),
                           child: Text(
-                            'Junior Dev',
+                            'Junior',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 14,
@@ -152,8 +153,8 @@ class TutorialPageWidget extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          width: widthScreen * 0.40,
-                          height: heightScreen * 0.15,
+                          width: widthScreen * 0.3,
+                          height: heightScreen * 0.1,
                           decoration: BoxDecoration(
                             color: Colors.grey,
                             borderRadius: BorderRadius.circular(25),
@@ -169,11 +170,11 @@ class TutorialPageWidget extends StatelessWidget {
 
                   //second level
                   Positioned(
-                    right: widthScreen * 0.05,
-                    top: heightScreen * 0.21,
+                    right: widthScreen * 0.13,
+                    top: heightScreen * 0.22,
                     child: Container(
-                      width: widthScreen * 0.40,
-                      height: heightScreen * 0.15,
+                      width: widthScreen * 0.3,
+                      height: heightScreen * 0.1,
                       decoration: BoxDecoration(
                         color: Colors.grey,
                         borderRadius: BorderRadius.circular(25),
@@ -186,11 +187,11 @@ class TutorialPageWidget extends StatelessWidget {
                   ),
                   // opacity and text
                   Positioned(
-                    right: widthScreen * 0.05,
-                    top: heightScreen * 0.21,
+                    right: widthScreen * 0.13,
+                    top: heightScreen * 0.22,
                     child: Container(
-                      width: widthScreen * 0.40,
-                      height: heightScreen * 0.15,
+                      width: widthScreen * 0.3,
+                      height: heightScreen * 0.1,
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
@@ -198,7 +199,7 @@ class TutorialPageWidget extends StatelessWidget {
                       ),
                       child: const Center(
                         child: Text(
-                          'Middle Dev',
+                          'Middle',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
@@ -212,11 +213,11 @@ class TutorialPageWidget extends StatelessWidget {
 
                   //third level
                   Positioned(
-                    left: widthScreen * 0.05,
-                    bottom: heightScreen * 0.10,
+                    left: widthScreen * 0.1,
+                    bottom: heightScreen * 0.18,
                     child: Container(
-                      width: widthScreen * 0.40,
-                      height: heightScreen * 0.15,
+                      width: widthScreen * 0.3,
+                      height: heightScreen * 0.1,
                       decoration: BoxDecoration(
                         color: Colors.grey,
                         borderRadius: BorderRadius.circular(25),
@@ -229,11 +230,11 @@ class TutorialPageWidget extends StatelessWidget {
                   ),
                   // opacity and text
                   Positioned(
-                    left: widthScreen * 0.05,
-                    bottom: heightScreen * 0.10,
+                    left: widthScreen * 0.1,
+                    bottom: heightScreen * 0.18,
                     child: Container(
-                      width: widthScreen * 0.40,
-                      height: heightScreen * 0.15,
+                      width: widthScreen * 0.3,
+                      height: heightScreen * 0.1,
                       padding: const EdgeInsets.all(10),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
@@ -241,7 +242,7 @@ class TutorialPageWidget extends StatelessWidget {
                       ),
                       child: const Center(
                         child: Text(
-                          'Senior Dev',
+                          'Senior',
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 16,
