@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:rutacode/common/feature/content/data/datasources/languages/java/insert_jr_java.dart';
 import 'package:rutacode/common/feature/content/data/datasources/languages/java/insert_sr_java.dart';
 import 'package:sqflite/sqflite.dart';
@@ -9,8 +10,8 @@ class InsertJavaData {
       await _insertMidLevelData(db);
       await _insertPythonSrLevelData(db);
     } catch (e, stackTrace) {
-      print('Error al insertar Java: $e');
-      print('Stack trace: $stackTrace');
+      debugPrint('Error al insertar Java: $e');
+      debugPrint('Stack trace: $stackTrace');
     }
   }
 

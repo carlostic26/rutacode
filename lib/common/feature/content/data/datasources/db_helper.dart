@@ -5,7 +5,7 @@ import 'package:path/path.dart';
 
 class LocalContentDatabaseHelper {
   Database? _database;
-  int dbVersion = 6;
+  int dbVersion = 7;
 
   Future<Database> getDatabase() async {
     _database ??= await _initDatabase();

@@ -52,8 +52,8 @@ class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
         ),
         leading: Builder(
           builder: (context) => IconButton(
-            onPressed: () => Scaffold.of(context).openDrawer(),
-            icon: const Icon(Icons.menu),
+            onPressed: () => Navigator.pop(context),
+            icon: const Icon(Icons.arrow_back_ios),
           ),
         ),
         centerTitle: true,
@@ -121,9 +121,8 @@ class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
         child: AdWidget(ad: adState.bannerAd!),
       );
     } else {
-      // Mostrar un placeholder mientras carga el anuncio
       return Container(
-        height: 50, // Altura aproximada de un banner
+        height: 50,
         color: Colors.transparent,
       );
     }

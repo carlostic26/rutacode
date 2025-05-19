@@ -1,8 +1,7 @@
 import 'package:sqflite_common/sqlite_api.dart';
-import 'package:flutter/foundation.dart'; // Para debugPrint
+import 'package:flutter/foundation.dart';
 
 Future<void> insertLanguageData(Database db) async {
-  // Insertar Java
   try {
     await db.insert(
       'language_img',
@@ -20,7 +19,6 @@ Future<void> insertLanguageData(Database db) async {
     // Puedes decidir si quieres relanzar el error o continuar
   }
 
-  // Insertar Python
   try {
     await db.insert(
       'language_img',
@@ -37,7 +35,6 @@ Future<void> insertLanguageData(Database db) async {
     debugPrint('Stack trace: $stackTrace');
   }
 
-  // Insertar JavaScript
   try {
     await db.insert(
       'language_img',
@@ -54,7 +51,6 @@ Future<void> insertLanguageData(Database db) async {
     debugPrint('Stack trace: $stackTrace');
   }
 
-  // Insertar C++
   try {
     await db.insert(
       'language_img',
@@ -62,6 +58,22 @@ Future<void> insertLanguageData(Database db) async {
         'language': 'C++',
         'url_img':
             'https://blogger.googleusercontent.com/img/a/AVvXsEjAkTnx1O62jM3tsmUD5MzPqgjSKIDKRpOSmogTwOPtdzqyc8_ofg_3FXxLo9KuaHeRq8FMkd4zuhowmg1nkF0B4njByOJ4DDAt_IVmuG6rLA54tYTAAPyBf9oKkfWIPh7j4C8H9uF3qIVX24Cqs4MEJpp1KbcmW63JZztXF_V7YNo91pdrgn7vHXPL'
+      },
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+    debugPrint('C++ insertado correctamente');
+  } catch (e, stackTrace) {
+    debugPrint('Error al insertar C++: $e');
+    debugPrint('Stack trace: $stackTrace');
+  }
+
+  try {
+    await db.insert(
+      'language_img',
+      {
+        'language': 'Flutter',
+        'url_img':
+            'https://blogger.googleusercontent.com/img/a/AVvXsEiMh3wU2kjyes2tNMJ2S7iaT0HUx-ke9uBNjwzCFb45fsthGTMc4tUjT26BtWrgoWQVc_meYSyZtiDICr1EF6SAPc9Nt173GlnGTX_Dg5tTdsi-VgLgRgSgROGxSR39HAvDruIKWn2f_GqBK3xkJr-GygzGEQS_vZPSyhutaZUeh3YszE3nv0-eh2TE'
       },
       conflictAlgorithm: ConflictAlgorithm.replace,
     );

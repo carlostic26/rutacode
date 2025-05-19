@@ -13,7 +13,7 @@ final getLanguagesProvider = Provider<GetLanguageUseCase>((ref) {
   return GetLanguageUseCase(repository);
 });
 
-final languagesProvider = FutureProvider<List<LanguageModel>>((ref) async {
+final languagesListProvider = FutureProvider<List<LanguageModel>>((ref) async {
   final getLeanguages = ref.watch(getLanguagesProvider);
   return await getLeanguages();
 });
