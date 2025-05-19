@@ -31,8 +31,21 @@ class LeanguageCardWidget extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: Image.network(
                     imageUrl,
-                    fit: BoxFit
-                        .contain, // La imagen se ajusta manteniendo su relación de aspecto
+                    fit: BoxFit.contain,
+                    loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) return child;
+                      return Center(
+                        child: CircularProgressIndicator(
+                          value: loadingProgress.expectedTotalBytes != null
+                              ? loadingProgress.cumulativeBytesLoaded /
+                                  loadingProgress.expectedTotalBytes!
+                              : null,
+                        ),
+                      );
+                    },
+                    errorBuilder: (context, error, stackTrace) {
+                      return const Icon(Icons.error);
+                    },
                   ),
                 ),
               ),

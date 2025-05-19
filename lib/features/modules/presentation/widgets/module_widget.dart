@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:rutacode/features/home/presentation/providers/navigation_home_page_state.dart';
+import 'package:rutacode/features/modules/presentation/providers/navigation_home_page_state.dart';
 import 'package:rutacode/features/level/presentation/state/completed_levels_shp_provider.dart';
 import 'package:rutacode/features/level/presentation/state/module_status_provider.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
-import 'package:rutacode/features/home/presentation/widgets/spacer_home_widget.dart';
+import 'package:rutacode/features/modules/presentation/widgets/spacer_home_widget.dart';
 
 class ModuleWidget extends ConsumerWidget {
   const ModuleWidget({

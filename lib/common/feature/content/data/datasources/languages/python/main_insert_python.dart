@@ -1,5 +1,5 @@
-import 'package:rutacode/common/feature/content/data/datasources/python/insert_jr_python.dart';
-import 'package:rutacode/common/feature/content/data/datasources/python/insert_sr_python.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/python/insert_jr_python.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/python/insert_sr_python.dart';
 import 'package:sqflite/sqflite.dart';
 
 class InsertPythonData {

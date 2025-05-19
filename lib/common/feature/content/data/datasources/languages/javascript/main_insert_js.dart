@@ -1,6 +1,6 @@
-import 'package:rutacode/common/feature/content/data/datasources/javascript/insert_jr_js.dart';
-import 'package:rutacode/common/feature/content/data/datasources/javascript/insert_mid_js.dart';
-import 'package:rutacode/common/feature/content/data/datasources/javascript/insert_sr_js.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/javascript/insert_jr_js.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/javascript/insert_mid_js.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/javascript/insert_sr_js.dart';
 import 'package:sqflite/sqflite.dart';
 
 class InsertJsData {

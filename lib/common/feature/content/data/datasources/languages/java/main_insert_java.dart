@@ -1,12 +1,17 @@
-import 'package:rutacode/common/feature/content/data/datasources/java/insert_jr_java.dart';
-import 'package:rutacode/common/feature/content/data/datasources/java/insert_sr_java.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/java/insert_jr_java.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/java/insert_sr_java.dart';
 import 'package:sqflite/sqflite.dart';
 
 class InsertJavaData {
   static Future<void> insertJavaData(Database db) async {
-    await _insertJrLevelData(db);
-    await _insertMidLevelData(db);
-    await _insertPythonSrLevelData(db);
+    try {
+      await _insertJrLevelData(db);
+      await _insertMidLevelData(db);
+      await _insertPythonSrLevelData(db);
+    } catch (e, stackTrace) {
+      print('Error al insertar Java: $e');
+      print('Stack trace: $stackTrace');
+    }
   }
 
   static Future<void> _insertJrLevelData(Database db) async {
