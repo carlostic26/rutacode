@@ -1,4 +1,4 @@
-import 'package:rutacode/common/feature/content/data/datasources/java/main_insert_java.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/java/main_insert_java.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
