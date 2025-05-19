@@ -14,6 +14,14 @@ class InsertJavaData {
       debugPrint('Error al insertar Java: $e');
       debugPrint('Stack trace: $stackTrace');
     }
+    try {
+      await _insertJrLevelData(db);
+      await _insertMidLevelData(db);
+      await _insertPythonSrLevelData(db);
+    } catch (e, stackTrace) {
+      debugPrint('Error al insertar Java: $e');
+      debugPrint('Stack trace: $stackTrace');
+    }
   }
 
   static Future<void> _insertJrLevelData(Database db) async {

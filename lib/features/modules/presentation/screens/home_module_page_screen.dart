@@ -2,22 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rutacode/core/ads/banner/ad_banner_provider_home.dart';
 import 'package:rutacode/features/detail/presentation/state/detail_sections_state.dart';
-import 'package:rutacode/features/home/presentation/providers/navigation_home_page_state.dart';
-import 'package:rutacode/features/home/presentation/widgets/home_drawer_widget.dart';
-import 'package:rutacode/features/home/presentation/widgets/module_widget.dart';
+import 'package:rutacode/features/modules/presentation/providers/navigation_home_page_state.dart';
+import 'package:rutacode/features/modules/presentation/widgets/home_drawer_widget.dart';
+import 'package:rutacode/features/modules/presentation/widgets/module_widget.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
 import 'package:rutacode/features/level/presentation/widgets/generate_route_path_widget.dart';
 import 'package:rutacode/features/progress/presentation/screens/progres_score_screen.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-class HomePageScreen extends ConsumerStatefulWidget {
-  const HomePageScreen({super.key});
+class HomeModuleScreen extends ConsumerStatefulWidget {
+  const HomeModuleScreen({super.key});
 
   @override
-  ConsumerState<HomePageScreen> createState() => _HomePageScreenState();
+  ConsumerState<HomeModuleScreen> createState() => _HomeModulePageScreenState();
 }
 
-class _HomePageScreenState extends ConsumerState<HomePageScreen> {
+class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
@@ -52,8 +52,8 @@ class _HomePageScreenState extends ConsumerState<HomePageScreen> {
         ),
         leading: Builder(
           builder: (context) => IconButton(
-            onPressed: () => Scaffold.of(context).openDrawer(),
-            icon: const Icon(Icons.menu),
+            onPressed: () => Navigator.pop(context),
+            icon: const Icon(Icons.arrow_back_ios),
           ),
         ),
         centerTitle: true,
@@ -121,9 +121,8 @@ class _HomePageScreenState extends ConsumerState<HomePageScreen> {
         child: AdWidget(ad: adState.bannerAd!),
       );
     } else {
-      // Mostrar un placeholder mientras carga el anuncio
       return Container(
-        height: 50, // Altura aproximada de un banner
+        height: 50,
         color: Colors.transparent,
       );
     }

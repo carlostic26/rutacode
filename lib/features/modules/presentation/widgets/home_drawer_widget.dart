@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:rutacode/core/app_config.dart';
 import 'package:rutacode/features/exam/presentation/screens/start_exam_screen.dart';
-import 'package:rutacode/features/home/presentation/screens/app_support.dart';
-import 'package:rutacode/features/home/presentation/screens/delete_progress.dart';
-import 'package:rutacode/features/home/presentation/screens/usability_screen.dart';
+import 'package:rutacode/features/modules/presentation/screens/app_support.dart';
+import 'package:rutacode/features/modules/presentation/screens/delete_progress.dart';
+import 'package:rutacode/features/modules/presentation/screens/usability_screen.dart';
 import 'package:rutacode/features/progress/presentation/screens/progres_score_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 

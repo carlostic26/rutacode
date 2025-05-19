@@ -1,10 +1,11 @@
 import 'package:rutacode/common/feature/content/data/datasources/languages/java/main_insert_java.dart';
+import 'package:rutacode/features/languages/data/datasource/inserts_language.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
 class LocalContentDatabaseHelper {
   Database? _database;
-  int dbVersion = 1;
+  int dbVersion = 7;
 
   Future<Database> getDatabase() async {
     _database ??= await _initDatabase();
@@ -33,9 +34,19 @@ class LocalContentDatabaseHelper {
           )
         ''');
 
+        await db.execute('''
+          CREATE TABLE IF NOT EXISTS language_img (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            language TEXT,
+            url_img TEXT
+          )
+        ''');
+
         await InsertJavaData.insertJavaData(db);
         //await InsertPythonData.insertPythonData(db);
         //this is develop branch
+
+        await insertLanguageData(db);
       },
     );
   }
