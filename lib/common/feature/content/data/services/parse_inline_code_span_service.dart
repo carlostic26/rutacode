@@ -12,7 +12,7 @@ List<InlineSpan> parseInlineCodeSpans(String input) {
         style: const TextStyle(
           color: Colors.white,
           fontFamily: 'Poppins',
-          fontSize: 12,
+          fontSize: 16,
         ),
       ));
     }
@@ -30,7 +30,7 @@ List<InlineSpan> parseInlineCodeSpans(String input) {
           match.group(1)!,
           style: const TextStyle(
             fontFamily: 'monospace',
-            fontSize: 12,
+            fontSize: 14,
             color: Color(0xFF80CBC4),
           ),
         ),
@@ -46,7 +46,7 @@ List<InlineSpan> parseInlineCodeSpans(String input) {
       style: const TextStyle(
         color: Colors.white,
         fontFamily: 'Poppins',
-        fontSize: 12,
+        fontSize: 16,
       ),
     ));
   }
