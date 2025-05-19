@@ -13,6 +13,8 @@ class InsertPythonData {
     await insertPythonJrLevel1Data(db);
     await insertPythonJrLevel2Data(db);
     await insertPythonJrLevel3Data(db);
+    await insertPythonJrLevel4Data(db);
+    await insertPythonJrLevel5Data(db);
   }
 
   static Future<void> _insertMidLevelData(Database db) async {}
