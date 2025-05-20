@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rutacode/core/ads/banner/ad_banner_provider_home.dart';
 import 'package:rutacode/features/detail/presentation/state/detail_sections_state.dart';
+import 'package:rutacode/features/languages/presentation/provider/language_providers.dart';
 import 'package:rutacode/features/modules/presentation/providers/navigation_home_page_state.dart';
 import 'package:rutacode/features/modules/presentation/widgets/home_drawer_widget.dart';
 import 'package:rutacode/features/modules/presentation/widgets/module_widget.dart';
@@ -42,13 +43,14 @@ class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
     final pageController = ref.watch(pageControllerProvider);
     final currentIndex = ref.watch(pageIndexProvider);
     final adState = ref.watch(adBannerProviderHome);
+    final actualLanguage = ref.watch(actualLanguageProvider);
 
     // Define los AppBars para cada pantalla
     final List<PreferredSizeWidget> appBars = [
       AppBar(
-        title: const Text(
-          'Módulos',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+        title: Text(
+          'Módulos para $actualLanguage',
+          style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
         ),
         leading: Builder(
           builder: (context) => IconButton(
@@ -61,7 +63,7 @@ class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
       ),
       AppBar(
         title: Text(
-          'Ruta ${ref.watch(actualModuleProvider)}',
+          'Ruta ${ref.watch(actualModuleProvider)} de $actualLanguage',
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
         ),
         centerTitle: true,
@@ -129,7 +131,6 @@ class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
   }
 }
 
-// HomeContent solo contiene el contenido sin Scaffold
 class _HomeContent extends ConsumerWidget {
   const _HomeContent();
 

@@ -43,10 +43,8 @@ class HomeLanguageScreen extends ConsumerWidget {
                 return LeanguageCardWidget(
                   imageUrl: language.urlImage!,
                   onTap: () {
-                    // establecer provider de actualLanguage
-                    // ref.read(currentLanguageProvider.notifier).setCurrentLanguage(leanguage);
-                    // Navegar a la pantalla de modulos
-                    // Navigator.push(HomeModuleScreen
+                    ref.read(actualLanguageProvider.notifier).state =
+                        language.language!;
 
                     if (language.language == 'Flutter') {
                       goRutaFlutterDialog(context);
