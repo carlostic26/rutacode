@@ -8,6 +8,9 @@ final languageRepositoryProvider = Provider<LanguageRepository>((ref) {
   return LanguageRepositoryImpl();
 });
 
+// Proveedor del módulo seleccionado
+final actualLanguageProvider = StateProvider<String>((ref) => 'none');
+
 final getLanguagesProvider = Provider<GetLanguageUseCase>((ref) {
   final repository = ref.watch(languageRepositoryProvider);
   return GetLanguageUseCase(repository);
