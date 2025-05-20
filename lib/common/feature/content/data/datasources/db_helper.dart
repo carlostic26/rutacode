@@ -1,4 +1,5 @@
 import 'package:rutacode/common/feature/content/data/datasources/languages/java/main_insert_java.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/python/main_insert_python.dart';
 import 'package:rutacode/features/languages/data/datasource/inserts_language.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
@@ -43,8 +44,7 @@ class LocalContentDatabaseHelper {
         ''');
 
         await InsertJavaData.insertJavaData(db);
-        //await InsertPythonData.insertPythonData(db);
-        //this is develop branch
+        await InsertPythonData.insertPythonData(db);
 
         await insertLanguageData(db);
       },
