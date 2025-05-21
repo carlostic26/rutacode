@@ -1361,4 +1361,1548 @@ async function* obtenerLotes() {
   });
 }
 
-Future<void> insertJsSrLevel4Data(Database db) async {}
+Future<void> insertJsSrLevel4Data(Database db) async {
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 4,
+    'title_level': 'Gestión de Memoria y Rendimiento',
+    'topic': 'Modelo de memoria en JS',
+    'subtopic': 'Stack vs Heap',
+    'definition': '''
+En JavaScript, la memoria se gestiona en dos estructuras principales: el stack y el heap. El stack es rápido pero limitado, mientras que el heap es más flexible pero requiere más gestión.
+
+Si nunca has pensado en cómo JavaScript maneja la memoria internamente, puede parecer un tema abstracto. Pero entender esta diferencia es clave para optimizar el rendimiento de tus aplicaciones.
+
+El stack almacena variables primitivas y referencias a objetos en un orden específico (LIFO - Last In, First Out). Es rápido porque la asignación y liberación de memoria es predecible. El heap, por otro lado, almacena los objetos complejos y las asignaciones dinámicas. Cuando creas un objeto, array o función, estos van al heap, mientras que las referencias a ellos se guardan en el stack. La recolección de basura (garbage collection) trabaja principalmente en el heap para liberar memoria no utilizada.
+''',
+    'code_example': '''
+// Variables primitivas van al stack
+let age = 30; // stack
+let name = 'Alex'; // stack
+
+// Objetos van al heap, la referencia va al stack
+let person = { // referencia en stack, objeto en heap
+  name: 'Alex',
+  age: 30
+};
+
+// MALA PRÁCTICA: Crear muchos objetos temporales puede saturar el heap
+function processData() {
+  for(let i = 0; i < 10000; i++) {
+    let tempObj = {index: i}; // Se crea y descarta rápidamente
+    // Mejor: reutilizar objetos cuando sea posible
+  }
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 4,
+    'title_level': 'Gestión de Memoria y Rendimiento',
+    'topic': 'Modelo de memoria en JS',
+    'subtopic': 'Asignación y liberación automática',
+    'definition': '''
+JavaScript maneja la memoria de forma automática mediante asignación y liberación, lo que nos ahorra tener que hacerlo manualmente como en otros lenguajes.
+
+Puede que te preguntes cómo es que nunca tienes que "borrar" variables en JavaScript. Esto es gracias al recolector de basura (garbage collector), que trabaja en segundo plano.
+
+Cuando declaras una variable, JavaScript automáticamente asigna memoria para ella. Para tipos primitivos, la memoria se libera inmediatamente cuando la variable sale de ámbito. Para objetos, el garbage collector identifica cuándo ya no hay referencias activas al objeto y libera esa memoria. Sin embargo, hay casos donde podemos crear memory leaks sin darnos cuenta, como cuando mantenemos referencias innecesarias a objetos grandes.
+''',
+    'code_example': '''
+function createObjects() {
+  const bigObject = new Array(1000000).fill('data'); // Ocupa mucha memoria
+  
+  // Cuando la función termina, bigObject es elegible para GC
+  // a menos que haya referencias externas
+}
+
+// MEMORY LEAK POTENCIAL:
+let cache = [];
+function processWithLeak(data) {
+  cache.push(processData(data)); // Los datos nunca se liberan
+  // Mejor: limpiar el cache periódicamente o usar WeakMap
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 4,
+    'title_level': 'Gestión de Memoria y Rendimiento',
+    'topic': 'Modelo de memoria en JS',
+    'subtopic': 'Variables primitivas vs referencias',
+    'definition': '''
+En JavaScript, hay una diferencia fundamental en cómo se manejan los tipos primitivos (numbers, strings, booleans) versus los objetos (arrays, functions, objects).
+
+Si vienes de otros lenguajes, quizás esperes que todo se comporte como objetos. Pero en JavaScript, los primitivos tienen un comportamiento especial que afecta cómo trabajan con la memoria.
+
+Los tipos primitivos se almacenan directamente en el stack y se pasan por valor - cuando los asignas a otra variable, se copia el valor. Los objetos, en cambio, se pasan por referencia - solo se copia la referencia al mismo objeto en el heap. Esto explica por qué modificar un objeto a través de una variable afecta a todas las referencias a ese mismo objeto, mientras que con primitivos cada variable mantiene su propio valor independiente.
+''',
+    'code_example': '''
+// Primitivos - pasados por valor
+let a = 10;
+let b = a; // b obtiene una copia del valor
+b = 20;
+console.log(a); // 10 (no cambió)
+
+// Objetos - pasados por referencia
+let obj1 = {value: 10};
+let obj2 = obj1; // obj2 apunta al mismo objeto
+obj2.value = 20;
+console.log(obj1.value); // 20 (ambos cambiaron)
+
+// Para clonar objetos correctamente:
+let obj3 = {...obj1}; // Spread operator para copia superficial
+let obj4 = JSON.parse(JSON.stringify(obj1)); // Copia profunda (con limitaciones)
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 4,
+    'title_level': 'Gestión de Memoria y Rendimiento',
+    'topic': 'Recolección de basura (Garbage Collection)',
+    'subtopic': 'Algoritmos de GC',
+    'definition': '''
+JavaScript utiliza algoritmos sofisticados para identificar y liberar memoria no utilizada automáticamente. Los motores modernos como V8 (Chrome) y SpiderMonkey (Firefox) han refinado estos procesos a lo largo de los años.
+
+Quizás te sorprenda saber que el garbage collection no es perfecto y tiene un costo de rendimiento. Los motores de JavaScript han evolucionado para minimizar este impacto mediante algoritmos inteligentes.
+
+Los dos algoritmos principales son: Mark-and-Sweep (marca y barre) y Generational Collection. Mark-and-Sweep recorre todos los objetos alcanzables desde las raíces globales, marcando los que están en uso, luego barre los no marcados. El enfoque generacional divide los objetos en "jóvenes" (allocados recientemente) y "viejos", ya que estadísticamente la mayoría de objetos mueren jóvenes. Esto permite optimizar la recolección enfocándose en las áreas más probables de tener basura.
+''',
+    'code_example': '''
+// Ejemplo que puede generar trabajo extra para el GC
+function createManyTemporaryObjects() {
+  for(let i = 0; i < 1000; i++) {
+    let temp = {index: i}; // Objeto creado y pronto descartado
+    process(temp);
+  }
+  // El GC tendrá que limpiar estos 1000 objetos temporales
+}
+
+// Mejor enfoque: reutilizar objetos cuando sea posible
+const reusableObj = {index: 0};
+function createWithReuse() {
+  for(let i = 0; i < 1000; i++) {
+    reusableObj.index = i;
+    process(reusableObj); // Mismo objeto, menos trabajo para GC
+  }
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 4,
+    'title_level': 'Gestión de Memoria y Rendimiento',
+    'topic': 'Recolección de basura (Garbage Collection)',
+    'subtopic': 'Identificación de objetos inalcanzables',
+    'definition': '''
+El garbage collector de JavaScript determina qué memoria puede liberarse identificando objetos que ya no son alcanzables desde las raíces del programa.
+
+Es posible que hayas escuchado sobre memory leaks en JavaScript y te preguntes cómo ocurren. Sucede cuando mantenemos referencias a objetos que ya no necesitamos, impidiendo que el GC los identifique como basura.
+
+Las raíces típicas incluyen variables globales, la cadena de alcance de funciones en ejecución y referencias del DOM. Un objeto es inalcanzable cuando no hay ninguna cadena de referencias que lleve desde una raíz hasta él. Sin embargo, referencias circulares (objetos que se referencian entre sí pero no desde las raíces) sí son detectadas y recolectadas por los algoritmos modernos.
+''',
+    'code_example': '''
+// Ejemplo de objeto inalcanzable
+function createObject() {
+  let obj = {data: 'temp'};
+  // obj se vuelve inalcanzable al terminar la función
+}
+
+// MEMORY LEAK: referencia mantenida accidentalmente
+let leakedObjects = [];
+function processWithLeak(data) {
+  let result = processData(data);
+  leakedObjects.push(result); // Nunca se libera
+  // Mejor: limpiar el array cuando ya no se necesite
+}
+
+// Referencias circulares SON recolectadas (mito común)
+function createCircularReference() {
+  let obj1 = {};
+  let obj2 = {ref: obj1};
+  obj1.ref = obj2; // Circular
+  // Ambos serán recolectados si no hay otras referencias
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 4,
+    'title_level': 'Gestión de Memoria y Rendimiento',
+    'topic': 'Recolección de basura (Garbage Collection)',
+    'subtopic': 'WeakMap y WeakSet como solución a leaks',
+    'definition': '''
+WeakMap y WeakSet son estructuras de datos especiales introducidas en ES6 que permiten almacenar referencias "débiles" a objetos, evitando así memory leaks comunes.
+
+Si trabajas con caches o mapeos de objetos temporales, probablemente has enfrentado el dilema de cuándo limpiarlos. WeakMap y WeakSet resuelven esto elegantemente.
+
+A diferencia de Map y Set normales, WeakMap y WeakSet no previenen que sus valores sean recolectados por el garbage collector. Cuando un objeto solo existe como valor en un WeakMap/WeakSet, puede ser recolectado. Esto los hace ideales para almacenar metadatos asociados a objetos cuyo ciclo de vida no controlamos, como elementos del DOM o instancias de terceras librerías. Las claves en WeakMap deben ser objetos (no primitivos).
+''',
+    'code_example': '''
+// Uso básico de WeakMap
+let weakMap = new WeakMap();
+let obj = {};
+
+weakMap.set(obj, 'metadata asociado');
+console.log(weakMap.get(obj)); // 'metadata asociado'
+
+// Cuando obj se vuelve inalcanzable...
+obj = null;
+// La entrada en weakMap será automáticamente removida
+
+// EJEMPLO PRÁCTICO: Cache de resultados de procesamiento
+const cache = new WeakMap();
+
+function processCached(element) {
+  if (!cache.has(element)) {
+    let result = heavyProcessing(element);
+    cache.set(element, result);
+  }
+  return cache.get(element);
+}
+// Cuando el elemento DOM es removido, su cache se limpia automáticamente
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 4,
+    'title_level': 'Gestión de Memoria y Rendimiento',
+    'topic': 'Detección de memory leaks',
+    'subtopic': 'Uso de herramientas del navegador',
+    'definition': '''
+Cuando hablamos de “memory leaks” o fugas de memoria, nos referimos a casos donde el navegador guarda en la RAM cosas que ya no debería, lo que poco a poco hace que la app web se ponga lenta o hasta se caiga.
+
+¿Te estás preguntando por qué esto importa?
+
+Bueno, si alguna vez usaste una app web que de repente se empezó a trabar sin razón aparente, es muy posible que esté sufriendo una fuga de memoria. Aquí es donde entran las herramientas de desarrollo del navegador, como Chrome DevTools, que tienen pestañas específicas para ayudarte a detectar esos casos.
+
+En particular, en la pestaña "Memory" de DevTools, puedes tomar snapshots (capturas del estado de la memoria) y comparar si hay objetos que siguen en memoria cuando ya no deberían. También puedes grabar el uso de memoria a lo largo del tiempo para ver si hay crecimiento constante. Si estás trabajando con listeners que nunca se eliminan o referencias a DOM que ya no se usa, estos snapshots te van a mostrar si los objetos siguen vivos.
+
+Esta técnica es esencial para mantener una app rápida y saludable, sobre todo si tu aplicación vive abierta por muchas horas, como dashboards o apps de mensajería.
+''',
+    'code_example': r'''
+// Código de ejemplo para usar herramientas del navegador
+
+// Este listener se queda activo incluso si el elemento se elimina
+const button = document.getElementById('click-me');
+
+button.addEventListener('click', () => {
+  console.log('Hiciste clic');
+});
+
+// Luego se elimina el botón del DOM pero el listener sigue en memoria
+button.remove();
+
+// En DevTools, ve a la pestaña Memory y toma un snapshot para ver
+// si el objeto `button` sigue referenciado. Si lo está, tienes un memory leak.
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 4,
+    'title_level': 'Gestión de Memoria y Rendimiento',
+    'topic': 'Detección de memory leaks',
+    'subtopic': 'Puntos comunes de fuga de memoria',
+    'definition': '''
+Al desarrollar en JavaScript, hay ciertos patrones y errores que suelen terminar en fugas de memoria. Esos errores no siempre generan fallos visibles, pero con el tiempo hacen que la aplicación consuma más RAM de lo necesario.
+
+¿Te estás preguntando dónde suelen esconderse estas fugas?
+
+Algunos de los lugares más comunes donde ocurren son:
+
+- Listeners de eventos que nunca se eliminan (como `addEventListener` sin `removeEventListener`)
+- Timers como `setInterval` que siguen ejecutándose sin necesidad
+- Variables globales mal gestionadas
+- Closures que retienen más información de la que deberían
+- Caches o estructuras como `Map` o `Set` que nunca se limpian
+
+Estos casos pueden parecer inofensivos en apps pequeñas, pero escalan mal. Si no se limpian correctamente, pueden mantener objetos vivos que ya no se usan, lo cual impide que el recolector de basura los elimine.
+
+La buena noticia es que, sabiendo qué buscar, podés prevenirlos con facilidad. Y si ya están ocurriendo, herramientas como DevTools ayudan bastante a encontrarlos.
+''',
+    'code_example': r'''
+// Peligro: esta fuga ocurre si el intervalo nunca se limpia
+function startCounter() {
+  setInterval(() => {
+    console.log('Sigo corriendo...');
+  }, 1000);
+}
+
+// Aunque ya no necesitamos el contador, sigue en memoria y ejecutándose
+startCounter();
+
+// Solución: guardar el ID del intervalo y usar clearInterval cuando sea necesario
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 4,
+    'title_level': 'Gestión de Memoria y Rendimiento',
+    'topic': 'Detección de memory leaks',
+    'subtopic': 'Técnicas de profiling',
+    'definition': '''
+El profiling es como una radiografía de tu app: te deja ver cómo se comporta realmente bajo el capó. Sirve para encontrar cuellos de botella, fugas de memoria y partes del código que están consumiendo más recursos de los necesarios.
+
+Seguramente pensarás que esto suena a algo avanzado y técnico.
+
+Y lo es, pero no tiene por qué asustarte. Las herramientas modernas como Chrome DevTools hacen que perfilar una app sea accesible. Por ejemplo, la pestaña "Performance" te permite grabar una sesión de uso y ver en qué momento del timeline se hicieron más operaciones, cuánto tardaron, y si hubo bloqueos en el hilo principal.
+
+En cuanto a la memoria, el profiling permite ver cuánto consume cada componente, función o ciclo. Esto te da pistas para decidir si vale la pena refactorizar alguna parte o si un componente está montado más tiempo del necesario.
+
+Usar estas técnicas no solo mejora el rendimiento, también ayuda a que el usuario final tenga una experiencia más fluida.
+''',
+    'code_example': r'''
+// No es código directo, pero así se usa el profiling en DevTools:
+
+// 1. Abrí Chrome DevTools
+// 2. Pestaña "Performance"
+// 3. Click en "Record", usá la app por unos segundos y detené
+// 4. Observá qué funciones tardan más y si hay trabajo bloqueante
+
+// Para memoria:
+// 1. Pestaña "Memory"
+// 2. Tomá snapshots antes y después de una operación costosa
+// 3. Compará si hay objetos que se quedan en memoria
+
+// Ideal para detectar leaks o funciones que podrían optimizarse.
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 4,
+    'title_level': 'Gestión de Memoria y Rendimiento',
+    'topic': 'Optimización de performance',
+    'subtopic': 'debounce y throttle',
+    'definition': '''
+Cuando un usuario escribe o hace scroll, tu aplicación puede llegar a ejecutar funciones decenas o cientos de veces por segundo. Eso puede saturar el navegador y hacer que todo se sienta lento o con lag.
+
+¿Te has topado con un buscador que se congela mientras escribís?
+
+Aquí es donde entran dos técnicas clave: **debounce** y **throttle**. Ambas ayudan a limitar cuántas veces se ejecuta una función, pero lo hacen de formas distintas.
+
+- **Debounce** espera a que el usuario deje de hacer algo por un tiempo antes de ejecutar la función. Ideal para buscadores en vivo.
+- **Throttle** ejecuta la función solo cada cierto intervalo, sin importar cuántos eventos ocurran entre medio. Perfecto para scroll o resize.
+
+Aplicarlas bien mejora mucho el rendimiento y evita bloqueos innecesarios.
+''',
+    'code_example': r'''
+// Debounce: espera a que el usuario deje de escribir
+function debounce(fn, delay) {
+  let timer;
+  return function(...args) {
+    clearTimeout(timer);
+    timer = setTimeout(() => fn.apply(this, args), delay);
+  };
+}
+
+const handleInput = debounce((event) => {
+  console.log('Buscando:', event.target.value);
+}, 500);
+
+// input.addEventListener('input', handleInput);
+
+// Throttle: ejecuta cada X tiempo sin importar cuántos eventos hay
+function throttle(fn, limit) {
+  let lastCall = 0;
+  return function(...args) {
+    const now = Date.now();
+    if (now - lastCall >= limit) {
+      lastCall = now;
+      fn.apply(this, args);
+    }
+  };
+}
+
+// window.addEventListener('scroll', throttle(() => {
+//   console.log('Scroll detectado');
+// }, 200));
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 4,
+    'title_level': 'Gestión de Memoria y Rendimiento',
+    'topic': 'Optimización de performance',
+    'subtopic': 'Medición con performance.now()',
+    'definition': '''
+Cuando queremos saber cuánto tiempo tarda en ejecutarse una parte específica de nuestro código, necesitamos una herramienta precisa. Aquí es donde entra en juego `performance.now()`, una función que nos proporciona una marca de tiempo con precisión de milisegundos, ideal para medir el rendimiento de nuestras funciones.
+
+¿Te estás preguntando por qué esto importa?
+
+Imagina que estás optimizando una función crítica en tu aplicación y necesitas saber si tus cambios realmente la hacen más rápida. Usar `performance.now()` te permite medir con exactitud el tiempo que tarda en ejecutarse esa función, ayudándote a tomar decisiones informadas sobre tus optimizaciones.
+
+Esta función es parte de la API de rendimiento de JavaScript y es ampliamente compatible con los navegadores modernos. A diferencia de `Date.now()`, que puede verse afectado por cambios en el reloj del sistema, `performance.now()` proporciona una medición más precisa y constante, lo que la hace más confiable para pruebas de rendimiento.
+
+Utilizar `performance.now()` es sencillo: simplemente tomas una marca de tiempo antes y después de la ejecución de la función que deseas medir y calculas la diferencia. Esta técnica es especialmente útil cuando se trabaja en aplicaciones donde el rendimiento es crítico, como juegos en línea, aplicaciones financieras o cualquier sistema en tiempo real.
+''',
+    'code_example': r'''
+// Medir el tiempo de ejecución de una función
+const inicio = performance.now();
+
+realizarTareaIntensiva(); // Función cuya duración queremos medir
+
+const fin = performance.now();
+console.log(`La tarea tomó ${fin - inicio} milisegundos.`);
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 4,
+    'title_level': 'Gestión de Memoria y Rendimiento',
+    'topic': 'Optimización de performance',
+    'subtopic': 'Minimización del trabajo en el main thread',
+    'definition': '''
+El "main thread" o hilo principal es donde el navegador ejecuta la mayoría de las tareas de una página web: renderizar el DOM, procesar eventos de usuario y ejecutar JavaScript. Si este hilo se sobrecarga, la aplicación puede volverse lenta o incluso no responder.
+
+¿Te estás preguntando cómo evitar que esto suceda?
+
+La clave está en minimizar el trabajo que realizamos en el hilo principal. Algunas estrategias efectivas incluyen:
+
+- **Dividir el código en partes más pequeñas**: Utiliza técnicas como el "code splitting" para cargar solo el código necesario en cada momento.
+- **Usar `requestIdleCallback` o `setTimeout`**: Estas funciones permiten diferir tareas no críticas para que se ejecuten cuando el hilo principal esté libre.
+- **Implementar Web Workers**: Para tareas intensivas en cálculo, los Web Workers permiten ejecutar código en hilos separados, liberando el hilo principal.
+- **Optimizar el uso de bibliotecas y frameworks**: Asegúrate de que las herramientas que utilizas no estén realizando operaciones costosas en el hilo principal.
+- **Reducir el uso de animaciones complejas**: Las animaciones pueden ser exigentes; considera usar propiedades CSS que no requieran reflujo o repintado.
+
+Al aplicar estas técnicas, mejorarás la capacidad de respuesta de tu aplicación, proporcionando una experiencia de usuario más fluida y eficiente.
+''',
+    'code_example': r'''
+// Uso de Web Worker para realizar una tarea intensiva sin bloquear el hilo principal
+
+// main.js
+const worker = new Worker('worker.js');
+worker.postMessage('Iniciar tarea intensiva');
+
+worker.onmessage = function(event) {
+  console.log('Resultado del worker:', event.data);
+};
+
+// worker.js
+self.onmessage = function(event) {
+  const resultado = realizarTareaIntensiva(); // Función pesada
+  self.postMessage(resultado);
+};
+''',
+  });
+}
+
+Future<void> insertJsSrLevel5Data(Database db) async {
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 5,
+    'title_level': 'JavaScript Seguro y Robusto',
+    'topic': 'Seguridad en ejecución',
+    'subtopic': 'Ataques XSS en scripts',
+    'definition': '''
+Los ataques XSS (Cross-Site Scripting) son una de las vulnerabilidades más comunes en aplicaciones web, permitiendo a atacantes inyectar código malicioso que se ejecuta en el contexto de tu aplicación.
+
+Si piensas que solo las grandes empresas son objetivo de estos ataques, reconsidera. Aplicaciones pequeñas son frecuentemente objetivo precisamente porque suelen tener menos medidas de seguridad.
+
+XSS ocurre cuando datos no sanitizados ingresados por usuarios terminan siendo interpretados como código. Hay tres tipos principales: XSS almacenado (el código malicioso se guarda en la base de datos), XSS reflejado (el código viene en la URL y se refleja en la respuesta), y DOM-based XSS (la manipulación ocurre completamente del lado del cliente). Para prevenirlos, siempre sanitiza y escapa los datos del usuario antes de mostrarlos en la página.
+''',
+    'code_example': '''
+// VULNERABLE TO XSS:
+function displayUserInput() {
+  let userInput = document.getElementById('user-comment').value;
+  document.getElementById('comments-section').innerHTML += userInput;
+  // Si userInput contiene <script>maliciousCode()</script>, se ejecutará
+
+  // FORMA SEGURA: usar textContent en lugar de innerHTML
+  let safeDiv = document.createElement('div');
+  safeDiv.textContent = userInput;
+  document.getElementById('comments-section').appendChild(safeDiv);
+}
+
+// CON LIBRERÍAS DE SANITIZACIÓN (ej. DOMPurify):
+import DOMPurify from 'dompurify';
+let clean = DOMPurify.sanitize(userInput);
+document.getElementById('safe-area').innerHTML = clean;
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 5,
+    'title_level': 'JavaScript Seguro y Robusto',
+    'topic': 'Seguridad en ejecución',
+    'subtopic': 'Escapado de inputs',
+    'definition': '''
+Escapar inputs es el proceso de neutralizar caracteres peligrosos en datos ingresados por usuarios antes de incluirlos en tu aplicación. Es una defensa fundamental contra inyecciones de código.
+
+Quizás te preguntes por qué no simplemente prohibir ciertos caracteres. El problema es que muchos caracteres "peligrosos" son también válidos en contextos normales (como < y > en texto matemático). Por eso escaparlos es mejor que prohibirlos.
+
+Escapar significa convertir caracteres especiales en sus equivalentes HTML entities. Por ejemplo, < se convierte en &lt; y > en &gt;. Así, si alguien ingresa <script>, se mostrará literalmente en la página en lugar de ser interpretado como una etiqueta HTML. Las librerías modernas como DOMPurify automatizan este proceso, pero es importante entender qué hacen internamente.
+''',
+    'code_example': '''
+// FUNCIÓN BÁSICA DE ESCAPADO:
+function escapeHtml(unsafe) {
+  return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
+// USO:
+let userInput = '<script>alert("XSS")</script>';
+let safeOutput = escapeHtml(userInput);
+console.log(safeOutput); 
+// &lt;script&gt;alert(&quot;XSS&quot;)&lt;/script&gt;
+
+// EN EL DOM:
+document.getElementById('output').textContent = userInput; // Seguro (automáticamente escapa)
+// vs
+document.getElementById('output').innerHTML = escapeHtml(userInput); // También seguro
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 5,
+    'title_level': 'JavaScript Seguro y Robusto',
+    'topic': 'Seguridad en ejecución',
+    'subtopic': 'Sanitización de datos',
+    'definition': '''
+La sanitización va un paso más allá del escapado: no solo neutraliza código peligroso, sino que también elimina o transforma contenido no deseado según reglas específicas de tu aplicación.
+
+Pensemos por un momento en un campo donde los usuarios pueden ingresar HTML limitado (como negritas y enlaces). El escapado completo haría imposible este formato, mientras que la sanitización permite solo lo seguro.
+
+Herramientas como DOMPurify implementan listas blancas (whitelists) de etiquetas y atributos permitidos. Por ejemplo, puedes permitir <strong> pero no <script>, o href en <a> pero solo con protocolos http/https (no javascript:). La sanitización debe ocurrir del lado del servidor también, nunca confíes solo en la validación del cliente. Un enfoque común es sanitizar al guardar los datos y al mostrarlos (defensa en profundidad).
+''',
+    'code_example': '''
+// CON DOMPurify (configuración personalizada):
+let dirty = '<div><script>alert("XSS")</script><p class="safe">Hello <a href="javascript:alert(1)">click</a></p></div>';
+
+let clean = DOMPurify.sanitize(dirty, {
+  ALLOWED_TAGS: ['p', 'strong', 'em', 'a'],
+  ALLOWED_ATTR: ['class', 'href'],
+  FORBID_ATTR: ['style'],
+  FORBID_TAGS: ['script', 'style'],
+  ALLOWED_URI_REGEXP: /^(https?|mailto):/i
+});
+
+console.log(clean);
+// <p class="safe">Hello <a>click</a></p> 
+// (script eliminado, href javascript: bloqueado)
+
+// EN NODE.JS (usando sanitize-html):
+const sanitizeHtml = require('sanitize-html');
+let cleaned = sanitizeHtml(dirty, {
+  allowedTags: sanitizeHtml.defaults.allowedTags.concat(['img'])
+});
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 5,
+    'title_level': 'JavaScript Seguro y Robusto',
+    'topic': 'Inmutabilidad y protección de datos',
+    'subtopic': 'Uso de Object.freeze()',
+    'definition': '''
+Object.freeze() es un método poderoso que previene modificaciones a un objeto: no se pueden agregar, eliminar o cambiar propiedades, y no se puede reasignar su prototipo.
+
+Si has trabajado con estados en aplicaciones complejas, sabes lo valioso que es prevenir modificaciones accidentales. Object.freeze() te da esta garantía a nivel de lenguaje.
+
+Al congelar un objeto, cualquier intento de modificación fallará silenciosamente en modo estricto o lanzará un error. Es shallow (superficial) - solo afecta las propiedades directas del objeto, no los objetos anidados. Para inmutabilidad profunda, necesitas recursividad. Es útil para objetos de configuración, constantes, o cualquier dato que no debería cambiar después de la inicialización.
+''',
+    'code_example': '''
+const config = {
+  apiUrl: 'https://api.example.com',
+  maxRetries: 3,
+  timeout: 5000
+};
+
+Object.freeze(config);
+
+// Intentos de modificación:
+config.apiUrl = 'http://malicious.com'; // Silently fails (o error en strict mode)
+config.newProp = 'value'; // No se agrega
+delete config.timeout; // No se elimina
+
+// EN MODO ESTRICTO:
+'use strict';
+config.apiUrl = 'http://changed.com'; // TypeError: Cannot assign to read only property
+
+// CONGELADO PROFUNDO (implementación básica):
+function deepFreeze(obj) {
+  Object.freeze(obj);
+  Object.getOwnPropertyNames(obj).forEach(prop => {
+    if (obj[prop] !== null && 
+        typeof obj[prop] === 'object' && 
+        !Object.isFrozen(obj[prop])) {
+      deepFreeze(obj[prop]);
+    }
+  });
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 5,
+    'title_level': 'JavaScript Seguro y Robusto',
+    'topic': 'Inmutabilidad y protección de datos',
+    'subtopic': 'Object.seal() y Object.preventExtensions()',
+    'definition': '''
+JavaScript ofrece varios niveles de protección para objetos: Object.preventExtensions(), Object.seal(), y Object.freeze(), cada uno con restricciones progresivamente más estrictas.
+
+Puede que te preguntes por qué necesitarías opciones menos restrictivas que freeze. En muchos casos, quieres prevenir ciertos tipos de modificaciones pero no otros, según los requisitos de tu diseño.
+
+Object.preventExtensions() solo evita que se agreguen nuevas propiedades. Object.seal() hace esto y además previene que se eliminen propiedades existentes (configura configurable: false en todas las propiedades). Pero ambas permiten modificar valores de propiedades existentes. Estas herramientas son útiles cuando quieres un control granular sobre qué modificaciones permitir en tus objetos, especialmente en código compartido o librerías.
+''',
+    'code_example': '''
+// EJEMPLO CON preventExtensions():
+let user = { name: 'Alice', age: 30 };
+Object.preventExtensions(user);
+
+user.name = 'Bob'; // OK - modificar existe
+user.email = 'alice@example.com'; // Falla (en strict mode lanza error)
+delete user.age; // OK - se puede eliminar
+
+// EJEMPLO CON seal():
+let sealedUser = { name: 'Alice', age: 30 };
+Object.seal(sealedUser);
+
+sealedUser.name = 'Bob'; // OK
+sealedUser.email = 'alice@example.com'; // Falla
+delete sealedUser.age; // Falla
+
+// COMPARACIÓN:
+let obj = { prop: 'value' };
+
+Object.preventExtensions(obj);
+// Puedes: modificar prop, eliminar prop
+// No puedes: agregar props
+
+Object.seal(obj);
+// Puedes: modificar prop
+// No puedes: agregar o eliminar props
+
+Object.freeze(obj);
+// No puedes: modificar, agregar o eliminar props
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 5,
+    'title_level': 'JavaScript Seguro y Robusto',
+    'topic': 'Inmutabilidad y protección de datos',
+    'subtopic': 'Deep vs shallow freeze',
+    'definition': '''
+La diferencia entre freeze shallow y deep es crucial cuando trabajas con objetos anidados. Object.freeze() solo afecta el nivel superior del objeto, dejando las propiedades anidadas modificables.
+
+Este comportamiento puede sorprender si esperas que freeze haga todo el trabajo por ti. De hecho, es un tradeoff intencional - freeze profundo tiene un costo de rendimiento y no siempre es necesario.
+
+Para objetos complejos con múltiples niveles de anidación, necesitas implementar una solución recursiva o usar librerías como Immutable.js. El freeze profundo es especialmente importante cuando pasas objetos entre componentes o módulos y quieres garantizar que nada en el árbol de objetos pueda modificarse, ya sea accidental o maliciosamente.
+''',
+    'code_example': '''
+// PROBLEMA CON FREEZE SHALLOW:
+const company = {
+  name: 'TechCorp',
+  employees: [
+    { name: 'Alice', position: 'Developer' },
+    { name: 'Bob', position: 'Designer' }
+  ]
+};
+
+Object.freeze(company);
+
+company.name = 'NewName'; // Bloqueado (shallow)
+company.employees.push({name: 'Charlie'}); // ¡Permitido!
+company.employees[0].name = 'Eve'; // ¡También permitido!
+
+// SOLUCIÓN RECURSIVA:
+function deepFreeze(obj) {
+  // Recuperar nombres de propiedades propias (incluye symbols)
+  const propNames = [
+    ...Object.getOwnPropertyNames(obj),
+    ...Object.getOwnPropertySymbols(obj)
+  ];
+
+  // Congelar propiedades antes de congelar el objeto
+  propNames.forEach(name => {
+    const prop = obj[name];
+    if (prop !== null && typeof prop === 'object' && !Object.isFrozen(prop)) {
+      deepFreeze(prop);
+    }
+  });
+
+  return Object.freeze(obj);
+}
+
+// USO CON LIBRERÍA (immer):
+import { produce } from 'immer';
+const nextState = produce(currentState, draft => {
+  draft.employees[0].name = 'Alice Smith'; // Seguro, no muta el original
+});
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Avances en ECMAScript',
+    'topic': 'Nuevas formas de control de flujo',
+    'subtopic': 'Etiquetas (label)',
+    'definition': '''
+En ocasiones, al trabajar con bucles anidados, necesitamos una forma de controlar el flujo de ejecución de manera más precisa. Las etiquetas (`label`) en JavaScript nos permiten nombrar bloques de código y luego referirnos a ellos con declaraciones como `break` o `continue`.
+
+¿Te estás preguntando por qué esto importa?
+
+Cuando tienes bucles dentro de bucles, y bajo ciertas condiciones deseas salir de uno específico, las etiquetas te permiten hacerlo directamente. Esto mejora la legibilidad y el control del flujo de tu programa, evitando lógica adicional o el uso de variables auxiliares.
+''',
+    'code_example': r'''
+// Uso de etiquetas para salir de un bucle externo
+outerLoop:
+for (let i = 0; i < 3; i++) {
+  for (let j = 0; j < 3; j++) {
+    if (i === 1 && j === 1) {
+      break outerLoop; // Sale del bucle externo
+    }
+    console.log(`i = ${i}, j = ${j}`);
+  }
+}
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Avances en ECMAScript',
+    'topic': 'Nuevas formas de control de flujo',
+    'subtopic': 'Operador in en condiciones',
+    'definition': '''
+El operador `in` en JavaScript se utiliza para verificar si una propiedad específica existe en un objeto. Es una forma sencilla y efectiva de comprobar la presencia de claves en objetos o índices en arreglos.
+
+¿Te estás preguntando por qué esto importa?
+
+Cuando trabajas con objetos dinámicos o datos que pueden variar, es crucial verificar la existencia de ciertas propiedades antes de acceder a ellas para evitar errores. El operador `in` te permite hacer esto de manera concisa, mejorando la robustez de tu código.
+''',
+    'code_example': r'''
+const usuario = {
+  nombre: 'Ana',
+  edad: 25
+};
+
+console.log('nombre' in usuario); // true
+console.log('direccion' in usuario); // false
+
+const arreglo = [10, 20, 30];
+console.log(1 in arreglo); // true (índice 1 existe)
+console.log(5 in arreglo); // false (índice 5 no existe)
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Avances en ECMAScript',
+    'topic': 'Nuevas formas de control de flujo',
+    'subtopic': 'do expressions (propuesta)',
+    'definition': '''
+Las `do expressions` son una propuesta para JavaScript que permitiría ejecutar bloques de código como expresiones, devolviendo un valor. Aunque aún no forman parte del estándar oficial, ofrecen una forma interesante de estructurar el código.
+
+¿Te estás preguntando por qué esto importa?
+
+Actualmente, en JavaScript, las declaraciones como `if`, `for` o `switch` no devuelven valores directamente. Con `do expressions`, podrías utilizar estas estructuras dentro de expresiones, asignando su resultado a variables, lo que podría llevar a un código más expresivo y funcional.
+''',
+    'code_example': r'''
+// Nota: do expressions aún no están soportadas nativamente
+// Este es un ejemplo hipotético de cómo se verían
+
+let resultado = do {
+  if (condicion) {
+    'Sí';
+  } else {
+    'No';
+  }
+};
+
+console.log(resultado); // 'Sí' o 'No' dependiendo de la condición
+''',
+  });
+}
+
+Future<void> insertJsSrLevel6Data(Database db) async {
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Avances en ECMAScript',
+    'topic': 'Nuevas características del lenguaje (ES2020+)',
+    'subtopic': 'Optional chaining (?.)',
+    'definition': '''
+A veces, al acceder a propiedades de objetos anidados, nos enfrentamos a errores si alguna propiedad intermedia no existe. El operador de encadenamiento opcional (`?.`) nos permite acceder a estas propiedades de manera segura, evitando errores si alguna parte del camino es `null` o `undefined`.
+
+¿Te estás preguntando por qué esto importa?
+
+Este operador es especialmente útil cuando trabajamos con datos de fuentes externas o estructuras complejas, donde no siempre podemos garantizar la existencia de todas las propiedades. Con `?.`, podemos escribir código más limpio y seguro, evitando múltiples verificaciones de existencia.
+''',
+    'code_example': r'''
+const usuario = {
+  perfil: {
+    nombre: 'Ana',
+    direccion: {
+      ciudad: 'Bogotá'
+    }
+  }
+};
+
+console.log(usuario.perfil?.direccion?.ciudad); // 'Bogotá'
+console.log(usuario.perfil?.telefono?.numero); // undefined, sin error
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Avances en ECMAScript',
+    'topic': 'Nuevas características del lenguaje (ES2020+)',
+    'subtopic': 'Nullish coalescing (??)',
+    'definition': '''
+En JavaScript, a veces necesitamos asignar valores predeterminados cuando una variable es `null` o `undefined`. El operador de fusión nula (`??`) nos permite hacer esto de manera clara y precisa, sin confundir otros valores falsy como `0` o `''`.
+
+¿Te estás preguntando por qué esto importa?
+
+Este operador es útil para evitar asignar valores predeterminados cuando la variable tiene un valor válido pero falsy. Por ejemplo, si una variable es `0`, no queremos reemplazarla con un valor predeterminado. Con `??`, solo se asigna el valor predeterminado si la variable es `null` o `undefined`.
+''',
+    'code_example': r'''
+let cantidad = 0;
+let resultado = cantidad ?? 10;
+console.log(resultado); // 0, no se reemplaza porque 0 no es null o undefined
+
+let valor;
+let resultado2 = valor ?? 5;
+console.log(resultado2); // 5, se reemplaza porque valor es undefined
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Avances en ECMAScript',
+    'topic': 'Nuevas características del lenguaje (ES2020+)',
+    'subtopic': 'Operadores lógicos compuestos (&&=, ||=, ??=)',
+    'definition': '''
+Los operadores lógicos compuestos (`&&=`, `||=`, `??=`) combinan operaciones lógicas con asignaciones, permitiéndonos escribir código más conciso y legible.
+
+¿Te estás preguntando por qué esto importa?
+
+Estos operadores nos permiten actualizar el valor de una variable solo si se cumple cierta condición lógica. Por ejemplo, con `&&=`, la variable se actualiza solo si su valor actual es verdadero. Esto es útil para evitar escribir estructuras condicionales más largas y mantener el código limpio.
+''',
+    'code_example': r'''
+let activo = true;
+let nombre = 'Carlos';
+
+activo &&= nombre; // Si activo es true, se asigna nombre
+console.log(activo); // 'Carlos'
+
+let usuario = null;
+usuario ||= 'Invitado'; // Si usuario es falsy, se asigna 'Invitado'
+console.log(usuario); // 'Invitado'
+
+let edad;
+edad ??= 18; // Si edad es null o undefined, se asigna 18
+console.log(edad); // 18
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Avances en ECMAScript',
+    'topic': 'Métodos recientes de arrays y objetos',
+    'subtopic': 'Object.entries(), Object.values()',
+    'definition': '''
+Los métodos `Object.entries()` y `Object.values()` nos permiten trabajar con objetos de manera más flexible, convirtiéndolos en estructuras que podemos recorrer fácilmente.
+
+¿Te estás preguntando por qué esto importa?
+
+Con `Object.entries()`, obtenemos un arreglo de pares clave-valor del objeto, lo que facilita iterar sobre ellos. Con `Object.values()`, obtenemos un arreglo con solo los valores del objeto. Estos métodos son útiles para transformar objetos en arreglos y aplicar métodos como `map`, `filter` o `reduce`.
+''',
+    'code_example': r'''
+const persona = {
+  nombre: 'Lucía',
+  edad: 30,
+  ciudad: 'Medellín'
+};
+
+console.log(Object.entries(persona));
+// [['nombre', 'Lucía'], ['edad', 30], ['ciudad', 'Medellín']]
+
+console.log(Object.values(persona));
+// ['Lucía', 30, 'Medellín']
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Avances en ECMAScript',
+    'topic': 'Métodos recientes de arrays y objetos',
+    'subtopic': 'Array.flat() y Array.flatMap()',
+    'definition': '''
+Los métodos `Array.flat()` y `Array.flatMap()` nos permiten trabajar con arreglos anidados de manera más sencilla, aplanándolos según nuestras necesidades.
+
+¿Te estás preguntando por qué esto importa?
+
+Con `Array.flat()`, podemos aplanar un arreglo de arreglos en un solo nivel, o más, dependiendo del parámetro que le pasemos. Con `Array.flatMap()`, combinamos las operaciones de `map()` y `flat()`, aplicando una función a cada elemento y luego aplanando el resultado en un solo paso.
+''',
+    'code_example': r'''
+const anidado = [1, 2, [3, 4, [5, 6]]];
+console.log(anidado.flat(1)); // [1, 2, 3, 4, [5, 6]]
+console.log(anidado.flat(2)); // [1, 2, 3, 4, 5, 6]
+
+const frases = ['Hola mundo', 'JavaScript es genial'];
+const palabras = frases.flatMap(frase => frase.split(' '));
+console.log(palabras); // ['Hola', 'mundo', 'JavaScript', 'es', 'genial']
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Avances en ECMAScript',
+    'topic': 'Métodos recientes de arrays y objetos',
+    'subtopic': 'Array.at()',
+    'definition': '''
+El método `Array.at()` nos permite acceder a elementos de un arreglo utilizando índices positivos o negativos, ofreciendo una forma más flexible y legible de obtener elementos.
+
+¿Te estás preguntando por qué esto importa?
+
+Con `Array.at()`, podemos acceder fácilmente al último elemento de un arreglo usando un índice negativo, sin necesidad de calcular la longitud del arreglo. Esto mejora la legibilidad del código y reduce posibles errores al trabajar con índices.
+''',
+    'code_example': r'''
+const numeros = [10, 20, 30, 40, 50];
+
+console.log(numeros.at(0)); // 10
+console.log(numeros.at(-1)); // 50, último elemento
+console.log(numeros.at(-2)); // 40, penúltimo elemento
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Avances en ECMAScript',
+    'topic': 'Nuevas formas de control de flujo',
+    'subtopic': 'Etiquetas (label)',
+    'definition': '''
+A veces, en estructuras de control complejas, especialmente con bucles anidados, necesitamos una forma de romper o continuar desde un nivel específico. Las etiquetas (`label`) en JavaScript nos permiten nombrar bloques de código y luego referirnos a ellos con declaraciones como `break` o `continue`.
+
+¿Te estás preguntando por qué esto importa?
+
+Imagina que tienes un bucle dentro de otro y, bajo ciertas condiciones, deseas salir del bucle externo desde el interno. Sin etiquetas, esto requeriría lógica adicional o banderas. Con etiquetas, puedes hacer esto de manera directa y clara, mejorando la legibilidad y control del flujo de tu programa.
+''',
+    'code_example': r'''
+// Uso de etiquetas para salir de un bucle externo
+outerLoop:
+for (let i = 0; i < 3; i++) {
+  for (let j = 0; j < 3; j++) {
+    if (i === 1 && j === 1) {
+      break outerLoop; // Sale del bucle externo
+    }
+    console.log(`i = ${i}, j = ${j}`);
+  }
+}
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Avances en ECMAScript',
+    'topic': 'Nuevas formas de control de flujo',
+    'subtopic': 'Operador in en condiciones',
+    'definition': '''
+El operador `in` en JavaScript se utiliza para verificar si una propiedad específica existe en un objeto. Es una forma sencilla y efectiva de comprobar la presencia de claves en objetos o índices en arreglos.
+
+¿Te estás preguntando por qué esto importa?
+
+Cuando trabajas con objetos dinámicos o datos que pueden variar, es crucial verificar la existencia de ciertas propiedades antes de acceder a ellas para evitar errores. El operador `in` te permite hacer esto de manera concisa, mejorando la robustez de tu código.
+''',
+    'code_example': r'''
+const usuario = {
+  nombre: 'Ana',
+  edad: 25
+};
+
+console.log('nombre' in usuario); // true
+console.log('direccion' in usuario); // false
+
+const arreglo = [10, 20, 30];
+console.log(1 in arreglo); // true (índice 1 existe)
+console.log(5 in arreglo); // false (índice 5 no existe)
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Avances en ECMAScript',
+    'topic': 'Nuevas formas de control de flujo',
+    'subtopic': 'do expressions (propuesta)',
+    'definition': '''
+Las `do expressions` son una propuesta para JavaScript que permitiría ejecutar bloques de código como expresiones, devolviendo un valor. Aunque aún no forman parte del estándar oficial, ofrecen una forma interesante de estructurar el código.
+
+¿Te estás preguntando por qué esto importa?
+
+Actualmente, en JavaScript, las declaraciones como `if`, `for` o `switch` no devuelven valores directamente. Con `do expressions`, podrías utilizar estas estructuras dentro de expresiones, asignando su resultado a variables, lo que podría llevar a un código más expresivo y funcional.
+''',
+    'code_example': r'''
+// Nota: do expressions aún no están soportadas nativamente
+// Este es un ejemplo hipotético de cómo se verían
+
+let resultado = do {
+  if (condicion) {
+    'Sí';
+  } else {
+    'No';
+  }
+};
+
+console.log(resultado); // 'Sí' o 'No' dependiendo de la condición
+''',
+  });
+}
+
+Future<void> insertJsSrLevel7Data(Database db) async {
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Programación Funcional en JavaScript',
+    'topic': 'Principios funcionales',
+    'subtopic': 'Funciones puras',
+    'definition': '''
+Una función pura es aquella que, dado el mismo conjunto de argumentos, siempre devuelve el mismo resultado y no produce efectos secundarios observables. Esto significa que no depende ni modifica el estado externo a la función.
+
+¿Te estás preguntando por qué esto importa?
+
+Las funciones puras son fundamentales en la programación funcional porque garantizan predictibilidad y facilidad de prueba. Al no depender de factores externos, su comportamiento es consistente, lo que facilita el razonamiento sobre el código y su depuración.
+''',
+    'code_example': r'''
+// Función pura
+function suma(a, b) {
+  return a + b;
+}
+
+console.log(suma(2, 3)); // 5
+console.log(suma(2, 3)); // 5
+
+// Función impura
+let contador = 0;
+function incrementar() {
+  contador++;
+  return contador;
+}
+
+console.log(incrementar()); // 1
+console.log(incrementar()); // 2
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Programación Funcional en JavaScript',
+    'topic': 'Principios funcionales',
+    'subtopic': 'Inmutabilidad',
+    'definition': '''
+La inmutabilidad es el principio de no modificar los datos originales. En lugar de alterar un objeto o arreglo existente, se crea una nueva copia con las modificaciones necesarias.
+
+¿Te estás preguntando por qué esto importa?
+
+Mantener los datos inmutables evita efectos secundarios inesperados y facilita el seguimiento del flujo de datos en una aplicación. Esto es especialmente útil en entornos asincrónicos o cuando múltiples funciones pueden interactuar con los mismos datos.
+''',
+    'code_example': r'''
+// Objeto mutable
+const usuario = { nombre: 'Ana', edad: 25 };
+usuario.edad = 26; // Modifica el objeto original
+
+// Objeto inmutable
+const usuario = { nombre: 'Ana', edad: 25 };
+const nuevoUsuario = { ...usuario, edad: 26 }; // Crea una nueva copia
+
+console.log(usuario); // { nombre: 'Ana', edad: 25 }
+console.log(nuevoUsuario); // { nombre: 'Ana', edad: 26 }
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Programación Funcional en JavaScript',
+    'topic': 'Principios funcionales',
+    'subtopic': 'Transparencia referencial',
+    'definition': '''
+La transparencia referencial es una propiedad que permite reemplazar una expresión por su valor sin alterar el comportamiento del programa. Esto es posible cuando una función es pura y no tiene efectos secundarios.
+
+¿Te estás preguntando por qué esto importa?
+
+La transparencia referencial facilita el razonamiento sobre el código, permite optimizaciones como la memoización y mejora la mantenibilidad del software al garantizar que las funciones se comporten de manera predecible.
+''',
+    'code_example': r'''
+// Función con transparencia referencial
+function cuadrado(n) {
+  return n * n;
+}
+
+const resultado = cuadrado(4); // 16
+// Podemos reemplazar cuadrado(4) por 16 en cualquier parte del código sin afectar su comportamiento
+
+// Función sin transparencia referencial
+let factor = 2;
+function multiplicar(n) {
+  return n * factor;
+}
+
+const resultado1 = multiplicar(4); // 8
+factor = 3;
+const resultado2 = multiplicar(4); // 12
+// El resultado cambia según el valor externo 'factor', por lo que no es transparente referencialmente
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Programación Funcional en JavaScript',
+    'topic': 'Métodos funcionales comunes',
+    'subtopic': 'map, filter, reduce, some, every',
+    'definition': '''
+Los métodos `map`, `filter`, `reduce`, `some` y `every` son funciones de orden superior disponibles en los arreglos de JavaScript. Permiten procesar y transformar datos de manera declarativa y funcional.
+
+¿Te estás preguntando por qué esto importa?
+
+Estos métodos facilitan operaciones comunes sobre arreglos, como transformar elementos (`map`), filtrar según condiciones (`filter`), acumular valores (`reduce`), verificar si al menos un elemento cumple una condición (`some`) o si todos la cumplen (`every`). Su uso promueve un código más limpio y expresivo.
+''',
+    'code_example': r'''
+const numeros = [1, 2, 3, 4, 5];
+
+// map: eleva cada número al cuadrado
+const cuadrados = numeros.map(n => n * n);
+console.log(cuadrados); // [1, 4, 9, 16, 25]
+
+// filter: selecciona números pares
+const pares = numeros.filter(n => n % 2 === 0);
+console.log(pares); // [2, 4]
+
+// reduce: suma todos los números
+const suma = numeros.reduce((acc, n) => acc + n, 0);
+console.log(suma); // 15
+
+// some: verifica si hay algún número mayor que 4
+const hayMayorQueCuatro = numeros.some(n => n > 4);
+console.log(hayMayorQueCuatro); // true
+
+// every: verifica si todos los números son positivos
+const todosPositivos = numeros.every(n => n > 0);
+console.log(todosPositivos); // true
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Programación Funcional en JavaScript',
+    'topic': 'Métodos funcionales comunes',
+    'subtopic': 'Composición de funciones',
+    'definition': '''
+La composición de funciones es una técnica que consiste en combinar dos o más funciones para producir una nueva función. El resultado de una función se pasa como argumento a la siguiente.
+
+¿Te estás preguntando por qué esto importa?
+
+Componer funciones permite construir operaciones complejas a partir de funciones simples y reutilizables. Esto mejora la modularidad y legibilidad del código, facilitando su mantenimiento y prueba.
+''',
+    'code_example': r'''
+// Definición de funciones simples
+const duplicar = x => x * 2;
+const incrementar = x => x + 1;
+
+// Composición de funciones: primero duplica, luego incrementa
+const duplicarEIncrementar = x => incrementar(duplicar(x));
+
+console.log(duplicarEIncrementar(3)); // 7
+
+// Utilizando una función de composición genérica
+const compose = (f, g) => x => f(g(x));
+const duplicarEIncrementar2 = compose(incrementar, duplicar);
+
+console.log(duplicarEIncrementar2(3)); // 7
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Programación Funcional en JavaScript',
+    'topic': 'Métodos funcionales comunes',
+    'subtopic': 'Currying y partial application',
+    'definition': '''
+El currying es una técnica que transforma una función con múltiples argumentos en una secuencia de funciones unarias (que toman un solo argumento). La aplicación parcial consiste en fijar algunos argumentos de una función, produciendo una nueva función con menor aridad.
+
+¿Te estás preguntando por qué esto importa?
+
+Estas técnicas permiten crear funciones más específicas y reutilizables, facilitando la composición y mejorando la claridad del código. Son fundamentales en la programación funcional para construir abstracciones más expresivas.
+''',
+    'code_example': r'''
+// Currying: función que suma tres números
+function suma(a) {
+  return function(b) {
+    return function(c) {
+      return a + b + c;
+    };
+  };
+}
+
+console.log(suma(1)(2)(3)); // 6
+
+// Aplicación parcial: función que suma dos números
+function sumar(a, b) {
+  return a + b;
+}
+
+// Fijar el primer argumento usando bind
+const sumarCinco = sumar.bind(null, 5);
+console.log(sumarCinco(10)); // 15
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Programación Funcional en JavaScript',
+    'topic': 'Funciones de orden superior',
+    'subtopic': 'Qué son y cómo se usan',
+    'definition': '''
+Una función de orden superior es aquella que puede recibir otras funciones como argumentos, devolver una función como resultado o ambas cosas. Este concepto es fundamental en la programación funcional y permite crear código más modular y reutilizable.
+
+¿Te estás preguntando por qué esto importa?
+
+Las funciones de orden superior permiten abstraer operaciones comunes, facilitando la creación de funciones más generales y composables. Esto mejora la legibilidad y mantenibilidad del código, especialmente en aplicaciones complejas.
+''',
+    'code_example': r'''
+// Función que recibe otra función como argumento
+function aplicarOperacion(a, b, operacion) {
+  return operacion(a, b);
+}
+
+function suma(x, y) {
+  return x + y;
+}
+
+console.log(aplicarOperacion(5, 3, suma)); // 8
+
+// Función que devuelve otra función
+function crearMultiplicador(factor) {
+  return function(numero) {
+    return numero * factor;
+  };
+}
+
+const duplicar = crearMultiplicador(2);
+console.log(duplicar(4)); // 8
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Programación Funcional en JavaScript',
+    'topic': 'Funciones de orden superior',
+    'subtopic': 'Uso con callbacks y APIs',
+    'definition': '''
+Las funciones de orden superior son ampliamente utilizadas en JavaScript, especialmente en el manejo de callbacks y en la interacción con APIs. Permiten definir comportamientos personalizados que se ejecutan en respuesta a eventos o al completar operaciones asincrónicas.
+
+¿Te estás preguntando por qué esto importa?
+
+El uso de funciones de orden superior con callbacks permite manejar operaciones asincrónicas de manera eficiente, como la lectura de archivos, solicitudes HTTP o eventos del usuario, mejorando la capacidad de respuesta y la experiencia del usuario.
+''',
+    'code_example': r'''
+// Uso de una función de orden superior con un callback
+function procesarUsuario(nombre, callback) {
+  console.log(`Procesando usuario ${nombre}`);
+  callback(nombre);
+}
+
+function saludar(nombre) {
+  console.log(`Hola, ${nombre}`);
+}
+
+procesarUsuario('Ana', saludar);
+
+// Uso con una API: setTimeout
+setTimeout(function() {
+  console.log('Esto se ejecuta después de 2 segundos');
+}, 2000);
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Programación Funcional en JavaScript',
+    'topic': 'Funciones de orden superior',
+    'subtopic': 'Composición dinámica de comportamiento',
+    'definition': '''
+La composición dinámica de comportamiento consiste en combinar funciones simples para crear funciones más complejas de manera flexible y reutilizable. Esto se logra mediante funciones de orden superior que permiten componer comportamientos en tiempo de ejecución.
+
+¿Te estás preguntando por qué esto importa?
+
+Esta técnica permite construir funcionalidades complejas a partir de piezas más pequeñas y manejables, facilitando la extensión y modificación del comportamiento del programa sin alterar el código existente.
+''',
+    'code_example': r'''
+// Funciones simples
+function enMayusculas(str) {
+  return str.toUpperCase();
+}
+
+function agregarSignoExclamacion(str) {
+  return str + '!';
+}
+
+// Función de orden superior para componer funciones
+function componer(...funciones) {
+  return function(valor) {
+    return funciones.reduce((acumulado, fn) => fn(acumulado), valor);
+  };
+}
+
+const enfatizar = componer(enMayusculas, agregarSignoExclamacion);
+console.log(enfatizar('hola')); // 'HOLA!'
+''',
+  });
+}
+
+Future<void> insertJsSrLevel8Data(Database db) async {
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 8,
+    'title_level': 'Internacionalización y Localización',
+    'topic': 'API Intl',
+    'subtopic': 'Intl.NumberFormat',
+    'definition': '''
+La clase `Intl.NumberFormat` permite formatear números según las convenciones de diferentes locales, incluyendo estilos como moneda, porcentaje y notación compacta.
+
+¿Te estás preguntando por qué esto importa?
+
+Al desarrollar aplicaciones para una audiencia global, es esencial presentar números en formatos que los usuarios reconozcan y comprendan fácilmente. `Intl.NumberFormat` facilita esta tarea al manejar automáticamente las diferencias en formatos numéricos entre regiones.
+''',
+    'code_example': r'''
+// Formatear número como moneda en Colombia
+const numero = 1234567.89;
+const formatoCOP = new Intl.NumberFormat('es-CO', {
+  style: 'currency',
+  currency: 'COP'
+});
+console.log(formatoCOP.format(numero)); // "$1.234.567,89"
+
+// Formatear número como porcentaje
+const porcentaje = 0.75;
+const formatoPorcentaje = new Intl.NumberFormat('en-US', {
+  style: 'percent'
+});
+console.log(formatoPorcentaje.format(porcentaje)); // "75%"
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 8,
+    'title_level': 'Internacionalización y Localización',
+    'topic': 'API Intl',
+    'subtopic': 'Intl.DateTimeFormat',
+    'definition': '''
+La clase `Intl.DateTimeFormat` permite formatear fechas y horas según las convenciones de diferentes locales, adaptándose a formatos regionales y preferencias culturales.
+
+¿Te estás preguntando por qué esto importa?
+
+Mostrar fechas y horas en un formato familiar para el usuario mejora la experiencia y evita confusiones. `Intl.DateTimeFormat` automatiza este proceso, asegurando que la información temporal se presente de manera coherente y localizada.
+''',
+    'code_example': r'''
+// Fecha actual
+const fecha = new Date();
+
+// Formatear fecha en formato largo en español de Colombia
+const formatoFecha = new Intl.DateTimeFormat('es-CO', {
+  dateStyle: 'full',
+  timeStyle: 'long'
+});
+console.log(formatoFecha.format(fecha));
+// Ejemplo de salida: "miércoles, 21 de mayo de 2025, 08:48:13 GMT-5"
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 8,
+    'title_level': 'Internacionalización y Localización',
+    'topic': 'API Intl',
+    'subtopic': 'Intl.Collator',
+    'definition': '''
+La clase `Intl.Collator` proporciona funciones de comparación de cadenas que respetan las reglas de ordenación específicas de cada locale, permitiendo ordenar textos de manera culturalmente adecuada.
+
+¿Te estás preguntando por qué esto importa?
+
+El ordenamiento de textos puede variar entre culturas. Por ejemplo, en algunos idiomas, ciertos caracteres tienen un orden específico que difiere del orden lexicográfico estándar. `Intl.Collator` asegura que las comparaciones y ordenamientos de cadenas sean precisos y culturalmente relevantes.
+''',
+    'code_example': r'''
+const palabras = ['zanahoria', 'árbol', 'zapato', 'ábaco'];
+
+// Ordenar palabras según las reglas del español
+const collator = new Intl.Collator('es-ES');
+const ordenadas = palabras.sort(collator.compare);
+console.log(ordenadas); // ["ábaco", "árbol", "zanahoria", "zapato"]
+''',
+  });
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 8,
+    'title_level': 'Internacionalización y Localización',
+    'topic': 'Soporte de diferentes idiomas',
+    'subtopic': 'Adaptación de formatos de fecha y moneda',
+    'definition': '''
+La adaptación de formatos de fecha y moneda es esencial para ofrecer una experiencia de usuario coherente y localizada. JavaScript proporciona la API `Intl` que permite formatear fechas y números según las convenciones de diferentes regiones.
+
+¿Te estás preguntando por qué esto importa?
+
+Mostrar fechas y monedas en un formato familiar para el usuario mejora la comprensión y la confianza en la aplicación. Utilizar la API `Intl` asegura que los datos se presenten de manera adecuada para cada audiencia.
+''',
+    'code_example': r'''
+// Formatear fecha en formato largo en español de Colombia
+const fecha = new Date();
+const formatoFecha = new Intl.DateTimeFormat('es-CO', {
+  dateStyle: 'full',
+  timeStyle: 'long'
+});
+console.log(formatoFecha.format(fecha));
+// Ejemplo de salida: "miércoles, 21 de mayo de 2025, 08:48:13 GMT-5"
+
+// Formatear número como moneda en Colombia
+const numero = 1234567.89;
+const formatoMoneda = new Intl.NumberFormat('es-CO', {
+  style: 'currency',
+  currency: 'COP'
+});
+console.log(formatoMoneda.format(numero)); // "$1.234.567,89"
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 8,
+    'title_level': 'Internacionalización y Localización',
+    'topic': 'Soporte de diferentes idiomas',
+    'subtopic': 'Estrategias de localización',
+    'definition': '''
+Las estrategias de localización implican adaptar una aplicación para diferentes idiomas y culturas. Esto incluye traducir textos, adaptar formatos de fecha y moneda, y considerar diferencias culturales en el diseño y funcionalidad.
+
+¿Te estás preguntando por qué esto importa?
+
+Una aplicación localizada correctamente puede alcanzar una audiencia más amplia y ofrecer una experiencia de usuario más personalizada y efectiva, aumentando la satisfacción y la retención de usuarios.
+''',
+    'code_example': r'''
+// Ejemplo de objeto de traducciones
+const traducciones = {
+  'es': {
+    saludo: 'Hola',
+    despedida: 'Adiós'
+  },
+  'en': {
+    saludo: 'Hello',
+    despedida: 'Goodbye'
+  }
+};
+
+// Función para obtener la traducción según el idioma
+function traducir(idioma, clave) {
+  return traducciones[idioma][clave] || clave;
+}
+
+console.log(traducir('es', 'saludo')); // "Hola"
+console.log(traducir('en', 'despedida')); // "Goodbye"
+''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'JavaScript',
+    'module': 'Sr',
+    'level': 8,
+    'title_level': 'Internacionalización y Localización',
+    'topic': 'Soporte de diferentes idiomas',
+    'subtopic': 'Detección del idioma del navegador',
+    'definition': '''
+Detectar el idioma del navegador permite adaptar automáticamente el contenido de la aplicación al idioma preferido del usuario. JavaScript proporciona propiedades como `navigator.language` y `navigator.languages` para obtener esta información.
+
+¿Te estás preguntando por qué esto importa?
+
+Al detectar el idioma del navegador, puedes ofrecer una experiencia más personalizada desde el primer contacto, mejorando la accesibilidad y la satisfacción del usuario.
+''',
+    'code_example': r'''
+// Obtener el idioma preferido del navegador
+const idioma = navigator.language || navigator.userLanguage;
+console.log(idioma); // Ejemplo de salida: "es-CO"
+
+// Obtener la lista de idiomas preferidos
+const idiomas = navigator.languages;
+console.log(idiomas); // Ejemplo de salida: ["es-CO", "en-US", "fr-FR"]
+''',
+  });
+}
