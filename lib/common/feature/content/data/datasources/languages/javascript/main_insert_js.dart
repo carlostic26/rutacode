@@ -14,6 +14,9 @@ class InsertJsData {
     await insertJsJrLevel1Data(db);
     await insertJsJrLevel2Data(db);
     await insertJsJrLevel3Data(db);
+    await insertJsJrLevel4Data(db);
+    await insertJsJrLevel5Data(db);
+    await insertJsJrLevel6Data(db);
   }
 
   static Future<void> _insertJsMidLevelData(Database db) async {
