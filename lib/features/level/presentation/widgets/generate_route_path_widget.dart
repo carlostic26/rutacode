@@ -1,9 +1,9 @@
 import 'dart:math';
 import 'package:animated_button/animated_button.dart';
-import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:rutacode/features/level/data/models/level_model.dart';
+import 'package:rutacode/features/detail/data/models/detail_model.dart';
+import 'package:rutacode/features/languages/presentation/provider/language_providers.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
 import 'package:rutacode/features/level/presentation/state/completed_levels_shp_provider.dart';
 import 'package:rutacode/features/level/presentation/widgets/confeti_widget.dart';
@@ -19,15 +19,18 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
     final heightScreen = MediaQuery.of(context).size.height;
     final widthScreen = MediaQuery.of(context).size.width;
 
-    // Obtener datos necesarios
+    // variables provider para solicitud de datos
+    final actualLanguage = ref.watch(actualLanguageProvider);
+    final actualModule = ref.watch(actualModuleProvider);
+
     final getLevelUseCase = ref.read(getLevelUseCaseProvider);
-    final moduleSelected = ref.watch(actualModuleProvider);
+
     final completedLevels = ref.watch(
-      completedLevelsProvider.select((value) => value[moduleSelected] ?? []),
+      completedLevelsProvider.select((value) => value[actualModule] ?? []),
     );
     final lastCompletedLevel = ref
         .watch(completedLevelsProvider.notifier)
-        .getLastCompletedLevelByModule(moduleSelected);
+        .getLastCompletedLevelByModule(actualModule);
 
     // Configuración de posiciones
     final squareCenterScreen = widthScreen * 0.40;
@@ -40,12 +43,12 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
       'Mid': Colors.orange,
       'Sr': Colors.green,
     };
-    final moduleBaseColor = moduleColors[moduleSelected] ?? Colors.green;
+    final moduleBaseColor = moduleColors[actualModule] ?? Colors.green;
     const rutaColorLineDefault = Colors.grey;
     final rutaColorLineCompleted = moduleBaseColor;
 
-    return FutureBuilder<List<LevelModel>>(
-      future: getLevelUseCase.call(moduleSelected),
+    return FutureBuilder<List<DetailContentModel>>(
+      future: getLevelUseCase.call(actualLanguage, actualModule),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
@@ -60,9 +63,10 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
         double currentBottom = heightScreen * 0.15;
 
         for (int i = 0; i < levelList.length; i++) {
+          //TODO: create a function to get levelcompleted or lastcompleted
           final level = levelList[i];
-          final isLevelCompleted = completedLevels.contains(level.order);
-          final isLastCompletedLevel = lastCompletedLevel == level.order;
+          final isLevelCompleted = completedLevels.contains(level.level);
+          final isLastCompletedLevel = lastCompletedLevel == level.level;
 
           // Calcular posición del cuadrado
           final squareX = _calculateSquarePosition(
@@ -121,15 +125,14 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
                     width: widthScreen * 0.22,
                     shape: BoxShape.rectangle,
                     onPressed: () =>
-                        _showLevelDialog(context, level, ref, moduleSelected),
+                        _showLevelDialog(context, level, ref, actualModule),
                     child: Container(
                       width: widthScreen * 0.3,
                       height: heightScreen * 0.10,
                       decoration: BoxDecoration(
                         color:
                             isLevelCompleted ? Colors.green : moduleBaseColor,
-                        borderRadius: BorderRadius.circular(
-                            12.0), // Ajusta este valor para cambiar el redondeo
+                        borderRadius: BorderRadius.circular(12.0),
                       ),
                       child: Center(
                         child: Text(
@@ -224,15 +227,15 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
     }
   }
 
-  void _showLevelDialog(
-      BuildContext context, LevelModel level, WidgetRef ref, moduleSelected) {
+  void _showLevelDialog(BuildContext context, DetailContentModel level,
+      WidgetRef ref, moduleSelected) {
     showDialog(
       context: context,
       builder: (context) => SimpleDialog(
         backgroundColor: const Color.fromARGB(255, 30, 30, 30),
         title: Center(
           child: Text(
-            level.title!,
+            level.titleLevel!,
             style: const TextStyle(
               color: Colors.white,
               fontSize: 20.0,
@@ -244,24 +247,6 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
         children: [
           Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(15, 10, 15, 25),
-                child: AnimatedTextKit(
-                  animatedTexts: [
-                    TypewriterAnimatedText(
-                      level.description!,
-                      textStyle: const TextStyle(
-                        fontSize: 12,
-                        fontFamily: 'Poppins',
-                      ),
-                      textAlign: TextAlign.justify,
-                      speed: const Duration(milliseconds: 50),
-                    ),
-                  ],
-                  totalRepeatCount: 1,
-                  displayFullTextOnTap: true,
-                ),
-              ),
               ElevatedButton(
                 style: ButtonStyle(
                   backgroundColor: WidgetStateProperty.all<Color>(
@@ -281,21 +266,22 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
                   switch (moduleSelected) {
                     case 'Jr':
                       ref.read(actualLevelIdJrProvider.notifier).state =
-                          level.order!;
+                          level.id!;
                       break;
                     case 'Mid':
                       ref.read(actualLevelIdMidProvider.notifier).state =
-                          level.order!;
+                          level.id!;
                       break;
                     case 'Sr':
                       ref.read(actualLevelIdSrProvider.notifier).state =
-                          level.order!;
+                          level.id!;
                       break;
                     default:
                       break;
                   }
 
-                  ref.read(levelTitleProvider.notifier).state = level.title!;
+                  ref.read(levelTitleProvider.notifier).state =
+                      level.titleLevel!;
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(

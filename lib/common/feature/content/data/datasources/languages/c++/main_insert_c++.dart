@@ -26,5 +26,7 @@ class InsertCppData {
     await insertCppSrLevel1Data(db);
     await insertCppSrLevel2Data(db);
     await insertCppSrLevel3Data(db);
+    await insertCppSrLevel4Data(db);
+    await insertCppSrLevel5Data(db);
   }
 }

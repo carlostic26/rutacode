@@ -1,8 +1,8 @@
-import 'package:rutacode/features/level/data/datasources/level_local_database.dart';
+import 'package:rutacode/common/feature/content/data/datasources/db_helper.dart';
 import 'package:sqflite_common/sqlite_api.dart';
 
-class ScoreLocalDatabaseHelper {
-  LevelLocalDatabaseHelper dbHelper = LevelLocalDatabaseHelper();
+class ScoreLocalContentDatabaseHelper {
+  LocalContentDatabaseHelper dbHelper = LocalContentDatabaseHelper();
 
   Future<void> createScoreTable(Database db) async {
     await db.execute('''

@@ -1,4 +1,4 @@
-import 'package:rutacode/common/feature/content/data/datasources/old_database_helper.dart';
+import 'package:rutacode/common/feature/content/data/datasources/db_helper.dart';
 import 'package:rutacode/features/progress/data/datasources/progress_local_database.dart';
 import 'package:rutacode/features/progress/data/model/progress_model.dart';
 import 'package:rutacode/features/progress/domain/repositories/progress_repository.dart';
@@ -8,11 +8,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
 
 class ProgressRepositoryImpl implements ProgressRepository {
-  final ProgressLocalDatabaseHelper _dbHelper = ProgressLocalDatabaseHelper();
+  final ProgressLocalContentDatabaseHelper _dbHelper =
+      ProgressLocalContentDatabaseHelper();
   final SubtopicRepository _subtopicRepository;
   final TopicRepository _topicRepository;
 
-  final LocalDatabaseHelper _localDbHelper = LocalDatabaseHelper();
+  final LocalContentDatabaseHelper _localDbHelper =
+      LocalContentDatabaseHelper();
 
   // Constructor que inicializa _subtopicRepository
   ProgressRepositoryImpl(this._subtopicRepository, this._topicRepository);
@@ -20,7 +22,8 @@ class ProgressRepositoryImpl implements ProgressRepository {
   Future<Database> get progressLocalDatabase async =>
       await _dbHelper.getDatabase();
 
-  final LocalDatabaseHelper _subtopicDbHelper = LocalDatabaseHelper();
+  final LocalContentDatabaseHelper _subtopicDbHelper =
+      LocalContentDatabaseHelper();
   Future<Database> get subtopicLocalDatabase async =>
       await _subtopicDbHelper.getDatabase();
 

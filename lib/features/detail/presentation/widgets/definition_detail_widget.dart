@@ -13,7 +13,7 @@ class DefinitionDetailWidget extends ConsumerStatefulWidget {
   });
 
   final double heightScreen;
-  final DetailModel detail;
+  final DetailContentModel detail;
 
   @override
   ConsumerState<DefinitionDetailWidget> createState() =>

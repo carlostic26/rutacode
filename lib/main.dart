@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:rutacode/common/feature/content/data/datasources/db_helper.dart';
 import 'package:rutacode/core/ads/ads_manager.dart';
-import 'package:rutacode/common/feature/content/data/datasources/old_database_helper.dart';
 import 'package:rutacode/core/theme/theme_manager.dart';
 import 'package:rutacode/core/theme/theme_notifier.dart';
 import 'package:rutacode/features/exam/data/datasources/local_exam_data_source.dart';
@@ -43,10 +43,9 @@ Future<void> loadOpenAd() async {
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await MobileAds.instance.initialize();
-  LocalDatabaseHelper().getDatabase();
-  ProgressLocalDatabaseHelper().getDatabase;
+  LocalContentDatabaseHelper().getDatabase();
+  ProgressLocalContentDatabaseHelper().getDatabase;
   LocalExamDataSource().getDatabase;
-  //LocalExamDataSource().printAllQuestions();
 
   await dotenv.load(fileName: '.env');
 

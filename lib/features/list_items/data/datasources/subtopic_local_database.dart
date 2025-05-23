@@ -1,9 +1,9 @@
-import 'package:flutter/material.dart';
+/* import 'package:flutter/material.dart';
 import 'package:rutacode/features/level/data/datasources/level_local_database.dart';
 import 'package:sqflite_common/sqlite_api.dart';
 
-class SubtopicLocalDatabaseHelper {
-  LevelLocalDatabaseHelper dbHelper = LevelLocalDatabaseHelper();
+class SubtopicLocalContentDatabaseHelper {
+  LevelLocalContentDatabaseHelper dbHelper = LevelLocalContentDatabaseHelper();
 
   Future<void> createSubtopicTable(Database db) async {
     await db.execute('''
@@ -1888,3 +1888,4 @@ class SubtopicLocalDatabaseHelper {
     });
   }
 }
+ */

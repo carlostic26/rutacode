@@ -1,4 +1,5 @@
 import 'package:rutacode/common/feature/content/data/datasources/languages/java/main_insert_java.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/javascript/main_insert_js.dart';
 import 'package:rutacode/common/feature/content/data/datasources/languages/python/main_insert_python.dart';
 import 'package:rutacode/features/languages/data/datasource/inserts_language.dart';
 import 'package:sqflite/sqflite.dart';
@@ -6,7 +7,7 @@ import 'package:path/path.dart';
 
 class LocalContentDatabaseHelper {
   Database? _database;
-  int dbVersion = 7;
+  int dbVersion = 10;
 
   Future<Database> getDatabase() async {
     _database ??= await _initDatabase();
@@ -27,7 +28,7 @@ class LocalContentDatabaseHelper {
             language TEXT,
             module TEXT,
             level INTEGER,
-            title_level TEXT,
+            tittle_level TEXT,
             topic TEXT,
             subtopic TEXT,
             definition TEXT,
@@ -45,6 +46,7 @@ class LocalContentDatabaseHelper {
 
         await InsertJavaData.insertJavaData(db);
         await InsertPythonData.insertPythonData(db);
+        await InsertJsData.insertJsData(db);
 
         await insertLanguageData(db);
       },

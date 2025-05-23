@@ -8,7 +8,7 @@ import 'package:rutacode/features/detail/data/models/detail_model.dart';
 class CodeDetailWidget extends ConsumerStatefulWidget {
   const CodeDetailWidget({super.key, required this.detail});
 
-  final DetailModel detail;
+  final DetailContentModel detail;
 
   @override
   ConsumerState<CodeDetailWidget> createState() => _CodeDetailWidgetState();

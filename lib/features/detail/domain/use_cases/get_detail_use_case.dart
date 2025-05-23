@@ -6,7 +6,7 @@ class GetDetailUseCase {
 
   GetDetailUseCase(this.repository);
 
-  Future<DetailModel> call(String subtopicID, String module) {
+  Future<DetailContentModel> call(String subtopicID, String module) {
     return repository.getDetail(subtopicID, module);
   }
 }

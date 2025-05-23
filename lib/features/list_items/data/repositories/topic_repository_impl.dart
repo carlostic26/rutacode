@@ -1,10 +1,10 @@
-import 'package:rutacode/common/feature/content/data/datasources/old_database_helper.dart';
+import 'package:rutacode/common/feature/content/data/datasources/db_helper.dart';
 import 'package:rutacode/features/list_items/data/model/topic_model.dart';
 import 'package:rutacode/features/list_items/domain/repositories/topic_repository.dart';
 import 'package:sqflite/sqflite.dart';
 
 class TopicRepositoryImpl implements TopicRepository {
-  final LocalDatabaseHelper _dbHelper = LocalDatabaseHelper();
+  final LocalContentDatabaseHelper _dbHelper = LocalContentDatabaseHelper();
 
   Future<Database> get _database async => await _dbHelper.getDatabase();
 

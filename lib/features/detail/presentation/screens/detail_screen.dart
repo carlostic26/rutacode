@@ -116,7 +116,7 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
     final titleSubtopic = ref.watch(titleSubtopicProvider);
     final pageController = ref.watch(pageControllerItemsProvider);
 
-    return FutureBuilder<DetailModel>(
+    return FutureBuilder<DetailContentModel>(
       future: getDetailUseCase.call(subtopicID, module),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
