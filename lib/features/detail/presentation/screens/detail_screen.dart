@@ -71,7 +71,7 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
         await progressRepository.isSubtopicCompleted(module, subtopicId);
     if (isCompleted) return;
 
-    _timer = Timer(const Duration(seconds: 12), () async {
+    _timer = Timer(const Duration(seconds: 1), () async {
       try {
         await progressRepository.createProgressBySubtopic(
           module: module,
