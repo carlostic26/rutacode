@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rutacode/features/detail/data/models/detail_model.dart';
+import 'package:rutacode/features/languages/presentation/provider/language_providers.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
-import 'package:rutacode/features/list_items/data/model/subtopic_model.dart';
 import 'package:rutacode/features/list_items/presentation/state/provider/get_subtopic_use_case_provider.dart';
 import 'package:rutacode/features/list_items/presentation/state/provider/get_topic_use_case_provider.dart';
 import 'package:rutacode/features/list_items/presentation/widgets/item_subtopic_widget.dart';
@@ -14,11 +15,16 @@ class SubtopicScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final listSubtopicUseCase = ref.watch(getSubtopicUseCaseProvider);
-    final topicId = ref.watch(topicIdProvider);
-    final module = ref.watch(actualModuleProvider);
 
-    return FutureBuilder<List<SubtopicModel>>(
-      future: listSubtopicUseCase.call(topicId, module),
+    // variables provider para solicitud de datos
+    final actualLanguage = ref.watch(actualLanguageProvider);
+    final actualModule = ref.watch(actualModuleProvider);
+    final actualLevel = ref.watch(actualLevelProvider);
+    final topicTitle = ref.watch(topicTitleProvider);
+
+    return FutureBuilder<List<DetailContentModel>>(
+      future: listSubtopicUseCase.call(
+          actualLanguage, actualModule, actualLevel, topicTitle),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
@@ -39,7 +45,7 @@ class SubtopicScreen extends ConsumerWidget {
                 // Stepper Vertical
                 StepperWidget(
                   subtopicList: subtopicList,
-                  module: module, // Pasamos el módulo al stepper
+                  module: actualModule, // Pasamos el módulo al stepper
                 ),
 
                 // Lista de Subtopics
@@ -52,7 +58,7 @@ class SubtopicScreen extends ConsumerWidget {
                         return Padding(
                           padding: const EdgeInsets.only(top: 5, bottom: 22.3),
                           child: ItemSubtopicWidget(
-                            subtopic: subtopic,
+                            detailContent: subtopic,
                             index: index,
                           ),
                         );
@@ -70,7 +76,7 @@ class SubtopicScreen extends ConsumerWidget {
 }
 
 class StepperWidget extends ConsumerWidget {
-  final List<SubtopicModel> subtopicList;
+  final List<DetailContentModel> subtopicList;
   final String module;
 
   const StepperWidget({
@@ -132,7 +138,7 @@ class StepperWidget extends ConsumerWidget {
   }
 
   int _getActiveStep(
-      List<String> completedSteps, List<SubtopicModel> subtopicList) {
+      List<String> completedSteps, List<DetailContentModel> subtopicList) {
     for (int i = 0; i < subtopicList.length; i++) {
       if (!completedSteps.contains(subtopicList[i].id)) {
         return i;

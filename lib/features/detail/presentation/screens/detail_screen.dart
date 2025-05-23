@@ -6,6 +6,7 @@ import 'package:rutacode/features/detail/presentation/state/detail_sections_stat
 import 'package:rutacode/features/detail/presentation/state/provider/get_detail_use_case_provider.dart';
 import 'package:rutacode/features/detail/presentation/widgets/code_detail_widget.dart';
 import 'package:rutacode/features/detail/presentation/widgets/definition_detail_widget.dart';
+import 'package:rutacode/features/languages/presentation/provider/language_providers.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
 import 'package:rutacode/features/level/presentation/state/completed_levels_shp_provider.dart';
 import 'package:rutacode/features/progress/presentation/state/provider/progress_use_cases_provider.dart';
@@ -37,15 +38,17 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
 
   void _startTimer() async {
     final progressRepository = ref.read(progressRepositoryProvider);
-    final module = ref.read(actualModuleProvider);
 
-    final topicId = ref.read(topicIdProvider);
-    final subtopicId = ref.read(subtopicIdProvider);
-
+    // variables provider para solicitud de datos
+    final actualLanguage = ref.watch(actualLanguageProvider);
+    final actualModule = ref.watch(actualModuleProvider);
+    final actualLevel = ref.watch(actualLevelProvider);
+    final topicTitle = ref.watch(topicTitleProvider);
+    final subtopicTitle = ref.read(subtopicTitleProvider);
     late final int levelId;
 
     // Handle different modules using a switch statement
-    switch (module) {
+    switch (actualLanguage) {
       case 'Jr':
         levelId = ref.read(actualLevelIdJrProvider);
         break;
@@ -62,29 +65,35 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
 
     // Obtener los notifiers usando los providers family
     final completedSubtopicsNotifier =
-        ref.read(completedSubtopicsProvider(module).notifier);
-    final topicsNotifier = ref.read(completedTopicsProvider(module).notifier);
+        ref.read(completedSubtopicsProvider(actualLanguage).notifier);
+    final topicsNotifier =
+        ref.read(completedTopicsProvider(actualLanguage).notifier);
     final completedLevelsNotifier = ref.read(completedLevelsProvider.notifier);
 
     // Verificar si el subtopic ya está completado
-    final isCompleted =
-        await progressRepository.isSubtopicCompleted(module, subtopicId);
-    if (isCompleted) return;
+    final isSubtopicCompleted = await progressRepository.isSubtopicCompleted(
+        actualLanguage, actualModule, actualLevel, topicTitle, subtopicTitle);
+    if (isSubtopicCompleted) return;
 
     _timer = Timer(const Duration(seconds: 1), () async {
       try {
         await progressRepository.createProgressBySubtopic(
-          module: module,
+          module: actualLanguage,
           levelId: levelId,
-          topicId: topicId,
-          subtopicId: subtopicId,
+          topicId: topicTitle,
+          subtopicId: subtopicTitle,
           score: 2,
         );
 
-        completedSubtopicsNotifier.markSubtopicAsCompleted(subtopicId);
-        await topicsNotifier.checkAndUpdateTopicCompletion(topicId, levelId);
+        completedSubtopicsNotifier.markSubtopicAsCompleted(subtopicTitle);
+        await topicsNotifier.checkAndUpdateTopicCompletion(actualLanguage,
+            actualModule, actualLevel, topicTitle, subtopicTitle);
         await completedLevelsNotifier.checkAndUpdateLevelCompletionByModule(
-            levelId, module);
+            actualLanguage,
+            actualModule,
+            actualLevel,
+            topicTitle,
+            subtopicTitle);
 
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
@@ -111,9 +120,9 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final getDetailUseCase = ref.read(getDetailUseCaseProvider);
-    final subtopicID = ref.watch(subtopicIdProvider);
+    final subtopicID = ref.watch(subtopicTitleProvider);
     final module = ref.watch(actualModuleProvider);
-    final titleSubtopic = ref.watch(titleSubtopicProvider);
+    final subtopicTitle = ref.watch(subtopicTitleProvider);
     final pageController = ref.watch(pageControllerItemsProvider);
 
     return FutureBuilder<DetailContentModel>(
@@ -150,7 +159,7 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
               Padding(
                 padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
                 child: Text(
-                  titleSubtopic,
+                  subtopicTitle,
                   style: const TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -162,7 +171,7 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
               const SizedBox(height: 10),
               Expanded(
                 child: PageView(
-                  controller: pageController, // Usa el controlador del provider
+                  controller: pageController,
                   onPageChanged: (index) {
                     ref.read(appBarSectionProvider.notifier).state = index == 0
                         ? AppBarSection.definition

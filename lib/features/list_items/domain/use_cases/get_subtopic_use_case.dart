@@ -1,4 +1,4 @@
-import 'package:rutacode/features/list_items/data/model/subtopic_model.dart';
+import 'package:rutacode/features/detail/data/models/detail_model.dart';
 import 'package:rutacode/features/list_items/domain/repositories/subtopic_repository.dart';
 
 class GetSubtopicUseCase {
@@ -6,7 +6,8 @@ class GetSubtopicUseCase {
 
   GetSubtopicUseCase(this.repository);
 
-  Future<List<SubtopicModel>> call(String topicID, String module) async {
-    return repository.getSubtopics(topicID, module);
+  Future<List<DetailContentModel>> call(
+      String language, String module, int level, String topic) async {
+    return repository.getSubtopicsByTopic(language, module, level, topic);
   }
 }

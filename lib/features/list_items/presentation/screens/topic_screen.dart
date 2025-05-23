@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rutacode/features/detail/data/models/detail_model.dart';
+import 'package:rutacode/features/languages/presentation/provider/language_providers.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
 import 'package:rutacode/features/progress/presentation/state/provider/progress_use_cases_provider.dart';
-import 'package:rutacode/features/list_items/data/model/topic_model.dart';
 import 'package:rutacode/features/list_items/presentation/state/provider/get_topic_use_case_provider.dart';
 import 'package:rutacode/features/list_items/presentation/widgets/item_topic_widget.dart';
 import 'package:easy_stepper/easy_stepper.dart';
@@ -13,12 +14,15 @@ class TopicScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final listTopicUseCase = ref.read(getTopicUseCaseProvider);
-    final module = ref.watch(actualModuleProvider);
+
+    // variables provider para solicitud de datos
+    final actualLanguage = ref.watch(actualLanguageProvider);
+    final actualModule = ref.watch(actualModuleProvider);
 
     late final int levelId;
 
     // Handle different modules using a switch statement
-    switch (module) {
+    switch (actualModule) {
       case 'Jr':
         levelId = ref.read(actualLevelIdJrProvider);
         break;
@@ -34,15 +38,15 @@ class TopicScreen extends ConsumerWidget {
     }
 
     // Obtener los topics completados según el módulo
-    final completedTopics = switch (module) {
+    final completedTopics = switch (actualModule) {
       'Jr' => ref.watch(jrCompletedTopicsProvider),
       'Mid' => ref.watch(midCompletedTopicsProvider),
       'Sr' => ref.watch(srCompletedTopicsProvider),
       _ => throw Exception('Módulo no válido'),
     };
 
-    return FutureBuilder<List<TopicModel>>(
-      future: listTopicUseCase.call(levelId, module),
+    return FutureBuilder<List<DetailContentModel>>(
+      future: listTopicUseCase.call(actualLanguage, actualModule),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
@@ -97,8 +101,8 @@ class TopicScreen extends ConsumerWidget {
                       return Padding(
                         padding: const EdgeInsets.only(top: 5, bottom: 28),
                         child: ItemTopicWidget(
-                          topic: topicList[index],
-                          module: module,
+                          detailContent: topicList[index],
+                          module: actualModule,
                         ),
                       );
                     },
@@ -113,7 +117,7 @@ class TopicScreen extends ConsumerWidget {
   }
 
   List<EasyStep> _buildSteps(
-      List<TopicModel> topics, List<String> completedTopics) {
+      List<DetailContentModel> topics, List<String> completedTopics) {
     return topics.map((topic) {
       final isCompleted = completedTopics.contains(topic.id);
       return EasyStep(

@@ -55,7 +55,7 @@ class _ListItemsScreenState extends ConsumerState<ListItemsScreen> {
   Widget build(BuildContext context) {
     final levelTitle = ref.watch(levelTitleProvider);
     final titleTopic = ref.watch(topicTitleProvider);
-    final titleSubtopic = ref.watch(titleSubtopicProvider);
+    final titleSubtopic = ref.watch(subtopicTitleProvider);
     final adState = ref.watch(adBannerProviderDetail);
     final size = MediaQuery.of(context).size;
 

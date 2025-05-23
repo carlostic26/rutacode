@@ -40,9 +40,15 @@ class CompletedLevelsNotifier extends StateNotifier<Map<String, List<int>>> {
   }
 
   Future<void> checkAndUpdateLevelCompletionByModule(
-      int levelId, String module) async {
+    String language,
+    String module,
+    int levelId,
+    String topic,
+    String subtopic,
+  ) async {
     final current = state[module] ?? [];
-    final isCompleted = await _repository.isLevelCompleted(module, levelId);
+    final isCompleted = await _repository.isLevelCompleted(
+        language, module, levelId, topic, subtopic);
 
     if (isCompleted && !current.contains(levelId)) {
       final updated = [...current, levelId];
