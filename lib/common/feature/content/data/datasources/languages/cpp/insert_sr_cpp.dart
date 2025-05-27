@@ -1,11 +1,11 @@
 import 'package:sqflite_common/sqlite_api.dart';
 
-Future<void> insertCppSrLevel1Data(Database db) async {
+Future<void> insertSrLevel1DataCpp(Database db) async {
   await db.insert('programming_content', {
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Patrones de Diseño Avanzados',
     'subtopic': 'Singleton',
     'definition': '''
@@ -59,7 +59,7 @@ public:
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Patrones de Diseño Avanzados',
     'subtopic': 'Factory',
     'definition': '''
@@ -118,7 +118,7 @@ Enemy* badEnemy = new Dragon(); // Acopla el código a una clase concreta.
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Patrones de Diseño Avanzados',
     'subtopic': 'Abstract Factory',
     'definition': '''
@@ -186,7 +186,7 @@ Button* macButton = new MacButton(); // Mezcla estilos, mala práctica.
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Patrones de Diseño Avanzados',
     'subtopic': 'Observer',
     'definition': '''
@@ -259,7 +259,7 @@ public:
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Patrones de Diseño Avanzados',
     'subtopic': 'Strategy',
     'definition': '''
@@ -303,7 +303,7 @@ public:
         strategy = newStrategy;
     }
     
-    void sortData(std::vector<int>& data) {
+    void sortDataCpp(std::vector<int>& data) {
         strategy->sort(data);
     }
 };
@@ -314,10 +314,10 @@ QuickSort quickSort;
 MergeSort mergeSort;
 
 Sorter sorter(&quickSort);
-sorter.sortData(data); // Usa QuickSort
+sorter.sortDataCpp(data); // Usa QuickSort
 
 sorter.setStrategy(&mergeSort);
-sorter.sortData(data); // Cambia a MergeSort
+sorter.sortDataCpp(data); // Cambia a MergeSort
 
 // Ejemplo incorrecto: Usar condicionales en lugar de Strategy
 class BadSorter {
@@ -338,7 +338,7 @@ public:
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Patrones de Diseño Avanzados',
     'subtopic': 'Command',
     'definition': '''
@@ -425,7 +425,7 @@ public:
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Patrones de Diseño Avanzados',
     'subtopic': 'Adapter',
     'definition': '''
@@ -484,7 +484,7 @@ public:
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Patrones de Diseño Avanzados',
     'subtopic': 'Decorator',
     'definition': '''
@@ -564,7 +564,7 @@ class MilkCoffee : public SimpleCoffee {
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Patrones de Diseño Avanzados',
     'subtopic': 'Composite',
     'definition': '''
@@ -643,7 +643,7 @@ class BadFileSystem {
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Principios SOLID y Buenas Prácticas',
     'subtopic': 'Responsabilidad Única',
     'definition': '''
@@ -679,7 +679,7 @@ class Reporte {
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Principios SOLID y Buenas Prácticas',
     'subtopic': 'Abierto/Cerrado',
     'definition': '''
@@ -728,7 +728,7 @@ class ProcesadorDePago {
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Principios SOLID y Buenas Prácticas',
     'subtopic': 'Sustitución de Liskov',
     'definition': '''
@@ -775,7 +775,7 @@ class AveNoVoladora : public Animal {};
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Principios SOLID y Buenas Prácticas',
     'subtopic': 'Segregación de Interfaces',
     'definition': '''
@@ -820,7 +820,7 @@ class ImpresoraBasica : public IImpresora {
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Principios SOLID y Buenas Prácticas',
     'subtopic': 'Inversión de Dependencias',
     'definition': '''
@@ -866,7 +866,7 @@ class Controlador {
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Arquitecturas de Software',
     'subtopic': 'Arquitectura en Capas',
     'definition': '''
@@ -933,7 +933,7 @@ void mostrarSaludo() {
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Arquitecturas de Software',
     'subtopic': 'Microservicios',
     'definition': '''
@@ -1000,7 +1000,7 @@ void usarServicioUsuario() {
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Arquitecturas de Software',
     'subtopic': 'Event-Driven Architecture',
     'definition': '''
@@ -1069,7 +1069,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Diseño y Arquitectura de Software',
+    'tittle_level': 'Diseño y Arquitectura de Software',
     'topic': 'Arquitecturas de Software',
     'subtopic': 'Domain-Driven Design (DDD)',
     'definition': '''
@@ -1138,12 +1138,12 @@ int main() {
   });
 }
 
-Future<void> insertCppSrLevel2Data(Database db) async {
+Future<void> insertSrLevel2DataCpp(Database db) async {
   await db.insert('programming_content', {
     'language': 'C++',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Metaprogramación y Plantillas Avanzadas',
+    'tittle_level': 'Metaprogramación y Plantillas Avanzadas',
     'topic': 'Metaprogramación con Templates',
     'subtopic': 'SFINAE (Substitution Failure Is Not An Error)',
     'definition': '''
@@ -1184,7 +1184,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Metaprogramación y Plantillas Avanzadas',
+    'tittle_level': 'Metaprogramación y Plantillas Avanzadas',
     'topic': 'Metaprogramación con Templates',
     'subtopic': 'Traits y Type Traits',
     'definition': '''
@@ -1225,7 +1225,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Metaprogramación y Plantillas Avanzadas',
+    'tittle_level': 'Metaprogramación y Plantillas Avanzadas',
     'topic': 'Metaprogramación con Templates',
     'subtopic': 'Plantillas Variádicas',
     'definition': '''
@@ -1263,7 +1263,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Metaprogramación y Plantillas Avanzadas',
+    'tittle_level': 'Metaprogramación y Plantillas Avanzadas',
     'topic': 'Concepts y Constraints (C++20)',
     'subtopic': 'Introducción a Concepts',
     'definition': '''
@@ -1307,7 +1307,7 @@ auto old_add(T a, T b) -> decltype(a + b) {
     'language': 'C++',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Metaprogramación y Plantillas Avanzadas',
+    'tittle_level': 'Metaprogramación y Plantillas Avanzadas',
     'topic': 'Concepts y Constraints (C++20)',
     'subtopic': 'Uso de Constraints en Templates',
     'definition': '''
@@ -1368,7 +1368,7 @@ printAll(nums); // OK
     'language': 'C++',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Metaprogramación y Plantillas Avanzadas',
+    'tittle_level': 'Metaprogramación y Plantillas Avanzadas',
     'topic': 'Concepts y Constraints (C++20)',
     'subtopic': 'Mejora de la legibilidad y mantenibilidad',
     'definition': '''
@@ -1427,7 +1427,7 @@ void sort(Iter first, Iter last) {
     'language': 'C++',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Metaprogramación y Plantillas Avanzadas',
+    'tittle_level': 'Metaprogramación y Plantillas Avanzadas',
     'topic': 'Técnicas Avanzadas de Plantillas',
     'subtopic': 'CRTP (Curiously Recurring Template Pattern)',
     'definition': '''
@@ -1472,7 +1472,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Metaprogramación y Plantillas Avanzadas',
+    'tittle_level': 'Metaprogramación y Plantillas Avanzadas',
     'topic': 'Técnicas Avanzadas de Plantillas',
     'subtopic': 'Policy-Based Design',
     'definition': '''
@@ -1531,7 +1531,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Metaprogramación y Plantillas Avanzadas',
+    'tittle_level': 'Metaprogramación y Plantillas Avanzadas',
     'topic': 'Técnicas Avanzadas de Plantillas',
     'subtopic': 'Plantillas Recursivas',
     'definition': '''
@@ -1566,12 +1566,12 @@ int main() {
   });
 }
 
-Future<void> insertCppSrLevel3Data(Database db) async {
+Future<void> insertSrLevel3DataCpp(Database db) async {
   await db.insert('programming_content', {
     'language': 'C++',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Concurrencia y Programación Paralela',
+    'tittle_level': 'Concurrencia y Programación Paralela',
     'topic': 'Programación Multihilo Avanzada',
     'subtopic': 'std::thread, std::async, std::future',
     'definition': '''
@@ -1611,7 +1611,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Concurrencia y Programación Paralela',
+    'tittle_level': 'Concurrencia y Programación Paralela',
     'topic': 'Programación Multihilo Avanzada',
     'subtopic': 'std::mutex, std::lock_guard, std::unique_lock',
     'definition': '''
@@ -1655,7 +1655,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Concurrencia y Programación Paralela',
+    'tittle_level': 'Concurrencia y Programación Paralela',
     'topic': 'Programación Multihilo Avanzada',
     'subtopic': 'std::condition_variable',
     'definition': '''
@@ -1712,7 +1712,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Metaprogramación y Plantillas Avanzadas',
+    'tittle_level': 'Metaprogramación y Plantillas Avanzadas',
     'topic': 'Paralelismo y SIMD',
     'subtopic': 'Paralelismo con std::execution (C++17)',
     'definition': '''
@@ -1753,7 +1753,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Metaprogramación y Plantillas Avanzadas',
+    'tittle_level': 'Metaprogramación y Plantillas Avanzadas',
     'topic': 'Paralelismo y SIMD',
     'subtopic': 'SIMD y Vectorización',
     'definition': '''
@@ -1797,7 +1797,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Metaprogramación y Plantillas Avanzadas',
+    'tittle_level': 'Metaprogramación y Plantillas Avanzadas',
     'topic': 'Paralelismo y SIMD',
     'subtopic': 'Bibliotecas como Intel TBB y OpenMP',
     'definition': '''
@@ -1836,7 +1836,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Programación Orientada a Objetos Avanzada',
+    'tittle_level': 'Programación Orientada a Objetos Avanzada',
     'topic': 'Diseño de Sistemas Concurrentes',
     'subtopic': 'Modelos de Memoria',
     'definition': '''
@@ -1905,7 +1905,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Programación Orientada a Objetos Avanzada',
+    'tittle_level': 'Programación Orientada a Objetos Avanzada',
     'topic': 'Diseño de Sistemas Concurrentes',
     'subtopic': 'Evitación de Deadlocks',
     'definition': '''
@@ -1979,7 +1979,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Programación Orientada a Objetos Avanzada',
+    'tittle_level': 'Programación Orientada a Objetos Avanzada',
     'topic': 'Diseño de Sistemas Concurrentes',
     'subtopic': 'Diseño de Sistemas Reactivos',
     'definition': '''
@@ -2036,12 +2036,12 @@ int main() {
   });
 }
 
-Future<void> insertCppSrLevel4Data(Database db) async {
+Future<void> insertSrLevel4DataCpp(Database db) async {
   await db.insert('programming_content', {
     'language': 'C++',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Manejo Avanzado de Memoria',
+    'tittle_level': 'Manejo Avanzado de Memoria',
     'topic': 'Punteros Inteligentes y RAII',
     'subtopic': 'std::unique_ptr, std::shared_ptr, std::weak_ptr',
     'definition': '''
@@ -2095,7 +2095,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Manejo Avanzado de Memoria',
+    'tittle_level': 'Manejo Avanzado de Memoria',
     'topic': 'Punteros Inteligentes y RAII',
     'subtopic': 'Gestión de Recursos con RAII',
     'definition': '''
@@ -2130,7 +2130,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Manejo Avanzado de Memoria',
+    'tittle_level': 'Manejo Avanzado de Memoria',
     'topic': 'Punteros Inteligentes y RAII',
     'subtopic': 'Ciclo de Vida de Objetos',
     'definition': '''
@@ -2166,7 +2166,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Manejo Avanzado de Memoria',
+    'tittle_level': 'Manejo Avanzado de Memoria',
     'topic': 'Gestión de Recursos Personalizada',
     'subtopic': 'Allocators Personalizados',
     'definition': '''
@@ -2211,7 +2211,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Manejo Avanzado de Memoria',
+    'tittle_level': 'Manejo Avanzado de Memoria',
     'topic': 'Gestión de Recursos Personalizada',
     'subtopic': 'Pool de Memoria',
     'definition': '''
@@ -2274,7 +2274,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Manejo Avanzado de Memoria',
+    'tittle_level': 'Manejo Avanzado de Memoria',
     'topic': 'Gestión de Recursos Personalizada',
     'subtopic': 'Técnicas de Optimización de Memoria',
     'definition': '''
@@ -2315,7 +2315,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Programación Orientada a Objetos Avanzada',
+    'tittle_level': 'Programación Orientada a Objetos Avanzada',
     'topic': 'Diagnóstico y Depuración de Memoria',
     'subtopic': 'Herramientas como Valgrind y AddressSanitizer',
     'definition': '''
@@ -2379,7 +2379,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Programación Orientada a Objetos Avanzada',
+    'tittle_level': 'Programación Orientada a Objetos Avanzada',
     'topic': 'Diagnóstico y Depuración de Memoria',
     'subtopic': 'Detección de Fugas de Memoria',
     'definition': '''
@@ -2433,7 +2433,7 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Programación Orientada a Objetos Avanzada',
+    'tittle_level': 'Programación Orientada a Objetos Avanzada',
     'topic': 'Diagnóstico y Depuración de Memoria',
     'subtopic': 'Análisis de Uso de Memoria',
     'definition': '''
@@ -2492,4 +2492,4 @@ int main() {
   });
 }
 
-Future<void> insertCppSrLevel5Data(Database db) async {}
+Future<void> insertSrLevel5DataCpp(Database db) async {}
