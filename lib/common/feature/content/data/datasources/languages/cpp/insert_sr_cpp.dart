@@ -1,6 +1,6 @@
 import 'package:sqflite_common/sqlite_api.dart';
 
-Future<void> insertCppSrLevel1Data(Database db) async {
+Future<void> insertSrLevel1DataCpp(Database db) async {
   await db.insert('programming_content', {
     'language': 'C++',
     'module': 'Sr',
@@ -1138,7 +1138,7 @@ int main() {
   });
 }
 
-Future<void> insertCppSrLevel2Data(Database db) async {
+Future<void> insertSrLevel2DataCpp(Database db) async {
   await db.insert('programming_content', {
     'language': 'C++',
     'module': 'Sr',
@@ -1566,7 +1566,7 @@ int main() {
   });
 }
 
-Future<void> insertCppSrLevel3Data(Database db) async {
+Future<void> insertSrLevel3DataCpp(Database db) async {
   await db.insert('programming_content', {
     'language': 'C++',
     'module': 'Sr',
@@ -2036,7 +2036,7 @@ int main() {
   });
 }
 
-Future<void> insertCppSrLevel4Data(Database db) async {
+Future<void> insertSrLevel4DataCpp(Database db) async {
   await db.insert('programming_content', {
     'language': 'C++',
     'module': 'Sr',
@@ -2492,4 +2492,4 @@ int main() {
   });
 }
 
-Future<void> insertCppSrLevel5Data(Database db) async {}
+Future<void> insertSrLevel5DataCpp(Database db) async {}
