@@ -8,7 +8,7 @@ import 'package:rutacode/features/detail/data/models/detail_model.dart';
 class CodeDetailWidget extends ConsumerStatefulWidget {
   const CodeDetailWidget({super.key, required this.detail});
 
-  final DetailModel detail;
+  final DetailContentModel detail;
 
   @override
   ConsumerState<CodeDetailWidget> createState() => _CodeDetailWidgetState();
@@ -51,8 +51,18 @@ class _CodeDetailWidgetState extends ConsumerState<CodeDetailWidget> {
               color: const Color.fromARGB(66, 35, 35, 35),
               alignment: Alignment.centerRight,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: Text('Guía o ejemplo:',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: _fontSize,
+                          fontWeight: FontWeight.bold,
+                        )),
+                  ),
+                  Spacer(),
                   IconButton(
                     icon: const Icon(CupertinoIcons.zoom_in),
                     onPressed: _increaseFontSize,

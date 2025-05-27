@@ -1,4 +1,4 @@
-import 'package:path/path.dart';
+/* import 'package:path/path.dart';
 import 'package:rutacode/features/detail/data/datasourcers/detail_jr_inserts_db.dart';
 import 'package:rutacode/features/detail/data/datasourcers/detail_mid_inserts_db.dart';
 import 'package:rutacode/features/detail/data/datasourcers/detail_sr_inserts_db.dart';
@@ -7,7 +7,7 @@ import 'package:sqflite/sqflite.dart';
 import 'package:rutacode/features/level/data/datasources/level_local_database.dart';
 import 'package:rutacode/features/list_items/data/datasources/topic_local_database.dart';
 
-class LocalDatabaseHelper {
+class LocalContentDatabaseHelper {
   Database? _database;
   int dbVersion = 1;
 
@@ -27,12 +27,12 @@ class LocalDatabaseHelper {
         version: 1,
         onCreate: (db, version) async {
           // Delegar la creación de tablas a cada feature
-          await LevelLocalDatabaseHelper().createLevelTable(db);
-          await TopicLocalDatabaseHelper().createTopicTable(db);
-          await SubtopicLocalDatabaseHelper().createSubtopicTable(db);
-          await DetailJrLocalDatabaseHelper().createDetailTable(db);
-          await DetailMidLocalDatabaseHelper().insertDetailsMid(db);
-          await DetailSrLocalDatabaseHelper().insertDetailsSr(db);
+          await LevelLocalContentDatabaseHelper().createLevelTable(db);
+          await TopicLocalContentDatabaseHelper().createTopicTable(db);
+          await SubtopicLocalContentDatabaseHelper().createSubtopicTable(db);
+          await DetailJrLocalContentDatabaseHelper().createDetailTable(db);
+          await DetailMidLocalContentDatabaseHelper().insertDetailsMid(db);
+          await DetailSrLocalContentDatabaseHelper().insertDetailsSr(db);
         },
       );
     } catch (e) {
@@ -40,3 +40,4 @@ class LocalDatabaseHelper {
     }
   }
 }
+ */

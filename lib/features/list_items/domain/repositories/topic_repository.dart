@@ -1,5 +1,6 @@
-import 'package:rutacode/features/list_items/data/model/topic_model.dart';
+import 'package:rutacode/features/detail/data/models/detail_model.dart';
 
 abstract class TopicRepository {
-  Future<List<TopicModel>> getTopics(int levelId, String module);
+  Future<List<DetailContentModel>> getTopicsByModule(
+      String language, String module);
 }

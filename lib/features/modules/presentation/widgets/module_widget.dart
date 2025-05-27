@@ -107,6 +107,7 @@ class ModuleWidget extends ConsumerWidget {
             width: widthScreen * 0.3,
             height: heightScreen * 0.15,
             decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 255, 254, 226),
               borderRadius: BorderRadius.circular(25),
               image: DecorationImage(
                 scale: 0.5,
@@ -119,7 +120,7 @@ class ModuleWidget extends ConsumerWidget {
                 height: widthScreen * 0.3,
                 width: heightScreen * 0.15,
                 decoration: BoxDecoration(
-                  color: Colors.black.withOpacity(0.4),
+                  //color: Colors.black.withOpacity(0.4),
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: const Icon(

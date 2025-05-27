@@ -32,5 +32,10 @@ class InsertJsData {
     await insertJsSrLevel1Data(db);
     await insertJsSrLevel2Data(db);
     await insertJsSrLevel3Data(db);
+    await insertJsSrLevel4Data(db);
+    await insertJsSrLevel5Data(db);
+    await insertJsSrLevel6Data(db);
+    await insertJsSrLevel7Data(db);
+    await insertJsSrLevel8Data(db);
   }
 }

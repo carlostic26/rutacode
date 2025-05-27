@@ -1,7 +1,7 @@
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
-class ProgressLocalDatabaseHelper {
+class ProgressLocalContentDatabaseHelper {
   Database? _database;
   final int dbVersion = 13;
 

@@ -1,6 +1,7 @@
-import 'package:rutacode/features/level/data/models/level_model.dart';
+import 'package:rutacode/features/detail/data/models/detail_model.dart';
 
 abstract class LevelRepository {
-  Future<List<LevelModel>> getLevel(String module);
-  Future<int> countLevelsByModule(String module);
+  Future<List<DetailContentModel>> getLevelByModule(
+      String language, String module);
+  Future<int> countLevelsByModule(String language, String module);
 }

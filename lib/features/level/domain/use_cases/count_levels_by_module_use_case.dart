@@ -5,7 +5,7 @@ class CountLevelsByModuleUseCase {
 
   CountLevelsByModuleUseCase(this.repository);
 
-  Future<int> call(String module) async {
-    return repository.countLevelsByModule(module);
+  Future<int> call(String language, String module) async {
+    return repository.countLevelsByModule(language, module);
   }
 }

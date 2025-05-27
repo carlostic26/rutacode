@@ -9,8 +9,7 @@ final subtopicRepositoryProvider = Provider<SubtopicRepository>((ref) {
 });
 
 // Proveedor del titulo de subtopic seleccionado
-final titleSubtopicProvider = StateProvider<String>((ref) => '');
-final subtopicIdProvider = StateProvider<String>((ref) => '');
+final subtopicTitleProvider = StateProvider<String>((ref) => '');
 
 // Proveedor del caso de uso (Inyección de dependencias)
 final getSubtopicUseCaseProvider = Provider<GetSubtopicUseCase>((ref) {

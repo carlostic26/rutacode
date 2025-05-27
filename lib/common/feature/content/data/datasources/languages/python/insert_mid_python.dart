@@ -5,7 +5,7 @@ Future<void> insertPythonMidLevel1Data(Database db) async {
     'language': 'Python',
     'module': 'Mid',
     'level': 1,
-    'title_level': 'Estructuras de Datos Avanzadas',
+    'tittle_level': 'Estructuras de Datos Avanzadas',
     'topic': 'Algoritmos',
     'subtopic': 'Recursión',
     'definition': '''
@@ -41,7 +41,7 @@ print(factorial(5))  # Salida: 120 (5 * 4 * 3 * 2 * 1)
     'language': 'Python',
     'module': 'Mid',
     'level': 1,
-    'title_level': 'Estructuras de Datos Avanzadas',
+    'tittle_level': 'Estructuras de Datos Avanzadas',
     'topic': 'Algoritmos',
     'subtopic': 'Algoritmos de ordenamiento',
     'definition': '''
@@ -84,7 +84,7 @@ print("Lista ordenada:", lista_ordenada) # Salida: Lista ordenada: [11, 12, 22, 
     'language': 'Python',
     'module': 'Mid',
     'level': 1,
-    'title_level': 'Estructuras de Datos Avanzadas',
+    'tittle_level': 'Estructuras de Datos Avanzadas',
     'topic': 'Algoritmos',
     'subtopic': 'Búsqueda binaria',
     'definition': '''
@@ -125,7 +125,7 @@ print("Índice de 100:", busqueda_binaria(lista_ordenada, 100)) # Salida: Índic
     'language': 'Python',
     'module': 'Mid',
     'level': 1,
-    'title_level': 'Estructuras de Datos Avanzadas',
+    'tittle_level': 'Estructuras de Datos Avanzadas',
     'topic': 'Algoritmos',
     'subtopic': 'Complejidad algorítmica (Big-O)',
     'definition': '''
@@ -165,7 +165,7 @@ def pares_cuadraticos(n):
     'language': 'Python',
     'module': 'Mid',
     'level': 1,
-    'title_level': 'Estructuras de Datos Avanzadas',
+    'tittle_level': 'Estructuras de Datos Avanzadas',
     'topic': 'Colecciones Avanzadas',
     'subtopic': 'defaultdict, OrderedDict',
     'definition': '''
@@ -210,7 +210,7 @@ for clave, valor in diccionario_ordenado.items():
     'language': 'Python',
     'module': 'Mid',
     'level': 1,
-    'title_level': 'Estructuras de Datos Avanzadas',
+    'tittle_level': 'Estructuras de Datos Avanzadas',
     'topic': 'Colecciones Avanzadas',
     'subtopic': 'namedtuple',
     'definition': '''
@@ -246,7 +246,7 @@ print(p1[0])      # Acceso por índice: 10
     'language': 'Python',
     'module': 'Mid',
     'level': 1,
-    'title_level': 'Estructuras de Datos Avanzadas',
+    'tittle_level': 'Estructuras de Datos Avanzadas',
     'topic': 'Colecciones Avanzadas',
     'subtopic': 'heapq module',
     'definition': '''
@@ -286,7 +286,7 @@ print(f"El nuevo elemento más pequeño extraído: {menor_nuevo}") # Salida: El 
     'language': 'Python',
     'module': 'Mid',
     'level': 1,
-    'title_level': 'Estructuras de Datos Avanzadas',
+    'tittle_level': 'Estructuras de Datos Avanzadas',
     'topic': 'Colecciones Avanzadas',
     'subtopic': 'bisect module',
     'definition': '''
@@ -328,7 +328,7 @@ Future<void> insertPythonMidLevel2Data(Database db) async {
     'language': 'Python',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia y Paralelismo',
+    'tittle_level': 'Concurrencia y Paralelismo',
     'topic': 'Threads Básicos',
     'subtopic': 'threading module',
     'definition': '''
@@ -369,7 +369,7 @@ print("Todas las tareas han finalizado.")
     'language': 'Python',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia y Paralelismo',
+    'tittle_level': 'Concurrencia y Paralelismo',
     'topic': 'Threads Básicos',
     'subtopic': 'GIL (Global Interpreter Lock)',
     'definition': '''
@@ -429,7 +429,7 @@ def esperar_io():
     'language': 'Python',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia y Paralelismo',
+    'tittle_level': 'Concurrencia y Paralelismo',
     'topic': 'Threads Básicos',
     'subtopic': 'Race conditions',
     'definition': '''
@@ -501,7 +501,7 @@ print(f"Saldo final esperado (con bloqueos): {saldo}") # Debería ser 0
     'language': 'Python',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia y Paralelismo',
+    'tittle_level': 'Concurrencia y Paralelismo',
     'topic': 'Multiprocessing',
     'subtopic': 'multiprocessing module',
     'definition': '''
@@ -543,7 +543,7 @@ if __name__ == '__main__':
     'language': 'Python',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia y Paralelismo',
+    'tittle_level': 'Concurrencia y Paralelismo',
     'topic': 'Multiprocessing',
     'subtopic': 'Pool',
     'definition': '''
@@ -584,7 +584,7 @@ if __name__ == '__main__':
     'language': 'Python',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia y Paralelismo',
+    'tittle_level': 'Concurrencia y Paralelismo',
     'topic': 'Multiprocessing',
     'subtopic': 'Queue',
     'definition': '''
@@ -635,7 +635,7 @@ if __name__ == '__main__':
     'language': 'Python',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia y Paralelismo',
+    'tittle_level': 'Concurrencia y Paralelismo',
     'topic': 'Asincronía',
     'subtopic': 'async/await',
     'definition': '''
@@ -675,7 +675,7 @@ if __name__ == "__main__":
     'language': 'Python',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia y Paralelismo',
+    'tittle_level': 'Concurrencia y Paralelismo',
     'topic': 'Asincronía',
     'subtopic': 'asyncio',
     'definition': '''
@@ -717,7 +717,7 @@ if __name__ == "__main__":
     'language': 'Python',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia y Paralelismo',
+    'tittle_level': 'Concurrencia y Paralelismo',
     'topic': 'Asincronía',
     'subtopic': 'Event loops',
     'definition': '''
@@ -780,7 +780,7 @@ Future<void> insertPythonMidLevel3Data(Database db) async {
     'language': 'Python',
     'module': 'Mid',
     'level': 3,
-    'title_level': 'Python Moderno',
+    'tittle_level': 'Python Moderno',
     'topic': 'Tipado',
     'subtopic': 'Type hints',
     'definition': '''
@@ -814,7 +814,7 @@ print(sumar(5, 10))
     'language': 'Python',
     'module': 'Mid',
     'level': 3,
-    'title_level': 'Python Moderno',
+    'tittle_level': 'Python Moderno',
     'topic': 'Tipado',
     'subtopic': 'mypy',
     'definition': '''
@@ -857,7 +857,7 @@ Para usar `mypy`, lo instalas como un paquete de Python y luego lo ejecutas desd
     'language': 'Python',
     'module': 'Mid',
     'level': 3,
-    'title_level': 'Python Moderno',
+    'tittle_level': 'Python Moderno',
     'topic': 'Tipado',
     'subtopic': 'Pydantic',
     'definition': '''
@@ -913,7 +913,7 @@ except ValidationError as e:
     'language': 'Python',
     'module': 'Mid',
     'level': 3,
-    'title_level': 'Python Moderno',
+    'tittle_level': 'Python Moderno',
     'topic': 'Funcional',
     'subtopic': 'Lambda functions',
     'definition': '''
@@ -946,7 +946,7 @@ print(lista_ordenada) # Salida: [(2, 'dos'), (1, 'uno'), (3, 'tres')]
     'language': 'Python',
     'module': 'Mid',
     'level': 3,
-    'title_level': 'Python Moderno',
+    'tittle_level': 'Python Moderno',
     'topic': 'Funcional',
     'subtopic': 'map, filter, reduce',
     'definition': '''
@@ -988,7 +988,7 @@ print(f"Producto total: {producto_total}") # Salida: Producto total: 120
     'language': 'Python',
     'module': 'Mid',
     'level': 3,
-    'title_level': 'Python Moderno',
+    'tittle_level': 'Python Moderno',
     'topic': 'Funcional',
     'subtopic': 'functools module',
     'definition': '''
@@ -1042,7 +1042,7 @@ print(f"Tiempo: {time.time() - start_time:.4f} segundos")
     'language': 'Python',
     'module': 'Mid',
     'level': 3,
-    'title_level': 'Python Moderno',
+    'tittle_level': 'Python Moderno',
     'topic': 'Iteradores y Generadores',
     'subtopic': 'yield',
     'definition': '''
@@ -1085,7 +1085,7 @@ print(next(gen)) # Salida: Esto se imprime después del segundo yield\n3
     'language': 'Python',
     'module': 'Mid',
     'level': 3,
-    'title_level': 'Python Moderno',
+    'tittle_level': 'Python Moderno',
     'topic': 'Iteradores y Generadores',
     'subtopic': 'Generators',
     'definition': '''
@@ -1132,7 +1132,7 @@ print(f"Resto de cuadrados en lista: {lista_cuadrados}") # Salida: Resto de cuad
     'language': 'Python',
     'module': 'Mid',
     'level': 3,
-    'title_level': 'Python Moderno',
+    'tittle_level': 'Python Moderno',
     'topic': 'Iteradores y Generadores',
     'subtopic': 'itertools module',
     'definition': '''
@@ -1192,7 +1192,7 @@ Future<void> insertPythonMidLevel4Data(Database db) async {
     'language': 'Python',
     'module': 'Mid',
     'level': 4,
-    'title_level': 'Bases de Datos',
+    'tittle_level': 'Bases de Datos',
     'topic': 'SQL Básico',
     'subtopic': 'sqlite3 module',
     'definition': '''
@@ -1234,7 +1234,7 @@ conn.close()
     'language': 'Python',
     'module': 'Mid',
     'level': 4,
-    'title_level': 'Bases de Datos',
+    'tittle_level': 'Bases de Datos',
     'topic': 'SQL Básico',
     'subtopic': 'Consultas básicas',
     'definition': '''
@@ -1299,7 +1299,7 @@ conn.close()
     'language': 'Python',
     'module': 'Mid',
     'level': 4,
-    'title_level': 'Bases de Datos',
+    'tittle_level': 'Bases de Datos',
     'topic': 'SQL Básico',
     'subtopic': 'ORMs básicos (SQLAlchemy Core)',
     'definition': '''
@@ -1377,7 +1377,7 @@ with engine.connect() as conn:
     'language': 'Python',
     'module': 'Mid',
     'level': 4,
-    'title_level': 'Bases de Datos',
+    'tittle_level': 'Bases de Datos',
     'topic': 'ORMs',
     'subtopic': 'SQLAlchemy ORM',
     'definition': '''
@@ -1451,7 +1451,7 @@ session.close()
     'language': 'Python',
     'module': 'Mid',
     'level': 4,
-    'title_level': 'Bases de Datos',
+    'tittle_level': 'Bases de Datos',
     'topic': 'ORMs',
     'subtopic': 'Django ORM',
     'definition': '''
@@ -1518,7 +1518,7 @@ Una de las características más potentes del Django ORM es su sintaxis concisa 
     'language': 'Python',
     'module': 'Mid',
     'level': 4,
-    'title_level': 'Bases de Datos',
+    'tittle_level': 'Bases de Datos',
     'topic': 'ORMs',
     'subtopic': 'Modelos básicos',
     'definition': '''
@@ -1577,7 +1577,7 @@ Future<void> insertPythonMidLevel5Data(Database db) async {
     'language': 'Python',
     'module': 'Mid',
     'level': 5,
-    'title_level': 'Pruebas Avanzadas',
+    'tittle_level': 'Pruebas Avanzadas',
     'topic': 'Pruebas Unitarias',
     'subtopic': 'pytest avanzado',
     'definition': '''
@@ -1626,7 +1626,7 @@ def test_suma_numeros():
     'language': 'Python',
     'module': 'Mid',
     'level': 5,
-    'title_level': 'Pruebas Avanzadas',
+    'tittle_level': 'Pruebas Avanzadas',
     'topic': 'Pruebas Unitarias',
     'subtopic': 'fixtures',
     'definition': '''
@@ -1679,7 +1679,7 @@ def test_edad_usuario(datos_usuario):
     'language': 'Python',
     'module': 'Mid',
     'level': 5,
-    'title_level': 'Pruebas Avanzadas',
+    'tittle_level': 'Pruebas Avanzadas',
     'topic': 'Pruebas Unitarias',
     'subtopic': 'parametrización',
     'definition': '''
@@ -1748,7 +1748,7 @@ def test_es_par_varios_casos(entrada, esperado):
     'language': 'Python',
     'module': 'Mid',
     'level': 5,
-    'title_level': 'Pruebas Avanzadas',
+    'tittle_level': 'Pruebas Avanzadas',
     'topic': 'Mocking',
     'subtopic': 'unittest.mock',
     'definition': '''
@@ -1795,7 +1795,7 @@ class TestObtenerDatosAPI(unittest.TestCase):
     'language': 'Python',
     'module': 'Mid',
     'level': 5,
-    'title_level': 'Pruebas Avanzadas',
+    'tittle_level': 'Pruebas Avanzadas',
     'topic': 'Mocking',
     'subtopic': 'patch',
     'definition': '''
@@ -1840,7 +1840,7 @@ def test_es_hora_laboral_con_with():
     'language': 'Python',
     'module': 'Mid',
     'level': 5,
-    'title_level': 'Pruebas Avanzadas',
+    'tittle_level': 'Pruebas Avanzadas',
     'topic': 'Mocking',
     'subtopic': 'MagicMock',
     'definition': '''
@@ -1889,7 +1889,7 @@ Future<void> insertPythonMidLevel6Data(Database db) async {
     'language': 'Python',
     'module': 'Mid',
     'level': 6,
-    'title_level': 'Gestión de Dependencias',
+    'tittle_level': 'Gestión de Dependencias',
     'topic': 'Entornos Virtuales',
     'subtopic': 'venv',
     'definition': '''
@@ -1923,7 +1923,7 @@ Para crear un entorno virtual con `venv`, utilizas el comando `python -m venv <n
     'language': 'Python',
     'module': 'Mid',
     'level': 6,
-    'title_level': 'Gestión de Dependencias',
+    'tittle_level': 'Gestión de Dependencias',
     'topic': 'Entornos Virtuales',
     'subtopic': 'pipenv',
     'definition': '''
@@ -1963,7 +1963,7 @@ Para crear un entorno virtual con `venv`, utilizas el comando `python -m venv <n
     'language': 'Python',
     'module': 'Mid',
     'level': 6,
-    'title_level': 'Gestión de Dependencias',
+    'tittle_level': 'Gestión de Dependencias',
     'topic': 'Entornos Virtuales',
     'subtopic': 'poetry',
     'definition': '''
@@ -2008,7 +2008,7 @@ Además de la gestión de dependencias, `Poetry` facilita la publicación de paq
     'language': 'Python',
     'module': 'Mid',
     'level': 6,
-    'title_level': 'Gestión de Dependencias',
+    'tittle_level': 'Gestión de Dependencias',
     'topic': 'Empaquetado',
     'subtopic': 'setup.py',
     'definition': '''
@@ -2067,7 +2067,7 @@ setup(
     'language': 'Python',
     'module': 'Mid',
     'level': 6,
-    'title_level': 'Gestión de Dependencias',
+    'tittle_level': 'Gestión de Dependencias',
     'topic': 'Empaquetado',
     'subtopic': 'pyproject.toml',
     'definition': '''
@@ -2139,7 +2139,7 @@ where = ["src"] # Le dice a setuptools dónde buscar los paquetes
     'language': 'Python',
     'module': 'Mid',
     'level': 6,
-    'title_level': 'Gestión de Dependencias',
+    'tittle_level': 'Gestión de Dependencias',
     'topic': 'Empaquetado',
     'subtopic': 'wheel',
     'definition': '''
