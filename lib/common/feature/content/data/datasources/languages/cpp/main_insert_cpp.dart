@@ -1,6 +1,6 @@
-import 'package:rutacode/common/feature/content/data/datasources/languages/c++/insert_jr_c++.dart';
-import 'package:rutacode/common/feature/content/data/datasources/languages/c++/insert_mid_c++.dart';
-import 'package:rutacode/common/feature/content/data/datasources/languages/c++/insert_sr_c++.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/cpp/insert_jr_cpp.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/cpp/insert_mid_cpp.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/cpp/insert_sr_cpp.dart';
 import 'package:sqflite/sqflite.dart';
 
 class InsertCppData {
@@ -11,9 +11,9 @@ class InsertCppData {
   }
 
   static Future<void> _insertCppJrLevelData(Database db) async {
-    await insertCppJrLevel1Data(db);
-    await insertCppJrLevel2Data(db);
-    await insertCppJrLevel3Data(db);
+    await insertJrLevel1DataCpp(db);
+    await insertJrLevel2DataCpp(db);
+    await insertJrLevel3DataCpp(db);
   }
 
   static Future<void> _insertCppMidLevelData(Database db) async {
