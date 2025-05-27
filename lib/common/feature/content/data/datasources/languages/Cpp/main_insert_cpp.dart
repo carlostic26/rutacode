@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:rutacode/common/feature/content/data/datasources/languages/C++/insert_jr_c++.dart';
-import 'package:rutacode/common/feature/content/data/datasources/languages/C++/insert_mid_c++.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/cpp/insert_jr_cpp.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/cpp/insert_mid_cpp.dart';
 import 'package:sqflite/sqflite.dart';
 
 class InsertCPPData {
@@ -10,7 +10,7 @@ class InsertCPPData {
       await _insertCppMidLevelData(db);
       await _insertCppSrLevelData(db);
     } catch (e, stackTrace) {
-      debugPrint('Error al insertar C++: $e');
+      debugPrint('Error al insertar cpp: $e');
       debugPrint('Stack trace: $stackTrace');
     }
   }

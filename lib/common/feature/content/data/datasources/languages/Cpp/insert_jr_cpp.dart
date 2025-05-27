@@ -1,6 +1,6 @@
 import 'package:sqflite_common/sqlite_api.dart';
 
-Future<void> insertJrLevel1Data(Database db) async {
+Future<void> insertJrLevel1DataCpp(Database db) async {
   await db.insert('programming_content', {
     'language': 'C++',
     'module': 'Jr',
