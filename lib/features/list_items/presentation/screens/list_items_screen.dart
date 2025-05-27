@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:rutacode/core/ads/banner/ad_banner_provider_detail.dart';
-import 'package:rutacode/features/detail/presentation/screens/detail_screen.dart';
+import 'package:rutacode/features/detail/presentation/pages/detail_page.dart';
 import 'package:rutacode/features/detail/presentation/widgets/appbar_detail_widget.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
 import 'package:rutacode/features/list_items/presentation/screens/topic_page.dart';
@@ -43,21 +43,35 @@ class _ListItemsScreenState extends ConsumerState<ListItemsScreen> {
     });
   }
 
-  @override
+/*   @override
   void dispose() {
     // Forzar la disposición del banner al salir de la pantalla
     ref.read(adBannerProviderDetail.notifier).disposeCurrentAd();
     _pageController.dispose();
     super.dispose();
+  } */
+
+  @override
+  void dispose() {
+    super.dispose();
+
+    _pageController.dispose();
+
+    try {
+      ref.read(adBannerProviderDetail.notifier).disposeCurrentAd();
+    } catch (e) {
+      debugPrint('Error al eliminar el anuncio: $e');
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    final levelTitle = ref.watch(levelTitleProvider);
-    final titleTopic = ref.watch(topicTitleProvider);
-    final titleSubtopic = ref.watch(subtopicTitleProvider);
     final adState = ref.watch(adBannerProviderDetail);
     final size = MediaQuery.of(context).size;
+
+    final levelTitle = ref.watch(levelTitleProvider);
+    final titleTopic = ref.watch(titleTopicProvider);
+    final titleSubtopic = ref.watch(subtopicTitleProvider);
 
     // Escuchar cambios en el provider para actualizar el PageController
     ref.listen<int>(currentPageProvider, (_, nextPage) {
@@ -82,9 +96,13 @@ class _ListItemsScreenState extends ConsumerState<ListItemsScreen> {
           // Actualizar el provider cuando el usuario hace swipe manual (aunque está desactivado)
           ref.read(currentPageProvider.notifier).state = index;
         },
-        children: const [TopicScreen(), SubtopicScreen(), DetailScreen()],
+        children: const [
+          TopicPage(),
+          SubtopicPage(),
+          DetailPage(),
+        ],
       ),
-      bottomNavigationBar: _buildAdBanner(adState),
+      // bottomNavigationBar: _buildAdBanner(adState),
     );
   }
 

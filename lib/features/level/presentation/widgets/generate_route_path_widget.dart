@@ -8,6 +8,8 @@ import 'package:rutacode/features/level/presentation/state/provider/get_level_us
 import 'package:rutacode/features/level/presentation/state/completed_levels_shp_provider.dart';
 import 'package:rutacode/features/level/presentation/widgets/confeti_widget.dart';
 import 'package:rutacode/features/list_items/presentation/screens/list_items_screen.dart';
+import 'package:rutacode/features/list_items/presentation/state/provider/get_subtopic_use_case_provider.dart';
+import 'package:rutacode/features/list_items/presentation/state/provider/get_topic_use_case_provider.dart';
 
 class GenerateLevelsRoutePathWidget extends ConsumerWidget {
   const GenerateLevelsRoutePathWidget({
@@ -227,7 +229,7 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
     }
   }
 
-  void _showLevelDialog(BuildContext context, DetailContentModel level,
+  void _showLevelDialog(BuildContext context, DetailContentModel content,
       WidgetRef ref, moduleSelected) {
     showDialog(
       context: context,
@@ -235,7 +237,7 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
         backgroundColor: const Color.fromARGB(255, 30, 30, 30),
         title: Center(
           child: Text(
-            level.titleLevel!,
+            content.titleLevel!,
             style: const TextStyle(
               color: Colors.white,
               fontSize: 20.0,
@@ -263,7 +265,7 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
                   ),
                 ),
                 onPressed: () {
-                  switch (moduleSelected) {
+                  /* switch (moduleSelected) {
                     case 'Jr':
                       ref.read(actualLevelProvider.notifier).state = level.id!;
                       break;
@@ -275,10 +277,18 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
                       break;
                     default:
                       break;
-                  }
+                  } */
+
+                  ref.read(actualLevelProvider.notifier).state = content.level!;
 
                   ref.read(levelTitleProvider.notifier).state =
-                      level.titleLevel!;
+                      content.titleLevel!;
+
+/*                   ref.read(topicTitleProvider.notifier).state = level.topic!;
+
+                  ref.read(subtopicTitleProvider.notifier).state =
+                      level.subtopic!; */
+
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(

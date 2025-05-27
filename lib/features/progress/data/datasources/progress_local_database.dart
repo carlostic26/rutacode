@@ -3,7 +3,7 @@ import 'package:sqflite/sqflite.dart';
 
 class ProgressLocalContentDatabaseHelper {
   Database? _database;
-  final int dbVersion = 13;
+  final int dbVersion = 15;
 
   Future<Database> getDatabase() async {
     if (_database != null) return _database!;
@@ -23,10 +23,11 @@ class ProgressLocalContentDatabaseHelper {
           await db.execute('''
           CREATE TABLE progress (
               id INTEGER PRIMARY KEY AUTOINCREMENT,
+              language TEXT NOT NULL,
               module TEXT NOT NULL,
               level_id INTEGER NOT NULL,
-              topic_id TEXT NOT NULL,
-              subtopic_id TEXT NOT NULL,
+              topic TEXT NOT NULL,
+              subtopic TEXT NOT NULL,
               score INTEGER NOT NULL
           );
         ''');

@@ -18,10 +18,6 @@ class SubtopicRepositoryImpl implements SubtopicRepository {
     String topic,
   ) async {
     final db = await _database;
-
-    debugPrint(
-        '📌 Params en subtopic: language=$language, module=$module, level=$level, topic=$topic');
-
     final maps = await db.query(
       'programming_content',
       where: 'language = ? AND module = ? AND level = ? AND topic = ?',

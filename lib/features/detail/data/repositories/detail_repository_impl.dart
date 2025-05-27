@@ -14,9 +14,6 @@ class DetailRepositoryImpl implements DetailRepository {
       int level, String topic, String subtopic) async {
     final db = await _database;
 
-    debugPrint(
-        '📌 Params en subtopic: language=$language, module=$module, level=$level, topic=$topic, subtopic=$subtopic');
-
     final maps = await db.query(
       'programming_content',
       where:

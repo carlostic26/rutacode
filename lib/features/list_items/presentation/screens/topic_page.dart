@@ -8,8 +8,8 @@ import 'package:rutacode/features/list_items/presentation/state/provider/get_top
 import 'package:rutacode/features/list_items/presentation/widgets/item_topic_widget.dart';
 import 'package:easy_stepper/easy_stepper.dart';
 
-class TopicScreen extends ConsumerWidget {
-  const TopicScreen({super.key});
+class TopicPage extends ConsumerWidget {
+  const TopicPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -18,11 +18,14 @@ class TopicScreen extends ConsumerWidget {
     // variables provider para solicitud de datos
     final actualLanguage = ref.watch(actualLanguageProvider);
     final actualModule = ref.watch(actualModuleProvider);
+    final actualLevelTittle = ref.watch(levelTitleProvider);
+    final actualLevelId = ref.watch(actualLevelProvider);
+    //final titleTopic = ref.watch(topicTitleProvider);
 
-    late final int levelId;
+    // late final int levelId;
 
     // Handle different modules using a switch statement
-    switch (actualModule) {
+/*     switch (actualModule) {
       case 'Jr':
         levelId = ref.read(actualLevelProvider);
         break;
@@ -35,7 +38,7 @@ class TopicScreen extends ConsumerWidget {
       default:
         // Default logic for unknown modules
         break;
-    }
+    } */
 
     // Obtener los topics completados según el módulo
     final completedTopics = switch (actualModule) {
@@ -46,7 +49,8 @@ class TopicScreen extends ConsumerWidget {
     };
 
     return FutureBuilder<List<DetailContentModel>>(
-      future: listTopicUseCase.call(actualLanguage, actualModule),
+      future:
+          listTopicUseCase.call(actualLanguage, actualModule, actualLevelId),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
@@ -59,7 +63,7 @@ class TopicScreen extends ConsumerWidget {
         final topicList = snapshot.data!;
 
         final activeStep = topicList
-            .where((topic) => completedTopics.contains(topic.id))
+            .where((topic) => completedTopics.contains(topic.id.toString()))
             .length;
 
         return Scaffold(
@@ -119,7 +123,7 @@ class TopicScreen extends ConsumerWidget {
   List<EasyStep> _buildSteps(
       List<DetailContentModel> topics, List<String> completedTopics) {
     return topics.map((topic) {
-      final isCompleted = completedTopics.contains(topic.id);
+      final isCompleted = completedTopics.contains(topic.id.toString());
       return EasyStep(
         icon: Icon(
           Icons.check,

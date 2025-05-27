@@ -19,23 +19,23 @@ class HomeModuleScreen extends ConsumerStatefulWidget {
 }
 
 class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
+  late final AdBannerStateHome adState; // Guardamos el estado
+
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      ref
-          .read(adBannerProviderHome.notifier)
-          .loadAdaptiveAd(context, screenId: 'home');
-    });
+  void initState() {
+    super.initState();
+    adState = ref.read(adBannerProviderHome);
   }
 
   @override
   void dispose() {
-    // Solo disponer si estamos en esta pantalla
-    if (ref.read(adBannerProviderHome).currentScreen == 'home') {
-      ref.read(adBannerProviderHome.notifier).disposeCurrentAd();
-    }
     super.dispose();
+    // Usamos la referencia guardada en lugar de ref.read
+    if (mounted) {
+      if (adState.currentScreen == 'home') {
+        ref.read(adBannerProviderHome.notifier).disposeCurrentAd();
+      }
+    }
   }
 
   @override

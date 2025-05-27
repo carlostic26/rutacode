@@ -34,20 +34,20 @@ class ItemTopicWidget extends ConsumerWidget {
           ref.read(topicTitleProvider.notifier).state = topic.title!;
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const SubtopicScreen()),
+            MaterialPageRoute(builder: (context) => const SubtopicPage()),
           );
         }, */
         onTap: () {
-          ref.read(topicTitleProvider.notifier).state =
+          ref.read(titleTopicProvider.notifier).state =
               detailContent.topic as String;
-          ref.read(topicTitleProvider.notifier).state = detailContent.topic!;
+          ref.read(titleTopicProvider.notifier).state = detailContent.topic!;
           ref.read(currentPageProvider.notifier).state = 1;
         },
         child: Container(
           height: 50,
           width: 400,
           decoration: BoxDecoration(
-            color: isCompleted ? Colors.green : const Color(0xFF2962FF),
+            color: isCompleted ? Colors.green : Colors.grey,
             borderRadius: BorderRadius.circular(25),
           ),
           child: Padding(

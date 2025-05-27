@@ -9,29 +9,46 @@ class TopicRepositoryImpl implements TopicRepository {
   Future<Database> get _database async => await _dbHelper.getDatabase();
 
   @override
-  Future<List<DetailContentModel>> getTopicsByModule(
-      String language, String module) async {
+  Future<List<DetailContentModel>> getTopicsByLevel(
+      String language, String module, int level) async {
     final db = await _database;
-    final maps = await db.rawQuery('''
-      SELECT MIN(id) as id, language, module, level, tittle_level, topic, subtopic, definition, code_example
-      FROM programming_content
-      WHERE language = ? AND module = ?
-      GROUP BY level
-      ORDER BY level ASC
-    ''', [language, module]);
 
-    return List.generate(maps.length, (i) {
+    // Opción 1: Si necesitas los subtopics agrupados
+    final maps = await db.rawQuery('''
+      SELECT 
+        MIN(id) as id, 
+        language, 
+        module, 
+        level, 
+        tittle_level, 
+        topic,
+        GROUP_CONCAT(subtopic) as subtopics
+      FROM programming_content
+      WHERE language = ? AND module = ? AND level = ?
+      GROUP BY topic
+      ORDER BY MIN(id) ASC
+    ''', [language, module, level]);
+
+    // Opción 2: Si prefieres todos los registros individualmente
+    // final maps = await db.query(
+    //   'programming_content',
+    //   where: 'language = ? AND module = ? AND level = ?',
+    //   whereArgs: [language, module, level],
+    //   orderBy: 'id ASC',
+    // );
+    return maps.map((map) {
       return DetailContentModel(
-        id: maps[i]['id'] as int,
-        language: maps[i]['language'] as String,
-        module: maps[i]['module'] as String,
-        level: maps[i]['level'] as int,
-        titleLevel: maps[i]['tittle_level'] as String,
-        topic: maps[i]['topic'] as String,
-        subtopic: maps[i]['subtopic'] as String,
-        definition: maps[i]['definition'] as String,
-        codeExample: maps[i]['code_example'] as String,
+        id: map['id'] as int,
+        language: map['language'] as String,
+        module: map['module'] as String,
+        level: map['level'] as int,
+        titleLevel: map['tittle_level'] as String,
+        topic: map['topic'] as String,
+        subtopic: map['subtopics']
+            as String, // Aquí tendrás todos los subtopics concatenados
+        definition: '', // No necesario para esta vista
+        codeExample: '', // No necesario para esta vista
       );
-    });
+    }).toList();
   }
 }

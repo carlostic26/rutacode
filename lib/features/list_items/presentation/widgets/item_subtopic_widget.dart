@@ -40,17 +40,17 @@ class ItemSubtopicWidget extends ConsumerWidget {
               detailContent.subtopic!;
 /*           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const DetailScreen()),
+            MaterialPageRoute(builder: (context) => const DetailPage()),
           ); */
 
-          // En algún lugar donde navegas a DetailScreen:
+          // En algún lugar donde navegas a DetailPage:
           ref.read(currentPageProvider.notifier).state = 2;
         },
         child: Container(
           height: 50,
           width: 400,
           decoration: BoxDecoration(
-            color: isCompleted ? Colors.green : const Color(0xFF2962FF),
+            color: isCompleted ? Colors.green : Colors.grey.shade800,
             borderRadius: BorderRadius.circular(25),
           ),
           child: Padding(

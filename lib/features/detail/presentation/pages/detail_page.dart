@@ -13,55 +13,41 @@ import 'package:rutacode/features/progress/presentation/state/provider/progress_
 import 'package:rutacode/features/list_items/presentation/state/provider/get_subtopic_use_case_provider.dart';
 import 'package:rutacode/features/list_items/presentation/state/provider/get_topic_use_case_provider.dart';
 
-class DetailScreen extends ConsumerStatefulWidget {
-  const DetailScreen({super.key});
+class DetailPage extends ConsumerStatefulWidget {
+  const DetailPage({super.key});
 
   @override
-  ConsumerState<DetailScreen> createState() => _DetailScreenState();
+  ConsumerState<DetailPage> createState() => _DetailPageState();
 }
 
-class _DetailScreenState extends ConsumerState<DetailScreen> {
+class _DetailPageState extends ConsumerState<DetailPage> {
   Timer? _timer;
 
   @override
   void initState() {
     super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
     _startTimer();
   }
 
   @override
   void dispose() {
     _timer?.cancel();
-    // NO disposed el _pageController aquí (ya lo hace el provider)
     super.dispose();
   }
 
   void _startTimer() async {
     final progressRepository = ref.read(progressRepositoryProvider);
 
-    // variables provider para solicitud de datos
-    final actualLanguage = ref.watch(actualLanguageProvider);
-    final actualModule = ref.watch(actualModuleProvider);
-    final actualLevel = ref.watch(actualLevelProvider);
-    final topicTitle = ref.watch(topicTitleProvider);
+    final actualLanguage = ref.read(actualLanguageProvider);
+    final actualModule = ref.read(actualModuleProvider);
+    final actualLevel = ref.read(actualLevelProvider);
+    final topicTitle = ref.read(titleTopicProvider);
     final subtopicTitle = ref.read(subtopicTitleProvider);
-    late final int levelId;
-
-    // Handle different modules using a switch statement
-    switch (actualLanguage) {
-      case 'Jr':
-        levelId = ref.read(actualLevelProvider);
-        break;
-      case 'Mid':
-        levelId = ref.read(actualLevelProvider);
-        break;
-      case 'Sr':
-        levelId = ref.read(actualLevelProvider);
-        break;
-      default:
-        // Default logic for unknown modules
-        break;
-    }
 
     // Obtener los notifiers usando los providers family
     final completedSubtopicsNotifier =
@@ -75,13 +61,14 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
         actualLanguage, actualModule, actualLevel, topicTitle, subtopicTitle);
     if (isSubtopicCompleted) return;
 
-    _timer = Timer(const Duration(seconds: 1), () async {
+    _timer = Timer(const Duration(seconds: 3), () async {
       try {
         await progressRepository.createProgressBySubtopic(
-          module: actualLanguage,
-          levelId: levelId,
-          topicId: topicTitle,
-          subtopicId: subtopicTitle,
+          language: actualLanguage,
+          module: actualModule,
+          levelId: actualLevel,
+          topic: topicTitle,
+          subtopic: subtopicTitle,
           score: 2,
         );
 
@@ -95,22 +82,27 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
             topicTitle,
             subtopicTitle);
 
-        if (mounted) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Text('¡+2 puntos acumulados! Sigue repasando.'),
               duration: Duration(seconds: 3),
             ),
           );
-        }
+        });
       } catch (e) {
         if (mounted) {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(
-              content: Text('Error al guardar el progreso: $e'),
-              duration: const Duration(seconds: 1),
-            ),
-          );
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Error al guardar el progreso: $e'),
+                duration: const Duration(seconds: 1),
+              ),
+            );
+          });
+        } else {
+          debugPrint(
+              '📌Timer: Widget no montado, no se puede mostrar SnackBar de error');
         }
       }
     });
@@ -119,18 +111,15 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final getDetailUseCase = ref.read(
-        getDetailUseCaseProvider); /* 
-    final subtopicID = ref.watch(subtopicTitleProvider);
-    final module = ref.watch(actualModuleProvider); */
+    final getDetailUseCase = ref.read(getDetailUseCaseProvider);
 
     final pageController = ref.watch(pageControllerItemsProvider);
 
-    // variables provider para solicitud de datos
+    // Variables provider para solicitud de datos
     final actualLanguage = ref.watch(actualLanguageProvider);
     final actualModule = ref.watch(actualModuleProvider);
     final actualLevel = ref.watch(actualLevelProvider);
-    final topicTitle = ref.watch(topicTitleProvider);
+    final topicTitle = ref.watch(titleTopicProvider);
     final subtopicTitle = ref.watch(subtopicTitleProvider);
 
     return FutureBuilder<DetailContentModel>(
@@ -143,25 +132,12 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
           return Center(child: Text('Error: ${snapshot.error}'));
         } else if (!snapshot.hasData || snapshot.data == null) {
           return const Center(
-              child: Text('No se encontró detalle del subtema.'));
+              child: Text('📌No se encontró detalle del subtema.'));
         }
 
         final detail = snapshot.data!;
 
         return Scaffold(
-/*           appBar: AppBar(
-            title: AppBarDetailWidget(widthScreen: size.width),
-            centerTitle: true,
-            foregroundColor: Colors.white,
-            leading: IconButton(
-              onPressed: () {
-                ref.read(appBarSectionProvider.notifier).state =
-                    AppBarSection.definition;
-                Navigator.pop(context);
-              },
-              icon: const Icon(Icons.arrow_back_ios),
-            ),
-          ), */
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

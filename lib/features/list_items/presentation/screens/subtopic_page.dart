@@ -9,8 +9,8 @@ import 'package:rutacode/features/list_items/presentation/widgets/item_subtopic_
 import 'package:easy_stepper/easy_stepper.dart';
 import 'package:rutacode/features/progress/presentation/state/provider/progress_use_cases_provider.dart';
 
-class SubtopicScreen extends ConsumerWidget {
-  const SubtopicScreen({super.key});
+class SubtopicPage extends ConsumerWidget {
+  const SubtopicPage({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -20,7 +20,7 @@ class SubtopicScreen extends ConsumerWidget {
     final actualLanguage = ref.watch(actualLanguageProvider);
     final actualModule = ref.watch(actualModuleProvider);
     final actualLevel = ref.watch(actualLevelProvider);
-    final topicTitle = ref.watch(topicTitleProvider);
+    final topicTitle = ref.watch(titleTopicProvider);
 
     return FutureBuilder<List<DetailContentModel>>(
       future: listSubtopicUseCase.call(
