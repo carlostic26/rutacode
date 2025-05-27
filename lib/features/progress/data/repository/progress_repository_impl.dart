@@ -1,4 +1,4 @@
-import 'package:rutacode/common/feature/content/data/datasources/old_database_helper.dart';
+import 'package:rutacode/common/feature/content/data/datasources/db_helper.dart';
 import 'package:rutacode/features/progress/data/datasources/progress_local_database.dart';
 import 'package:rutacode/features/progress/data/model/progress_model.dart';
 import 'package:rutacode/features/progress/domain/repositories/progress_repository.dart';
@@ -8,11 +8,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
 
 class ProgressRepositoryImpl implements ProgressRepository {
-  final ProgressLocalDatabaseHelper _dbHelper = ProgressLocalDatabaseHelper();
+  final ProgressLocalContentDatabaseHelper _dbHelper =
+      ProgressLocalContentDatabaseHelper();
   final SubtopicRepository _subtopicRepository;
   final TopicRepository _topicRepository;
 
-  final LocalDatabaseHelper _localDbHelper = LocalDatabaseHelper();
+  final LocalContentDatabaseHelper _localDbHelper =
+      LocalContentDatabaseHelper();
 
   // Constructor que inicializa _subtopicRepository
   ProgressRepositoryImpl(this._subtopicRepository, this._topicRepository);
@@ -20,7 +22,8 @@ class ProgressRepositoryImpl implements ProgressRepository {
   Future<Database> get progressLocalDatabase async =>
       await _dbHelper.getDatabase();
 
-  final LocalDatabaseHelper _subtopicDbHelper = LocalDatabaseHelper();
+  final LocalContentDatabaseHelper _subtopicDbHelper =
+      LocalContentDatabaseHelper();
   Future<Database> get subtopicLocalDatabase async =>
       await _subtopicDbHelper.getDatabase();
 
@@ -125,14 +128,16 @@ class ProgressRepositoryImpl implements ProgressRepository {
   }
 
   @override
-  Future<bool> isTopicCompleted(
-      String module, int levelId, String topicId) async {
+  Future<bool> isTopicCompleted(String language, String module, int level,
+      String topic, String subtopicTitle) async {
     // Obtener todos los subtopics del topic
-    final subtopics = await _subtopicRepository.getSubtopics(topicId, module);
+    final subtopics = await _subtopicRepository.getSubtopicsByTopic(
+        language, module, level, topic);
 
     // Verificar si todos los subtopics están completados
     for (final subtopic in subtopics) {
-      final isCompleted = await isSubtopicCompleted(module, subtopic.id!);
+      final isCompleted = await isSubtopicCompleted(
+          language, module, level, topic, subtopicTitle);
       if (!isCompleted) {
         return false; // Si algún subtopic no está completado, el topic no está completado
       }
@@ -140,7 +145,8 @@ class ProgressRepositoryImpl implements ProgressRepository {
 
     //print("Verificando subtopics del topic $topicId");
     for (final subtopic in subtopics) {
-      final isCompleted = await isSubtopicCompleted(module, subtopic.id!);
+      final isCompleted = await isSubtopicCompleted(
+          language, module, level, topic, subtopicTitle);
       //print("En impl, Subtopic ${subtopic.id}: ¿Completado? $isCompleted");
     }
 
@@ -148,12 +154,14 @@ class ProgressRepositoryImpl implements ProgressRepository {
   }
 
   @override
-  Future<bool> isSubtopicCompleted(String module, String subtopicId) async {
+  Future<bool> isSubtopicCompleted(String language, String module, int level,
+      String topic, String subtopic) async {
     final db = await progressLocalDatabase;
     final result = await db.query(
       'progress',
-      where: 'module = ? AND subtopic_id = ?',
-      whereArgs: [module, subtopicId],
+      where:
+          'language = ? AND module = ? AND tittle_level = ? AND topic = ? AND subtopic = ?',
+      whereArgs: [language, module, level, topic, subtopic],
     );
     return result.isNotEmpty;
   }
@@ -245,13 +253,15 @@ class ProgressRepositoryImpl implements ProgressRepository {
   }
 
   @override
-  Future<bool> isLevelCompleted(String module, int levelId) async {
+  Future<bool> isLevelCompleted(String language, String module, int level,
+      String topicTitle, subtopic) async {
     // Obtener todos los topics del nivel
-    final topics = await _topicRepository.getTopics(levelId, module);
+    final topics = await _topicRepository.getTopicsByModule(language, module);
 
     // Verificar si todos los topics están completados
     for (final topic in topics) {
-      final isCompleted = await isTopicCompleted(module, levelId, topic.id!);
+      final isCompleted =
+          await isTopicCompleted(language, module, level, topicTitle, subtopic);
       if (!isCompleted) {
         return false; // Si algún topic no está completado, el nivel no está completado
       }

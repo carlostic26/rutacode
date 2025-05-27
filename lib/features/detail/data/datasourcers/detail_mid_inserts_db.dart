@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sqflite_common/sqlite_api.dart';
 
-class DetailMidLocalDatabaseHelper {
+class DetailMidLocalContentDatabaseHelper {
   Future<void> insertDetailsMid(Database db) async {
     try {
       await insertDetailsMidLevel1(db);

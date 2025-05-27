@@ -5,7 +5,9 @@ class IsTopicCompletedUseCase {
 
   IsTopicCompletedUseCase(this._progressRepository);
 
-  Future<bool> call(String module, int levelId, String topicId) async {
-    return await _progressRepository.isTopicCompleted(module, levelId, topicId);
+  Future<bool> call(String language, String module, int levelId, String topic,
+      String subtopic) async {
+    return await _progressRepository.isTopicCompleted(
+        language, module, levelId, topic, subtopic);
   }
 }

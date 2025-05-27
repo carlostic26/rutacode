@@ -1,6 +1,6 @@
-import 'package:sqflite/sqflite.dart';
+/* import 'package:sqflite/sqflite.dart';
 
-class LevelLocalDatabaseHelper {
+class LevelLocalContentDatabaseHelper {
   Future<void> createLevelTable(Database db) async {
     await db.execute('''
         CREATE TABLE level(
@@ -278,3 +278,4 @@ class LevelLocalDatabaseHelper {
     });
   }
 }
+ */

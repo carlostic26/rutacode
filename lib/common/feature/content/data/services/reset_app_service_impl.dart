@@ -21,7 +21,8 @@ class ResetServiceImpl implements ResetService {
     required this.ref,
   });
 
-  final ProgressLocalDatabaseHelper _dbHelper = ProgressLocalDatabaseHelper();
+  final ProgressLocalContentDatabaseHelper _dbHelper =
+      ProgressLocalContentDatabaseHelper();
 
   Future<Database> get progressLocalDatabase async =>
       await _dbHelper.getDatabase();

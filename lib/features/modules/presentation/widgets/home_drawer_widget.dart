@@ -65,11 +65,11 @@ class HomeDrawer extends StatelessWidget {
             leading: const Icon(Icons.emoji_events),
             title: const Text('Mis puntajes'),
             onTap: () {
-              Navigator.push(
+              /*      Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) => const ProgressScoreScreen()),
-              );
+              ); */
             },
           ),
           ListTile(

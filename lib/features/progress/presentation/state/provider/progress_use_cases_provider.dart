@@ -89,13 +89,18 @@ class CompletedTopicsNotifier extends StateNotifier<List<String>> {
   }
 
   Future<void> checkAndUpdateTopicCompletion(
-      String topicId, int levelId) async {
-    final isCompleted =
-        await _repository.isTopicCompleted(_module, levelId, topicId);
-    if (isCompleted && !state.contains(topicId)) {
-      state = [...state, topicId];
-    } else if (!isCompleted && state.contains(topicId)) {
-      state = state.where((id) => id != topicId).toList();
+    String language,
+    String module,
+    int level,
+    String topic,
+    String subtopic,
+  ) async {
+    final isCompleted = await _repository.isTopicCompleted(
+        language, module, level, topic, subtopic);
+    if (isCompleted && !state.contains(topic)) {
+      state = [...state, topic];
+    } else if (!isCompleted && state.contains(topic)) {
+      state = state.where((id) => id != topic).toList();
     }
   }
 

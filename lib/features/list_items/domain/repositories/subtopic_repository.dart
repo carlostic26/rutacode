@@ -1,5 +1,6 @@
-import 'package:rutacode/features/list_items/data/model/subtopic_model.dart';
+import 'package:rutacode/features/detail/data/models/detail_model.dart';
 
 abstract class SubtopicRepository {
-  Future<List<SubtopicModel>> getSubtopics(String topicID, String module);
+  Future<List<DetailContentModel>> getSubtopicsByTopic(
+      String language, String module, int level, String topic);
 }

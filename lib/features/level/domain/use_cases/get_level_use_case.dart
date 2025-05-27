@@ -1,4 +1,4 @@
-import 'package:rutacode/features/level/data/models/level_model.dart';
+import 'package:rutacode/features/detail/data/models/detail_model.dart';
 import 'package:rutacode/features/level/domain/repositories/level_repository.dart';
 
 class GetLevelUseCase {
@@ -6,7 +6,7 @@ class GetLevelUseCase {
 
   GetLevelUseCase(this.repository);
 
-  Future<List<LevelModel>> call(String module) async {
-    return repository.getLevel(module);
+  Future<List<DetailContentModel>> call(String language, String module) async {
+    return repository.getLevelByModule(language, module);
   }
 }

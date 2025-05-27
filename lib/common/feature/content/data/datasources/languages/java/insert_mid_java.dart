@@ -5,7 +5,7 @@ Future<void> insertMidLevel1Data(Database db) async {
     'language': 'Java',
     'module': 'Mid',
     'level': 1,
-    'title_level': 'Colecciones Avanzadas',
+    'tittle_level': 'Colecciones Avanzadas',
     'topic': 'Framework de Colecciones',
     'subtopic': 'Iteradores y ListIterator',
     'definition': '''
@@ -52,7 +52,7 @@ public class EjemploIteradores {
     'language': 'Java',
     'module': 'Mid',
     'level': 1,
-    'title_level': 'Colecciones Avanzadas',
+    'tittle_level': 'Colecciones Avanzadas',
     'topic': 'Framework de Colecciones',
     'subtopic': 'Comparadores (Comparator vs Comparable)',
     'definition': '''
@@ -118,7 +118,7 @@ public class EjemploComparadores {
     'language': 'Java',
     'module': 'Mid',
     'level': 1,
-    'title_level': 'Colecciones Avanzadas',
+    'tittle_level': 'Colecciones Avanzadas',
     'topic': 'Framework de Colecciones',
     'subtopic': 'Colecciones inmutables',
     'definition': '''
@@ -161,7 +161,7 @@ public class EjemploColeccionesInmutables {
     'language': 'Java',
     'module': 'Mid',
     'level': 1,
-    'title_level': 'Colecciones Avanzadas',
+    'tittle_level': 'Colecciones Avanzadas',
     'topic': 'Framework de Colecciones',
     'subtopic': 'Métodos utilitarios (Collections, Arrays)',
     'definition': '''
@@ -205,7 +205,7 @@ public class EjemploMetodosUtilitarios {
     'language': 'Java',
     'module': 'Mid',
     'level': 1,
-    'title_level': 'Colecciones Avanzadas',
+    'tittle_level': 'Colecciones Avanzadas',
     'topic': 'Stream API',
     'subtopic': 'Introducción a Streams',
     'definition': '''
@@ -240,7 +240,7 @@ public class EjemploStream {
     'language': 'Java',
     'module': 'Mid',
     'level': 1,
-    'title_level': 'Colecciones Avanzadas',
+    'tittle_level': 'Colecciones Avanzadas',
     'topic': 'Stream API',
     'subtopic': 'Operaciones intermedias (filter, map, sorted)',
     'definition': '''
@@ -280,7 +280,7 @@ public class OperacionesIntermedias {
     'language': 'Java',
     'module': 'Mid',
     'level': 1,
-    'title_level': 'Colecciones Avanzadas',
+    'tittle_level': 'Colecciones Avanzadas',
     'topic': 'Stream API',
     'subtopic': 'Operaciones terminales (collect, forEach, reduce)',
     'definition': '''
@@ -326,7 +326,7 @@ public class OperacionesTerminales {
     'language': 'Java',
     'module': 'Mid',
     'level': 1,
-    'title_level': 'Colecciones Avanzadas',
+    'tittle_level': 'Colecciones Avanzadas',
     'topic': 'Stream API',
     'subtopic': 'Parallel streams',
     'definition': '''
@@ -374,7 +374,7 @@ Future<void> insertMidLevel2Data(Database db) async {
     'language': 'Java',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia',
+    'tittle_level': 'Concurrencia',
     'topic': 'Threads Básicos',
     'subtopic': 'Creación de threads (extends Thread vs implements Runnable)',
     'definition': '''
@@ -421,7 +421,7 @@ public class EjemploThread {
     'language': 'Java',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia',
+    'tittle_level': 'Concurrencia',
     'topic': 'Threads Básicos',
     'subtopic': 'Estados de un thread',
     'definition': '''
@@ -462,7 +462,7 @@ public class EstadosHilo implements Runnable {
     'language': 'Java',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia',
+    'tittle_level': 'Concurrencia',
     'topic': 'Threads Básicos',
     'subtopic': 'Métodos de Thread (start, run, sleep, join)',
     'definition': '''
@@ -506,7 +506,7 @@ public class MetodosThread {
     'language': 'Java',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia',
+    'tittle_level': 'Concurrencia',
     'topic': 'Sincronización',
     'subtopic': 'Problemas de concurrencia (race conditions)',
     'definition': '''
@@ -560,7 +560,7 @@ public class ContadorCompartido {
     'language': 'Java',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia',
+    'tittle_level': 'Concurrencia',
     'topic': 'Sincronización',
     'subtopic': 'synchronized (métodos y bloques)',
     'definition': '''
@@ -601,7 +601,7 @@ public class ContadorSincronizado {
     'language': 'Java',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia',
+    'tittle_level': 'Concurrencia',
     'topic': 'Sincronización',
     'subtopic': 'wait(), notify(), notifyAll()',
     'definition': '''
@@ -651,7 +651,7 @@ public class ProductorConsumidor {
     'language': 'Java',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia',
+    'tittle_level': 'Concurrencia',
     'topic': 'Sincronización',
     'subtopic': 'volatile keyword',
     'definition': '''
@@ -698,7 +698,7 @@ public class VolatileEjemplo {
     'language': 'Java',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia',
+    'tittle_level': 'Concurrencia',
     'topic': 'Concurrencia Moderna',
     'subtopic': 'ExecutorService',
     'definition': '''
@@ -734,7 +734,7 @@ public class EjemploExecutorService {
     'language': 'Java',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia',
+    'tittle_level': 'Concurrencia',
     'topic': 'Concurrencia Moderna',
     'subtopic': 'Callable y Future',
     'definition': '''
@@ -775,7 +775,7 @@ public class EjemploCallableFuture {
     'language': 'Java',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia',
+    'tittle_level': 'Concurrencia',
     'topic': 'Concurrencia Moderna',
     'subtopic':
         'Colecciones concurrentes (ConcurrentHashMap, CopyOnWriteArrayList)',
@@ -814,7 +814,7 @@ public class EjemploColeccionesConcurrentes {
     'language': 'Java',
     'module': 'Mid',
     'level': 2,
-    'title_level': 'Concurrencia',
+    'tittle_level': 'Concurrencia',
     'topic': 'Concurrencia Moderna',
     'subtopic': 'Locks (ReentrantLock)',
     'definition': '''
@@ -859,7 +859,7 @@ Future<void> insertMidLevel3Data(Database db) async {
     'language': 'Java',
     'module': 'Mid',
     'level': 3,
-    'title_level': 'Java Moderno (8+)',
+    'tittle_level': 'Java Moderno (8+)',
     'topic': 'Lambdas y Functional Interfaces',
     'subtopic': 'Expresiones lambda',
     'definition': '''
@@ -900,7 +900,7 @@ Editar
     'language': 'Java',
     'module': 'Mid',
     'level': 3,
-    'title_level': 'Java Moderno (8+)',
+    'tittle_level': 'Java Moderno (8+)',
     'topic': 'Lambdas y Functional Interfaces',
     'subtopic':
         'Interfaces funcionales (Supplier, Consumer, Function, Predicate)',
@@ -939,7 +939,7 @@ public class EjemploInterfacesFuncionales {
     'language': 'Java',
     'module': 'Mid',
     'level': 3,
-    'title_level': 'Java Moderno (8+)',
+    'tittle_level': 'Java Moderno (8+)',
     'topic': 'Lambdas y Functional Interfaces',
     'subtopic': 'Method references',
     'definition': '''
@@ -980,7 +980,7 @@ public class EjemploMethodReference {
     'language': 'Java',
     'module': 'Mid',
     'level': 3,
-    'title_level': 'Java Moderno (8+)',
+    'tittle_level': 'Java Moderno (8+)',
     'topic': 'APIs Avanzadas',
     'subtopic': 'Optional',
     'definition': '''
@@ -1010,7 +1010,7 @@ public class EjemploOptional {
     'language': 'Java',
     'module': 'Mid',
     'level': 3,
-    'title_level': 'Java Moderno (8+)',
+    'tittle_level': 'Java Moderno (8+)',
     'topic': 'APIs Avanzadas',
     'subtopic': 'Nueva API de Date/Time (LocalDate, LocalTime, etc.)',
     'definition': '''
@@ -1048,7 +1048,7 @@ public class EjemploDateTime {
     'language': 'Java',
     'module': 'Mid',
     'level': 3,
-    'title_level': 'Java Moderno (8+)',
+    'tittle_level': 'Java Moderno (8+)',
     'topic': 'APIs Avanzadas',
     'subtopic': 'Interfaces con métodos default y static',
     'definition': '''
@@ -1088,7 +1088,7 @@ Future<void> insertMidLevel4Data(Database db) async {
     'language': 'Java',
     'module': 'Mid',
     'level': 4,
-    'title_level': 'Bases de Datos',
+    'tittle_level': 'Bases de Datos',
     'topic': 'JDBC',
     'subtopic': 'Arquitectura JDBC',
     'definition': '''
@@ -1125,7 +1125,7 @@ public class ConexionJDBC {
     'language': 'Java',
     'module': 'Mid',
     'level': 4,
-    'title_level': 'Bases de Datos',
+    'tittle_level': 'Bases de Datos',
     'topic': 'JDBC',
     'subtopic': 'DriverManager y DataSource',
     'definition': '''
@@ -1163,7 +1163,7 @@ public class ConexionConDriverManager {
     'language': 'Java',
     'module': 'Mid',
     'level': 4,
-    'title_level': 'Bases de Datos',
+    'tittle_level': 'Bases de Datos',
     'topic': 'JDBC',
     'subtopic': 'Statement vs PreparedStatement',
     'definition': '''
@@ -1209,7 +1209,7 @@ public class EjemploPreparedStatement {
     'language': 'Java',
     'module': 'Mid',
     'level': 4,
-    'title_level': 'Bases de Datos',
+    'tittle_level': 'Bases de Datos',
     'topic': 'JDBC',
     'subtopic': 'Transacciones',
     'definition': '''
@@ -1256,7 +1256,7 @@ public class ManejoTransacciones {
     'language': 'Java',
     'module': 'Mid',
     'level': 4,
-    'title_level': 'Bases de Datos',
+    'tittle_level': 'Bases de Datos',
     'topic': 'ORMs',
     'subtopic': 'Introducción a Hibernate',
     'definition': '''
@@ -1310,7 +1310,7 @@ public class HibernateEjemplo {
     'language': 'Java',
     'module': 'Mid',
     'level': 4,
-    'title_level': 'Bases de Datos',
+    'tittle_level': 'Bases de Datos',
     'topic': 'ORMs',
     'subtopic': 'EntityManager y JPA',
     'definition': '''
@@ -1362,7 +1362,7 @@ public class JPAManejo {
     'language': 'Java',
     'module': 'Mid',
     'level': 4,
-    'title_level': 'Bases de Datos',
+    'tittle_level': 'Bases de Datos',
     'topic': 'ORMs',
     'subtopic': 'Anotaciones básicas (@Entity, @Table, @Id)',
     'definition': '''
@@ -1399,7 +1399,7 @@ public class Empleado {
     'language': 'Java',
     'module': 'Mid',
     'level': 4,
-    'title_level': 'Bases de Datos',
+    'tittle_level': 'Bases de Datos',
     'topic': 'ORMs',
     'subtopic': 'Consultas JPQL',
     'definition': '''
@@ -1453,7 +1453,7 @@ Future<void> insertMidLevel5Data(Database db) async {
     'language': 'Java',
     'module': 'Mid',
     'level': 5,
-    'title_level': 'Pruebas Avanzadas',
+    'tittle_level': 'Pruebas Avanzadas',
     'topic': 'Pruebas Unitarias',
     'subtopic': 'Mockito (creación de mocks, verificación)',
     'definition': '''
@@ -1501,7 +1501,7 @@ class ServicioTest {
     'language': 'Java',
     'module': 'Mid',
     'level': 5,
-    'title_level': 'Pruebas Avanzadas',
+    'tittle_level': 'Pruebas Avanzadas',
     'topic': 'Pruebas Unitarias',
     'subtopic': 'Inyección de dependencias para testing',
     'definition': '''
@@ -1551,7 +1551,7 @@ class ControladorTest {
     'language': 'Java',
     'module': 'Mid',
     'level': 5,
-    'title_level': 'Pruebas Avanzadas',
+    'tittle_level': 'Pruebas Avanzadas',
     'topic': 'Pruebas Unitarias',
     'subtopic': 'Pruebas parametrizadas',
     'definition': '''
@@ -1589,7 +1589,7 @@ class CalculadoraTest {
     'language': 'Java',
     'module': 'Mid',
     'level': 5,
-    'title_level': 'Pruebas Avanzadas',
+    'tittle_level': 'Pruebas Avanzadas',
     'topic': 'Pruebas de Integración',
     'subtopic': 'Testcontainers',
     'definition': '''
@@ -1641,7 +1641,7 @@ public class TestcontainersEjemplo {
     'language': 'Java',
     'module': 'Mid',
     'level': 5,
-    'title_level': 'Pruebas Avanzadas',
+    'tittle_level': 'Pruebas Avanzadas',
     'topic': 'Pruebas de Integración',
     'subtopic': 'Pruebas con bases de datos reales',
     'definition': '''
@@ -1702,7 +1702,7 @@ public class PruebasBaseDeDatosRealesEjemplo {
     'language': 'Java',
     'module': 'Mid',
     'level': 5,
-    'title_level': 'Pruebas Avanzadas',
+    'tittle_level': 'Pruebas Avanzadas',
     'topic': 'Pruebas de Integración',
     'subtopic': 'Spring Test',
     'definition': '''
@@ -1765,7 +1765,7 @@ Future<void> insertMidLevel6Data(Database db) async {
     'language': 'Java',
     'module': 'Mid',
     'level': 6,
-    'title_level': 'Build Tools y Dependencias',
+    'tittle_level': 'Build Tools y Dependencias',
     'topic': 'Maven',
     'subtopic': 'Estructura de pom.xml',
     'definition': '''
@@ -1811,7 +1811,7 @@ Cada dependencia se define con su propio `<groupId>`, `<artifactId>` y `<version
     'language': 'Java',
     'module': 'Mid',
     'level': 6,
-    'title_level': 'Build Tools y Dependencias',
+    'tittle_level': 'Build Tools y Dependencias',
     'topic': 'Maven',
     'subtopic': 'Ciclo de vida de Maven',
     'definition': '''
@@ -1854,7 +1854,7 @@ Para ejecutar una fase, simplemente usas el comando `mvn` seguido del nombre de 
     'language': 'Java',
     'module': 'Mid',
     'level': 6,
-    'title_level': 'Build Tools y Dependencias',
+    'tittle_level': 'Build Tools y Dependencias',
     'topic': 'Maven',
     'subtopic': 'Dependencias y scopes',
     'definition': '''
@@ -1900,7 +1900,7 @@ Usar los scopes correctamente ayuda a mantener tu proyecto limpio y a evitar con
     'language': 'Java',
     'module': 'Mid',
     'level': 6,
-    'title_level': 'Build Tools y Dependencias',
+    'tittle_level': 'Build Tools y Dependencias',
     'topic': 'Maven',
     'subtopic': 'Plugins comunes',
     'definition': '''
@@ -1951,7 +1951,7 @@ Los plugins se configuran en el `pom.xml` dentro del elemento `<build>`.  Puedes
     'language': 'Java',
     'module': 'Mid',
     'level': 6,
-    'title_level': 'Build Tools y Dependencias',
+    'tittle_level': 'Build Tools y Dependencias',
     'topic': 'Gradle',
     'subtopic': 'Build.gradle básico',
     'definition': '''
@@ -1994,7 +1994,7 @@ dependencies {
     'language': 'Java',
     'module': 'Mid',
     'level': 6,
-    'title_level': 'Build Tools y Dependencias',
+    'tittle_level': 'Build Tools y Dependencias',
     'topic': 'Gradle',
     'subtopic': 'Tasks',
     'definition': '''
@@ -2034,7 +2034,7 @@ tasks.register('miJar', Jar) {
     'language': 'Java',
     'module': 'Mid',
     'level': 6,
-    'title_level': 'Build Tools y Dependencias',
+    'tittle_level': 'Build Tools y Dependencias',
     'topic': 'Gradle',
     'subtopic': 'Gestión de dependencias',
     'definition': '''
@@ -2063,7 +2063,7 @@ dependencies {
     'language': 'Java',
     'module': 'Mid',
     'level': 6,
-    'title_level': 'Build Tools y Dependencias',
+    'tittle_level': 'Build Tools y Dependencias',
     'topic': 'Gradle',
     'subtopic': 'Comparación con Maven',
     'definition': '''
