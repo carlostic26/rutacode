@@ -50,13 +50,13 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
     // Handle different modules using a switch statement
     switch (actualLanguage) {
       case 'Jr':
-        levelId = ref.read(actualLevelIdJrProvider);
+        levelId = ref.read(actualLevelProvider);
         break;
       case 'Mid':
-        levelId = ref.read(actualLevelIdMidProvider);
+        levelId = ref.read(actualLevelProvider);
         break;
       case 'Sr':
-        levelId = ref.read(actualLevelIdSrProvider);
+        levelId = ref.read(actualLevelProvider);
         break;
       default:
         // Default logic for unknown modules
@@ -119,14 +119,23 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
-    final getDetailUseCase = ref.read(getDetailUseCaseProvider);
+    final getDetailUseCase = ref.read(
+        getDetailUseCaseProvider); /* 
     final subtopicID = ref.watch(subtopicTitleProvider);
-    final module = ref.watch(actualModuleProvider);
-    final subtopicTitle = ref.watch(subtopicTitleProvider);
+    final module = ref.watch(actualModuleProvider); */
+
     final pageController = ref.watch(pageControllerItemsProvider);
 
+    // variables provider para solicitud de datos
+    final actualLanguage = ref.watch(actualLanguageProvider);
+    final actualModule = ref.watch(actualModuleProvider);
+    final actualLevel = ref.watch(actualLevelProvider);
+    final topicTitle = ref.watch(topicTitleProvider);
+    final subtopicTitle = ref.watch(subtopicTitleProvider);
+
     return FutureBuilder<DetailContentModel>(
-      future: getDetailUseCase.call(subtopicID, module),
+      future: getDetailUseCase.call(
+          actualLanguage, actualModule, actualLevel, topicTitle, subtopicTitle),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
@@ -156,18 +165,6 @@ class _DetailScreenState extends ConsumerState<DetailScreen> {
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
-                child: Text(
-                  subtopicTitle,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Poppins',
-                    fontSize: 18,
-                  ),
-                ),
-              ),
               const SizedBox(height: 10),
               Expanded(
                 child: PageView(

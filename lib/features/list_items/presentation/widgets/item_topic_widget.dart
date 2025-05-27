@@ -40,8 +40,7 @@ class ItemTopicWidget extends ConsumerWidget {
         onTap: () {
           ref.read(topicTitleProvider.notifier).state =
               detailContent.topic as String;
-          ref.read(topicTitleProvider.notifier).state =
-              detailContent.titleLevel!;
+          ref.read(topicTitleProvider.notifier).state = detailContent.topic!;
           ref.read(currentPageProvider.notifier).state = 1;
         },
         child: Container(
@@ -56,7 +55,7 @@ class ItemTopicWidget extends ConsumerWidget {
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                detailContent.titleLevel!,
+                detailContent.topic!,
                 style: const TextStyle(
                     color: Colors.white, fontFamily: 'Poppins', fontSize: 12),
               ),

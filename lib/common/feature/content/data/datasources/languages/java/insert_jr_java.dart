@@ -17,7 +17,6 @@ Cuando te adentras en Java, lo primero que notarás es su estructura caracterís
 En Java, todo el código reside dentro de clases. El método `main` se define como `public static void main(String[] args)`, y es donde se inicia la ejecución del programa. Comprender esta estructura básica es esencial para escribir programas funcionales y bien organizados.
 ''',
     'code_example': '''
-// Comentario: Programa básico en Java
 public class MiPrograma {
     public static void main(String[] args) {
         System.out.println("¡Hola, mundo!");

@@ -51,8 +51,18 @@ class _CodeDetailWidgetState extends ConsumerState<CodeDetailWidget> {
               color: const Color.fromARGB(66, 35, 35, 35),
               alignment: Alignment.centerRight,
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8),
+                    child: Text('Guía o ejemplo:',
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: _fontSize,
+                          fontWeight: FontWeight.bold,
+                        )),
+                  ),
+                  Spacer(),
                   IconButton(
                     icon: const Icon(CupertinoIcons.zoom_in),
                     onPressed: _increaseFontSize,

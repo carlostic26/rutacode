@@ -1429,7 +1429,7 @@ message Resultado {
   int32 resultado = 1;
 }
 
-// Comentario: Este archivo .proto se compila para generar el código necesario en Python y otros lenguajes, permitiendo la comunicación entre servicios mediante gRPC.
+//Este archivo .proto se compila para generar el código necesario en Python y otros lenguajes, permitiendo la comunicación entre servicios mediante gRPC.
 '''
   });
 

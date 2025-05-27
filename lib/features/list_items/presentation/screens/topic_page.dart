@@ -24,13 +24,13 @@ class TopicScreen extends ConsumerWidget {
     // Handle different modules using a switch statement
     switch (actualModule) {
       case 'Jr':
-        levelId = ref.read(actualLevelIdJrProvider);
+        levelId = ref.read(actualLevelProvider);
         break;
       case 'Mid':
-        levelId = ref.read(actualLevelIdMidProvider);
+        levelId = ref.read(actualLevelProvider);
         break;
       case 'Sr':
-        levelId = ref.read(actualLevelIdSrProvider);
+        levelId = ref.read(actualLevelProvider);
         break;
       default:
         // Default logic for unknown modules

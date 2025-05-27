@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:rutacode/common/feature/content/data/datasources/db_helper.dart';
 import 'package:rutacode/features/detail/data/models/detail_model.dart';
 import 'package:rutacode/features/list_items/domain/repositories/subtopic_repository.dart';
@@ -9,14 +10,23 @@ class SubtopicRepositoryImpl implements SubtopicRepository {
   Future<Database> get _database async => await _dbHelper.getDatabase();
 
   @override
+  @override
   Future<List<DetailContentModel>> getSubtopicsByTopic(
-      String language, String module, int level, String topic) async {
+    String language,
+    String module,
+    int level,
+    String topic,
+  ) async {
     final db = await _database;
-    final maps = await db.rawQuery('''
-      SELECT MIN(id) as id, language, module, level, tittle_level, topic, subtopic, definition, code_example
-      FROM programming_content
-      WHERE language = ? AND module = ? and level = ? and topic = ?
-    ''', [language, module, level, topic]);
+
+    debugPrint(
+        '📌 Params en subtopic: language=$language, module=$module, level=$level, topic=$topic');
+
+    final maps = await db.query(
+      'programming_content',
+      where: 'language = ? AND module = ? AND level = ? AND topic = ?',
+      whereArgs: [language, module, level, topic],
+    );
 
     return List.generate(maps.length, (i) {
       return DetailContentModel(

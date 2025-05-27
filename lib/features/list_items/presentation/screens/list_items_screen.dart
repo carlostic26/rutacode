@@ -5,8 +5,8 @@ import 'package:rutacode/core/ads/banner/ad_banner_provider_detail.dart';
 import 'package:rutacode/features/detail/presentation/screens/detail_screen.dart';
 import 'package:rutacode/features/detail/presentation/widgets/appbar_detail_widget.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
-import 'package:rutacode/features/list_items/presentation/screens/topic_screen.dart';
-import 'package:rutacode/features/list_items/presentation/screens/subtopic_screen.dart';
+import 'package:rutacode/features/list_items/presentation/screens/topic_page.dart';
+import 'package:rutacode/features/list_items/presentation/screens/subtopic_page.dart';
 import 'package:rutacode/features/list_items/presentation/state/provider/get_subtopic_use_case_provider.dart';
 import 'package:rutacode/features/list_items/presentation/state/provider/get_topic_use_case_provider.dart';
 

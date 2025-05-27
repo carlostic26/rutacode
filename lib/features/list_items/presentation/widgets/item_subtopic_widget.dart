@@ -37,7 +37,7 @@ class ItemSubtopicWidget extends ConsumerWidget {
           // Navegar a la pantalla de detalles
           //    ref.read(subtopicIdProvider.notifier).state = detailContent.id!;
           ref.read(subtopicTitleProvider.notifier).state =
-              detailContent.titleLevel!;
+              detailContent.subtopic!;
 /*           Navigator.push(
             context,
             MaterialPageRoute(builder: (context) => const DetailScreen()),
@@ -58,7 +58,7 @@ class ItemSubtopicWidget extends ConsumerWidget {
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                detailContent.titleLevel!,
+                detailContent.subtopic!,
                 style: const TextStyle(
                     color: Colors.white,
                     //fontWeight: FontWeight.bold,

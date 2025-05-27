@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:rutacode/common/feature/content/data/datasources/db_helper.dart';
 import 'package:rutacode/features/detail/data/models/detail_model.dart';
 import 'package:rutacode/features/detail/domain/repositories/detail_repository.dart';
@@ -9,12 +10,18 @@ class DetailRepositoryImpl implements DetailRepository {
   Future<Database> get _database async => await _dbHelper.getDatabase();
 
   @override
-  Future<DetailContentModel> getDetail(String subtopicID, String module) async {
+  Future<DetailContentModel> getDetail(String language, String module,
+      int level, String topic, String subtopic) async {
     final db = await _database;
+
+    debugPrint(
+        '📌 Params en subtopic: language=$language, module=$module, level=$level, topic=$topic, subtopic=$subtopic');
+
     final maps = await db.query(
-      'detail',
-      where: 'subtopic_id = ? and module = ?',
-      whereArgs: [subtopicID, module],
+      'programming_content',
+      where:
+          'language = ? AND module = ? AND level = ? AND topic = ? AND subtopic = ?',
+      whereArgs: [language, module, level, topic, subtopic],
     );
 
     return DetailContentModel(

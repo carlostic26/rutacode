@@ -31,6 +31,7 @@ class SubtopicScreen extends ConsumerWidget {
         } else if (snapshot.hasError) {
           return Center(child: Text('Error: ${snapshot.error}'));
         } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
+          debugPrint(snapshot.data.toString());
           return const Center(child: Text('No se encontraron subtemas.'));
         }
 

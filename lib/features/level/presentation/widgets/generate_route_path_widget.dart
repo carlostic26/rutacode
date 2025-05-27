@@ -265,16 +265,13 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
                 onPressed: () {
                   switch (moduleSelected) {
                     case 'Jr':
-                      ref.read(actualLevelIdJrProvider.notifier).state =
-                          level.id!;
+                      ref.read(actualLevelProvider.notifier).state = level.id!;
                       break;
                     case 'Mid':
-                      ref.read(actualLevelIdMidProvider.notifier).state =
-                          level.id!;
+                      ref.read(actualLevelProvider.notifier).state = level.id!;
                       break;
                     case 'Sr':
-                      ref.read(actualLevelIdSrProvider.notifier).state =
-                          level.id!;
+                      ref.read(actualLevelProvider.notifier).state = level.id!;
                       break;
                     default:
                       break;
