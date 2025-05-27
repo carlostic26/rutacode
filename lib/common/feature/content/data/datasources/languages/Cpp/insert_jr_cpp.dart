@@ -492,7 +492,7 @@ int main() {
   });
 }
 
-Future<void> insertJrLevel2Data(Database db) async {
+Future<void> insertJrLevel2DataCpp(Database db) async {
   await db.insert('programming_content', {
     'language': 'C++',
     'module': 'Jr',
@@ -1167,7 +1167,7 @@ int main() {
   });
 }
 
-Future<void> insertJrLevel3Data(Database db) async {
+Future<void> insertJrLevel3DataCpp(Database db) async {
   await db.insert('programming_content', {
     'language': 'C++',
     'module': 'Jr',
@@ -1797,7 +1797,7 @@ int main() {
   });
 }
 
-Future<void> insertJrLevel4Data(Database db) async {
+Future<void> insertJrLevel4DataCpp(Database db) async {
   await db.insert('programming_content', {
     'language': 'C++',
     'module': 'Jr',
@@ -2586,7 +2586,7 @@ int main() {
   });
 }
 
-Future<void> insertJrLevel5Data(Database db) async {
+Future<void> insertJrLevel5DataCpp(Database db) async {
   await db.insert('programming_content', {
     'language': 'C++',
     'module': 'Jr',
@@ -3509,7 +3509,7 @@ int main() {
   });
 }
 
-Future<void> insertJrLevel6Data(Database db) async {
+Future<void> insertJrLevel6DataCpp(Database db) async {
   await db.insert('programming_content', {
     'language': 'C++',
     'module': 'Jr',
@@ -4459,7 +4459,7 @@ int main() {
   });
 }
 
-Future<void> insertJrLevel7Data(Database db) async {
+Future<void> insertJrLevel7DataCpp(Database db) async {
   await db.insert('programming_content', {
     'language': 'C++',
     'module': 'Jr',
@@ -5274,7 +5274,7 @@ int main() {
   });
 }
 
-Future<void> insertJrLevel8Data(Database db) async {
+Future<void> insertJrLevel8DataCpp(Database db) async {
   await db.insert('programming_content', {
     'language': 'C++',
     'module': 'Jr',
