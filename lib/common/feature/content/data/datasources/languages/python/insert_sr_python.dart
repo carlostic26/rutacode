@@ -5,7 +5,7 @@ Future<void> insertPythonSrLevel1Data(Database db) async {
     'language': 'Python',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Patrones de Diseño',
+    'tittle_level': 'Patrones de Diseño',
     'topic': 'Patrones Creacionales',
     'subtopic': 'Singleton',
     'definition': '''
@@ -48,7 +48,7 @@ print(config1 is config2)  # False, son instancias diferentes
     'language': 'Python',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Patrones de Diseño',
+    'tittle_level': 'Patrones de Diseño',
     'topic': 'Patrones Creacionales',
     'subtopic': 'Factory',
     'definition': '''
@@ -99,7 +99,7 @@ else:
     'language': 'Python',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Patrones de Diseño',
+    'tittle_level': 'Patrones de Diseño',
     'topic': 'Patrones Creacionales',
     'subtopic': 'Builder',
     'definition': '''
@@ -172,7 +172,7 @@ pizza.pepperoni = True
     'language': 'Python',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Patrones de Diseño',
+    'tittle_level': 'Patrones de Diseño',
     'topic': 'Patrones Estructurales',
     'subtopic': 'Adapter',
     'definition': '''
@@ -241,7 +241,7 @@ except AttributeError as e:
     'language': 'Python',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Patrones de Diseño',
+    'tittle_level': 'Patrones de Diseño',
     'topic': 'Patrones Estructurales',
     'subtopic': 'Decorator',
     'definition': '''
@@ -300,7 +300,7 @@ say_hello("Mundo")
     'language': 'Python',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Patrones de Diseño',
+    'tittle_level': 'Patrones de Diseño',
     'topic': 'Patrones Estructurales',
     'subtopic': 'Facade',
     'definition': '''
@@ -355,7 +355,7 @@ cpu.execute()
     'language': 'Python',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Patrones de Diseño',
+    'tittle_level': 'Patrones de Diseño',
     'topic': 'Patrones de Comportamiento',
     'subtopic': 'Observer',
     'definition': '''
@@ -405,7 +405,7 @@ subject.notify("Hay cambios importantes")
     'language': 'Python',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Patrones de Diseño',
+    'tittle_level': 'Patrones de Diseño',
     'topic': 'Patrones de Comportamiento',
     'subtopic': 'Strategy',
     'definition': '''
@@ -449,7 +449,7 @@ print(proc.procesar(datos))  # [9, 5, 2, 1]
     'language': 'Python',
     'module': 'Sr',
     'level': 1,
-    'title_level': 'Patrones de Diseño',
+    'tittle_level': 'Patrones de Diseño',
     'topic': 'Patrones de Comportamiento',
     'subtopic': 'Command',
     'definition': '''
@@ -501,7 +501,7 @@ Future<void> insertPythonSrLevel2Data(Database db) async {
     'language': 'Python',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Rendimiento y Optimización',
+    'tittle_level': 'Rendimiento y Optimización',
     'topic': 'Profiling',
     'subtopic': 'cProfile',
     'definition': '''
@@ -545,7 +545,7 @@ def slow_func():
     'language': 'Python',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Rendimiento y Optimización',
+    'tittle_level': 'Rendimiento y Optimización',
     'topic': 'Profiling',
     'subtopic': 'timeit',
     'definition': '''
@@ -593,7 +593,7 @@ print(f"Tiempo: {end - start}")  # Menos preciso que timeit
     'language': 'Python',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Rendimiento y Optimización',
+    'tittle_level': 'Rendimiento y Optimización',
     'topic': 'Profiling',
     'subtopic': 'memory_profiler',
     'definition': '''
@@ -646,7 +646,7 @@ def load_big_file():
     'language': 'Python',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Rendimiento y Optimización',
+    'tittle_level': 'Rendimiento y Optimización',
     'topic': 'Optimización',
     'subtopic': 'Cython',
     'definition': '''
@@ -673,7 +673,7 @@ def suma(int a, int b):
     'language': 'Python',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Rendimiento y Optimización',
+    'tittle_level': 'Rendimiento y Optimización',
     'topic': 'Optimización',
     'subtopic': 'Numba',
     'definition': '''
@@ -707,7 +707,7 @@ print(suma_lenta(datos))  # Se ejecuta mucho más rápido gracias a Numba
     'language': 'Python',
     'module': 'Sr',
     'level': 2,
-    'title_level': 'Rendimiento y Optimización',
+    'tittle_level': 'Rendimiento y Optimización',
     'topic': 'Optimización',
     'subtopic': 'Vectorización con NumPy',
     'definition': '''
@@ -746,7 +746,7 @@ Future<void> insertPythonSrLevel3Data(Database db) async {
     'language': 'Python',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Frameworks Web',
+    'tittle_level': 'Frameworks Web',
     'topic': 'Django',
     'subtopic': 'MTV architecture',
     'definition': '''
@@ -802,7 +802,7 @@ urlpatterns = [
     'language': 'Python',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Frameworks Web',
+    'tittle_level': 'Frameworks Web',
     'topic': 'Django',
     'subtopic': 'ORM',
     'definition': '''
@@ -853,7 +853,7 @@ books = author.book_set.all()  # SELECT * FROM library_book WHERE author_id = ?
     'language': 'Python',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Frameworks Web',
+    'tittle_level': 'Frameworks Web',
     'topic': 'Django',
     'subtopic': 'Views y URLs',
     'definition': '''
@@ -917,7 +917,7 @@ urlpatterns += [
     'language': 'Python',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Frameworks Web',
+    'tittle_level': 'Frameworks Web',
     'topic': 'Django',
     'subtopic': 'Templates',
     'definition': '''
@@ -1000,7 +1000,7 @@ El sistema incluye características potentes como herencia de plantillas ({% ext
     'language': 'Python',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Frameworks Web',
+    'tittle_level': 'Frameworks Web',
     'topic': 'FastAPI',
     'subtopic': 'Async',
     'definition': '''
@@ -1031,7 +1031,7 @@ async def proceso_lento():
     'language': 'Python',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Frameworks Web',
+    'tittle_level': 'Frameworks Web',
     'topic': 'FastAPI',
     'subtopic': 'Pydantic models',
     'definition': '''
@@ -1066,7 +1066,7 @@ def crear_usuario(usuario: Usuario):
     'language': 'Python',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Frameworks Web',
+    'tittle_level': 'Frameworks Web',
     'topic': 'FastAPI',
     'subtopic': 'OpenAPI',
     'definition': '''
@@ -1099,7 +1099,7 @@ def crear_producto(producto: Producto):
     'language': 'Python',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Frameworks Web',
+    'tittle_level': 'Frameworks Web',
     'topic': 'Flask',
     'subtopic': 'Blueprints',
     'definition': '''
@@ -1155,7 +1155,7 @@ if __name__ == '__main__':
     'language': 'Python',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Frameworks Web',
+    'tittle_level': 'Frameworks Web',
     'topic': 'Flask',
     'subtopic': 'Extensiones',
     'definition': '''
@@ -1215,7 +1215,7 @@ if __name__ == '__main__':
     'language': 'Python',
     'module': 'Sr',
     'level': 3,
-    'title_level': 'Frameworks Web',
+    'tittle_level': 'Frameworks Web',
     'topic': 'Flask',
     'subtopic': 'WSGI',
     'definition': '''
@@ -1270,7 +1270,7 @@ Future<void> insertPythonSrLevel4Data(Database db) async {
     'language': 'Python',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Arquitectura Avanzada',
+    'tittle_level': 'Arquitectura Avanzada',
     'topic': 'Microservicios',
     'subtopic': 'Introducción a los Microservicios',
     'definition': '''
@@ -1298,7 +1298,7 @@ Además, si un servicio falla, los demás pueden seguir funcionando, lo que mejo
     'language': 'Python',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Arquitectura Avanzada',
+    'tittle_level': 'Arquitectura Avanzada',
     'topic': 'Microservicios',
     'subtopic': 'Ventajas de los Microservicios',
     'definition': '''
@@ -1328,7 +1328,7 @@ Estas ventajas hacen que los microservicios sean una opción atractiva para apli
     'language': 'Python',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Arquitectura Avanzada',
+    'tittle_level': 'Arquitectura Avanzada',
     'topic': 'Microservicios',
     'subtopic': 'Desventajas de los Microservicios',
     'definition': '''
@@ -1359,7 +1359,7 @@ Es fundamental evaluar estos aspectos y contar con un equipo capacitado y herram
     'language': 'Python',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Arquitectura Avanzada',
+    'tittle_level': 'Arquitectura Avanzada',
     'topic': 'Microservicios',
     'subtopic': 'Event-driven architecture',
     'definition': '''
@@ -1401,7 +1401,7 @@ connection.close()
     'language': 'Python',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Arquitectura Avanzada',
+    'tittle_level': 'Arquitectura Avanzada',
     'topic': 'Microservicios',
     'subtopic': 'gRPC',
     'definition': '''
@@ -1429,7 +1429,7 @@ message Resultado {
   int32 resultado = 1;
 }
 
-// Comentario: Este archivo .proto se compila para generar el código necesario en Python y otros lenguajes, permitiendo la comunicación entre servicios mediante gRPC.
+//Este archivo .proto se compila para generar el código necesario en Python y otros lenguajes, permitiendo la comunicación entre servicios mediante gRPC.
 '''
   });
 
@@ -1437,7 +1437,7 @@ message Resultado {
     'language': 'Python',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Arquitectura Avanzada',
+    'tittle_level': 'Arquitectura Avanzada',
     'topic': 'Microservicios',
     'subtopic': 'REST avanzado',
     'definition': '''
@@ -1490,7 +1490,7 @@ def obtener_productos():
     'language': 'Python',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Arquitectura Avanzada',
+    'tittle_level': 'Arquitectura Avanzada',
     'topic': 'Seguridad',
     'subtopic': 'JWT',
     'definition': '''
@@ -1541,7 +1541,7 @@ except jwt.InvalidTokenError:
     'language': 'Python',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Arquitectura Avanzada',
+    'tittle_level': 'Arquitectura Avanzada',
     'topic': 'Seguridad',
     'subtopic': 'OAuth',
     'definition': '''
@@ -1616,7 +1616,7 @@ def logout():
     'language': 'Python',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Arquitectura Avanzada',
+    'tittle_level': 'Arquitectura Avanzada',
     'topic': 'Seguridad',
     'subtopic': 'Hashing (bcrypt)',
     'definition': '''
@@ -1670,7 +1670,7 @@ print(f"\\nMismo password, diferente hash debido al salt: {hashed_password_2.dec
     'language': 'Python',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Arquitectura Avanzada',
+    'tittle_level': 'Arquitectura Avanzada',
     'topic': 'Mensajería',
     'subtopic': 'RabbitMQ',
     'definition': '''
@@ -1710,7 +1710,7 @@ conexion.close()
     'language': 'Python',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Arquitectura Avanzada',
+    'tittle_level': 'Arquitectura Avanzada',
     'topic': 'Mensajería',
     'subtopic': 'Kafka',
     'definition': '''
@@ -1745,7 +1745,7 @@ for mensaje in consumidor:
     'language': 'Python',
     'module': 'Sr',
     'level': 4,
-    'title_level': 'Arquitectura Avanzada',
+    'tittle_level': 'Arquitectura Avanzada',
     'topic': 'Mensajería',
     'subtopic': 'Celery',
     'definition': '''
@@ -1788,7 +1788,7 @@ Future<void> insertPythonSrLevel5Data(Database db) async {
     'language': 'Python',
     'module': 'Sr',
     'level': 5,
-    'title_level': 'DevOps para Python',
+    'tittle_level': 'DevOps para Python',
     'topic': 'CI/CD',
     'subtopic': 'GitHub Actions',
     'definition': '''
@@ -1840,7 +1840,7 @@ jobs:
     'language': 'Python',
     'module': 'Sr',
     'level': 5,
-    'title_level': 'DevOps para Python',
+    'tittle_level': 'DevOps para Python',
     'topic': 'CI/CD',
     'subtopic': 'Dockerización',
     'definition': '''
@@ -1899,7 +1899,7 @@ CMD ["python", "app.py"]
     'language': 'Python',
     'module': 'Sr',
     'level': 5,
-    'title_level': 'DevOps para Python',
+    'tittle_level': 'DevOps para Python',
     'topic': 'CI/CD',
     'subtopic': 'Testing en CI',
     'definition': '''
@@ -1994,7 +1994,7 @@ jobs:
     'language': 'Python',
     'module': 'Sr',
     'level': 5,
-    'title_level': 'DevOps para Python',
+    'tittle_level': 'DevOps para Python',
     'topic': 'Cloud',
     'subtopic': 'AWS Lambda',
     'definition': '''
@@ -2032,7 +2032,7 @@ def lambda_handler(event, context):
     'language': 'Python',
     'module': 'Sr',
     'level': 5,
-    'title_level': 'DevOps para Python',
+    'tittle_level': 'DevOps para Python',
     'topic': 'Cloud',
     'subtopic': 'Google Cloud Functions',
     'definition': '''
@@ -2069,7 +2069,7 @@ def hola_mundo(request):
     'language': 'Python',
     'module': 'Sr',
     'level': 5,
-    'title_level': 'DevOps para Python',
+    'tittle_level': 'DevOps para Python',
     'topic': 'Cloud',
     'subtopic': 'Azure Functions',
     'definition': '''
@@ -2111,7 +2111,7 @@ Future<void> insertPythonSrLevel6Data(Database db) async {
     'language': 'Python',
     'module': 'Sr',
     'level': 6,
-    'title_level': 'Tópicos Avanzados',
+    'tittle_level': 'Tópicos Avanzados',
     'topic': 'Data Science',
     'subtopic': 'NumPy básico',
     'definition': '''
@@ -2189,7 +2189,7 @@ print(f"Slice de arr2d (columnas 1 y 2):\\n{slice_arr2d}")
     'language': 'Python',
     'module': 'Sr',
     'level': 6,
-    'title_level': 'Tópicos Avanzados',
+    'tittle_level': 'Tópicos Avanzados',
     'topic': 'Data Science',
     'subtopic': 'Pandas básico',
     'definition': '''
@@ -2276,7 +2276,7 @@ except KeyError as e:
     'language': 'Python',
     'module': 'Sr',
     'level': 6,
-    'title_level': 'Tópicos Avanzados',
+    'tittle_level': 'Tópicos Avanzados',
     'topic': 'Data Science',
     'subtopic': 'Visualización básica (Matplotlib)',
     'definition': '''
@@ -2351,7 +2351,7 @@ plt.show()
     'language': 'Python',
     'module': 'Sr',
     'level': 6,
-    'title_level': 'Tópicos Avanzados',
+    'tittle_level': 'Tópicos Avanzados',
     'topic': 'Machine Learning',
     'subtopic': 'scikit-learn básico',
     'definition': '''
@@ -2404,7 +2404,7 @@ print(f'Precisión del modelo: {precision:.2f}')
     'language': 'Python',
     'module': 'Sr',
     'level': 6,
-    'title_level': 'Tópicos Avanzados',
+    'tittle_level': 'Tópicos Avanzados',
     'topic': 'Machine Learning',
     'subtopic': 'Entrenamiento de modelos',
     'definition': '''
@@ -2444,7 +2444,7 @@ print(f'Intercepción: {modelo.intercept_:.2f}')
     'language': 'Python',
     'module': 'Sr',
     'level': 6,
-    'title_level': 'Tópicos Avanzados',
+    'tittle_level': 'Tópicos Avanzados',
     'topic': 'Machine Learning',
     'subtopic': 'Evaluación',
     'definition': '''
@@ -2492,7 +2492,7 @@ print(classification_report(y_test, y_pred))
     'language': 'Python',
     'module': 'Sr',
     'level': 6,
-    'title_level': 'Tópicos Avanzados',
+    'tittle_level': 'Tópicos Avanzados',
     'topic': 'Web Scraping',
     'subtopic': 'BeautifulSoup',
     'definition': '''
@@ -2555,7 +2555,7 @@ else:
     'language': 'Python',
     'module': 'Sr',
     'level': 6,
-    'title_level': 'Tópicos Avanzados',
+    'tittle_level': 'Tópicos Avanzados',
     'topic': 'Web Scraping',
     'subtopic': 'Scrapy',
     'definition': '''
@@ -2619,7 +2619,7 @@ class QuotesSpider(scrapy.Spider):
     'language': 'Python',
     'module': 'Sr',
     'level': 6,
-    'title_level': 'Tópicos Avanzados',
+    'tittle_level': 'Tópicos Avanzados',
     'topic': 'Web Scraping',
     'subtopic': 'APIs REST',
     'definition': '''

@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rutacode/features/detail/data/models/detail_model.dart';
 import 'package:rutacode/features/progress/presentation/state/provider/progress_use_cases_provider.dart';
-import 'package:rutacode/features/list_items/data/model/topic_model.dart';
 import 'package:rutacode/features/list_items/presentation/screens/list_items_screen.dart';
 import 'package:rutacode/features/list_items/presentation/state/provider/get_topic_use_case_provider.dart';
 
 class ItemTopicWidget extends ConsumerWidget {
-  final TopicModel topic;
+  final DetailContentModel detailContent;
   final String module;
 
   const ItemTopicWidget({
     super.key,
-    required this.topic,
+    required this.detailContent,
     required this.module,
   });
 
@@ -24,7 +24,7 @@ class ItemTopicWidget extends ConsumerWidget {
       'Sr' => ref.watch(srCompletedTopicsProvider),
       _ => throw Exception('Módulo no válido'),
     };
-    final isCompleted = completedTopics.contains(topic.id);
+    final isCompleted = completedTopics.contains(detailContent.topic);
 
     return Padding(
       padding: const EdgeInsets.only(top: 8),
@@ -34,19 +34,20 @@ class ItemTopicWidget extends ConsumerWidget {
           ref.read(topicTitleProvider.notifier).state = topic.title!;
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const SubtopicScreen()),
+            MaterialPageRoute(builder: (context) => const SubtopicPage()),
           );
         }, */
         onTap: () {
-          ref.read(topicIdProvider.notifier).state = topic.id!;
-          ref.read(topicTitleProvider.notifier).state = topic.title!;
+          ref.read(titleTopicProvider.notifier).state =
+              detailContent.topic as String;
+          ref.read(titleTopicProvider.notifier).state = detailContent.topic!;
           ref.read(currentPageProvider.notifier).state = 1;
         },
         child: Container(
           height: 50,
           width: 400,
           decoration: BoxDecoration(
-            color: isCompleted ? Colors.green : const Color(0xFF2962FF),
+            color: isCompleted ? Colors.green : Colors.grey,
             borderRadius: BorderRadius.circular(25),
           ),
           child: Padding(
@@ -54,7 +55,7 @@ class ItemTopicWidget extends ConsumerWidget {
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                topic.title!,
+                detailContent.topic!,
                 style: const TextStyle(
                     color: Colors.white, fontFamily: 'Poppins', fontSize: 12),
               ),

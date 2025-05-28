@@ -1,4 +1,4 @@
-import 'package:rutacode/features/list_items/data/model/topic_model.dart';
+import 'package:rutacode/features/detail/data/models/detail_model.dart';
 import 'package:rutacode/features/list_items/domain/repositories/topic_repository.dart';
 
 class GetTopicUseCase {
@@ -6,7 +6,8 @@ class GetTopicUseCase {
 
   GetTopicUseCase(this.repository);
 
-  Future<List<TopicModel>> call(int levelId, String module) async {
-    return repository.getTopics(levelId, module);
+  Future<List<DetailContentModel>> call(
+      String language, String module, int level) async {
+    return repository.getTopicsByLevel(language, module, level);
   }
 }

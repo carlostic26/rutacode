@@ -13,7 +13,7 @@ class DefinitionDetailWidget extends ConsumerStatefulWidget {
   });
 
   final double heightScreen;
-  final DetailModel detail;
+  final DetailContentModel detail;
 
   @override
   ConsumerState<DefinitionDetailWidget> createState() =>
@@ -33,6 +33,18 @@ class _DefinitionDetailWidgetState
     return ListView(
       shrinkWrap: true,
       children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+          child: Text(
+            widget.detail.subtopic.toString(),
+            style: const TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+              fontFamily: 'Poppins',
+              fontSize: 18,
+            ),
+          ),
+        ),
         Consumer(
           builder: (context, ref, child) {
             final imageUrl = ref.watch(randomImageProvider);

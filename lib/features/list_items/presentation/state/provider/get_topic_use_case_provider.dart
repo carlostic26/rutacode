@@ -11,9 +11,6 @@ final topicRepositoryProvider = Provider<TopicRepository>((ref) {
 // Proveedor del titulo de topic seleccionado
 final titleTopicProvider = StateProvider<String>((ref) => '');
 
-final topicIdProvider = StateProvider<String>((ref) => '');
-final topicTitleProvider = StateProvider<String>((ref) => '');
-
 final getTopicUseCaseProvider = Provider<GetTopicUseCase>((ref) {
   final repository = ref.read(topicRepositoryProvider);
   return GetTopicUseCase(repository);

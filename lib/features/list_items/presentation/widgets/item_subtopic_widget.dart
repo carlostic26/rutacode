@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rutacode/features/detail/data/models/detail_model.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
 import 'package:rutacode/features/list_items/presentation/screens/list_items_screen.dart';
 import 'package:rutacode/features/progress/presentation/state/provider/progress_use_cases_provider.dart';
-import 'package:rutacode/features/list_items/data/model/subtopic_model.dart';
 import 'package:rutacode/features/list_items/presentation/state/provider/get_subtopic_use_case_provider.dart';
 
 class ItemSubtopicWidget extends ConsumerWidget {
-  final SubtopicModel subtopic;
+  final DetailContentModel detailContent;
   final int index;
 
   const ItemSubtopicWidget({
     super.key,
-    required this.subtopic,
+    required this.detailContent,
     required this.index,
   });
 
@@ -29,27 +29,28 @@ class ItemSubtopicWidget extends ConsumerWidget {
       _ => throw Exception('Módulo no válido'),
     };
 
-    final isCompleted = completedSubtopics.contains(subtopic.id);
+    final isCompleted = completedSubtopics.contains(detailContent.subtopic);
     return Padding(
       padding: const EdgeInsets.only(top: 8),
       child: GestureDetector(
         onTap: () {
           // Navegar a la pantalla de detalles
-          ref.read(subtopicIdProvider.notifier).state = subtopic.id!;
-          ref.read(titleSubtopicProvider.notifier).state = subtopic.title!;
+          //    ref.read(subtopicIdProvider.notifier).state = detailContent.id!;
+          ref.read(subtopicTitleProvider.notifier).state =
+              detailContent.subtopic!;
 /*           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => const DetailScreen()),
+            MaterialPageRoute(builder: (context) => const DetailPage()),
           ); */
 
-          // En algún lugar donde navegas a DetailScreen:
+          // En algún lugar donde navegas a DetailPage:
           ref.read(currentPageProvider.notifier).state = 2;
         },
         child: Container(
           height: 50,
           width: 400,
           decoration: BoxDecoration(
-            color: isCompleted ? Colors.green : const Color(0xFF2962FF),
+            color: isCompleted ? Colors.green : Colors.grey.shade800,
             borderRadius: BorderRadius.circular(25),
           ),
           child: Padding(
@@ -57,7 +58,7 @@ class ItemSubtopicWidget extends ConsumerWidget {
             child: Align(
               alignment: Alignment.centerLeft,
               child: Text(
-                subtopic.title!,
+                detailContent.subtopic!,
                 style: const TextStyle(
                     color: Colors.white,
                     //fontWeight: FontWeight.bold,

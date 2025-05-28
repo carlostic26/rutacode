@@ -21,9 +21,11 @@ class CompletedLevelsNotifier extends StateNotifier<List<int>> {
   }
 
   // Verificar y actualizar si un nivel está completado
-  Future<void> checkAndUpdateLevelCompletion(int levelId, String module) async {
+  Future<void> checkAndUpdateLevelCompletion(String language, String module,
+      int levelId, String topic, String subtopic) async {
     // Verificar si todos los topics del nivel están completados
-    final isCompleted = await _repository.isLevelCompleted(module, levelId);
+    final isCompleted = await _repository.isLevelCompleted(
+        language, module, levelId, topic, subtopic);
 
     // Actualizar el estado solo si es necesario
     if (isCompleted && !state.contains(levelId)) {

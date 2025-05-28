@@ -9,13 +9,14 @@ class CreateProgressBySubtopicUseCase {
 
   CreateProgressBySubtopicUseCase(this._progressRepository);
 
-  Future<void> call(String module, int levelId, String topicId,
+  Future<void> call(String language, String module, int levelId, String topicId,
       String subtopicId, int score) async {
     await _progressRepository.createProgressBySubtopic(
+        language: language,
         module: module,
         levelId: levelId,
-        topicId: topicId,
-        subtopicId: subtopicId,
+        topic: topicId,
+        subtopic: subtopicId,
         score: score);
   }
 }

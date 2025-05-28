@@ -1,4 +1,4 @@
-import 'package:rutacode/common/feature/content/data/datasources/old_database_helper.dart';
+import 'package:rutacode/common/feature/content/data/datasources/db_helper.dart';
 import 'package:rutacode/features/progress/data/datasources/progress_local_database.dart';
 import 'package:rutacode/features/progress/data/model/progress_model.dart';
 import 'package:rutacode/features/progress/domain/repositories/progress_repository.dart';
@@ -8,11 +8,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
 
 class ProgressRepositoryImpl implements ProgressRepository {
-  final ProgressLocalDatabaseHelper _dbHelper = ProgressLocalDatabaseHelper();
+  final ProgressLocalContentDatabaseHelper _dbHelper =
+      ProgressLocalContentDatabaseHelper();
   final SubtopicRepository _subtopicRepository;
   final TopicRepository _topicRepository;
 
-  final LocalDatabaseHelper _localDbHelper = LocalDatabaseHelper();
+  final LocalContentDatabaseHelper _localDbHelper =
+      LocalContentDatabaseHelper();
 
   // Constructor que inicializa _subtopicRepository
   ProgressRepositoryImpl(this._subtopicRepository, this._topicRepository);
@@ -20,7 +22,8 @@ class ProgressRepositoryImpl implements ProgressRepository {
   Future<Database> get progressLocalDatabase async =>
       await _dbHelper.getDatabase();
 
-  final LocalDatabaseHelper _subtopicDbHelper = LocalDatabaseHelper();
+  final LocalContentDatabaseHelper _subtopicDbHelper =
+      LocalContentDatabaseHelper();
   Future<Database> get subtopicLocalDatabase async =>
       await _subtopicDbHelper.getDatabase();
 
@@ -29,20 +32,22 @@ class ProgressRepositoryImpl implements ProgressRepository {
 
   @override
   Future<void> createProgressBySubtopic({
+    required String language,
     required String module,
     required int levelId,
-    required String topicId,
-    required String subtopicId,
+    required String topic,
+    required String subtopic,
     required int score,
   }) async {
     final db = await progressLocalDatabase;
     await db.insert(
       'progress',
       {
+        'language': language,
         'module': module,
         'level_id': levelId,
-        'topic_id': topicId,
-        'subtopic_id': subtopicId,
+        'topic': topic,
+        'subtopic': subtopic,
         'score': score,
       },
     );
@@ -73,6 +78,20 @@ class ProgressRepositoryImpl implements ProgressRepository {
     );
 
     return result.map((map) => map['level_id'] as int).toList();
+  }
+
+  @override
+  Future<List<ProgressModel>> getAllProgressByLanguage(String language) async {
+    final db = await progressLocalDatabase;
+    final maps = await db.query(
+      'progress',
+      where: 'language = ?',
+      whereArgs: [language],
+    );
+
+    return List.generate(maps.length, (i) {
+      return ProgressModel.fromMap(maps[i]);
+    });
   }
 
   @override
@@ -125,14 +144,16 @@ class ProgressRepositoryImpl implements ProgressRepository {
   }
 
   @override
-  Future<bool> isTopicCompleted(
-      String module, int levelId, String topicId) async {
+  Future<bool> isTopicCompleted(String language, String module, int level,
+      String topic, String subtopicTitle) async {
     // Obtener todos los subtopics del topic
-    final subtopics = await _subtopicRepository.getSubtopics(topicId, module);
+    final subtopics = await _subtopicRepository.getSubtopicsByTopic(
+        language, module, level, topic);
 
     // Verificar si todos los subtopics están completados
     for (final subtopic in subtopics) {
-      final isCompleted = await isSubtopicCompleted(module, subtopic.id!);
+      final isCompleted = await isSubtopicCompleted(
+          language, module, level, topic, subtopicTitle);
       if (!isCompleted) {
         return false; // Si algún subtopic no está completado, el topic no está completado
       }
@@ -140,7 +161,8 @@ class ProgressRepositoryImpl implements ProgressRepository {
 
     //print("Verificando subtopics del topic $topicId");
     for (final subtopic in subtopics) {
-      final isCompleted = await isSubtopicCompleted(module, subtopic.id!);
+      final isCompleted = await isSubtopicCompleted(
+          language, module, level, topic, subtopicTitle);
       //print("En impl, Subtopic ${subtopic.id}: ¿Completado? $isCompleted");
     }
 
@@ -148,12 +170,14 @@ class ProgressRepositoryImpl implements ProgressRepository {
   }
 
   @override
-  Future<bool> isSubtopicCompleted(String module, String subtopicId) async {
+  Future<bool> isSubtopicCompleted(String language, String module, int level,
+      String topic, String subtopic) async {
     final db = await progressLocalDatabase;
     final result = await db.query(
       'progress',
-      where: 'module = ? AND subtopic_id = ?',
-      whereArgs: [module, subtopicId],
+      where:
+          'language = ? AND module = ? AND level_id = ? AND topic = ? AND subtopic = ?',
+      whereArgs: [language, module, level, topic, subtopic],
     );
     return result.isNotEmpty;
   }
@@ -163,31 +187,24 @@ class ProgressRepositoryImpl implements ProgressRepository {
     final db = await progressLocalDatabase;
     final result = await db.query(
       'progress',
-      columns: ['subtopic_id'],
+      columns: ['subtopic'],
       where: 'module = ?',
       whereArgs: [module],
       distinct: true,
     );
-    return result.map((map) => map['subtopic_id'] as String).toList();
+    return result.map((map) => map['subtopic'] as String).toList();
   }
 
-/*     @override
-  Future<List<String>> getAllCompletedTopics() async {
-    final db = await progressLocalDatabase;
-    final result = await db.query('progress', columns: ['topic_id']);
-    return result.map((map) => map['topic_id'] as String).toList();
-  }
- */
   @override
   Future<List<String>> getAllCompletedTopics(String module) async {
     final db = await progressLocalDatabase;
     final result = await db.query(
       'progress',
-      columns: ['topic_id'],
+      columns: ['topic'],
       where: 'module = ?',
       whereArgs: [module],
     );
-    return result.map((map) => map['topic_id'] as String).toList();
+    return result.map((map) => map['topic'] as String).toList();
   }
 
   //---- Score
@@ -245,13 +262,16 @@ class ProgressRepositoryImpl implements ProgressRepository {
   }
 
   @override
-  Future<bool> isLevelCompleted(String module, int levelId) async {
+  Future<bool> isLevelCompleted(String language, String module, int level,
+      String topicTitle, subtopic) async {
     // Obtener todos los topics del nivel
-    final topics = await _topicRepository.getTopics(levelId, module);
+    final topics =
+        await _topicRepository.getTopicsByLevel(language, module, level);
 
     // Verificar si todos los topics están completados
     for (final topic in topics) {
-      final isCompleted = await isTopicCompleted(module, levelId, topic.id!);
+      final isCompleted =
+          await isTopicCompleted(language, module, level, topicTitle, subtopic);
       if (!isCompleted) {
         return false; // Si algún topic no está completado, el nivel no está completado
       }
@@ -266,7 +286,7 @@ class ProgressRepositoryImpl implements ProgressRepository {
   Future<int> countAllSubtopicsByModule(String module) async {
     final db = await _localDatabase;
     final result = await db.rawQuery(
-      'SELECT COUNT(*) as total FROM subtopic WHERE module = ?',
+      'SELECT COUNT(*) as total FROM programming_content WHERE module = ?',
       [module],
     );
     return result.first['total'] as int;
@@ -316,9 +336,9 @@ class ProgressRepositoryImpl implements ProgressRepository {
     // Contar el número total de subtopics en el nivel
     final result = await db.rawQuery('''
     SELECT COUNT(*) as count
-    FROM subtopic
-    JOIN topic ON subtopic.topic_id = topic.id AND subtopic.module = topic.module
-    WHERE topic.level_id = ? AND subtopic.module = ?
+    FROM programming_content 
+    JOIN topic ON programming_content.topic = topic AND programming_content.module = programming_content.module
+    WHERE programming_content.level_id = ? AND programming_content.module = ?
   ''', [level, module]);
 
     return result.first['count'] as int;
@@ -347,6 +367,28 @@ class ProgressRepositoryImpl implements ProgressRepository {
     if (maxScore == 0) return 0;
     final userScore = await getUTotalScoreProgressByModule(module);
     return (userScore / maxScore) * 100;
+  }
+
+  @override
+  Future<int> getUserTotalScoreByLanguage(String language) async {
+    final db = await progressLocalDatabase;
+
+    try {
+      // Consultar la suma de los puntajes para el módulo
+      final result = await db.rawQuery(
+        'SELECT SUM(score) as totalScore FROM progress WHERE module = ?',
+        [language],
+      );
+
+      // Si no hay registros, devolver 0
+      return result.first['totalScore'] != null
+          ? result.first['totalScore'] as int
+          : 0;
+    } catch (e) {
+      //print('Error al obtener el puntaje acumulado: $e');
+      throw Exception(
+          'Error al obtener el puntaje acumulado para el módulo $language');
+    }
   }
 
   @override

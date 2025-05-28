@@ -1,4 +1,4 @@
-class Level {
+/* class Level {
   final int? id;
   final String? module;
   final int? order;
@@ -16,3 +16,4 @@ class Level {
       this.points,
       this.isCompleted});
 }
+ */

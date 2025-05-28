@@ -19,23 +19,23 @@ class HomeModuleScreen extends ConsumerStatefulWidget {
 }
 
 class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
+  late final AdBannerStateHome adState; // Guardamos el estado
+
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      ref
-          .read(adBannerProviderHome.notifier)
-          .loadAdaptiveAd(context, screenId: 'home');
-    });
+  void initState() {
+    super.initState();
+    adState = ref.read(adBannerProviderHome);
   }
 
   @override
   void dispose() {
-    // Solo disponer si estamos en esta pantalla
-    if (ref.read(adBannerProviderHome).currentScreen == 'home') {
-      ref.read(adBannerProviderHome.notifier).disposeCurrentAd();
-    }
     super.dispose();
+    // Usamos la referencia guardada en lugar de ref.read
+    if (mounted) {
+      if (adState.currentScreen == 'home') {
+        ref.read(adBannerProviderHome.notifier).disposeCurrentAd();
+      }
+    }
   }
 
   @override
@@ -43,7 +43,9 @@ class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
     final pageController = ref.watch(pageControllerProvider);
     final currentIndex = ref.watch(pageIndexProvider);
     final adState = ref.watch(adBannerProviderHome);
+
     final actualLanguage = ref.watch(actualLanguageProvider);
+    final actualModule = ref.watch(actualModuleProvider);
 
     // Define los AppBars para cada pantalla
     final List<PreferredSizeWidget> appBars = [
@@ -63,7 +65,7 @@ class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
       ),
       AppBar(
         title: Text(
-          'Ruta ${ref.watch(actualModuleProvider)} de $actualLanguage',
+          'Ruta $actualModule de $actualLanguage',
           style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
         ),
         centerTitle: true,
@@ -79,12 +81,12 @@ class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
           IconButton(
             icon: const Icon(Icons.emoji_events),
             onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ProgressScoreScreen(),
-                ),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => const ProgressScoreScreen(),
+              //   ),
+              // );
             },
           ),
         ],
@@ -105,7 +107,7 @@ class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
           ref.read(pageIndexProvider.notifier).state = index;
         },
         children: const [
-          _HomeContent(),
+          _ModulesContent(),
           PathLevelWidget(),
         ],
       ),
@@ -131,8 +133,8 @@ class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
   }
 }
 
-class _HomeContent extends ConsumerWidget {
-  const _HomeContent();
+class _ModulesContent extends ConsumerWidget {
+  const _ModulesContent();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

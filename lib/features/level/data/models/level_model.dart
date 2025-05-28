@@ -1,4 +1,4 @@
-import 'package:rutacode/features/level/domain/entities/level.dart';
+/* import 'package:rutacode/features/level/domain/entities/level.dart';
 
 class LevelModel extends Level {
   LevelModel(
@@ -58,3 +58,4 @@ class LevelModel extends Level {
     );
   }
 }
+ */

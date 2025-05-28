@@ -3,6 +3,7 @@ import 'package:rutacode/features/progress/domain/entities/progress_entity.dart'
 class ProgressModel extends ProgressEntity {
   ProgressModel(
       {required super.id,
+      required super.language,
       required super.module,
       required super.levelId,
       required super.topicId,
@@ -12,6 +13,7 @@ class ProgressModel extends ProgressEntity {
   factory ProgressModel.fromMap(Map<String, dynamic> map) {
     return ProgressModel(
       id: map['id'] ?? '',
+      language: map['language'] ?? '',
       module: map['module'] ?? '',
       levelId: map['level_id'] ?? '',
       topicId: map['topic_id'] ?? '',
@@ -23,6 +25,7 @@ class ProgressModel extends ProgressEntity {
   Map<String, dynamic> toMap() {
     return {
       'id': id,
+      'language': language,
       'module': module,
       'level_id': levelId,
       'topic_id': topicId,
@@ -33,6 +36,7 @@ class ProgressModel extends ProgressEntity {
 
   ProgressModel copyWith({
     int? id,
+    String? language,
     String? module,
     int? levelId,
     String? topicId,
@@ -41,6 +45,7 @@ class ProgressModel extends ProgressEntity {
   }) {
     return ProgressModel(
       id: id ?? this.id,
+      language: language ?? this.language,
       module: module ?? this.module,
       levelId: levelId ?? this.levelId,
       topicId: topicId ?? this.topicId,

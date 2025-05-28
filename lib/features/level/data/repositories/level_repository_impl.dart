@@ -1,43 +1,49 @@
-import 'package:rutacode/common/feature/content/data/datasources/old_database_helper.dart';
-import 'package:rutacode/features/level/data/models/level_model.dart';
+import 'package:rutacode/common/feature/content/data/datasources/db_helper.dart';
+import 'package:rutacode/features/detail/data/models/detail_model.dart';
 import 'package:rutacode/features/level/domain/repositories/level_repository.dart';
 import 'package:sqflite/sqflite.dart';
 
 class LevelRepositoryImpl implements LevelRepository {
-  final LocalDatabaseHelper _dbHelper = LocalDatabaseHelper();
+  final LocalContentDatabaseHelper _dbHelper = LocalContentDatabaseHelper();
 
   Future<Database> get _database async => await _dbHelper.getDatabase();
 
   @override
-  Future<List<LevelModel>> getLevel(String module) async {
+  Future<List<DetailContentModel>> getLevelByModule(
+      String language, String module) async {
     final db = await _database;
-    final maps = await db.query(
-      'level',
-      where: 'module = ?',
-      whereArgs: [module],
-    );
+
+    final maps = await db.rawQuery('''
+      SELECT MIN(id) as id, language, module, level, tittle_level, topic, subtopic, definition, code_example
+      FROM programming_content
+      WHERE language = ? AND module = ?
+      GROUP BY level
+      ORDER BY level ASC
+    ''', [language, module]);
 
     return List.generate(maps.length, (i) {
-      return LevelModel(
+      return DetailContentModel(
         id: maps[i]['id'] as int,
+        language: maps[i]['language'] as String,
         module: maps[i]['module'] as String,
-        order: maps[i]['num_order'] as int,
-        title: maps[i]['title'] as String,
-        description: maps[i]['description'] as String,
-        points: maps[i]['points'] as int,
-        isCompleted: maps[i]['isCompleted'] == 1,
+        level: maps[i]['level'] as int,
+        titleLevel: maps[i]['tittle_level'] as String,
+        topic: maps[i]['topic'] as String,
+        subtopic: maps[i]['subtopic'] as String,
+        definition: maps[i]['definition'] as String,
+        codeExample: maps[i]['code_example'] as String,
       );
     });
   }
 
-  // Método para contar los niveles de un módulo
+// Método para contar los niveles (registros) de un módulo en un lenguaje específico
   @override
-  Future<int> countLevelsByModule(String module) async {
+  Future<int> countLevelsByModule(String language, String module) async {
     final db = await _database;
     final count = Sqflite.firstIntValue(
       await db.rawQuery(
-        'SELECT COUNT(*) FROM level WHERE module = ?',
-        [module],
+        'SELECT COUNT(*) FROM programming_content WHERE language = ? AND module = ?',
+        [language, module],
       ),
     );
     return count ?? 0;

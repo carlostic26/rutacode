@@ -24,14 +24,14 @@ class HomeDrawer extends StatelessWidget {
         children: [
           DrawerHeader(
             decoration: const BoxDecoration(
-              color: Color(0xFF2962FF),
+              color: Colors.indigo,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Image.asset(
-                  'assets/icons/logo.jpg',
+                  'assets/images/logo.jpg',
                   height: heightScreen * 0.08,
                   width: widthScreen * 0.18,
                 ),
@@ -65,11 +65,11 @@ class HomeDrawer extends StatelessWidget {
             leading: const Icon(Icons.emoji_events),
             title: const Text('Mis puntajes'),
             onTap: () {
-              Navigator.push(
+              /*      Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) => const ProgressScoreScreen()),
-              );
+              ); */
             },
           ),
           ListTile(
