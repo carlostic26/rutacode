@@ -26,7 +26,6 @@ class InsertCppData {
     await insertMidLevel2DataCpp(db);
     await insertMidLevel3DataCpp(db);
     //await insertMidLevel4DataCpp(db);
-    //await insertMidLevel5DataCpp(db);
   }
 
   static Future<void> _insertCppSrLevelData(Database db) async {
