@@ -41,9 +41,9 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
 
     // Configuración de colores por módulo
     final moduleColors = {
-      'Jr': Colors.blue,
-      'Mid': Colors.orange,
-      'Sr': Colors.green,
+      'Jr': Colors.indigo,
+      'Mid': Colors.deepPurple,
+      'Sr': Colors.cyan.shade900,
     };
     final moduleBaseColor = moduleColors[actualModule] ?? Colors.green;
     const rutaColorLineDefault = Colors.grey;
