@@ -74,7 +74,7 @@ class LoadingScreen extends ConsumerWidget {
                 },
                 style: ButtonStyle(
                   backgroundColor: btnEnabled
-                      ? WidgetStateProperty.all<Color>(Colors.blueGrey)
+                      ? WidgetStateProperty.all<Color>(Colors.indigo)
                       : WidgetStateProperty.all<Color>(
                           const Color.fromARGB(108, 57, 57, 57)),
                 ),

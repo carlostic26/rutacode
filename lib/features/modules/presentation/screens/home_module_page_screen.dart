@@ -107,7 +107,7 @@ class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
           ref.read(pageIndexProvider.notifier).state = index;
         },
         children: const [
-          _HomeContent(),
+          _ModulesContent(),
           PathLevelWidget(),
         ],
       ),
@@ -133,8 +133,8 @@ class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
   }
 }
 
-class _HomeContent extends ConsumerWidget {
-  const _HomeContent();
+class _ModulesContent extends ConsumerWidget {
+  const _ModulesContent();
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

@@ -33,6 +33,7 @@ class ModuleWidget extends ConsumerWidget {
             title: 'Módulo Junior',
             imagePath: 'assets/images/jr_icon.png',
             isEnabled: true,
+            color: Colors.indigo,
           ),
           const SizedBox(height: 45),
           jrModuleStatus.when(
@@ -45,13 +46,13 @@ class ModuleWidget extends ConsumerWidget {
               imagePath: 'assets/images/mid_icon.png',
             ),
             data: (isJrCompleted) => _buildModuleCard(
-              context: context,
-              ref: ref,
-              module: 'Mid',
-              title: 'Módulo Middle',
-              imagePath: 'assets/images/mid_icon.png',
-              isEnabled: true,
-            ),
+                context: context,
+                ref: ref,
+                module: 'Mid',
+                title: 'Módulo Middle',
+                imagePath: 'assets/images/mid_icon.png',
+                isEnabled: true,
+                color: Colors.deepPurple),
           ),
           const SizedBox(height: 45),
           middleModuleStatus.when(
@@ -64,13 +65,13 @@ class ModuleWidget extends ConsumerWidget {
               imagePath: 'assets/images/sir_icon.png',
             ),
             data: (isMiddleCompleted) => _buildModuleCard(
-              context: context,
-              ref: ref,
-              module: 'Sr',
-              title: 'Módulo Senior',
-              imagePath: 'assets/images/sir_icon.png',
-              isEnabled: true,
-            ),
+                context: context,
+                ref: ref,
+                module: 'Sr',
+                title: 'Módulo Senior',
+                imagePath: 'assets/images/sir_icon.png',
+                isEnabled: true,
+                color: Colors.cyan.shade900),
           ),
         ],
       ),
@@ -84,6 +85,7 @@ class ModuleWidget extends ConsumerWidget {
     required String title,
     required String imagePath,
     required bool isEnabled,
+    required Color color,
   }) {
     return Column(
       children: [
@@ -107,7 +109,7 @@ class ModuleWidget extends ConsumerWidget {
             width: widthScreen * 0.3,
             height: heightScreen * 0.15,
             decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 255, 254, 226),
+              color: color,
               borderRadius: BorderRadius.circular(25),
               image: DecorationImage(
                 scale: 0.5,

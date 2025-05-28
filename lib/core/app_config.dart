@@ -1,4 +1,4 @@
 class AppConfig {
-  String nameApp = 'rutacode';
+  String nameApp = 'RutaCode';
   String versionApp = '1.0.0';
 }
