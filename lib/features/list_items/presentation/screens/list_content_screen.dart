@@ -7,19 +7,18 @@ import 'package:rutacode/features/detail/presentation/widgets/appbar_detail_widg
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
 import 'package:rutacode/features/list_items/presentation/screens/topic_page.dart';
 import 'package:rutacode/features/list_items/presentation/screens/subtopic_page.dart';
+import 'package:rutacode/features/list_items/presentation/state/current_page_provider.dart';
 import 'package:rutacode/features/list_items/presentation/state/provider/get_subtopic_use_case_provider.dart';
 import 'package:rutacode/features/list_items/presentation/state/provider/get_topic_use_case_provider.dart';
 
-final currentPageProvider = StateProvider<int>((ref) => 0);
-
-class ListItemsScreen extends ConsumerStatefulWidget {
-  const ListItemsScreen({super.key});
+class ListContentScreen extends ConsumerStatefulWidget {
+  const ListContentScreen({super.key});
 
   @override
-  ConsumerState<ListItemsScreen> createState() => _ListItemsScreenState();
+  ConsumerState<ListContentScreen> createState() => _ListContentScreenState();
 }
 
-class _ListItemsScreenState extends ConsumerState<ListItemsScreen> {
+class _ListContentScreenState extends ConsumerState<ListContentScreen> {
   late PageController _pageController;
   bool _adLoaded = false;
 
@@ -27,7 +26,7 @@ class _ListItemsScreenState extends ConsumerState<ListItemsScreen> {
   void initState() {
     super.initState();
     _pageController =
-        PageController(initialPage: ref.read(currentPageProvider));
+        PageController(initialPage: ref.read(currentContentPageProvider));
   }
 
   @override
@@ -42,14 +41,6 @@ class _ListItemsScreenState extends ConsumerState<ListItemsScreen> {
       }
     });
   }
-
-/*   @override
-  void dispose() {
-    // Forzar la disposición del banner al salir de la pantalla
-    ref.read(adBannerProviderDetail.notifier).disposeCurrentAd();
-    _pageController.dispose();
-    super.dispose();
-  } */
 
   @override
   void dispose() {
@@ -72,9 +63,10 @@ class _ListItemsScreenState extends ConsumerState<ListItemsScreen> {
     final levelTitle = ref.watch(levelTitleProvider);
     final titleTopic = ref.watch(titleTopicProvider);
     final titleSubtopic = ref.watch(subtopicTitleProvider);
+    final currentPage = ref.watch(currentContentPageProvider);
 
     // Escuchar cambios en el provider para actualizar el PageController
-    ref.listen<int>(currentPageProvider, (_, nextPage) {
+    ref.listen<int>(currentContentPageProvider, (_, nextPage) {
       if (_pageController.hasClients &&
           _pageController.page?.round() != nextPage) {
         _pageController.animateToPage(
@@ -85,24 +77,33 @@ class _ListItemsScreenState extends ConsumerState<ListItemsScreen> {
       }
     });
 
-    return Scaffold(
-      //si estoy en page 0 este es el appbar
-      appBar: _buildAppBar(ref.watch(currentPageProvider), levelTitle,
-          titleTopic, titleSubtopic, size),
-      body: PageView(
-        controller: _pageController,
-        physics: const NeverScrollableScrollPhysics(),
-        onPageChanged: (index) {
-          // Actualizar el provider cuando el usuario hace swipe manual (aunque está desactivado)
-          ref.read(currentPageProvider.notifier).state = index;
-        },
-        children: const [
-          TopicPage(),
-          SubtopicPage(),
-          DetailPage(),
-        ],
+    return PopScope(
+      canPop: currentPage == 0,
+      onPopInvoked: (didPop) {
+        if (!didPop) {
+          if (currentPage != 0) {
+            ref.read(currentContentPageProvider.notifier).state =
+                currentPage - 1;
+          }
+        }
+      },
+      child: Scaffold(
+        appBar: _buildAppBar(
+            currentPage, levelTitle, titleTopic, titleSubtopic, size),
+        body: PageView(
+          controller: _pageController,
+          physics: const NeverScrollableScrollPhysics(),
+          onPageChanged: (index) {
+            ref.read(currentContentPageProvider.notifier).state = index;
+          },
+          children: const [
+            TopicPage(),
+            SubtopicPage(),
+            DetailPage(),
+          ],
+        ),
+        bottomNavigationBar: _buildAdBanner(adState),
       ),
-      // bottomNavigationBar: _buildAdBanner(adState),
     );
   }
 
@@ -144,7 +145,7 @@ class _ListItemsScreenState extends ConsumerState<ListItemsScreen> {
           ),
           leading: IconButton(
             onPressed: () {
-              ref.read(currentPageProvider.notifier).state = 0;
+              ref.read(currentContentPageProvider.notifier).state = 0;
             },
             icon: const Icon(Icons.arrow_back_ios),
           ),
@@ -158,7 +159,7 @@ class _ListItemsScreenState extends ConsumerState<ListItemsScreen> {
           foregroundColor: Colors.white,
           leading: IconButton(
             onPressed: () {
-              ref.read(currentPageProvider.notifier).state = 1;
+              ref.read(currentContentPageProvider.notifier).state = 1;
             },
             icon: const Icon(Icons.arrow_back_ios),
           ),
