@@ -7139,7 +7139,7 @@ int main() {
 Future<void> insertMidLevel6DataCpp(Database db) async {
   await db.insert('programming_content', {
     'language': 'C++',
-    'module': 'Mid', // Module corrected as per instruction
+    'module': 'Mid',
     'level': 6,
     'title_level': 'Concurrencia y Programación Multihilo',
     'topic': 'Hilos en C++',
