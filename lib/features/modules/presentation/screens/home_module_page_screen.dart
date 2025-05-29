@@ -7,7 +7,7 @@ import 'package:rutacode/features/modules/presentation/providers/navigation_home
 import 'package:rutacode/features/modules/presentation/widgets/home_drawer_widget.dart';
 import 'package:rutacode/features/modules/presentation/widgets/module_widget.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
-import 'package:rutacode/features/level/presentation/widgets/generate_route_path_widget.dart';
+import 'package:rutacode/features/level/presentation/pages/generate_route_path_widget.dart';
 import 'package:rutacode/features/progress/presentation/screens/progres_score_screen.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 

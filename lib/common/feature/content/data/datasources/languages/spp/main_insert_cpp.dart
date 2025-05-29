@@ -1,4 +1,4 @@
-import 'package:rutacode/common/feature/content/data/datasources/cpp/insert_jr_cpp.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/spp/insert_jr_cpp.dart';
 import 'package:rutacode/common/feature/content/data/datasources/languages/spp/insert_mid_cpp.dart';
 import 'package:rutacode/common/feature/content/data/datasources/languages/spp/insert_sr_cpp.dart';
 import 'package:sqflite/sqflite.dart';

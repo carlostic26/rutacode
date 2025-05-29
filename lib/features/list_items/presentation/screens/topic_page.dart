@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rutacode/features/detail/data/models/detail_model.dart';
 import 'package:rutacode/features/languages/presentation/provider/language_providers.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
-import 'package:rutacode/features/progress/presentation/state/provider/progress_use_cases_provider.dart';
 import 'package:rutacode/features/list_items/presentation/state/provider/get_topic_use_case_provider.dart';
 import 'package:rutacode/features/list_items/presentation/widgets/item_topic_widget.dart';
 import 'package:easy_stepper/easy_stepper.dart';
@@ -14,39 +13,9 @@ class TopicPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final listTopicUseCase = ref.read(getTopicUseCaseProvider);
-
-    // variables provider para solicitud de datos
     final actualLanguage = ref.watch(actualLanguageProvider);
     final actualModule = ref.watch(actualModuleProvider);
-    final actualLevelTittle = ref.watch(levelTitleProvider);
     final actualLevelId = ref.watch(actualLevelProvider);
-    //final titleTopic = ref.watch(topicTitleProvider);
-
-    // late final int levelId;
-
-    // Handle different modules using a switch statement
-/*     switch (actualModule) {
-      case 'Jr':
-        levelId = ref.read(actualLevelProvider);
-        break;
-      case 'Mid':
-        levelId = ref.read(actualLevelProvider);
-        break;
-      case 'Sr':
-        levelId = ref.read(actualLevelProvider);
-        break;
-      default:
-        // Default logic for unknown modules
-        break;
-    } */
-
-    // Obtener los topics completados según el módulo
-    final completedTopics = switch (actualModule) {
-      'Jr' => ref.watch(jrCompletedTopicsProvider),
-      'Mid' => ref.watch(midCompletedTopicsProvider),
-      'Sr' => ref.watch(srCompletedTopicsProvider),
-      _ => throw Exception('Módulo no válido'),
-    };
 
     return FutureBuilder<List<DetailContentModel>>(
       future:
@@ -62,17 +31,13 @@ class TopicPage extends ConsumerWidget {
 
         final topicList = snapshot.data!;
 
-        final activeStep = topicList
-            .where((topic) => completedTopics.contains(topic.id.toString()))
-            .length;
-
         return Scaffold(
           body: Padding(
             padding: const EdgeInsets.fromLTRB(8, 8, 8, 8),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Stepper Vertical
+                // Stepper Vertical (mostrado pero inactivo)
                 SizedBox(
                   width: 60,
                   child: Column(
@@ -86,12 +51,13 @@ class TopicPage extends ConsumerWidget {
                           lineType: LineType.dotted,
                         ),
                         activeStepBackgroundColor: Colors.grey,
-                        finishedStepBackgroundColor: Colors.green,
+                        finishedStepBackgroundColor:
+                            Colors.grey, // Cambiado a gris
                         stepRadius: 10,
-                        activeStep: activeStep,
+                        activeStep: 0, // Siempre muestra el primer paso
                         enableStepTapping: false,
                         direction: Axis.vertical,
-                        steps: _buildSteps(topicList, completedTopics),
+                        steps: _buildSteps(topicList),
                         onStepReached: (index) {},
                       )
                     ],
@@ -120,18 +86,12 @@ class TopicPage extends ConsumerWidget {
     );
   }
 
-  List<EasyStep> _buildSteps(
-      List<DetailContentModel> topics, List<String> completedTopics) {
+  List<EasyStep> _buildSteps(List<DetailContentModel> topics) {
     return topics.map((topic) {
-      final isCompleted = completedTopics.contains(topic.id.toString());
-      return EasyStep(
-        icon: Icon(
-          Icons.check,
-          size: 20,
-          color: isCompleted ? Colors.white : Colors.grey,
-        ),
-        activeIcon: const Icon(Icons.check, size: 20, color: Colors.white),
-        finishIcon: const Icon(Icons.check, size: 20, color: Colors.white),
+      return const EasyStep(
+        icon: Icon(Icons.check, size: 20, color: Colors.grey),
+        activeIcon: Icon(Icons.check, size: 20, color: Colors.grey),
+        finishIcon: Icon(Icons.check, size: 20, color: Colors.grey),
       );
     }).toList();
   }
