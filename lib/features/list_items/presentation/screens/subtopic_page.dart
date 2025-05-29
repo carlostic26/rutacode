@@ -7,6 +7,7 @@ import 'package:rutacode/features/list_items/presentation/state/provider/get_sub
 import 'package:rutacode/features/list_items/presentation/state/provider/get_topic_use_case_provider.dart';
 import 'package:rutacode/features/list_items/presentation/widgets/item_subtopic_widget.dart';
 import 'package:easy_stepper/easy_stepper.dart';
+import 'package:rutacode/features/progress/presentation/state/provider/progress_use_cases_provider.dart';
 
 class SubtopicPage extends ConsumerWidget {
   const SubtopicPage({super.key});
@@ -39,41 +40,10 @@ class SubtopicPage extends ConsumerWidget {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                // Stepper Vertical (mostrado pero inactivo)
+                // Stepper Vertical
                 SizedBox(
                   width: 60,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      EasyStepper(
-                        alignment: Alignment.topLeft,
-                        lineStyle: const LineStyle(
-                          lineLength: 20,
-                          lineThickness: 1,
-                          lineType: LineType.dotted,
-                        ),
-                        activeStepBackgroundColor: Colors.grey,
-                        finishedStepBackgroundColor:
-                            Colors.grey, // Cambiado a gris
-                        stepRadius: 8,
-                        activeStep: 0, // Siempre muestra el primer paso
-                        enableStepTapping: false,
-                        direction: Axis.vertical,
-                        steps: List.generate(
-                          subtopicList.length,
-                          (index) => const EasyStep(
-                            icon:
-                                Icon(Icons.check, size: 20, color: Colors.grey),
-                            activeIcon:
-                                Icon(Icons.check, size: 20, color: Colors.grey),
-                            finishIcon:
-                                Icon(Icons.check, size: 20, color: Colors.grey),
-                          ),
-                        ),
-                        onStepReached: (index) {},
-                      ),
-                    ],
-                  ),
+                  child: SubtopicStepperWidget(subtopicList: subtopicList),
                 ),
                 // Lista de Subtopics
                 Expanded(
@@ -93,6 +63,106 @@ class SubtopicPage extends ConsumerWidget {
                 ),
               ],
             ),
+          ),
+        );
+      },
+    );
+  }
+}
+
+class SubtopicStepperWidget extends ConsumerWidget {
+  final List<DetailContentModel> subtopicList;
+
+  const SubtopicStepperWidget({super.key, required this.subtopicList});
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final useCase = ref.watch(progressUseCasesProvider);
+    final language = ref.watch(actualLanguageProvider);
+    final module = ref.watch(actualModuleProvider);
+    final level = ref.watch(actualLevelProvider);
+    final topic = ref.watch(titleTopicProvider);
+
+    final completionFutures = subtopicList.map((subtopic) {
+      return useCase.isSubtopicCompleted(
+        language: language,
+        module: module,
+        level: level,
+        topic: topic,
+        subtopic: subtopic.subtopic!,
+      );
+    }).toList();
+
+    return FutureBuilder<List<bool>>(
+      future: Future.wait(completionFutures),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState != ConnectionState.done) {
+          return const SizedBox(
+            width: 60,
+            child: Center(child: CircularProgressIndicator()),
+          );
+        }
+
+        final completedList =
+            snapshot.data ?? List.filled(subtopicList.length, false);
+        final allCompleted = completedList.every((completed) => completed);
+
+        // Lógica mejorada para determinar el paso activo
+        int activeStep;
+        if (allCompleted) {
+          // Si todos están completados, el último paso es el activo (pero mostrado como completado)
+          activeStep = subtopicList.length - 1;
+        } else {
+          // Buscamos el primer paso incompleto
+          activeStep = completedList.indexWhere((completed) => !completed);
+          // Si no encuentra (caso inesperado), usamos el primer paso
+          activeStep = activeStep == -1 ? 0 : activeStep;
+        }
+
+        return SizedBox(
+          width: 60,
+          child: EasyStepper(
+            alignment: Alignment.topLeft,
+            direction: Axis.vertical,
+            stepRadius: 8,
+            enableStepTapping: false,
+            activeStep: activeStep,
+            activeStepBackgroundColor:
+                allCompleted ? Colors.green : Colors.grey,
+            finishedStepBackgroundColor: Colors.green,
+            lineStyle: const LineStyle(
+              lineLength: 20,
+              lineThickness: 1,
+              lineType: LineType.dotted,
+            ),
+            steps: List.generate(
+              subtopicList.length,
+              (index) {
+                final isCompleted = completedList[index];
+                final isActive = index == activeStep;
+
+                return EasyStep(
+                  icon: Icon(
+                    isCompleted || allCompleted
+                        ? Icons.check
+                        : Icons.more_horiz,
+                    size: 20,
+                    color: Colors.white,
+                  ),
+                  activeIcon: const Icon(
+                    Icons.more_horiz,
+                    size: 20,
+                    color: Colors.white,
+                  ),
+                  finishIcon: const Icon(
+                    Icons.check,
+                    size: 20,
+                    color: Colors.white,
+                  ),
+                );
+              },
+            ),
+            onStepReached: (index) {},
           ),
         );
       },

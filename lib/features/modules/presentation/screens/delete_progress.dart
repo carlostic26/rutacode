@@ -16,7 +16,7 @@ class _DeleteProgressWidgetState extends ConsumerState<DeleteProgressWidget> {
   Future<void> _deleteProgress() async {
     setState(() => _isLoading = true);
     try {
-      await ref.read(resetServiceProvider).resetAllUserProgress();
+      //await ref.read(resetServiceProvider).resetAllUserProgress();
 
       if (!mounted) return;
 

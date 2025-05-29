@@ -7,7 +7,7 @@ import 'package:rutacode/features/list_items/domain/repositories/topic_repositor
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sqflite/sqflite.dart';
 
-class ProgressRepositoryImpl implements ProgressRepository {
+/* class ProgressRepositoryImpl implements ProgressRepository {
   final ProgressLocalContentDatabaseHelper _dbHelper =
       ProgressLocalContentDatabaseHelper();
   final SubtopicRepository _subtopicRepository;
@@ -412,27 +412,23 @@ class ProgressRepositoryImpl implements ProgressRepository {
           'Error al obtener el puntaje acumulado para el módulo $module');
     }
   }
-}
- 
+} */
 
-/* class ProgressRepositoryImpl implements ProgressRepository {
-  final ProgressLocalContentDatabaseHelper _dbHelper;
+class ProgressRepositoryImpl implements ProgressRepository {
+  final ProgressLocalContentDatabaseHelper _dbHelper =
+      ProgressLocalContentDatabaseHelper();
   final SubtopicRepository _subtopicRepository;
   final TopicRepository _topicRepository;
-  final LocalContentDatabaseHelper _contentDbHelper;
 
   ProgressRepositoryImpl({
     required ProgressLocalContentDatabaseHelper dbHelper,
     required SubtopicRepository subtopicRepository,
     required TopicRepository topicRepository,
-    required LocalContentDatabaseHelper contentDbHelper,
-  })  : _dbHelper = dbHelper,
-        _subtopicRepository = subtopicRepository,
-        _topicRepository = topicRepository,
-        _contentDbHelper = contentDbHelper;
+  })  : _subtopicRepository = subtopicRepository,
+        _topicRepository = topicRepository;
 
   @override
-  Future<void> createProgressBySubtopic({
+  Future<void> saveScoreProgressBySubtopic({
     required String language,
     required String module,
     required int levelId,
@@ -488,8 +484,8 @@ class ProgressRepositoryImpl implements ProgressRepository {
     if (subtopics.isEmpty) return false;
 
     for (final subtopic in subtopics) {
-      final isCompleted =
-          await isSubtopicCompleted(language, module, level, topic, subtopic.subtopic!);
+      final isCompleted = await isSubtopicCompleted(
+          language, module, level, topic, subtopic.subtopic!);
       if (!isCompleted) return false;
     }
 
@@ -608,7 +604,7 @@ class ProgressRepositoryImpl implements ProgressRepository {
     required String module,
     required int level,
   }) async {
-    final db = await _contentDbHelper.getDatabase();
+    final db = await _dbHelper.getDatabase();
     final result = await db.rawQuery('''
       SELECT COUNT(*) as total 
       FROM programming_content 
@@ -657,4 +653,3 @@ class ProgressRepositoryImpl implements ProgressRepository {
     return (completed / total) * 100;
   }
 }
- */

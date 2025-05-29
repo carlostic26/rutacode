@@ -1,4 +1,4 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+/* import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rutacode/features/detail/data/models/detail_model.dart';
 import 'package:rutacode/features/languages/presentation/provider/language_providers.dart';
 import 'package:rutacode/features/level/presentation/state/completed_levels_shp_provider.dart';
@@ -44,3 +44,4 @@ final middleModuleStatusProvider = FutureProvider<bool>((ref) async {
     },
   );
 });
+ */

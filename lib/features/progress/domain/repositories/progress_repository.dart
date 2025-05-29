@@ -1,6 +1,6 @@
 import 'package:rutacode/features/progress/data/model/progress_model.dart';
 
-abstract class ProgressRepository {
+/* abstract class ProgressRepository {
   Future<void> createProgressBySubtopic({
     required String language,
     required String module,
@@ -63,12 +63,11 @@ abstract class ProgressRepository {
 
   Future<double> getCircularProgressPercentageByModule(String module);
 }
- 
-/* 
+  */
 
 abstract class ProgressRepository {
   // Operaciones básicas de progreso
-  Future<void> createProgressBySubtopic({
+  Future<void> saveScoreProgressBySubtopic({
     required String language,
     required String module,
     required int levelId,
@@ -131,4 +130,3 @@ abstract class ProgressRepository {
     required int level,
   });
 }
- */

@@ -8,7 +8,7 @@ import 'package:path/path.dart';
 class LocalContentDatabaseHelper {
   final Database? testDatabase;
   Database? _database;
-  int dbVersion = 14;
+  int dbVersion = 15;
 
   LocalContentDatabaseHelper({this.testDatabase});
 

@@ -17,11 +17,11 @@ class ModuleWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final jrModuleStatus = ref.watch(jrModuleStatusProvider);
+/*     final jrModuleStatus = ref.watch(jrModuleStatusProvider);
     final middleModuleStatus = ref.watch(middleModuleStatusProvider);
 
     ref.watch(completedLevelsProvider);
-
+ */
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -36,43 +36,23 @@ class ModuleWidget extends ConsumerWidget {
             color: Colors.indigo,
           ),
           const SizedBox(height: 45),
-          jrModuleStatus.when(
-            loading: () => _buildLoadingModule(
+          _buildModuleCard(
+              context: context,
+              ref: ref,
+              module: 'Mid',
               title: 'Módulo Middle',
               imagePath: 'assets/images/mid_icon.png',
-            ),
-            error: (error, stack) => _buildErrorModule(
-              title: 'Módulo Middle',
-              imagePath: 'assets/images/mid_icon.png',
-            ),
-            data: (isJrCompleted) => _buildModuleCard(
-                context: context,
-                ref: ref,
-                module: 'Mid',
-                title: 'Módulo Middle',
-                imagePath: 'assets/images/mid_icon.png',
-                isEnabled: true,
-                color: Colors.deepPurple),
-          ),
+              isEnabled: true,
+              color: Colors.deepPurple),
           const SizedBox(height: 45),
-          middleModuleStatus.when(
-            loading: () => _buildLoadingModule(
+          _buildModuleCard(
+              context: context,
+              ref: ref,
+              module: 'Sr',
               title: 'Módulo Senior',
               imagePath: 'assets/images/sir_icon.png',
-            ),
-            error: (error, stack) => _buildErrorModule(
-              title: 'Módulo Senior',
-              imagePath: 'assets/images/sir_icon.png',
-            ),
-            data: (isMiddleCompleted) => _buildModuleCard(
-                context: context,
-                ref: ref,
-                module: 'Sr',
-                title: 'Módulo Senior',
-                imagePath: 'assets/images/sir_icon.png',
-                isEnabled: true,
-                color: Colors.cyan.shade900),
-          ),
+              isEnabled: true,
+              color: Colors.cyan.shade900),
         ],
       ),
     );
@@ -200,9 +180,7 @@ class ModuleWidget extends ConsumerWidget {
   void goToPathScreen(BuildContext context, String module, WidgetRef ref) {
     final normalizedModule = module;
     ref.read(actualModuleProvider.notifier).state = normalizedModule;
-    ref
-        .read(completedLevelsProvider.notifier)
-        .loadModuleLevels(normalizedModule);
+
     final navService = ref.read(navigationServiceProvider);
     navService.navigateTo(1);
   }

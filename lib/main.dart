@@ -60,10 +60,10 @@ void main() async {
   });
 
   runApp(ProviderScope(
-    overrides: [
+/*     overrides: [
       // Sobrescribir el SharedPreferencesProvider con la instancia de SharedPreferences
       sharedPreferencesProvider.overrideWithValue(sharedPreferences),
-    ],
+    ], */
     child: const MyApp(),
   ));
 }
