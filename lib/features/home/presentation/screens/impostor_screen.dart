@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:rutacode/features/impostor/presentation/state/body_text_impostor_provider_state.dart';
+import 'package:rutacode/features/home/presentation/widgets/body_text_impostor_provider_state.dart';
 
 class ImpostorScreen extends ConsumerWidget {
   const ImpostorScreen({super.key});

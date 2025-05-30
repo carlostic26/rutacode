@@ -6,7 +6,7 @@ import 'package:rutacode/features/detail/presentation/state/detail_sections_stat
 import 'package:rutacode/features/detail/presentation/state/provider/get_detail_use_case_provider.dart';
 import 'package:rutacode/features/detail/presentation/widgets/code_detail_widget.dart';
 import 'package:rutacode/features/detail/presentation/widgets/definition_detail_widget.dart';
-import 'package:rutacode/features/languages/presentation/provider/language_providers.dart';
+import 'package:rutacode/features/home/presentation/provider/language_providers.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
 import 'package:rutacode/features/progress/presentation/state/provider/progress_use_cases_provider.dart';
 import 'package:rutacode/features/list_items/presentation/state/provider/get_subtopic_use_case_provider.dart';

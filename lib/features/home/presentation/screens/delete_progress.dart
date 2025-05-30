@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rutacode/common/provider/reset_app_service_provider.dart';
+import 'package:rutacode/features/progress/presentation/state/provider/progress_use_cases_provider.dart';
 
 class DeleteProgressWidget extends ConsumerStatefulWidget {
   const DeleteProgressWidget({super.key});
@@ -16,9 +17,12 @@ class _DeleteProgressWidgetState extends ConsumerState<DeleteProgressWidget> {
   Future<void> _deleteProgress() async {
     setState(() => _isLoading = true);
     try {
-      //await ref.read(resetServiceProvider).resetAllUserProgress();
+      await ref.read(progressUseCasesProvider).deleteAllUserProgress();
 
       if (!mounted) return;
+
+      Navigator.of(context).pop(); // Close the dialog
+      //Navigator.of(context).pop(); // Close the drawer
 
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Progreso borrado exitosamente')),

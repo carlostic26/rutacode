@@ -1,9 +1,8 @@
-/* import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rutacode/features/home/presentation/provider/language_providers.dart';
 import 'package:rutacode/features/level/presentation/state/provider/count_levels_use_case_provider.dart';
-import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
 import 'package:rutacode/features/progress/domain/repositories/progress_repository.dart';
-import 'package:rutacode/features/progress/domain/use_cases/get_level_progress_use_case.dart';
 import 'package:rutacode/features/progress/presentation/state/provider/progress_use_cases_provider.dart';
 import 'package:rutacode/features/progress/presentation/state/start_exam_provider.dart';
 import 'package:rutacode/features/progress/presentation/widgets/circular_progress_widget.dart';
@@ -11,8 +10,11 @@ import 'package:rutacode/features/progress/presentation/widgets/score_static_wid
 
 class ScoreInfoWidget extends ConsumerWidget {
   final String module;
+  final String language;
+
   const ScoreInfoWidget({
     super.key,
+    required this.language,
     required this.module,
   });
 
@@ -22,16 +24,19 @@ class ScoreInfoWidget extends ConsumerWidget {
     final examProvider = ref.watch(examProviderSelector(module));
     final isExamStarted = ref.watch(examProvider);
 
-    final getLevelProgress = ref.read(getLevelProgressProvider);
+    final useCases = ref.watch(progressUseCasesProvider);
+
+    final getLevelProgress = useCases.getLevelProgress;
     final getCircularProgressPercentageByModuleUseCase =
-        ref.read(getCircularProgressPercentageByModuleUseCaseProvider);
-    final actualLevelIdJr = ref.watch(actualLevelIdJrProvider);
+        useCases.getCircularProgressPercentageByModule(
+            language: language, module: module);
+/*     final actualLevelIdJr = ref.watch(actualLevelIdJrProvider);
     final actualLevelIdMid = ref.watch(actualLevelIdMidProvider);
-    final actualLevelIdSr = ref.watch(actualLevelIdSrProvider);
+    final actualLevelIdSr = ref.watch(actualLevelIdSrProvider); */
     final progressRepository = ref.read(progressRepositoryProvider);
 
     return FutureBuilder<List<double>>(
-      future: _getProgressForLevels(module, getLevelProgress, ref),
+      future: _getProgressForLevels(language, module, getLevelProgress, ref),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
@@ -42,7 +47,7 @@ class ScoreInfoWidget extends ConsumerWidget {
         } else {
           final progressList = snapshot.data!;
           return FutureBuilder<double>(
-            future: getCircularProgressPercentageByModuleUseCase.call(module),
+            future: getCircularProgressPercentageByModuleUseCase,
             builder: (context, progressSnapshot) {
               if (progressSnapshot.connectionState == ConnectionState.waiting) {
                 return const Center(child: CircularProgressIndicator());
@@ -54,8 +59,8 @@ class ScoreInfoWidget extends ConsumerWidget {
               } else {
                 final progressPercentage = progressSnapshot.data!;
                 return FutureBuilder<Map<String, int>>(
-                  future:
-                      _getAccumulatedPoints(progressRepository, module, ref),
+                  future: _getAccumulatedPoints(
+                      progressRepository, language, module, ref),
                   builder: (context, pointsSnapshot) {
                     if (pointsSnapshot.connectionState ==
                         ConnectionState.waiting) {
@@ -97,7 +102,7 @@ class ScoreInfoWidget extends ConsumerWidget {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text(
+/*                                     const Text(
                                       'Nivel Actual',
                                       style: TextStyle(
                                           fontWeight: FontWeight.bold,
@@ -123,7 +128,7 @@ class ScoreInfoWidget extends ConsumerWidget {
                                                   )
                                                 : const SizedBox(
                                                     height: 10,
-                                                  ),
+                                                  ), */
                                     const Text(
                                       'Examen final:',
                                       style: TextStyle(
@@ -188,18 +193,18 @@ class ScoreInfoWidget extends ConsumerWidget {
 
 // Método para obtener el progreso de cada nivel
 Future<List<double>> _getProgressForLevels(
-    String module, GetLevelProgress getLevelProgress, WidgetRef ref) async {
+    String language, String module, getLevelProgress, WidgetRef ref) async {
   final progressList = <double>[];
 
-  // Obtener el caso de uso desde el provider
-  final countLevelsUseCase = ref.read(countLevelsUseCaseProvider);
+  final useCases = ref.read(progressUseCasesProvider);
 
   // Obtener el número de niveles del módulo
-  final numberOfLevels = await countLevelsUseCase.call(module);
+  final numberOfLevels =
+      await useCases.countLevelsByModule(language: language, module: module);
 
   // Iterar sobre los niveles y obtener el progreso
   for (int level = 1; level <= numberOfLevels; level++) {
-    final progress = await getLevelProgress.call(module, level);
+    final progress = getLevelProgress;
     progressList.add(progress);
   }
 
@@ -207,13 +212,18 @@ Future<List<double>> _getProgressForLevels(
 }
 
 Future<Map<String, int>> _getAccumulatedPoints(
-    ProgressRepository progressRepository, String module, ref) async {
-  final getUserTotalScoreByModuleUseCase =
-      ref.read(getUserTotalScoreByModuleUseCaseProvider);
+    ProgressRepository progressRepository,
+    String language,
+    String module,
+    ref) async {
+  final useCases = ref.read(progressUseCasesProvider);
 
-  final userScore = await getUserTotalScoreByModuleUseCase.call(module);
+  final userTotalScoreByModuleUseCase = useCases.getUserTotalScoreByModule();
+
+  final userScore = userTotalScoreByModuleUseCase;
+
   final totalSubtopics =
-      await progressRepository.countAllSubtopicsByModule(module);
+      await progressRepository.countAllSubtopicsByModule(language, module);
   final maxScore = totalSubtopics * 2; // Cada subtema vale 2 puntos
 
   return {
@@ -221,4 +231,3 @@ Future<Map<String, int>> _getAccumulatedPoints(
     'maxScore': maxScore,
   };
 }
- */

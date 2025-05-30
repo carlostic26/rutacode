@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:rutacode/features/languages/presentation/provider/language_providers.dart';
-import 'package:rutacode/features/languages/presentation/widgets/leanguage_card_widget.dart';
-import 'package:rutacode/features/modules/presentation/screens/home_module_page_screen.dart';
-import 'package:rutacode/features/modules/presentation/widgets/home_drawer_widget.dart';
+import 'package:rutacode/features/home/presentation/provider/language_providers.dart';
+import 'package:rutacode/features/home/presentation/widgets/leanguage_card_widget.dart';
+import 'package:rutacode/features/modules/presentation/screens/module_screen.dart';
+import 'package:rutacode/features/home/presentation/widgets/home_drawer_widget.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomeLanguageScreen extends ConsumerWidget {
@@ -53,7 +53,7 @@ class HomeLanguageScreen extends ConsumerWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const HomeModuleScreen(),
+                            builder: (context) => const ModuleScreen(),
                           ));
                     }
                   },

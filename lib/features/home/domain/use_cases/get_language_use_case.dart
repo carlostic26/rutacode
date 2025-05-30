@@ -1,5 +1,5 @@
-import 'package:rutacode/features/languages/data/model/leanguage_img_model.dart';
-import 'package:rutacode/features/languages/domain/repositories/leanguage_repository.dart';
+import 'package:rutacode/features/home/data/model/leanguage_img_model.dart';
+import 'package:rutacode/features/home/domain/repositories/leanguage_repository.dart';
 
 class GetLanguageUseCase {
   late final LanguageRepository _languageRepository;

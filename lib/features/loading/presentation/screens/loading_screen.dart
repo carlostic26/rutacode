@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
-import 'package:rutacode/features/languages/presentation/screens/home_language_screen.dart';
+import 'package:rutacode/features/home/presentation/screens/home_language_screen.dart';
 import 'package:rutacode/features/loading/presentation/screens/welcome_screen.dart';
 import 'package:rutacode/features/loading/presentation/state/button_loading_state_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -52,7 +52,7 @@ class LoadingScreen extends ConsumerWidget {
                 percent: 1.0,
                 animation: true,
                 animationDuration: 7000,
-                progressColor: Colors.blueGrey,
+                progressColor: Colors.indigo,
                 barRadius: const Radius.circular(10),
                 onAnimationEnd: () =>
                     ref.read(buttonState.notifier).enableButton(),

@@ -79,12 +79,34 @@ class _CodeDetailWidgetState extends ConsumerState<CodeDetailWidget> {
               ),
             ),
             // Área del código
-            /*   Expanded(
+            Expanded(
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.7,
+                  height: MediaQuery.of(context).size.height * 0.8,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: HighlightView(
+                      code,
+                      language: 'dart',
+                      theme: theme,
+                      padding: const EdgeInsets.all(12),
+                      textStyle: TextStyle(
+                        fontFamily: 'monospace',
+                        fontSize: _fontSize,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+/*             Expanded(
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
                   child: HighlightView(
                     code,
                     language: 'dart',
@@ -98,22 +120,6 @@ class _CodeDetailWidgetState extends ConsumerState<CodeDetailWidget> {
                 ),
               ),
             ), */
-
-            Expanded(
-              child: SingleChildScrollView(
-                scrollDirection: Axis.vertical,
-                child: HighlightView(
-                  code,
-                  language: 'dart',
-                  theme: theme,
-                  padding: const EdgeInsets.all(12),
-                  textStyle: TextStyle(
-                    fontFamily: 'monospace',
-                    fontSize: _fontSize,
-                  ),
-                ),
-              ),
-            ),
           ],
         ),
       ),

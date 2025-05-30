@@ -3,7 +3,7 @@ import 'package:animated_button/animated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rutacode/features/detail/data/models/detail_model.dart';
-import 'package:rutacode/features/languages/presentation/provider/language_providers.dart';
+import 'package:rutacode/features/home/presentation/provider/language_providers.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
 import 'package:rutacode/features/list_items/presentation/screens/list_content_screen.dart';
 import 'package:rutacode/features/progress/domain/use_cases/progress_use_cases.dart';

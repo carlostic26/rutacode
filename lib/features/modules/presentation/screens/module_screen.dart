@@ -2,24 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rutacode/core/ads/banner/ad_banner_provider_home.dart';
 import 'package:rutacode/features/detail/presentation/state/detail_sections_state.dart';
-import 'package:rutacode/features/languages/presentation/provider/language_providers.dart';
+import 'package:rutacode/features/home/presentation/provider/language_providers.dart';
 import 'package:rutacode/features/modules/presentation/providers/navigation_home_page_state.dart';
-import 'package:rutacode/features/modules/presentation/widgets/home_drawer_widget.dart';
+import 'package:rutacode/features/home/presentation/widgets/home_drawer_widget.dart';
 import 'package:rutacode/features/modules/presentation/widgets/module_widget.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
 import 'package:rutacode/features/level/presentation/pages/generate_route_path_widget.dart';
-import 'package:rutacode/features/progress/presentation/screens/progres_score_screen.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-class HomeModuleScreen extends ConsumerStatefulWidget {
-  const HomeModuleScreen({super.key});
+class ModuleScreen extends ConsumerStatefulWidget {
+  const ModuleScreen({super.key});
 
   @override
-  ConsumerState<HomeModuleScreen> createState() => _HomeModulePageScreenState();
+  ConsumerState<ModuleScreen> createState() => _ModuleScreenState();
 }
 
-class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
-  late final AdBannerStateHome adState; // Guardamos el estado
+class _ModuleScreenState extends ConsumerState<ModuleScreen> {
+  late final AdBannerStateHome adState;
 
   @override
   void initState() {
@@ -30,7 +29,7 @@ class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
   @override
   void dispose() {
     super.dispose();
-    // Usamos la referencia guardada en lugar de ref.read
+
     if (mounted) {
       if (adState.currentScreen == 'home') {
         ref.read(adBannerProviderHome.notifier).disposeCurrentAd();

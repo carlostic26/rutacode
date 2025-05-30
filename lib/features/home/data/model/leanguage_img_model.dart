@@ -1,4 +1,4 @@
-import 'package:rutacode/features/languages/domain/entity/leanguage_img_entity.dart';
+import 'package:rutacode/features/home/domain/entity/leanguage_img_entity.dart';
 
 class LanguageModel extends LanguageEntity {
   LanguageModel({required super.language, required super.urlImage});

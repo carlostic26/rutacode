@@ -102,7 +102,7 @@ class ModuleWidget extends ConsumerWidget {
                 height: widthScreen * 0.3,
                 width: heightScreen * 0.15,
                 decoration: BoxDecoration(
-                  //color: Colors.black.withOpacity(0.4),
+                  color: Colors.black.withOpacity(0.3),
                   borderRadius: BorderRadius.circular(25),
                 ),
                 child: const Icon(

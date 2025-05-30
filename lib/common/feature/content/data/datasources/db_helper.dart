@@ -2,14 +2,14 @@ import 'package:rutacode/common/feature/content/data/datasources/languages/java/
 import 'package:rutacode/common/feature/content/data/datasources/languages/javascript/main_insert_js.dart';
 import 'package:rutacode/common/feature/content/data/datasources/languages/python/main_insert_python.dart';
 import 'package:rutacode/common/feature/content/data/datasources/languages/spp/main_insert_cpp.dart';
-import 'package:rutacode/features/languages/data/datasource/inserts_language.dart';
+import 'package:rutacode/features/home/data/datasource/inserts_language.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
 class LocalContentDatabaseHelper {
   final Database? testDatabase;
   Database? _database;
-  int dbVersion = 2;
+  int dbVersion = 3;
 
   LocalContentDatabaseHelper({this.testDatabase});
 

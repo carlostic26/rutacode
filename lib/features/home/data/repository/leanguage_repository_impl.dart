@@ -1,6 +1,6 @@
 import 'package:rutacode/common/feature/content/data/datasources/db_helper.dart';
-import 'package:rutacode/features/languages/data/model/leanguage_img_model.dart';
-import 'package:rutacode/features/languages/domain/repositories/leanguage_repository.dart';
+import 'package:rutacode/features/home/data/model/leanguage_img_model.dart';
+import 'package:rutacode/features/home/domain/repositories/leanguage_repository.dart';
 import 'package:sqflite_common/sqlite_api.dart';
 
 class LanguageRepositoryImpl implements LanguageRepository {

@@ -35,6 +35,7 @@ class _DefinitionDetailWidgetState
       children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+          //title text of subtopic
           child: Text(
             widget.detail.subtopic.toString(),
             style: const TextStyle(

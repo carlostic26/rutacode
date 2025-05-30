@@ -52,12 +52,10 @@ class ProgressUseCases {
   Future<double> getCircularProgressPercentageByModule({
     required String language,
     required String module,
-    required int level,
   }) async {
     return _repository.getProgressPercentageByModule(
       language: language,
       module: module,
-      level: level,
     );
   }
 
@@ -71,6 +69,13 @@ class ProgressUseCases {
       module: module,
       levelId: levelId,
     );
+  }
+
+  Future<int> countLevelsByModule({
+    required String language,
+    required String module,
+  }) async {
+    return _repository.countLevelsByModule(language, module);
   }
 
   Future<int> getScoresProgressByModule({
@@ -125,5 +130,9 @@ class ProgressUseCases {
     required int level,
   }) async {
     return _repository.isLevelCompleted(language, module, level);
+  }
+
+  Future<void> deleteAllUserProgress() async {
+    await _repository.deleteAllUserProgress();
   }
 }
