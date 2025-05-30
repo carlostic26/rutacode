@@ -178,7 +178,7 @@ class _AppSupportState extends State<AppSupport> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(icon, color: Colors.green),
+          Icon(icon, color: Colors.indigo),
           const SizedBox(width: 10),
           Text(
             text,
@@ -226,7 +226,7 @@ class _AppSupportState extends State<AppSupport> {
 
             // Descripción
             const Text(
-              'Hemos invertido cientos de horas desarrollando rutacode para crear la mejor '
+              'Hemos invertido cientos de horas desarrollando RutaCode para crear la mejor '
               'experiencia de aprendizaje. Con tu apoyo podremos seguir mejorando la app, '
               'añadiendo nuevo contenido y manteniendo todo actualizado.',
               style: TextStyle(
@@ -253,7 +253,7 @@ class _AppSupportState extends State<AppSupport> {
                   style: TextStyle(fontSize: 18),
                 ),
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Colors.indigo,
                   foregroundColor: Colors.white,
                   padding:
                       const EdgeInsets.symmetric(horizontal: 24, vertical: 16),

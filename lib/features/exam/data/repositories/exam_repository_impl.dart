@@ -12,11 +12,11 @@ class ExamRepositoryImpl implements ExamRepository {
 
   @override
   Future<List<ExamQuestion>> getFinalExamQuestionsByModule(
-      String moduleId) async {
+      String language, String moduleId) async {
     final rawQuestions = await _localDataSource.query(
       'exam_questions',
-      where: 'moduleId = ?',
-      whereArgs: [moduleId],
+      where: 'language = ? AND moduleId = ?',
+      whereArgs: [language, moduleId],
     );
 
     if (rawQuestions.isEmpty) {

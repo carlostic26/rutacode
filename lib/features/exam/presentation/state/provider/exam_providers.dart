@@ -64,10 +64,10 @@ class ExamNotifier extends StateNotifier<ExamState> {
 
   ExamNotifier(this.repository) : super(ExamState(questions: []));
 
-  Future<void> loadQuestions(String moduleId) async {
+  Future<void> loadQuestions(String language, String moduleId) async {
     try {
       final questions =
-          await repository.getFinalExamQuestionsByModule(moduleId);
+          await repository.getFinalExamQuestionsByModule(language, moduleId);
       if (questions.isNotEmpty) {
         state = state.copyWith(questions: questions);
       }

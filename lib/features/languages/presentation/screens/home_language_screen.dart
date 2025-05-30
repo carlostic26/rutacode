@@ -15,9 +15,10 @@ class HomeLanguageScreen extends ConsumerWidget {
 
     return Scaffold(
         appBar: AppBar(
+          //backgroundColor: Colors.indigo,
           title: const Text(
-            'Áreas y lenguajes',
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 12),
+            'Home - Áreas y lenguajes',
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
           ),
           leading: Builder(
             builder: (context) => IconButton(
@@ -32,13 +33,13 @@ class HomeLanguageScreen extends ConsumerWidget {
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (error, stack) => Center(child: Text('Error: $error')),
           data: (leanguages) => Padding(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(20),
             child: GridView.count(
               crossAxisCount: 2,
               childAspectRatio: 1,
-              padding: const EdgeInsets.all(25),
-              crossAxisSpacing: 12,
-              mainAxisSpacing: 12,
+              padding: const EdgeInsets.all(39),
+              crossAxisSpacing: 18,
+              mainAxisSpacing: 18,
               children: leanguages.map((language) {
                 return LeanguageCardWidget(
                   imageUrl: language.urlImage!,

@@ -16,7 +16,6 @@ Future<void> insertLanguageData(Database db) async {
   } catch (e, stackTrace) {
     debugPrint('Error al insertar Java: $e');
     debugPrint('Stack trace: $stackTrace');
-    // Puedes decidir si quieres relanzar el error o continuar
   }
 
   try {
@@ -79,7 +78,39 @@ Future<void> insertLanguageData(Database db) async {
     );
     debugPrint('C++ insertado correctamente');
   } catch (e, stackTrace) {
-    debugPrint('Error al insertar C++: $e');
+    debugPrint('Error al insertar flter: $e');
+    debugPrint('Stack trace: $stackTrace');
+  }
+
+  try {
+    await db.insert(
+      'language_img',
+      {
+        'language': 'Aws',
+        'url_img':
+            'https://blogger.googleusercontent.com/img/a/AVvXsEhpE_mDQ6yzXjlidfHfdb2WKCA0TlV3BWjOfcb92jk92-vg0w1qAkLhBmAATpAHbxsr5tUni-pAz04ygqrN1Z-RYVeH6ZwuFKezC7WQtQKNdMFgXXe1cvIue2pef6ZC0XpCab4W8DfhhJ7BC6naniROcLuq2QnZbP-wnb3EhxDd5agEYcS1j2oTBXlA'
+      },
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+    debugPrint('C++ insertado correctamente');
+  } catch (e, stackTrace) {
+    debugPrint('Error al insertar aws: $e');
+    debugPrint('Stack trace: $stackTrace');
+  }
+
+  try {
+    await db.insert(
+      'language_img',
+      {
+        'language': 'Linux',
+        'url_img':
+            'https://blogger.googleusercontent.com/img/a/AVvXsEgTFKtju6NNM6vKvw5WrwtTZozJVk0kLMJZ68bcoIrqnpR235AHmKAfW8uYN2lxobCMaDDwTyDcFTnI5uTOmAvij56YmrVC3CqJs_GMqkCoMJXi6pvGfacPZEMEK2DZO_T86wPFHYRM8hFocbrBGN7O_tbZexGXkDoX5c8P8V9w3M2nt4LUt7i_uyO-'
+      },
+      conflictAlgorithm: ConflictAlgorithm.replace,
+    );
+    debugPrint('C++ insertado correctamente');
+  } catch (e, stackTrace) {
+    debugPrint('Error al insertar linux: $e');
     debugPrint('Stack trace: $stackTrace');
   }
 }

@@ -12,7 +12,7 @@ List<InlineSpan> parseInlineCodeSpans(String input) {
         style: const TextStyle(
           color: Colors.white,
           fontFamily: 'Poppins',
-          fontSize: 16,
+          fontSize: 14,
         ),
       ));
     }

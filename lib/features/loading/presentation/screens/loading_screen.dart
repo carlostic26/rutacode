@@ -51,7 +51,7 @@ class LoadingScreen extends ConsumerWidget {
                 lineHeight: 5,
                 percent: 1.0,
                 animation: true,
-                animationDuration: 3000,
+                animationDuration: 7000,
                 progressColor: Colors.blueGrey,
                 barRadius: const Radius.circular(10),
                 onAnimationEnd: () =>

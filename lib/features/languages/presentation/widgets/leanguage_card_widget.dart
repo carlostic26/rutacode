@@ -28,7 +28,7 @@ class LeanguageCardWidget extends StatelessWidget {
             children: [
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(25.0),
                   child: Image.network(
                     imageUrl,
                     fit: BoxFit.contain,

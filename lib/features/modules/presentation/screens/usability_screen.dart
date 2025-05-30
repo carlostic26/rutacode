@@ -7,9 +7,13 @@ class UsabilityScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        shadowColor: Colors.transparent,
         title: const Text(
           'Usabilidad',
-          style: TextStyle(fontSize: 14),
+          style: TextStyle(
+              fontSize: 14, fontWeight: FontWeight.bold, color: Colors.white),
         ),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
@@ -26,19 +30,19 @@ class UsabilityScreen extends StatelessWidget {
           children: [
             _buildSectionTitle('¿Qué es RutaCode?'),
             _buildSectionContent(
-                'RutaCode es una aplicación diseñada para repasar Flutter de manera estructurada y progresiva. '
+                'RutaCode es una aplicación diseñada para vencer el sindrome del impostor mediante la gamificación, a traves de repasos por modulos de conocimiento sobre diversos lenguajes de programación o tecnologias, de manera estructurada y progresiva. '
                 'La app te guía a través de diferentes niveles de conocimiento, desde conceptos básicos hasta avanzados, '
                 'permitiéndote evaluar tu progreso mediante exámenes y seguimiento de puntajes.'),
             const SizedBox(height: 30),
             _buildSectionTitle('¿Por qué se creó?'),
             _buildSectionContent(
-                'Esta aplicación fue desarrollada para solucionar el problema de aprendizaje fragmentado que muchos '
-                'desarrolladores enfrentan al aprender Flutter. Ofrece una ruta de aprendizaje clara, con contenido '
+                'Esta aplicación fue desarrollada para solucionar problemas de aprendizajes fragmentados que muchos '
+                'desarrolladores enfrentan al aprender alguna tecnologia. Ofrece una ruta de aprendizaje clara, con contenido '
                 'organizado y evaluaciones que miden tu comprensión real de los conceptos.'),
             const SizedBox(height: 30),
             _buildSectionTitle('Estructura de aprendizaje'),
-            _buildFeatureItem(
-                Icons.star, 'Niveles', 'Jr, Mid y Sr según tu conocimiento'),
+            _buildFeatureItem(Icons.star, 'Módulos de conocimiento',
+                'Jr, Mid y Sr según tu conocimiento'),
             _buildFeatureItem(Icons.list, 'Tópicos',
                 'Cada nivel contiene tópicos específicos'),
             _buildFeatureItem(Icons.subject, 'Subtópicos',
@@ -47,12 +51,11 @@ class UsabilityScreen extends StatelessWidget {
                 'Explicación teórica + ejemplos de código'),
             const SizedBox(height: 30),
             _buildSectionTitle('Cómo usar la app'),
-            _buildStepItem('1', 'Selecciona tu nivel inicial'),
+            _buildStepItem('1', 'Elige un lenguaje y un módulo inicial'),
             _buildStepItem('2', 'Explora los tópicos y subtópicos'),
             _buildStepItem('3', 'Estudia la teoría y los ejemplos'),
-            _buildStepItem('4', 'Completa las prácticas'),
-            _buildStepItem('5', 'Toma los exámenes finales'),
-            _buildStepItem('6', 'Revisa tus resultados y mejora'),
+            _buildStepItem('4', 'Toma los exámenes finales'),
+            _buildStepItem('5', 'Revisa tus resultados y mejora'),
             const SizedBox(height: 20),
             _buildSectionTitle('Sistema de puntajes'),
             _buildSectionContent(
@@ -73,7 +76,7 @@ class UsabilityScreen extends StatelessWidget {
         style: const TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.bold,
-          color: Colors.blue,
+          color: Colors.indigo,
         ),
       ),
     );
@@ -98,7 +101,7 @@ class UsabilityScreen extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Icon(icon, color: Colors.blue, size: 24),
+          Icon(icon, color: Colors.deepPurple, size: 24),
           const SizedBox(width: 15),
           Expanded(
             child: Column(
@@ -137,7 +140,7 @@ class UsabilityScreen extends StatelessWidget {
             width: 24,
             height: 24,
             decoration: BoxDecoration(
-              color: Colors.blue,
+              color: Colors.deepPurple,
               borderRadius: BorderRadius.circular(14),
             ),
             child: Center(

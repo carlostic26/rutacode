@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:rutacode/core/app_config.dart';
+import 'package:rutacode/features/exam/presentation/screens/choose_exam_screen.dart';
 import 'package:rutacode/features/exam/presentation/screens/start_exam_screen.dart';
+import 'package:rutacode/features/impostor/presentation/screens/impostor_screen.dart';
 import 'package:rutacode/features/modules/presentation/screens/app_support.dart';
 import 'package:rutacode/features/modules/presentation/screens/delete_progress.dart';
 import 'package:rutacode/features/modules/presentation/screens/usability_screen.dart';
-import 'package:rutacode/features/progress/presentation/screens/progres_score_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomeDrawer extends StatelessWidget {
@@ -56,7 +57,7 @@ class HomeDrawer extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(Icons.home),
-            title: const Text('Módulos'),
+            title: const Text('Áreas y lenguajes'),
             onTap: () {
               Navigator.pop(context);
             },
@@ -73,51 +74,33 @@ class HomeDrawer extends StatelessWidget {
             },
           ),
           ListTile(
+            leading: const Icon(Icons.checklist_rtl),
+            title: const Text('Pruebas y examen'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const ChooseExamScreen()),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.sentiment_dissatisfied),
+            title: const Text('Síndrome del impostor'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ImpostorScreen()),
+              );
+            },
+          ),
+          ListTile(
             leading: const Icon(Icons.volunteer_activism),
             title: const Text('Apoya la app'),
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const AppSupport()),
-              );
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.checklist_rtl),
-            title: const Text('Examen Flutter Jr'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const StartExamScreen(
-                          moduleId: 'Jr',
-                        )),
-              );
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.checklist_rtl),
-            title: const Text('Examen Flutter Mid'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const StartExamScreen(
-                          moduleId: 'Mid',
-                        )),
-              );
-            },
-          ),
-          ListTile(
-            leading: const Icon(Icons.checklist_rtl),
-            title: const Text('Examen Flutter Sr'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const StartExamScreen(
-                          moduleId: 'Sr',
-                        )),
               );
             },
           ),
@@ -159,7 +142,7 @@ class HomeDrawer extends StatelessWidget {
             title: const Text('Info de la app'),
             onTap: () {
               dialogVersion(context, 'Información',
-                  '${infoApp.nameApp} es una guía definitiva para dominar el framework Flutter de manera estructurada. La app organiza el aprendizaje en niveles progresivos (Jr, Mid, Sr), con contenido práctico y evaluaciones que miden tu dominio real del desarrollo multiplataforma.\n\n Desarrollada por el grupo de estudio "Creciendo con Flutter" liderado por el Ing. Carlos Peñaranda. \n\nVersión: ${infoApp.versionApp}');
+                  '${infoApp.nameApp} es una guía definitiva para lenguajes y tecnologías de manera estructurada. La app organiza el aprendizaje en niveles progresivos (Jr, Mid, Sr), con contenido práctico y evaluaciones que miden tu dominio real del desarrollo de software.\n\n Desarrollada por Ing. Carlos Peñaranda. \n\nVersión: ${infoApp.versionApp}');
             },
           ),
           ListTile(
@@ -223,7 +206,7 @@ class HomeDrawer extends StatelessWidget {
 
   void _launchUrlPolicyPrivacy() async {
     final Uri url = Uri.parse(
-        'https://www.termsfeed.com/live/00b5994d-ba57-4b14-b52e-a048f4b25c39');
+        'https://www.termsfeed.com/live/dc00161d-7fd3-4c50-a9cb-46436e9ac1ab');
     if (await canLaunchUrl(url)) {
       await launchUrl(url);
     } else {

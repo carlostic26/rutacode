@@ -4,9 +4,11 @@ import 'package:rutacode/features/exam/presentation/screens/exam_screen.dart';
 import 'package:rutacode/features/progress/presentation/state/start_exam_provider.dart';
 
 class StartExamScreen extends ConsumerStatefulWidget {
-  final String moduleId;
+  final String language;
+  final String module;
 
-  const StartExamScreen({required this.moduleId, super.key});
+  const StartExamScreen(
+      {required this.language, required this.module, super.key});
 
   @override
   ConsumerState<StartExamScreen> createState() => _StartExamScreenState();
@@ -22,7 +24,7 @@ class _StartExamScreenState extends ConsumerState<StartExamScreen>
     {'text': '3', 'duration': 1, 'zoom': true},
     {'text': '2', 'duration': 1, 'zoom': true},
     {'text': '1', 'duration': 1, 'zoom': true},
-    {'text': 'Comencemos!', 'duration': 1, 'zoom': true}
+    {'text': '¡Comencemos!', 'duration': 1, 'zoom': true}
   ];
 
   @override
@@ -54,13 +56,14 @@ class _StartExamScreenState extends ConsumerState<StartExamScreen>
       _controller.forward(from: 0);
     } else {
       // Obtener el provider específico para este módulo y actualizar su estado
-      final examProvider = ref.read(examProviderSelector(widget.moduleId));
+      final examProvider = ref.read(examProviderSelector(widget.module));
       ref.read(examProvider.notifier).state = true;
 
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => ExamScreen(moduleId: widget.moduleId),
+          builder: (context) =>
+              ExamScreen(language: widget.language, module: widget.module),
         ),
       );
     }
@@ -97,10 +100,10 @@ class _StartExamScreenState extends ConsumerState<StartExamScreen>
                       ),
                       const SizedBox(height: 2),
                       Text(
-                        'Flutter ${widget.moduleId}',
+                        '${widget.language} ${widget.module}',
                         style: TextStyle(
                           fontSize: 32,
-                          color: Colors.blue[300],
+                          color: Colors.indigo[300],
                           fontWeight: FontWeight.bold,
                         ),
                       ),

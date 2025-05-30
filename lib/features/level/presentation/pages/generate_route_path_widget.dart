@@ -263,7 +263,7 @@ class GenerateLevelsRoutePathWidget extends ConsumerWidget {
               ),
               Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.fromLTRB(20, 20, 20, 10),
                   child: Text(
                     content.titleLevel!,
                     style: const TextStyle(

@@ -77,19 +77,19 @@ class _HomeModulePageScreenState extends ConsumerState<HomeModuleScreen> {
           onPressed: () => ref.read(navigationServiceProvider).goBack(),
           icon: const Icon(Icons.arrow_back_ios),
         ),
-        actions: [
+/*         actions: [
           IconButton(
             icon: const Icon(Icons.emoji_events),
             onPressed: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => const ProgressScoreScreen(),
-              //   ),
-              // );
+               Navigator.push(
+                 context,
+                MaterialPageRoute(
+                   builder: (context) => const ProgressScoreScreen(),
+               ),
+              );
             },
           ),
-        ],
+        ], */
       ),
     ];
 
