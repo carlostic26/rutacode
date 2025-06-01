@@ -9,6 +9,7 @@ import 'package:rutacode/features/modules/presentation/widgets/module_widget.dar
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
 import 'package:rutacode/features/level/presentation/pages/generate_route_path_widget.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:rutacode/features/progress/presentation/screens/progress_score_screen.dart';
 
 class ModuleScreen extends ConsumerStatefulWidget {
   const ModuleScreen({super.key});
@@ -59,6 +60,19 @@ class _ModuleScreenState extends ConsumerState<ModuleScreen> {
             icon: const Icon(Icons.arrow_back_ios),
           ),
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.emoji_events),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ProgressScoreScreen(),
+                ),
+              );
+            },
+          ),
+        ],
         centerTitle: true,
         foregroundColor: Colors.white,
       ),
@@ -76,19 +90,19 @@ class _ModuleScreenState extends ConsumerState<ModuleScreen> {
           onPressed: () => ref.read(navigationServiceProvider).goBack(),
           icon: const Icon(Icons.arrow_back_ios),
         ),
-/*         actions: [
+        actions: [
           IconButton(
             icon: const Icon(Icons.emoji_events),
             onPressed: () {
-               Navigator.push(
-                 context,
+              Navigator.push(
+                context,
                 MaterialPageRoute(
-                   builder: (context) => const ProgressScoreScreen(),
-               ),
+                  builder: (context) => const ProgressScoreScreen(),
+                ),
               );
             },
           ),
-        ], */
+        ],
       ),
     ];
 

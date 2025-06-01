@@ -3,7 +3,7 @@ import 'package:sqflite/sqflite.dart';
 
 class ProgressLocalContentDatabaseHelper {
   Database? _database;
-  final int dbVersion = 3;
+  final int dbVersion = 5;
 
   Future<Database> getDatabase() async {
     if (_database != null) return _database!;

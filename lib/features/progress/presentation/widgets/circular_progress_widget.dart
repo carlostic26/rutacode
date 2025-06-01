@@ -18,7 +18,7 @@ class CircularProgressWidget extends StatelessWidget {
             child: CircularProgressIndicator(
               value: progress / 100,
               backgroundColor: Colors.grey[300],
-              valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
+              valueColor: const AlwaysStoppedAnimation<Color>(Colors.indigo),
               strokeWidth: 5,
             ),
           ),

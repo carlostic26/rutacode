@@ -62,7 +62,7 @@ class HomeDrawer extends StatelessWidget {
               Navigator.pop(context);
             },
           ),
-          /*   ListTile(
+          ListTile(
             leading: const Icon(Icons.emoji_events),
             title: const Text('Mis puntajes'),
             onTap: () {
@@ -72,7 +72,7 @@ class HomeDrawer extends StatelessWidget {
                     builder: (context) => const ProgressScoreScreen()),
               );
             },
-          ), */
+          ),
           ListTile(
             leading: const Icon(Icons.checklist_rtl),
             title: const Text('Pruebas y examen'),

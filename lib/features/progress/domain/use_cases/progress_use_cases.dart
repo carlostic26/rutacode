@@ -6,7 +6,9 @@ class ProgressUseCases {
 
   ProgressUseCases(this._repository);
 
-  Future<void> saveScoreProgressBySubtopic({
+  // ========== Operaciones básicas de progreso ==========
+
+  Future<void> setScoreBySubtopic({
     required String language,
     required String module,
     required int levelId,
@@ -14,7 +16,7 @@ class ProgressUseCases {
     required String subtopic,
     required int score,
   }) async {
-    await _repository.saveScoreProgressBySubtopic(
+    return _repository.setScoreBySubtopic(
       language: language,
       module: module,
       levelId: levelId,
@@ -24,18 +26,59 @@ class ProgressUseCases {
     );
   }
 
-  Future<List<ProgressModel>> getAllProgressLevelsByModule({
+  // ========== Consultas de puntuación ==========
+  Future<int> countTotalScoreByLanguage({
+    required String language,
+  }) async {
+    return _repository.countTotalScoreByLanguage(language);
+  }
+
+  Future<int> countTotalScoreByModule({
+    required String language,
+    required String module,
+  }) async {
+    return _repository.countTotalScoreByModule(language, module);
+  }
+
+  Future<int> countTotalScoreByLevel({
+    required String language,
+    required String module,
+    required int levelId,
+  }) async {
+    return _repository.countTotalScoreByLevel(
+      language: language,
+      module: module,
+      levelId: levelId,
+    );
+  }
+
+  // ========== Consultas de progreso ==========
+  Future<List<ProgressModel>> getProgressByLanguage({
+    required String language,
+  }) async {
+    return _repository.getProgressByLanguage(language);
+  }
+
+  Future<List<ProgressModel>> getProgressByModule({
     required String language,
     required String module,
   }) async {
     return _repository.getProgressByModule(language, module);
   }
 
-  Future<List<ProgressModel>> getAllProgressModules(String language) async {
-    return _repository.getAllProgressByLanguage(language);
+  Future<List<ProgressModel>> getProgressByLevel({
+    required String language,
+    required String module,
+    required int levelId,
+  }) async {
+    return _repository.getProgressByLevel(
+      language: language,
+      module: module,
+      levelId: levelId,
+    );
   }
 
-  Future<List<ProgressModel>> getAllProgressTopicsByModule({
+  Future<List<ProgressModel>> getProgressByTopic({
     required String language,
     required String module,
     required int levelId,
@@ -49,7 +92,41 @@ class ProgressUseCases {
     );
   }
 
-  Future<double> getCircularProgressPercentageByModule({
+  // ========== Métricas de progreso ==========
+
+  Future<int> countSubtopicsCompletedByModule({
+    required String language,
+    required String module,
+  }) async {
+    return _repository.countSubtopicsCompletedByModule(
+        language: language, module: module);
+  }
+
+  Future<int> countSubtopicsCompletedByLevel({
+    required String language,
+    required String module,
+    required int level,
+  }) async {
+    return _repository.countSubtopicsCompletedByLevel(
+      language: language,
+      module: module,
+      level: level,
+    );
+  }
+
+  Future<int> countLevelsCompletedByModule({
+    required String language,
+    required String module,
+  }) async {
+    return _repository.countLevelsCompletedByModule(
+      language: language,
+      module: module,
+    );
+  }
+
+// Metrica de porcentaje de progreso por módulo
+
+  Future<double> getProgressPercentageByModule({
     required String language,
     required String module,
   }) async {
@@ -59,50 +136,7 @@ class ProgressUseCases {
     );
   }
 
-  Future<List<ProgressModel>> getLevelProgress({
-    required String language,
-    required String module,
-    required int levelId,
-  }) async {
-    return _repository.getProgressByLevel(
-      language: language,
-      module: module,
-      levelId: levelId,
-    );
-  }
-
-  Future<int> countLevelsByModule({
-    required String language,
-    required String module,
-  }) async {
-    return _repository.countLevelsByModule(language, module);
-  }
-
-  Future<int> getScoresProgressByModule({
-    required String language,
-    required String module,
-  }) async {
-    return _repository.getUserTotalScoreByModule(language, module);
-  }
-
-  Future<int> getTotalScoreByLevel({
-    required String language,
-    required String module,
-    required int levelId,
-  }) async {
-    return _repository.getTotalScoreByLevel(
-      language: language,
-      module: module,
-      levelId: levelId,
-    );
-  }
-
-  Future<int> getUserScoreByModule({
-    required String language,
-    required String module,
-  }) async {
-    return _repository.getUserTotalScoreByModule(language, module);
-  }
+// ========== Consultas de estado de completado ==========
 
   Future<bool> isSubtopicCompleted({
     required String language,
@@ -112,7 +146,12 @@ class ProgressUseCases {
     required String subtopic,
   }) async {
     return _repository.isSubtopicCompleted(
-        language, module, level, topic, subtopic);
+      language,
+      module,
+      level,
+      topic,
+      subtopic,
+    );
   }
 
   Future<bool> isTopicCompleted({
@@ -121,7 +160,12 @@ class ProgressUseCases {
     required int level,
     required String topic,
   }) async {
-    return _repository.isTopicCompleted(language, module, level, topic);
+    return _repository.isTopicCompleted(
+      language,
+      module,
+      level,
+      topic,
+    );
   }
 
   Future<bool> isLevelCompleted({
@@ -129,10 +173,34 @@ class ProgressUseCases {
     required String module,
     required int level,
   }) async {
-    return _repository.isLevelCompleted(language, module, level);
+    return _repository.isLevelCompleted(
+      language,
+      module,
+      level,
+    );
   }
 
+  // ========== Eliminación de progreso ==========
   Future<void> deleteAllUserProgress() async {
-    await _repository.deleteAllUserProgress();
+    return _repository.deleteAllUserProgress();
+  }
+
+  // ========== Consultas de cuentas en programming content ==========
+  Future<int> countTotalLevelsByModuleInProgrammingContent({
+    required String language,
+    required String module,
+  }) async {
+    return _repository.countTotalLevelsByModuleInProgrammingContent(
+      language,
+      module,
+    );
+  }
+
+  Future<int> countTotalSubtopicsByModuleInProgrammingContent(
+      String language, String module) async {
+    return _repository.countTotalSubtopicsByModuleInProgrammingContent(
+      language,
+      module,
+    );
   }
 }
