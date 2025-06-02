@@ -1,4 +1,5 @@
 import 'package:rutacode/common/feature/content/data/datasources/languages/linux/insert_jr_linux.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/linux/insert_sr_linux.dart';
 import 'package:rutacode/common/feature/content/data/datasources/languages/linux/intert_mid_linux.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -27,5 +28,12 @@ class InsertCppData {
     await insertMidLevel6DataLinux(db);
   }
 
-  static Future<void> _insertLinuxSrLevelData(Database db) async {}
+  static Future<void> _insertLinuxSrLevelData(Database db) async {
+    await insertSrLevel1DataLinux(db);
+    await insertSrLevel2DataLinux(db);
+    await insertSrLevel3DataLinux(db);
+    await insertSrLevel4DataLinux(db);
+    await insertSrLevel5DataLinux(db);
+    await insertSrLevel6DataLinux(db);
+  }
 }
