@@ -3,8 +3,8 @@ import 'package:rutacode/common/feature/content/data/datasources/languages/linux
 import 'package:rutacode/common/feature/content/data/datasources/languages/linux/intert_mid_linux.dart';
 import 'package:sqflite/sqflite.dart';
 
-class InsertCppData {
-  static Future<void> insertCppData(Database db) async {
+class InsertLinuxData {
+  static Future<void> insertLinuxData(Database db) async {
     await _insertLinuxJrLevelData(db);
     await _insertLinuxMidLevelData(db);
     await _insertLinuxSrLevelData(db);
