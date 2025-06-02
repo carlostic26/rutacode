@@ -9,15 +9,17 @@ import '../widgets/question_widget.dart';
 import '../widgets/timer_widget.dart';
 
 class ExamScreen extends ConsumerStatefulWidget {
-  final String moduleId;
+  final String language;
+  final String module;
 
-  const ExamScreen({required this.moduleId, super.key});
+  const ExamScreen({required this.language, required this.module, super.key});
 
-  static Future<void> navigate(BuildContext context, String moduleId) {
+  Future<void> navigate(BuildContext context, String module) {
     return Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => StartExamScreen(moduleId: moduleId),
+        builder: (context) =>
+            StartExamScreen(language: language, module: module),
       ),
     );
   }
@@ -34,7 +36,9 @@ class _ExamScreenState extends ConsumerState<ExamScreen> {
   void initState() {
     super.initState();
     _pageController = PageController();
-    ref.read(examStateProvider.notifier).loadQuestions(widget.moduleId);
+    ref
+        .read(examStateProvider.notifier)
+        .loadQuestions(widget.language, widget.module);
 
     // Inicializar el banner después de que el widget esté construido
     WidgetsBinding.instance.addPostFrameCallback((_) {
@@ -76,7 +80,7 @@ class _ExamScreenState extends ConsumerState<ExamScreen> {
       },
       child: Scaffold(
         appBar: AppBar(
-          title: Text(widget.moduleId),
+          title: Text(widget.module),
           leading: IconButton(
             icon: const Icon(Icons.highlight_off, color: Colors.white),
             onPressed: () {

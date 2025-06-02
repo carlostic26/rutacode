@@ -1,219 +1,317 @@
-/* import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:rutacode/features/level/presentation/state/provider/count_levels_use_case_provider.dart';
-import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
-import 'package:rutacode/features/progress/domain/repositories/progress_repository.dart';
-import 'package:rutacode/features/progress/domain/use_cases/get_level_progress_use_case.dart';
+import 'package:rutacode/features/progress/domain/use_cases/progress_use_cases.dart';
 import 'package:rutacode/features/progress/presentation/state/provider/progress_use_cases_provider.dart';
 import 'package:rutacode/features/progress/presentation/state/start_exam_provider.dart';
 import 'package:rutacode/features/progress/presentation/widgets/circular_progress_widget.dart';
-import 'package:rutacode/features/progress/presentation/widgets/score_static_widget.dart';
+import 'package:rutacode/features/progress/presentation/widgets/statics_score_widget.dart';
+
+final completedLevelListProvider = StateProvider<List<int>>((ref) {
+  return [];
+});
 
 class ScoreInfoWidget extends ConsumerWidget {
   final String module;
+  final String language;
+
   const ScoreInfoWidget({
     super.key,
+    required this.language,
     required this.module,
   });
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    // Obtener el provider específico para este módulo
     final examProvider = ref.watch(examProviderSelector(module));
     final isExamStarted = ref.watch(examProvider);
+    final progressUseCases = ref.watch(progressUseCasesProvider);
 
-    final getLevelProgress = ref.read(getLevelProgressProvider);
-    final getCircularProgressPercentageByModuleUseCase =
-        ref.read(getCircularProgressPercentageByModuleUseCaseProvider);
-    final actualLevelIdJr = ref.watch(actualLevelIdJrProvider);
-    final actualLevelIdMid = ref.watch(actualLevelIdMidProvider);
-    final actualLevelIdSr = ref.watch(actualLevelIdSrProvider);
-    final progressRepository = ref.read(progressRepositoryProvider);
+    const actualLevelIdJr = 1;
+    const actualLevelIdMid = 2;
+    const actualLevelIdSr = 3;
 
-    return FutureBuilder<List<double>>(
-      future: _getProgressForLevels(module, getLevelProgress, ref),
-      builder: (context, snapshot) {
-        if (snapshot.connectionState == ConnectionState.waiting) {
+    return FutureBuilder<double>(
+      future: progressUseCases.getProgressPercentageByModule(
+          language: language, module: module),
+      builder: (context, progressSnapshot) {
+        if (progressSnapshot.connectionState == ConnectionState.waiting) {
           return const Center(child: CircularProgressIndicator());
-        } else if (snapshot.hasError) {
-          return Center(child: Text('Error: ${snapshot.error}'));
-        } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-          return const Center(child: Text('No hay datos disponibles.'));
-        } else {
-          final progressList = snapshot.data!;
-          return FutureBuilder<double>(
-            future: getCircularProgressPercentageByModuleUseCase.call(module),
-            builder: (context, progressSnapshot) {
-              if (progressSnapshot.connectionState == ConnectionState.waiting) {
-                return const Center(child: CircularProgressIndicator());
-              } else if (progressSnapshot.hasError) {
-                return Center(child: Text('Error: ${progressSnapshot.error}'));
-              } else if (!progressSnapshot.hasData) {
-                return const Center(
-                    child: Text('No hay datos de progreso disponibles.'));
-              } else {
-                final progressPercentage = progressSnapshot.data!;
+        } else if (progressSnapshot.hasError) {
+          debugPrint('Error en progreso: ${progressSnapshot.error}');
+          return Center(child: Text('Error: ${progressSnapshot.error}'));
+        }
+
+        final progressPercentage = progressSnapshot.data ?? 0.0;
+
+        return FutureBuilder<List<int>>(
+          future: _getAllExistingLevelsByModule(language, module, ref),
+          builder: (context, levelsSnapshot) {
+            if (levelsSnapshot.connectionState == ConnectionState.waiting) {
+              return const Center(child: CircularProgressIndicator());
+            } else if (levelsSnapshot.hasError) {
+              debugPrint('Error en niveles: ${levelsSnapshot.error}');
+              return Center(child: Text('Error: ${levelsSnapshot.error}'));
+            }
+
+            final progressList = levelsSnapshot.data ?? [];
+
+            return FutureBuilder<List<int>>(
+              future: _getCompletedLevelsByModule(language, module, ref),
+              builder: (context, completedSnapshot) {
+                if (completedSnapshot.connectionState ==
+                    ConnectionState.waiting) {
+                  return const Center(child: CircularProgressIndicator());
+                } else if (completedSnapshot.hasError) {
+                  debugPrint(
+                      'Error en niveles completados: ${completedSnapshot.error}');
+                  return Center(
+                      child: Text('Error: ${completedSnapshot.error}'));
+                }
+
+                final completedList = completedSnapshot.data ?? [];
+
                 return FutureBuilder<Map<String, int>>(
                   future:
-                      _getAccumulatedPoints(progressRepository, module, ref),
-                  builder: (context, pointsSnapshot) {
-                    if (pointsSnapshot.connectionState ==
+                      _countScoresByModule(language, module, progressUseCases),
+                  builder: (context, scoreSnapshot) {
+                    if (scoreSnapshot.connectionState ==
                         ConnectionState.waiting) {
                       return const Center(child: CircularProgressIndicator());
-                    } else if (pointsSnapshot.hasError) {
+                    } else if (scoreSnapshot.hasError) {
+                      debugPrint('Error en puntos: ${scoreSnapshot.error}');
                       return Center(
-                          child: Text('Error: ${pointsSnapshot.error}'));
-                    } else if (!pointsSnapshot.hasData) {
-                      return const Center(
-                          child: Text('No hay datos de puntos disponibles.'));
-                    } else {
-                      final pointsData = pointsSnapshot.data!;
-                      final userScore = pointsData['userScore']!;
-                      final maxScore = pointsData['maxScore']!;
-
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(left: 30),
-                            child: Text(
-                              '👨🏼‍💻$module',
-                              style: const TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
-                            child: SizedBox(
-                              height: 150,
-                              child: StatisticsScoreWidget(
-                                  progressListScores: progressList),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.fromLTRB(30, 10, 50, 10),
-                            child: Row(
-                              children: [
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      'Nivel Actual',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 12),
-                                    ),
-                                    module == 'Jr'
-                                        ? Text(
-                                            ' $actualLevelIdJr',
-                                            style:
-                                                const TextStyle(fontSize: 10),
-                                          )
-                                        : module == 'Mid'
-                                            ? Text(
-                                                ' $actualLevelIdMid',
-                                                style: const TextStyle(
-                                                    fontSize: 10),
-                                              )
-                                            : module == 'Sr'
-                                                ? Text(
-                                                    ' $actualLevelIdSr',
-                                                    style: const TextStyle(
-                                                        fontSize: 10),
-                                                  )
-                                                : const SizedBox(
-                                                    height: 10,
-                                                  ),
-                                    const Text(
-                                      'Examen final:',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 12),
-                                    ),
-                                    Text(
-                                      isExamStarted
-                                          ? 'Iniciado'
-                                          : 'No iniciado',
-                                      style: const TextStyle(fontSize: 10),
-                                    ),
-                                    const SizedBox(
-                                      height: 10,
-                                    ),
-                                    const Text(
-                                      'Puntos acumulados:',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 12),
-                                    ),
-                                    Text(
-                                      '$userScore/$maxScore',
-                                      style: const TextStyle(fontSize: 10),
-                                    ),
-                                  ],
-                                ),
-                                const Spacer(),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    const Text(
-                                      'Progreso',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 10),
-                                    ),
-                                    const SizedBox(
-                                      height: 12,
-                                    ),
-                                    CircularProgressWidget(
-                                        progress: progressPercentage),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ),
-                          const Divider(),
-                        ],
-                      );
+                          child: Text('Error: ${scoreSnapshot.error}'));
                     }
+
+                    final scoreData =
+                        scoreSnapshot.data ?? {'userScore': 0, 'maxScore': 0};
+                    final userScore = scoreData['userScore']!;
+                    final maxScore = scoreData['maxScore']!;
+
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 30),
+                          child: Text(
+                            '👨🏼‍💻 $module',
+                            style: const TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(30, 10, 30, 10),
+                          child: SizedBox(
+                            height: 150,
+                            child: StatisticsScoreWidget(
+                              progressListScores: progressList,
+                              completedLevelList: completedList,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(30, 10, 50, 10),
+                          child: Row(
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  const Text(
+                                    'Nivel Actual',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12),
+                                  ),
+                                  Text(
+                                    module == 'Jr'
+                                        ? '$actualLevelIdJr'
+                                        : module == 'Mid'
+                                            ? '$actualLevelIdMid'
+                                            : '$actualLevelIdSr',
+                                    style: const TextStyle(fontSize: 10),
+                                  ),
+                                  const Text(
+                                    'Examen final:',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12),
+                                  ),
+                                  Text(
+                                    isExamStarted ? 'Iniciado' : 'No iniciado',
+                                    style: const TextStyle(fontSize: 10),
+                                  ),
+                                  const SizedBox(height: 10),
+                                  const Text(
+                                    'Puntos acumulados:',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 12),
+                                  ),
+                                  Text(
+                                    '$userScore/$maxScore',
+                                    style: const TextStyle(fontSize: 10),
+                                  ),
+                                ],
+                              ),
+                              const Spacer(),
+                              Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Text(
+                                    'Progreso',
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 10),
+                                  ),
+                                  const SizedBox(height: 12),
+                                  CircularProgressWidget(
+                                      progress: progressPercentage),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        const Divider(),
+                      ],
+                    );
                   },
                 );
-              }
-            },
-          );
-        }
+              },
+            );
+          },
+        );
       },
     );
   }
 }
 
-// Método para obtener el progreso de cada nivel
-Future<List<double>> _getProgressForLevels(
-    String module, GetLevelProgress getLevelProgress, WidgetRef ref) async {
-  final progressList = <double>[];
+Future<Map<String, int>> _countScoresByModule(
+  String language,
+  String module,
+  ProgressUseCases useCases,
+) async {
+  try {
+    final userScore = await useCases.countTotalScoreByModule(
+      language: language,
+      module: module,
+    );
 
-  // Obtener el caso de uso desde el provider
-  final countLevelsUseCase = ref.read(countLevelsUseCaseProvider);
+    final totalSubtopics =
+        await useCases.countTotalSubtopicsByModuleInProgrammingContent(
+      language,
+      module,
+    );
 
-  // Obtener el número de niveles del módulo
-  final numberOfLevels = await countLevelsUseCase.call(module);
-
-  // Iterar sobre los niveles y obtener el progreso
-  for (int level = 1; level <= numberOfLevels; level++) {
-    final progress = await getLevelProgress.call(module, level);
-    progressList.add(progress);
+    return {
+      'userScore': userScore,
+      'maxScore': totalSubtopics *
+          2, //este campo es el de puntos maximos de mis puntajes, lo que eel usuario debe alcanzar
+    };
+  } catch (e) {
+    debugPrint('Error en _getAccumulatedPoints: $e');
+    return {'userScore': 0, 'maxScore': 0};
   }
-
-  return progressList;
 }
 
-Future<Map<String, int>> _getAccumulatedPoints(
-    ProgressRepository progressRepository, String module, ref) async {
-  final getUserTotalScoreByModuleUseCase =
-      ref.read(getUserTotalScoreByModuleUseCaseProvider);
+// Método en UI para obtener el progreso de cada nivel
+// No son los niveles completados sino el numero de niveles de cada módulo
+Future<List<int>> _getAllExistingLevelsByModule(
+    String language, String module, WidgetRef ref) async {
+  final useCases = ref.read(progressUseCasesProvider);
+  final listNumberOfLevels = <int>[];
 
-  final userScore = await getUserTotalScoreByModuleUseCase.call(module);
+  // Obtener el número de niveles del módulo
+  final totalLevels =
+      await useCases.countTotalLevelsByModuleInProgrammingContent(
+          language: language, module: module);
+
+  debugPrint('*** NUMERO DE NIVELES EN PROTG CONTENT en $module: $totalLevels');
+
+  // Iterar sobre los niveles y obtener el progreso
+  for (int level = 1; level <= totalLevels; level++) {
+    listNumberOfLevels.add(level);
+  }
+
+  //establecer niveles completados
+  final completedLevelList = _getCompletedLevelsByModule(language, module, ref);
+
+  ref.read(completedLevelListProvider.notifier).state =
+      await completedLevelList;
+
+  return listNumberOfLevels;
+}
+
+Future<List<int>> _getCompletedLevelsByModule(
+    String language, String module, WidgetRef ref) async {
+  final useCases = ref.read(progressUseCasesProvider);
+  final listCompletedLevelIndexes = <int>[];
+
+  // Obtener el número total de niveles
+  final totalLevels =
+      await useCases.countTotalLevelsByModuleInProgrammingContent(
+          language: language, module: module);
+
+  for (int i = 0; i < totalLevels; i++) {
+    final levelId = i + 1; // ID real del nivel
+    final isLevelCompleted = await useCases.isLevelCompleted(
+      language: language,
+      module: module,
+      level: levelId,
+    );
+
+    if (isLevelCompleted) {
+      listCompletedLevelIndexes.add(i); // guardar índice (no ID)
+    }
+  }
+
+  return listCompletedLevelIndexes;
+}
+
+
+
+// Método para obtener el progreso de cada nivel
+/* Future<List<int>> _getNumberOfLevelsByModule(
+    String language, String module, WidgetRef ref) async {
+  final useCases = ref.read(progressUseCasesProvider);
+  final listNumberOfLevels = <int>[];
+
+  // Obtener el número de niveles del módulo
+  final totalLevels = await useCases.countLevelsByModuleInProgrammingContent(
+      language: language, module: module);
+
+  debugPrint('*** NUMERO DE NIVELES EN PROTG CONTENT en $module: $totalLevels');
+
+  // Iterar sobre los niveles y obtener el progreso
+  for (int level = 1; level <= totalLevels; level++) {
+    final isLevelCompleted = await useCases.isLevelCompleted(
+        language: language, module: module, level: level);
+
+    if (isLevelCompleted) {
+      listNumberOfLevels.add(level);
+    }
+  }
+
+  return listNumberOfLevels;
+}
+ */
+
+
+// Método para obtener el progreso de cada nivel
+/* 
+
+Future<Map<String, int>> _getAccumulatedPoints(
+    ProgressRepository progressRepository,
+    String language,
+    String module,
+    ref) async {
+  final useCases = ref.read(progressUseCasesProvider);
+
+  final userTotalScoreByModuleUseCase = useCases.getUserTotalScoreByModule();
+
+  final userScore = userTotalScoreByModuleUseCase;
+
   final totalSubtopics =
-      await progressRepository.countAllSubtopicsByModule(module);
+      await progressRepository.countAllSubtopicsByModule(language, module);
   final maxScore = totalSubtopics * 2; // Cada subtema vale 2 puntos
 
   return {
@@ -221,4 +319,5 @@ Future<Map<String, int>> _getAccumulatedPoints(
     'maxScore': maxScore,
   };
 }
+
  */

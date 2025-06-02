@@ -6,7 +6,7 @@ class GetFinalExamQuestions {
 
   GetFinalExamQuestions(this.repository);
 
-  Future<List<ExamQuestion>> call(String moduleId) async {
-    return await repository.getFinalExamQuestionsByModule(moduleId);
+  Future<List<ExamQuestion>> call(String language, String moduleId) async {
+    return await repository.getFinalExamQuestionsByModule(language, moduleId);
   }
 }

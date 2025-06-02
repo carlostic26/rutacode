@@ -6,9 +6,8 @@ import 'package:rutacode/features/detail/presentation/state/detail_sections_stat
 import 'package:rutacode/features/detail/presentation/state/provider/get_detail_use_case_provider.dart';
 import 'package:rutacode/features/detail/presentation/widgets/code_detail_widget.dart';
 import 'package:rutacode/features/detail/presentation/widgets/definition_detail_widget.dart';
-import 'package:rutacode/features/languages/presentation/provider/language_providers.dart';
+import 'package:rutacode/features/home/presentation/provider/language_providers.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
-import 'package:rutacode/features/level/presentation/state/completed_levels_shp_provider.dart';
 import 'package:rutacode/features/progress/presentation/state/provider/progress_use_cases_provider.dart';
 import 'package:rutacode/features/list_items/presentation/state/provider/get_subtopic_use_case_provider.dart';
 import 'package:rutacode/features/list_items/presentation/state/provider/get_topic_use_case_provider.dart';
@@ -22,16 +21,19 @@ class DetailPage extends ConsumerStatefulWidget {
 
 class _DetailPageState extends ConsumerState<DetailPage> {
   Timer? _timer;
+  bool _hasStartedTimer = false;
 
   @override
   void initState() {
     super.initState();
-  }
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    _startTimer();
+    // ✅ Esperar al primer frame antes de iniciar el timer
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (!_hasStartedTimer) {
+        _hasStartedTimer = true;
+        _startTimer();
+      }
+    });
   }
 
   @override
@@ -41,7 +43,7 @@ class _DetailPageState extends ConsumerState<DetailPage> {
   }
 
   void _startTimer() async {
-    final progressRepository = ref.read(progressRepositoryProvider);
+    final progressUseCases = ref.read(progressUseCasesProvider);
 
     final actualLanguage = ref.read(actualLanguageProvider);
     final actualModule = ref.read(actualModuleProvider);
@@ -49,21 +51,20 @@ class _DetailPageState extends ConsumerState<DetailPage> {
     final topicTitle = ref.read(titleTopicProvider);
     final subtopicTitle = ref.read(subtopicTitleProvider);
 
-    // Obtener los notifiers usando los providers family
-    final completedSubtopicsNotifier =
-        ref.read(completedSubtopicsProvider(actualLanguage).notifier);
-    final topicsNotifier =
-        ref.read(completedTopicsProvider(actualLanguage).notifier);
-    final completedLevelsNotifier = ref.read(completedLevelsProvider.notifier);
+    final isSubtopicCompleted = await progressUseCases.isSubtopicCompleted(
+      language: actualLanguage,
+      module: actualModule,
+      level: actualLevel,
+      topic: topicTitle,
+      subtopic: subtopicTitle,
+    );
 
-    // Verificar si el subtopic ya está completado
-    final isSubtopicCompleted = await progressRepository.isSubtopicCompleted(
-        actualLanguage, actualModule, actualLevel, topicTitle, subtopicTitle);
     if (isSubtopicCompleted) return;
 
-    _timer = Timer(const Duration(seconds: 3), () async {
+    _timer = Timer(const Duration(seconds: 2), () async {
       try {
-        await progressRepository.createProgressBySubtopic(
+        //guardar progreso 2 puntos
+        await progressUseCases.setScoreBySubtopic(
           language: actualLanguage,
           module: actualModule,
           levelId: actualLevel,
@@ -72,37 +73,23 @@ class _DetailPageState extends ConsumerState<DetailPage> {
           score: 2,
         );
 
-        completedSubtopicsNotifier.markSubtopicAsCompleted(subtopicTitle);
-        await topicsNotifier.checkAndUpdateTopicCompletion(actualLanguage,
-            actualModule, actualLevel, topicTitle, subtopicTitle);
-        await completedLevelsNotifier.checkAndUpdateLevelCompletionByModule(
-            actualLanguage,
-            actualModule,
-            actualLevel,
-            topicTitle,
-            subtopicTitle);
-
-        WidgetsBinding.instance.addPostFrameCallback((_) {
+        if (mounted) {
+          // ✅ Ya estás dentro del primer frame, es seguro mostrar el SnackBar
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
               content: Text('¡+2 puntos acumulados! Sigue repasando.'),
               duration: Duration(seconds: 3),
             ),
           );
-        });
+        }
       } catch (e) {
         if (mounted) {
-          WidgetsBinding.instance.addPostFrameCallback((_) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(
-                content: Text('Error al guardar el progreso: $e'),
-                duration: const Duration(seconds: 1),
-              ),
-            );
-          });
-        } else {
-          debugPrint(
-              '📌Timer: Widget no montado, no se puede mostrar SnackBar de error');
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              content: Text('Error al guardar el progreso: $e'),
+              duration: const Duration(seconds: 1),
+            ),
+          );
         }
       }
     });

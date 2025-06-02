@@ -43,7 +43,7 @@ class _CodeDetailWidgetState extends ConsumerState<CodeDetailWidget> {
 
     return SafeArea(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(15, 8, 8, 1),
+        padding: const EdgeInsets.fromLTRB(5, 8, 8, 1),
         child: Column(
           children: [
             // Barra de herramientas separada
@@ -53,16 +53,16 @@ class _CodeDetailWidgetState extends ConsumerState<CodeDetailWidget> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 8),
                     child: Text('Guía o ejemplo:',
                         style: TextStyle(
                           color: Colors.grey,
-                          fontSize: _fontSize,
+                          fontSize: 16,
                           fontWeight: FontWeight.bold,
                         )),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   IconButton(
                     icon: const Icon(CupertinoIcons.zoom_in),
                     onPressed: _increaseFontSize,
@@ -84,11 +84,33 @@ class _CodeDetailWidgetState extends ConsumerState<CodeDetailWidget> {
                 scrollDirection: Axis.vertical,
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height * 0.7,
+                  height: MediaQuery.of(context).size.height * 0.8,
+                  child: SingleChildScrollView(
+                    scrollDirection: Axis.vertical,
+                    child: HighlightView(
+                      code,
+                      language: 'dart',
+                      theme: theme,
+                      padding: const EdgeInsets.all(12),
+                      textStyle: TextStyle(
+                        fontFamily: 'monospace',
+                        fontSize: _fontSize,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+
+/*             Expanded(
+              child: Align(
+                alignment: Alignment.topLeft,
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.vertical,
                   child: HighlightView(
                     code,
                     language: 'dart',
-                    theme: theme, // Usamos el tema personalizado
+                    theme: theme,
                     padding: const EdgeInsets.all(12),
                     textStyle: TextStyle(
                       fontFamily: 'monospace',
@@ -97,11 +119,86 @@ class _CodeDetailWidgetState extends ConsumerState<CodeDetailWidget> {
                   ),
                 ),
               ),
-            ),
-            //const Spacer(),
+            ), */
           ],
         ),
       ),
     );
   }
 }
+
+
+/*
+
+@override
+Widget build(BuildContext context) {
+  String code = widget.detail.codeExample.toString();
+  const theme = darculaTheme;
+
+  final customTheme = {
+    ...darculaTheme,
+    'root': TextStyle(backgroundColor: Colors.grey[900]),
+  };
+
+  return SafeArea(
+    child: Padding(
+      padding: const EdgeInsets.fromLTRB(15, 8, 8, 1),
+      child: Column(
+        children: [
+          // Barra de herramientas
+          Container(
+            color: const Color.fromARGB(66, 35, 35, 35),
+            alignment: Alignment.centerRight,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 8),
+                  child: Text(
+                    'Guía o ejemplo:',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: _fontSize,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                const Spacer(),
+                IconButton(
+                  icon: const Icon(CupertinoIcons.zoom_in),
+                  onPressed: _increaseFontSize,
+                  color: Colors.white,
+                  iconSize: 20,
+                ),
+                IconButton(
+                  icon: const Icon(CupertinoIcons.zoom_out),
+                  onPressed: _decreaseFontSize,
+                  color: Colors.white,
+                  iconSize: 20,
+                ),
+              ],
+            ),
+          ),
+
+          // Área del código con scroll funcional
+          Expanded(
+            child: SingleChildScrollView(
+              scrollDirection: Axis.vertical,
+              padding: const EdgeInsets.all(12),
+              child: HighlightView(
+                code,
+                language: 'dart',
+                theme: customTheme,
+                textStyle: TextStyle(
+                  fontFamily: 'monospace',
+                  fontSize: _fontSize,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
+}
+*/

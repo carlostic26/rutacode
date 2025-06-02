@@ -29,7 +29,7 @@ class TopicRepositoryImpl implements TopicRepository {
       ORDER BY MIN(id) ASC
     ''', [language, module, level]);
 
-    // Opción 2: Si prefieres todos los registros individualmente
+    // Opción 2: todos los registros individualmente
     // final maps = await db.query(
     //   'programming_content',
     //   where: 'language = ? AND module = ? AND level = ?',

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:rutacode/common/feature/content/data/services/parse_inline_code_span_service.dart';
+import 'package:rutacode/common/feature/services/parse_inline_code_span_service.dart';
 import 'package:rutacode/features/detail/data/models/detail_model.dart';
 import 'package:rutacode/features/detail/presentation/state/image_detail_provider.dart';
 import 'package:rutacode/features/detail/presentation/widgets/image_loading_widget.dart';
@@ -35,6 +35,7 @@ class _DefinitionDetailWidgetState
       children: [
         Padding(
           padding: const EdgeInsets.fromLTRB(15, 0, 15, 0),
+          //title text of subtopic
           child: Text(
             widget.detail.subtopic.toString(),
             style: const TextStyle(

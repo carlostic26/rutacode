@@ -1,14 +1,15 @@
 import 'package:rutacode/common/feature/content/data/datasources/languages/java/main_insert_java.dart';
 import 'package:rutacode/common/feature/content/data/datasources/languages/javascript/main_insert_js.dart';
 import 'package:rutacode/common/feature/content/data/datasources/languages/python/main_insert_python.dart';
-import 'package:rutacode/features/languages/data/datasource/inserts_language.dart';
+import 'package:rutacode/common/feature/content/data/datasources/languages/spp/main_insert_cpp.dart';
+import 'package:rutacode/features/home/data/datasource/inserts_language.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 
 class LocalContentDatabaseHelper {
   final Database? testDatabase;
   Database? _database;
-  int dbVersion = 14;
+  int dbVersion = 4;
 
   LocalContentDatabaseHelper({this.testDatabase});
 
@@ -53,6 +54,7 @@ class LocalContentDatabaseHelper {
         await InsertJavaData.insertJavaData(db);
         await InsertPythonData.insertPythonData(db);
         await InsertJsData.insertJsData(db);
+        await InsertCppData.insertCppData(db);
 
         await insertLanguageData(db);
       },

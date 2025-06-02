@@ -2492,4 +2492,1352 @@ int main() {
   });
 }
 
-Future<void> insertSrLevel5DataCpp(Database db) async {}
+Future<void> insertSrLevel5DataCpp(Database db) async {
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 5,
+    'title_level': 'Desarrollo de Bibliotecas y Frameworks',
+    'topic': 'Creación de Bibliotecas Reutilizables',
+    'subtopic': 'Diseño de APIs Estables',
+    'definition': '''
+Cuando hablamos de bibliotecas reutilizables, el diseño de una API clara y estable es lo primero que debería estar en tu radar. Una buena API es como una promesa: debe ser fácil de entender, consistente en su comportamiento y mantenerse en el tiempo sin romper el código de quienes la usan.
+
+¿Te estás preguntando por qué esto importa tanto? Bueno, imagina que alguien construye su app encima de tu biblioteca. Si decides cambiar cómo funcionan tus funciones o clases sin avisar, puedes romperle todo. Literalmente. Por eso, diseñar con estabilidad en mente desde el inicio es clave.
+
+Algunos principios esenciales son:
+- Define funciones y estructuras con propósitos claros.
+- No expongas más de lo necesario: mantén detalles internos ocultos.
+- Usa nombres coherentes y bien pensados.
+- Piensa en el futuro: ¿podrás extender esta API sin romperla?
+
+Grandes bibliotecas como STL en C++ han sobrevivido tanto tiempo justamente por ese compromiso con la estabilidad y la claridad. Si diseñas tu API pensando en el usuario y en la mantenibilidad, ya estás un paso adelante.
+''',
+    'code_example': r'''
+// Interfaz pública bien diseñada
+class Logger {
+public:
+    void log(const std::string& message);
+    void setLevel(int level);
+private:
+    int currentLevel;
+};
+
+// Interfaz mal diseñada
+class LoggerV2 {
+public:
+    void lol(const std::string&); // nombre poco claro
+    void foo(int);                // sin contexto ni documentación
+};
+  ''',
+  });
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 5,
+    'title_level': 'Desarrollo de Bibliotecas y Frameworks',
+    'topic': 'Creación de Bibliotecas Reutilizables',
+    'subtopic': 'Control de Versiones Semántico',
+    'definition': '''
+El control de versiones semántico (o SemVer) no es solo un sistema de numeritos. Es una forma de comunicar claramente los cambios en tu biblioteca a quienes la usan. Básicamente, dice qué tan seguro es actualizar de una versión a otra.
+
+Vamos a ver de qué se trata todo esto...
+
+SemVer funciona con tres números: MAJOR.MINOR.PATCH. Por ejemplo, 2.3.1:
+- Si cambias el primer número (2 → 3), significa que hay cambios incompatibles.
+- El segundo número (3) sube cuando agregas funcionalidades sin romper nada.
+- El tercero (1) indica correcciones o mejoras pequeñas.
+
+Esto ayuda a los usuarios de tu biblioteca a decidir si deben actualizar, y qué riesgos hay al hacerlo. Por ejemplo, si pasas de la 1.2.0 a la 1.3.0, deberían poder hacerlo sin miedo. Pero si vas de la 1.x.x a la 2.0.0, es mejor leer el changelog con cuidado.
+
+Usar SemVer muestra profesionalismo y respeto por quienes integran tu código en sus proyectos.
+''',
+    'code_example': r'''
+// Versión actual de la biblioteca
+#define LIBRARY_VERSION "1.2.3"
+
+// Ejemplo de cambio de versión
+// v1.2.3 → v2.0.0  (cambio incompatible)
+
+// Changelog típico:
+/*
+  [2.0.0] - Se eliminó la función `legacyParse`
+           - Se renombró `Logger::logToFile` a `Logger::writeToFile`
+  [1.3.0] - Se agregó `Logger::setFormat`
+  [1.2.4] - Se corrigió bug en `Logger::log`
+*/
+  ''',
+  });
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 5,
+    'title_level': 'Desarrollo de Bibliotecas y Frameworks',
+    'topic': 'Creación de Bibliotecas Reutilizables',
+    'subtopic': 'Documentación y Ejemplos de Uso',
+    'definition': '''
+Una biblioteca sin documentación es como una caja sin etiquetas: podrías tener algo útil adentro, pero nadie sabrá cómo usarlo. La documentación y los ejemplos no son opcionales si quieres que tu biblioteca sea adoptada por otros.
+
+No sé tú, pero a mí esto al principio me costó 🤯. Escribir código es divertido; escribir sobre ese código, no tanto... pero es lo que realmente marca la diferencia.
+
+Una buena documentación incluye:
+- Qué hace cada clase o función.
+- Qué parámetros acepta y qué retorna.
+- Qué casos de uso resuelve.
+- Ejemplos reales de cómo se integra con otros proyectos.
+
+Los ejemplos de uso, además, muestran tu código en acción. Es la mejor forma de enseñar sin explicar tanto. GitHub, por ejemplo, valora mucho los proyectos que incluyen README completos, diagramas o incluso tutoriales paso a paso.
+
+Si usas herramientas como Doxygen, puedes generar documentación directamente desde los comentarios del código. Una pequeña inversión que te ahorra muchas preguntas en el futuro.
+''',
+    'code_example': r'''
+// Comentario para Doxygen
+/**
+ * Clase para gestionar logs.
+ * Permite escribir mensajes a consola o archivo.
+ */
+class Logger {
+public:
+    /**
+     * Escribe un mensaje en el log.
+     * @param message El texto a registrar.
+     */
+    void log(const std::string& message);
+};
+
+// Ejemplo de uso en un README.md
+/*
+#include "Logger.h"
+
+int main() {
+    Logger logger;
+    logger.log("Inicio del programa");
+    return 0;
+}
+*/
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 5,
+    'title_level': 'Desarrollo de Bibliotecas y Frameworks',
+    'topic': 'Integración y Distribución',
+    'subtopic': 'Sistemas de Build como CMake',
+    'definition': '''
+Cuando los proyectos crecen y ya no son solo un archivo .cpp, llega el momento de automatizar el proceso de compilación. Ahí es donde entra CMake, una herramienta que te permite definir cómo construir tu proyecto sin preocuparte por detalles específicos del sistema operativo o del compilador.
+
+¿Te estás preguntando por qué no usar simplemente Make o compilar a mano? Claro, eso sirve al principio, pero cuando tienes que compilar en Linux, Windows y macOS, con diferentes configuraciones, compilar “a lo manual” se vuelve insostenible.
+
+CMake te permite escribir un archivo `CMakeLists.txt` con toda la lógica de construcción: qué archivos usar, qué bibliotecas incluir, qué versiones exigir. Luego, genera automáticamente los archivos que el sistema de construcción del entorno necesite (Makefiles, proyectos de Visual Studio, etc.).
+
+Una de sus mayores ventajas es su compatibilidad con proyectos grandes y su facilidad para integrarse con herramientas modernas como vcpkg o Conan. Si estás pensando en distribuir tu biblioteca de forma profesional, dominar CMake no es opcional.
+''',
+    'code_example': r'''
+// CMakeLists.txt simple para una biblioteca
+cmake_minimum_required(VERSION 3.10)
+project(MyLibrary)
+
+add_library(MyLibrary SHARED Logger.cpp Logger.h)
+target_include_directories(MyLibrary PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
+
+// En consola:
+// mkdir build && cd build
+// cmake ..
+// cmake --build .
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 5,
+    'title_level': 'Desarrollo de Bibliotecas y Frameworks',
+    'topic': 'Integración y Distribución',
+    'subtopic': 'Gestión de Paquetes con Conan y vcpkg',
+    'definition': '''
+En el mundo moderno del desarrollo, depender de bibliotecas externas es casi inevitable. Pero descargarlas, compilarlas y mantenerlas manualmente... suena a pesadilla. Por suerte existen gestores de paquetes como **Conan** y **vcpkg** que te salvan de ese caos.
+
+Vamos a ver de qué se trata todo esto...
+
+Conan y vcpkg te permiten instalar bibliotecas con una sola línea de comando, con sus dependencias resueltas automáticamente. Además, se integran fácilmente con CMake, lo que hace que incluir algo como Boost o fmt sea cuestión de segundos.
+
+¿Diferencias clave?
+- Conan es más flexible y multiplataforma, ideal para entornos complejos.
+- vcpkg es más sencillo de usar, especialmente en proyectos con Visual Studio.
+
+Ambas opciones mejoran muchísimo la mantenibilidad y portabilidad de tus proyectos. Si estás pensando en distribuir tu propia biblioteca, también puedes crear tus propios paquetes y compartirlos con la comunidad o dentro de tu equipo.
+''',
+    'code_example': r'''
+# Usando Conan para instalar fmt
+conan install fmt/9.1.0@
+
+# Usando vcpkg para instalar fmt
+vcpkg install fmt
+
+# Integración con CMake usando vcpkg
+# En tu CMakeLists.txt
+find_package(fmt CONFIG REQUIRED)
+target_link_libraries(MyApp PRIVATE fmt::fmt)
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 5,
+    'title_level': 'Desarrollo de Bibliotecas y Frameworks',
+    'topic': 'Integración y Distribución',
+    'subtopic': 'Distribución en Repositorios Públicos',
+    'definition': '''
+Crear una buena biblioteca es solo el primer paso. El verdadero impacto ocurre cuando la compartes con el mundo, y para eso están los repositorios públicos. Ya sea en GitHub, GitLab o Bitbucket, distribuir tu código es una forma poderosa de colaborar, recibir feedback y aportar a la comunidad.
+
+Seguramente pensarás: “¿Pero qué tan difícil puede ser subir mi repo a GitHub?”. Técnicamente es sencillo, pero distribuir bien una biblioteca va más allá de hacer un `git push`. Implica:
+- Escribir un README claro y útil.
+- Tener una estructura de carpetas coherente.
+- Versionado semántico.
+- Documentación y ejemplos.
+- Tal vez un script de instalación o integración con Conan/vcpkg.
+
+Si además publicas tu biblioteca en repos públicos como el Center de Conan o el registry de vcpkg, cualquiera podrá instalarla con una sola línea. Eso sí que es comodidad.
+
+Al final, compartir tu trabajo puede abrirte muchas puertas: colaboraciones, ofertas de trabajo e incluso reconocimiento dentro del ecosistema C++.
+''',
+    'code_example': r'''
+// Estructura típica de una biblioteca lista para publicar
+MyLibrary/
+├── include/
+│   └── MyLibrary/
+│       └── Logger.h
+├── src/
+│   └── Logger.cpp
+├── CMakeLists.txt
+├── README.md
+├── conanfile.py  // para Conan
+├── LICENSE
+└── .gitignore
+
+// README.md puede incluir:
+# MyLibrary
+Una biblioteca para gestión de logs.
+#include <MyLibrary/Logger.h>
+Logger log;
+log.log("Hola mundo");
+   ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 5,
+    'title_level': 'Desarrollo de Bibliotecas y Frameworks',
+    'topic': 'Testing y Mantenimiento',
+    'subtopic': 'Pruebas Unitarias con Google Test y Catch2',
+    'definition': '''
+Tener una biblioteca sin pruebas unitarias es como construir un puente sin hacer cálculos. Puede parecer que todo funciona… hasta que algo se rompe y no sabes por qué. Para eso existen frameworks como **Google Test** y **Catch2**, que facilitan escribir y mantener tests automáticos.
+
+¿Te preguntas si vale la pena? Créeme, lo vale. Especialmente cuando otros empiecen a usar tu código y esperen que se comporte igual cada vez.
+
+Google Test es uno de los más usados: bien documentado, potente y con integración en muchos IDEs. Catch2, por otro lado, tiene una sintaxis más simple y amigable, ideal para empezar rápido. Ambos permiten verificar que tus funciones hacen lo que deben, incluso cuando las condiciones cambian o los inputs no son los esperados.
+
+La clave es empezar con lo esencial: probar las funciones críticas, validar casos límite, y automatizar esas pruebas. Así, cada vez que hagas cambios, tendrás la tranquilidad de que no rompiste nada sin darte cuenta.
+''',
+    'code_example': r'''
+// Ejemplo con Google Test
+#include <gtest/gtest.h>
+#include "MathUtils.h"
+
+TEST(MathUtilsTest, AddsCorrectly) {
+    EXPECT_EQ(add(2, 3), 5);
+}
+
+// Ejemplo con Catch2
+#define CATCH_CONFIG_MAIN
+#include <catch2/catch.hpp>
+#include "MathUtils.h"
+
+TEST_CASE("Addition works", "[math]") {
+    REQUIRE(add(2, 3) == 5);
+}
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 5,
+    'title_level': 'Desarrollo de Bibliotecas y Frameworks',
+    'topic': 'Testing y Mantenimiento',
+    'subtopic': 'Integración Continua',
+    'definition': '''
+Cada vez que haces cambios a tu biblioteca, existe el riesgo de introducir errores. Y si varias personas trabajan contigo, ese riesgo se multiplica. Ahí es donde entra la **Integración Continua (CI)**, una práctica que automatiza la validación del código nuevo cada vez que se sube al repositorio.
+
+¿Seguramente estás pensando: más trabajo, más configuraciones…? Bueno, al principio sí. Pero una vez que lo configuras, todo el equipo se beneficia. Con una buena pipeline de CI, puedes compilar tu proyecto, correr los tests, verificar estilo de código, y hasta publicar paquetes… todo automáticamente.
+
+Herramientas como **GitHub Actions**, **GitLab CI**, o **Jenkins** permiten definir workflows que se ejecutan cada vez que haces un push o un pull request. Esto te ayuda a detectar errores antes de que lleguen a producción, y te asegura que tu código se mantiene en buen estado, incluso con el paso del tiempo.
+
+Una biblioteca que usa CI transmite confianza. Y en el ecosistema open source, eso es oro puro.
+''',
+    'code_example': r'''
+# .github/workflows/build.yml (GitHub Actions)
+
+name: Build & Test
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Configurar CMake
+        run: cmake -S . -B build
+      - name: Compilar
+        run: cmake --build build
+      - name: Ejecutar Tests
+        run: ./build/tests
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 5,
+    'title_level': 'Desarrollo de Bibliotecas y Frameworks',
+    'topic': 'Testing y Mantenimiento',
+    'subtopic': 'Mantenimiento y Soporte de Bibliotecas',
+    'definition': '''
+Crear una biblioteca es solo el comienzo. El verdadero reto está en mantenerla útil y funcional con el paso del tiempo. El mantenimiento incluye corregir errores, mejorar el rendimiento, actualizar dependencias y escuchar a quienes la usan.
+
+Seguramente pensarás que eso suena a trabajo infinito... y en parte lo es. Pero también es una oportunidad para mejorar constantemente y construir una comunidad a tu alrededor.
+
+El soporte implica responder issues, revisar pull requests y estar atento a las nuevas versiones del lenguaje o de otras bibliotecas relacionadas. ¿Un consejo? Automatiza todo lo que puedas (tests, builds, distribución), pero mantén siempre una actitud abierta a los aportes de otros.
+
+Las bibliotecas que más perduran son las que se mantienen activas y bien cuidadas. Algunas como Boost o fmt llevan años evolucionando, justamente por tener un mantenimiento consistente y una base de usuarios comprometida.
+
+Ser mantenedor también te obliga a escribir código claro, documentado y testeado. En otras palabras: te convierte en mejor programador.
+''',
+    'code_example': r'''
+// Ejemplo de cambios de mantenimiento
+// Antes
+void log(std::string msg);
+
+// Después, para mejorar eficiencia y evitar copias innecesarias
+void log(const std::string& msg);
+
+// Documentación del cambio (changelog)
+/*
+  [1.4.0] - Se actualizó la firma de log() para optimizar el rendimiento.
+           - Deprecado log(std::string) en favor de log(const std::string&).
+*/
+  ''',
+  });
+}
+
+Future<void> insertSrLevel6DataCpp(Database db) async {
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Herramientas y Ecosistema de C++',
+    'topic': 'Compiladores y Estándares',
+    'subtopic': 'GCC, Clang, MSVC',
+    'definition': '''
+El ecosistema de C++ se sostiene sobre tres compiladores principales: GCC (GNU Compiler Collection), Clang (parte del proyecto LLVM) y MSVC (Microsoft Visual C++). Cada uno tiene sus fortalezas y contextos donde brilla más.
+
+Si estás eligiendo un compilador, la decisión no es trivial. GCC es el más maduro y ampliamente soportado, Clang destaca por sus mensajes de error más claros y tiempos de compilación rápidos, mientras que MSVC se integra perfectamente con el ecosistema de Windows. 
+
+GCC domina en entornos Linux y es la opción por defecto para muchos proyectos open source. Clang, desarrollado originalmente por Apple, se ha popularizado por su modularidad y se usa como base para herramientas de análisis estático. MSVC, aunque históricamente tenía un soporte estándar más lento, ha mejorado significativamente en los últimos años. Lo interesante es que estos compiladores a menudo se usan en conjunto para validar la portabilidad del código.
+''',
+    'code_example': '''
+// Ejemplo de compilación con diferentes compiladores:
+// GCC: g++ -std=c++20 -O2 main.cpp -o programa
+// Clang: clang++ -std=c++20 -stdlib=libc++ main.cpp -o programa
+// MSVC (Visual Studio): Configurar en propiedades del proyecto -> C++ -> Estándar del lenguaje
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Herramientas y Ecosistema de C++',
+    'topic': 'Compiladores y Estándares',
+    'subtopic': 'Estándares C++11, C++14, C++17, C++20, C++23',
+    'definition': '''
+C++ evoluciona a través de estándares publicados cada 3 años aproximadamente. Desde C++11 (antes conocido como C++0x), el lenguaje ha experimentado transformaciones significativas que han modernizado su sintaxis y capacidades.
+
+Cuando trabajas con código legacy, es común encontrarte con diferencias notables entre versiones. C++11 introdujo características revolucionarias como auto, lambdas y smart pointers. C++14 y 17 fueron evoluciones incrementales, mientras que C++20 trajo conceptos, rangos y corrutinas. C++23, el estándar más reciente, completa muchas de estas características.
+
+La adopción de estos estándares varía según el compilador y el proyecto. Empresas como Google y Microsoft tienen políticas específicas sobre qué versión usar. Por ejemplo, el código de Chromium tardó años en migrar completamente a C++11 debido a su enorme base de código y requisitos de estabilidad.
+''',
+    'code_example': '''
+// Ejemplo de características por estándar:
+// C++11: auto, ranged-for, lambdas
+auto suma = [](int a, int b) { return a + b; };
+
+// C++14: literales binarios, variables template
+auto binary = 0b1010;
+
+// C++17: structured bindings, std::optional
+auto [x, y] = std::make_pair(1, 2);
+
+// C++20: concepts, ranges, spaceship operator
+template<typename T>
+concept Integral = std::is_integral_v<T>;
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Herramientas y Ecosistema de C++',
+    'topic': 'Compiladores y Estándares',
+    'subtopic': 'Flags y Opciones de Compilación',
+    'definition': '''
+Las flags de compilación son el panel de control del compilador, permitiendo ajustar optimizaciones, advertencias y comportamiento del lenguaje. Dominarlas es esencial para desarrollo profesional.
+
+Al principio puede parecer abrumador tanta opción, pero en la práctica un conjunto básico cubre la mayoría de necesidades. Flags como -Wall (habilitar todas las advertencias) o -O2 (optimización balanceada) deberían ser estándar en cualquier proyecto.
+
+Las flags más útiles caen en varias categorías: control de estándar (-std=c++20), optimizaciones (-O3, -Os), generación de debug info (-g), y tratamiento de advertencias (-Werror para tratar warnings como errores). Proyectos grandes a menudo usan configuraciones personalizadas: Firefox, por ejemplo, compila con más de 200 flags específicas para equilibrar rendimiento y tamaño del binario.
+''',
+    'code_example': r'''
+// Ejemplo de flags comunes y su efecto:
+
+# Nivel de optimización (GCC/Clang):
+-O0 # Sin optimización (debugging)
+-O2 # Optimización balanceada (producción)
+-O3 # Optimización agresiva (puede aumentar tamaño binario)
+
+# Tratamiento de advertencias:
+-Wall # Habilita las advertencias más comunes
+-Wextra # Advertencias adicionales
+-Werror # Convierte advertencias en errores
+
+# Flags específicas para seguridad:
+-fstack-protector-strong # Protección contra buffer overflows
+-D_FORTIFY_SOURCE=2 # Chequeos adicionales en tiempo de ejecución
+
+// Ejemplo de compilación con flags de seguridad:
+// g++ -std=c++20 -O2 -Wall -Wextra -Werror -fstack-protector-strong main.cpp
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Herramientas y Ecosistema de C++',
+    'topic': 'Análisis Estático y Dinámico',
+    'subtopic': 'Herramientas como Cppcheck, Clang-Tidy',
+    'definition': '''
+El análisis estático es como tener un revisor de código disponible 24/7. Herramientas como Cppcheck y Clang-Tidy examinan tu código sin ejecutarlo, buscando patrones problemáticos, posibles bugs y violaciones de buenas prácticas.
+
+Al principio puede parecer que estas herramientas generan demasiadas advertencias, pero con el tiempo te das cuenta que atrapan errores sutiles que podrían pasar desapercibidos en revisiones humanas. Cppcheck es excelente para detectar memory leaks y undefined behavior, mientras que Clang-Tidy, al estar basado en el AST de Clang, puede hacer verificaciones más sofisticadas de estilo y modernización de código.
+
+Empresas como Google y Microsoft integran estas herramientas en sus pipelines de CI. Un caso interesante es el proyecto Chromium, donde Clang-Tidy ayuda a mantener la coherencia en millones de líneas de código. La clave está en configurarlas adecuadamente - empezar con las comprobaciones básicas e ir añadiendo reglas gradualmente.
+''',
+    'code_example': r'''
+# Ejecución básica de herramientas:
+cppcheck --enable=all --suppress=missingIncludeSystem .
+clang-tidy --checks='-*,modernize-*' main.cpp -- -std=c++17
+
+# Ejemplo de salida de Clang-Tidy:
+warning: use auto when initializing with new [modernize-use-auto]
+    std::string* str = new std::string("hello");
+            ^
+            auto
+
+# Configuración en CMake:
+find_program(CLANG_TIDY_EXE NAMES "clang-tidy")
+if(CLANG_TIDY_EXE)
+  set(CMAKE_CXX_CLANG_TIDY "${CLANG_TIDY_EXE}")
+endif()
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Herramientas y Ecosistema de C++',
+    'topic': 'Análisis Estático y Dinámico',
+    'subtopic': 'Análisis de Código y Métricas',
+    'definition': '''
+Las métricas de código van más allá de encontrar bugs - miden la salud del software a largo plazo. Complejidad ciclomática, acoplamiento entre clases, profundidad de herencia y líneas de código por función son algunas de las métricas clave.
+
+Estos números cuentan una historia sobre tu código. Una función con alta complejidad ciclomática probablemente sea difícil de mantener. Un módulo con alto acoplamiento será frágil ante cambios. Herramientas como SonarQube o Understand C++ proporcionan dashboards visuales de estas métricas.
+
+Un estudio de la NASA encontró que módulos con complejidad ciclomática mayor a 15 tenían significativamente más defectos. Muchas empresas establecen límites similares en sus guías de estilo. La clave está en usar estas métricas como indicadores, no como absolutos - a veces una función compleja está justificada, pero debería ser la excepción, no la regla.
+''',
+    'code_example': '''
+# Ejemplo de métricas comunes y rangos recomendados:
+
+- Complejidad ciclomática: 
+  * 1-10: Simple (ideal)
+  * 10-20: Moderada
+  * 20+: Compleja (requiere revisión)
+
+- Líneas de código por función:
+  * 1-20: Ideal
+  * 20-50: Aceptable
+  * 50+: Demasiado larga
+
+- Profundidad de herencia:
+  * 1-2: Bueno
+  * 3-4: Aceptable
+  * 5+: Problema de diseño
+
+# Herramientas para medir:
+lizard -l cpp .  # Analiza complejidad ciclomática
+metrix++ collect # Recolecta múltiples métricas
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Herramientas y Ecosistema de C++',
+    'topic': 'Análisis Estático y Dinámico',
+    'subtopic': 'Integración en el Proceso de Desarrollo',
+    'definition': '''
+Integrar análisis estático en tu flujo de trabajo es como añadir un sistema de seguridad continua a tu código. El enfoque más efectivo es aplicar estas herramientas en tres puntos: durante el desarrollo local, en commits/pull requests, y en el pipeline de CI/CD.
+
+Muchos equipos cometen el error de activar todas las comprobaciones de golpe, lo que genera cientos de errores que nunca se arreglan. La estrategia correcta es incremental: empezar con las reglas más críticas, arreglar esos problemas, y luego añadir gradualmente más comprobaciones.
+
+Proyectos como LLVM usan pre-commit hooks para ejecutar clang-format y clang-tidy antes de cada commit. En GitHub, acciones como `run-clang-tidy` pueden bloquear merges si encuentran problemas. La integración ideal es invisible cuando el código está bien escrito, pero atrapa errores temprano cuando no lo está.
+''',
+    'code_example': r'''
+# Ejemplo de configuración en Git pre-commit hook (.git/hooks/pre-commit):
+#!/bin/sh
+set -e
+clang-format -i --style=file $(git diff --cached --name-only -- '*.cpp' '*.h')
+clang-tidy --fix $(git diff --cached --name-only -- '*.cpp' '*.h')
+
+# Ejemplo de GitHub Action:
+name: Lint
+on: [push, pull_request]
+jobs:
+  clang-tidy:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: sudo apt-get install -y clang-tidy
+    - run: clang-tidy --checks=* src/*.cpp -- -std=c++17
+
+# Integración con CMake:
+option(ENABLE_CLANG_TIDY "Enable clang-tidy" ON)
+if(ENABLE_CLANG_TIDY)
+  find_program(CLANG_TIDY_EXE clang-tidy)
+  if(CLANG_TIDY_EXE)
+    set(CMAKE_CXX_CLANG_TIDY "${CLANG_TIDY_EXE}")
+  endif()
+endif()
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Herramientas y Ecosistema de C++',
+    'topic': 'Entornos de Desarrollo y Depuración',
+    'subtopic': 'IDEs como Visual Studio, CLion',
+    'definition': '''
+El IDE adecuado puede marcar la diferencia entre una experiencia de desarrollo fluida y una lucha constante. Visual Studio (Windows) y CLion (multiplataforma) representan los entornos más completos para C++ moderno, cada uno con su enfoque particular.
+
+Visual Studio ha evolucionado para ofrecer una de las experiencias más pulidas en Windows, con excelente soporte para CMake y herramientas de diagnóstico integradas. CLion, por su parte, destaca por su inteligente análisis de código en tiempo real y su consistencia entre plataformas. JetBrains, creadores de CLion, han llevado su experiencia en IDEs como IntelliJ al mundo C++.
+
+Lo interesante es que muchos desarrolladores profesionales usan combinaciones: Visual Studio para desarrollo en Windows, CLion para proyectos multiplataforma, y a menudo VSCode como editor ligero complementario. La elección depende del sistema operativo, tipo de proyecto y preferencias personales de flujo de trabajo.
+''',
+    'code_example': '''
+// Ejemplo de características clave por IDE:
+
+// Visual Studio:
+- IntelliSense avanzado
+- Profiler integrado
+- Excelente depurador visual
+- Soporte nativo para proyectos MSBuild
+
+// CLion:
+- Análisis de código en tiempo real
+- Soporte profundo para CMake
+- Refactorizaciones seguras
+- Integración con herramientas como Valgrind
+
+// Configuración recomendada:
+1. Habilitar clangd como backend de análisis
+2. Configurar format-on-save
+3. Personalizar atajos de teclado
+4. Integrar con sistemas de control de versiones
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Herramientas y Ecosistema de C++',
+    'topic': 'Entornos de Desarrollo y Depuración',
+    'subtopic': 'Depuración con GDB y LLDB',
+    'definition': '''
+Dominar la depuración desde línea de comandos es una habilidad esencial cuando trabajas en entornos remotos o sistemas integrados. GDB (GNU Debugger) y LLDB (debugger de LLVM) ofrecen capacidades poderosas que van más allá de los depuradores gráficos.
+
+A primera vista, la interfaz de comandos puede parecer intimidante, pero una vez que aprendes los comandos básicos, descubres que estos depuradores pueden hacer casi cualquier cosa: desde modificar variables en tiempo de ejecución hasta ejecutar scripts de depuración complejos. LLDB, siendo más moderno, tiene una sintaxis más limpia y mejor integración con Clang.
+
+Un truco profesional poco conocido es usar Python para extender estos depuradores. Facebook, por ejemplo, ha desarrollado scripts personalizados para GDB que ayudan a depurar sus estructuras de datos internas. La capacidad de crear breakpoints condicionales y comandos personalizados puede ahorrar horas de depuración tediosa.
+''',
+    'code_example': r'''
+# Comandos esenciales de GDB/LLDB:
+break main.cpp:15       # Punto de interrupción en línea 15
+run                     # Iniciar programa
+next (n)                # Paso a paso por procedimiento
+step (s)                # Paso a paso por instrucción
+print variable          # Mostrar valor de variable
+backtrace (bt)          # Mostrar pila de llamadas
+watch variable          # Parar cuando variable cambie
+
+# Ejemplo avanzado (LLDB):
+(lldb) break set -n main -C "frame variable" -c "i < 5"
+# Breakpoint que muestra variables y solo se activa cuando i < 5
+
+# Depuración de memoria:
+(lldb) memory read -t int -c 10 0x12345678
+# Lee 10 enteros de la memoria en 0x12345678
+
+# Integración con Python:
+(lldb) script import lldb
+(lldb) script print(lldb.frame.FindVariable("myVar").GetValue())
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 6,
+    'title_level': 'Herramientas y Ecosistema de C++',
+    'topic': 'Entornos de Desarrollo y Depuración',
+    'subtopic': 'Perfiles de Rendimiento',
+    'definition': '''
+El profiling es el arte de encontrar cuellos de botella en tu código. Herramientas como perf (Linux), VTune (Intel) y los profilers integrados en Visual Studio te permiten ver exactamente dónde tu programa gasta tiempo y recursos.
+
+Muchos desarrolladores adivinan qué partes del código optimizar, pero sin datos reales, estas optimizaciones a menudo son inefectivas. Un buen perfilado sigue el principio 80/20: usualmente el 80% del tiempo de ejecución se gasta en el 20% del código.
+
+Técnicas como el muestreo estadístico (que perf implementa) tienen bajo overhead y pueden usarse en producción. Google, por ejemplo, ejecuta perf continuamente en sus servicios críticos para identificar regresiones de rendimiento. La clave está en enfocarse primero en los hotspots más significativos, optimizar, y luego volver a medir para validar la mejora.
+''',
+    'code_example': r'''
+# Uso básico de perf (Linux):
+perf record -g ./mi_programa  # Grabar perfil
+perf report -n                # Mostrar resultados
+
+# Ejemplo de salida:
+# Overhead  Samples  Command  Shared Object  Symbol
+#   58.34%    10234  mi_programa  mi_programa  [.] _Z9hot_func1v
+#   23.12%     4056  mi_programa  mi_programa  [.] _Z9hot_func2v
+
+# Uso de gprof:
+g++ -pg -O2 mi_programa.cpp -o mi_programa
+./mi_programa
+gprof mi_programa gmon.out > analisis.txt
+
+# Perfilado con callgrind (Valgrind):
+valgrind --tool=callgrind ./mi_programa
+kcachegrind callgrind.out.*  # Visualización gráfica
+
+# Perfilado de memoria:
+valgrind --tool=massif ./mi_programa
+ms_print massif.out.* | less
+'''
+  });
+}
+
+Future<void> insertSrLevel7DataCpp(Database db) async {
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Interoperabilidad y Lenguajes Mixtos',
+    'topic': 'Interoperabilidad con C y Otros Lenguajes',
+    'subtopic': 'Enlace con Código C',
+    'definition': '''
+La interoperabilidad entre C y C++ es fundamental dado que gran parte de las bibliotecas del sistema y muchas bibliotecas populares están escritas en C. C++ fue diseñado para ser compatible con C, pero hay diferencias importantes en el name mangling y la gestión de tipos que requieren atención.
+
+Cuando mezclas código C y C++, el compilador necesita saber cómo manejar las funciones y estructuras de datos. El problema principal surge porque C++ realiza name mangling (decoración de nombres) para soportar sobrecarga de funciones, mientras que C no. Esto significa que si llamas directamente a una función C desde C++ sin preparación, el linker no podrá encontrar el símbolo.
+
+La solución está en usar el enlace externo apropiado. Muchas bibliotecas populares como OpenSSL y SQLite usan este enfoque para ser accesibles tanto desde C como desde C++. Un detalle importante es que las estructuras de datos compartidas deben usar tipos compatibles y evitar características específicas de C++ como clases o templates.
+''',
+    'code_example': r'''
+// Ejemplo de header compatible con C/C++ (ejemplo.h):
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+// Declaraciones compatibles con C
+void funcion_c(int parametro);
+struct EstructuraSimple {
+    int x;
+    double y;
+};
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
+
+// Implementación en C (ejemplo.c):
+#include "ejemplo.h"
+void funcion_c(int parametro) {
+    printf("Valor: %d\n", parametro);
+}
+
+// Uso desde C++ (main.cpp):
+#include "ejemplo.h"
+int main() {
+    funcion_c(42); // Llamada correctamente vinculada
+    EstructuraSimple s{1, 3.14}; // Inicialización C++
+    return 0;
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Interoperabilidad y Lenguajes Mixtos',
+    'topic': 'Interoperabilidad con C y Otros Lenguajes',
+    'subtopic': 'Uso de extern "C"',
+    'definition': '''
+La directiva extern "C" es el mecanismo fundamental para garantizar la interoperabilidad entre C y C++. Le indica al compilador C++ que no realice name mangling en las declaraciones especificadas, permitiendo que el linker encuentre los símbolos tal como fueron compilados en C.
+
+Aunque la sintaxis parece simple, hay varios matices importantes. Por ejemplo, solo puedes usar extern "C" con funciones que sigan la convención de llamadas de C, lo que significa que no pueden ser métodos de clase o usar características específicas de C++ como sobrecarga o templates. También es común ver patrones de header guards combinados con extern "C" para crear headers que funcionen tanto en C como en C++.
+
+Proyectos grandes como el kernel de Linux usan extensivamente este patrón para sus APIs exportadas. Un consejo profesional es agrupar todas las declaraciones que necesiten enlace C dentro de un solo bloque extern "C", en lugar de decorar cada función individualmente, lo que hace el código más mantenible.
+''',
+    'code_example': r'''
+// Forma típica de usar extern "C" en un header:
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+// Función que podrá ser llamada desde C
+int procesar_datos(const char* input, char* output);
+
+// Estructura compatible con C
+struct Configuracion {
+    int version;
+    int modo;
+};
+
+#ifdef __cplusplus
+} // extern "C"
+#endif
+
+// Implementación en C++ que mantiene compatibilidad:
+extern "C" int procesar_datos(const char* input, char* output) {
+    try {
+        std::string result = procesamiento_cpp(input);
+        std::strcpy(output, result.c_str());
+        return 0;
+    } catch (...) {
+        return -1; // Código de error compatible con C
+    }
+}
+
+// Ejemplo de uso incorrecto:
+// extern "C" {
+//    class MiClase { ... }; // ERROR: clases no son compatibles con C
+//    template<typename T>    // ERROR: templates son específicos de C++
+//    void funcion_template(T param);
+// }
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Interoperabilidad y Lenguajes Mixtos',
+    'topic': 'Interoperabilidad con C y Otros Lenguajes',
+    'subtopic': 'Integración con Python mediante pybind11',
+    'definition': '''
+Pybind11 es una biblioteca ligera que permite exponer funciones y clases C++ a Python con sintaxis minimalista. Es particularmente útil cuando necesitas combinar la velocidad de C++ con la flexibilidad y ecosistema de Python.
+
+A diferencia de las herramientas más antiguas como Boost.Python, pybind11 es header-only y tiene un overhead mínimo. Proyectos como TensorFlow y OpenCV lo usan extensivamente para sus bindings Python. La magia de pybind11 está en cómo abstrae las complejidades de la API Python C tradicional, permitiéndote definir bindings con una sintaxis que parece casi como C++ puro.
+
+Un aspecto poderoso es que pybind11 maneja automáticamente la conversión entre tipos Python y C++, incluyendo contenedores estándar como std::vector y std::map. También soporta características avanzadas como herencia cruzada (Python/C++), funciones lambda como callbacks, y gestión automática de memoria con smart pointers.
+''',
+    'code_example': r'''
+#include <pybind11/pybind11.h>
+namespace py = pybind11;
+
+// Función simple C++ a exponer
+int suma(int a, int b) {
+    return a + b;
+}
+
+// Clase C++ a exponer
+class MiClase {
+public:
+    MiClase(double valor) : valor_(valor) {}
+    void incrementar(double x) { valor_ += x; }
+    double obtener() const { return valor_; }
+private:
+    double valor_;
+};
+
+// Módulo Python
+PYBIND11_MODULE(ejemplo, m) {
+    m.doc() = "Módulo ejemplo pybind11";
+    
+    // Exponer función
+    m.def("suma", &suma, "Suma dos números");
+    
+    // Exponer clase
+    py::class_<MiClase>(m, "MiClase")
+        .def(py::init<double>())
+        .def("incrementar", &MiClase::incrementar)
+        .def("obtener", &MiClase::obtener);
+}
+
+// Uso en Python:
+// import ejemplo
+// print(ejemplo.suma(2, 3))  # 5
+// obj = ejemplo.MiClase(5.0)
+// obj.incrementar(2.5)
+// print(obj.obtener())  # 7.5
+
+// Ejemplo avanzado con numpy:
+#include <pybind11/numpy.h>
+void procesar_array(py::array_t<double> input) {
+    py::buffer_info buf = input.request();
+    double* ptr = static_cast<double*>(buf.ptr);
+    // ... procesamiento ...
+}
+'''
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Interoperabilidad y Lenguajes Mixtos',
+    'topic': 'Llamadas a Bibliotecas Externas',
+    'subtopic': 'Uso de DLLs y Shared Libraries',
+    'definition': '''
+Las bibliotecas compartidas (DLL en Windows, `.so` en Linux, `.dylib` en macOS) permiten distribuir funcionalidades sin tener que recompilar todo desde cero. Básicamente, encapsulan código que puede ser utilizado por múltiples programas al mismo tiempo, lo que ahorra recursos y facilita las actualizaciones.
+
+¿Te estás preguntando por qué usarlas en lugar de incluir directamente el código fuente? Porque reutilizar binarios compilados reduce el acoplamiento y mejora el mantenimiento. Además, puedes mantener partes cerradas o privadas sin entregar el código.
+
+En C++, al compilar una biblioteca compartida defines qué funciones o clases serán visibles públicamente, y luego desde otros programas puedes enlazarla dinámicamente al momento de ejecución o enlace.
+
+Esto se usa todo el tiempo. Por ejemplo, muchas bibliotecas de drivers gráficos o audio vienen como DLLs que los juegos cargan al iniciar. Así puedes mejorar o cambiar funcionalidades sin tocar el programa principal.
+''',
+    'code_example': r'''
+// Definición de una función exportada desde una DLL (Windows)
+__declspec(dllexport) void greet();
+
+// En el cliente que la usa
+__declspec(dllimport) void greet();
+
+int main() {
+    greet(); // Llamada a la función dentro de la DLL
+    return 0;
+}
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Interoperabilidad y Lenguajes Mixtos',
+    'topic': 'Llamadas a Bibliotecas Externas',
+    'subtopic': 'Carga Dinámica de Bibliotecas',
+    'definition': '''
+Cargar bibliotecas dinámicamente significa que no necesitas enlazarlas en tiempo de compilación. Puedes hacerlo en tiempo de ejecución, y eso te da mucha flexibilidad: desde plugins que se activan según el usuario, hasta cargar módulos bajo demanda para ahorrar memoria.
+
+Vamos a ver de qué se trata todo esto...
+
+En C++, esto se puede lograr con funciones del sistema operativo como `dlopen` y `dlsym` en Linux, o `LoadLibrary` y `GetProcAddress` en Windows. Con ellas puedes abrir una biblioteca externa y llamar funciones desde ella, todo mientras el programa ya está corriendo.
+
+Esto es muy usado en juegos, navegadores o IDEs que soportan plugins. Incluso puedes construir tu propia arquitectura modular a partir de esto.
+
+Eso sí: como no hay verificación de tipos en tiempo de compilación, debes tener cuidado al manejar punteros y conversiones. Pero si se hace bien, es una herramienta muy poderosa.
+''',
+    'code_example': r'''
+// Linux: Cargar una biblioteca dinámica manualmente
+#include <dlfcn.h>
+#include <iostream>
+
+int main() {
+    void* lib = dlopen("./libmath.so", RTLD_LAZY);
+    if (!lib) {
+        std::cerr << "No se pudo cargar la biblioteca\n";
+        return 1;
+    }
+
+    // Obtener función sumar
+    typedef int (*SumFunc)(int, int);
+    SumFunc sumar = (SumFunc) dlsym(lib, "sumar");
+    std::cout << "Resultado: " << sumar(2, 3) << "\n";
+
+    dlclose(lib);
+    return 0;
+}
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Interoperabilidad y Lenguajes Mixtos',
+    'topic': 'Llamadas a Bibliotecas Externas',
+    'subtopic': 'Gestión de Dependencias Externas',
+    'definition': '''
+Cuando tu proyecto empieza a usar varias bibliotecas externas, la gestión de esas dependencias se vuelve crítica. No solo debes saber qué versiones estás usando, sino también cómo instalarlas, actualizarlas y mantenerlas sincronizadas entre todo tu equipo.
+
+¿Te estás preguntando si realmente necesitas eso? Si alguna vez tuviste que compilar algo que pedía “Boost 1.70 o superior” y no sabías por dónde empezar... sí, lo necesitas.
+
+Herramientas como **Conan** y **vcpkg** te permiten definir todas tus dependencias en un archivo, y luego instalarlas automáticamente en cualquier entorno. Además, ayudan a evitar conflictos de versiones y te permiten reproducir builds de forma consistente.
+
+Una buena gestión de dependencias incluye:
+- No mezclar versiones incompatibles.
+- Fijar versiones cuando sea necesario.
+- Documentar claramente lo que se necesita.
+
+Es una de esas cosas que parecen tediosas, pero que cuando están bien hechas... hacen la vida mucho más fácil.
+''',
+    'code_example': r'''
+# conanfile.txt (usando Conan para declarar dependencias)
+[requires]
+fmt/9.1.0
+spdlog/1.11.0
+
+[generators]
+cmake
+
+# Instalación:
+conan install . --output-folder=build --build=missing
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Interoperabilidad y Lenguajes Mixtos',
+    'topic': 'Integración con Sistemas y Plataformas',
+    'subtopic': 'Llamadas al Sistema Operativo',
+    'definition': '''
+En ciertos casos, tu aplicación necesita interactuar directamente con el sistema operativo. Ya sea para obtener información del entorno, manejar procesos, acceder a archivos especiales o ejecutar comandos, las llamadas al sistema te dan ese control más “cercano al metal”.
+
+¿No sabes si alguna vez lo hiciste? Pues si usaste `system("cls")` o `system("clear")`... ya lo hiciste.
+
+En C++, puedes usar funciones estándar como `system`, pero también tienes APIs más avanzadas como la WinAPI en Windows o las llamadas POSIX en sistemas Unix. Por ejemplo, puedes lanzar procesos, leer variables de entorno, o modificar permisos de archivos.
+
+Esto es súper útil en herramientas de sistema, instaladores, aplicaciones que requieren permisos especiales o utilidades de depuración.
+''',
+    'code_example': r'''
+// Ejecutar un comando del sistema (portable)
+#include <cstdlib>
+
+int main() {
+#ifdef _WIN32
+    system("cls"); // Limpiar consola en Windows
+#else
+    system("clear"); // En Linux/macOS
+#endif
+    return 0;
+}
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Interoperabilidad y Lenguajes Mixtos',
+    'topic': 'Integración con Sistemas y Plataformas',
+    'subtopic': 'Programación de Bajo Nivel',
+    'definition': '''
+La programación de bajo nivel en C++ te permite interactuar directamente con la memoria, el hardware y las instrucciones del procesador. Esto no es algo que necesites todos los días, pero es esencial si estás desarrollando controladores, sistemas embebidos o herramientas con requerimientos extremos de rendimiento.
+
+¿Te estás preguntando si esto es peligroso? Sí, un poco. Pero también es donde C++ muestra todo su poder. Te permite manipular direcciones de memoria, acceder a registros, usar instrucciones SIMD y hasta escribir código en ensamblador incrustado.
+
+En este nivel es importante entender cómo funciona realmente tu sistema: qué significa alinear memoria, cómo evitar condiciones de carrera, qué hacen los flags del compilador o cómo optimizar acceso a caché.
+
+Este tipo de programación se usa mucho en motores de videojuegos, sistemas operativos, firmware, y herramientas de profiling. Requiere cuidado, pero también te da un control quirúrgico sobre el comportamiento del programa.
+''',
+    'code_example': r'''
+// Uso de memoria sin inicialización (no recomendado, pero ilustrativo)
+#include <iostream>
+#include <cstring>
+
+int main() {
+    char* buffer = (char*) malloc(100); // asignación sin inicializar
+    strcpy(buffer, "Hola bajo nivel");
+    std::cout << buffer << std::endl;
+    free(buffer);
+    return 0;
+}
+
+// También puedes incluir ensamblador en línea (compilador específico)
+// asm ("movl $1, %eax"); // solo ejemplo (no portable)
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 7,
+    'title_level': 'Interoperabilidad y Lenguajes Mixtos',
+    'topic': 'Integración con Sistemas y Plataformas',
+    'subtopic': 'Desarrollo Multiplataforma',
+    'definition': '''
+Escribir código C++ que funcione igual en Windows, Linux y macOS puede parecer un reto, pero con las herramientas y prácticas correctas es totalmente posible. El desarrollo multiplataforma busca reducir las partes específicas del sistema operativo y hacer que tu código se ejecute sin cambios en distintos entornos.
+
+¿Te preguntas si vale la pena? Si alguna vez quisiste distribuir tu app a más de un sistema operativo, ya tienes tu respuesta.
+
+La clave está en usar bibliotecas y herramientas compatibles con múltiples sistemas. CMake, por ejemplo, permite generar archivos de build específicos para cada plataforma. Bibliotecas como SDL, Qt o Boost abstraen detalles del sistema, y puedes usar macros como `#ifdef _WIN32` para manejar casos especiales.
+
+Un buen enfoque multiplataforma también implica:
+- No usar rutas absolutas o separadores específicos.
+- Evitar llamadas al sistema sin comprobaciones.
+- Probar en diferentes entornos (no solo “compila en mi máquina”).
+
+Muchas grandes aplicaciones como Chrome, OBS o incluso Unreal Engine aplican estos principios para correr en cualquier parte con una sola base de código.
+''',
+    'code_example': r'''
+// Uso de #ifdef para manejar diferencias de plataforma
+#include <iostream>
+
+int main() {
+#ifdef _WIN32
+    std::cout << "Ejecutando en Windows\n";
+#elif __linux__
+    std::cout << "Ejecutando en Linux\n";
+#elif __APPLE__
+    std::cout << "Ejecutando en macOS\n";
+#else
+    std::cout << "Plataforma no identificada\n";
+#endif
+    return 0;
+}
+  ''',
+  });
+}
+
+Future<void> insertSrLevel8DataCpp(Database db) async {
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 8,
+    'title_level': 'Seguridad y Buenas Prácticas',
+    'topic': 'Seguridad en C++',
+    'subtopic': 'Prevención de Desbordamientos de Búfer',
+    'definition': '''
+El desbordamiento de búfer es uno de los errores más comunes y peligrosos en C++. Ocurre cuando escribes más datos de los que una variable puede almacenar, sobrescribiendo memoria adyacente. Eso puede causar desde fallos en tiempo de ejecución hasta vulnerabilidades de seguridad.
+
+¿Te estás preguntando cómo pasa esto en la práctica? Pasa más seguido de lo que crees, especialmente cuando se manejan arreglos o cadenas sin verificar tamaños.
+
+Para prevenirlo:
+- Usa funciones seguras como `strncpy` en vez de `strcpy`.
+- Prefiere contenedores como `std::string` o `std::vector`.
+- Siempre valida la longitud de los datos antes de copiarlos o escribirlos en buffers.
+
+Evitar estos errores no es solo buena práctica, es una necesidad. Muchas brechas de seguridad han ocurrido por algo tan simple como no verificar los límites de un arreglo.
+''',
+    'code_example': r'''
+// Desbordamiento (inseguro)
+char nombre[10];
+strcpy(nombre, "Este texto es demasiado largo"); // sobrescribe memoria
+
+// Alternativa segura
+char nombre[10];
+strncpy(nombre, "Juan", sizeof(nombre) - 1);
+nombre[sizeof(nombre) - 1] = '\0'; // aseguramos terminación
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 8,
+    'title_level': 'Seguridad y Buenas Prácticas',
+    'topic': 'Seguridad en C++',
+    'subtopic': 'Validación de Entradas',
+    'definition': '''
+Validar la entrada del usuario (o de cualquier fuente externa) es una regla básica de seguridad. Nunca deberías confiar en que los datos que recibes tienen el formato o contenido esperado. Incluso en aplicaciones locales, una mala validación puede generar fallos o ser explotada con fines maliciosos.
+
+¿No sabes por dónde empezar? Lo más importante es comprobar que los valores estén dentro de un rango aceptable y que no contengan caracteres o estructuras inesperadas.
+
+Algunas buenas prácticas:
+- Verifica tamaños antes de copiar a buffers.
+- Comprueba que los números estén dentro de los límites válidos.
+- Filtra o escapa caracteres peligrosos si trabajas con archivos o comandos del sistema.
+
+Un sistema robusto trata todas las entradas externas como potencialmente corruptas. Es mejor validar de más que asumir que todo está bien.
+''',
+    'code_example': r'''
+#include <iostream>
+#include <limits>
+
+int leerEdad() {
+    int edad;
+    std::cout << "Ingrese su edad: ";
+    std::cin >> edad;
+
+    if (std::cin.fail() || edad < 0 || edad > 130) {
+        std::cerr << "Edad no válida.\n";
+        return -1;
+    }
+    return edad;
+}
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 8,
+    'title_level': 'Seguridad y Buenas Prácticas',
+    'topic': 'Seguridad en C++',
+    'subtopic': 'Uso Seguro de Punteros',
+    'definition': '''
+Los punteros son una herramienta poderosa en C++, pero también una fuente común de errores si se usan mal. Acceder a memoria liberada, desreferenciar punteros nulos o hacer cálculos erróneos con direcciones puede causar fallos difíciles de rastrear.
+
+¿Te estás preguntando si eso todavía pasa en proyectos modernos? Claro que sí. Incluso grandes compañías han tenido errores por punteros mal manejados.
+
+Para evitar problemas:
+- Inicializa siempre tus punteros.
+- Libéralos correctamente (y solo una vez).
+- Usa punteros inteligentes (`unique_ptr`, `shared_ptr`) cuando sea posible.
+- Verifica siempre si un puntero es `nullptr` antes de usarlo.
+
+Adoptar estas prácticas reduce enormemente los riesgos y te ahorra muchas horas de depuración.
+''',
+    'code_example': r'''
+// Puntero crudo sin inicializar (peligroso)
+int* ptr;
+*ptr = 10; // comportamiento indefinido
+
+// Alternativa segura con puntero inteligente
+#include <memory>
+std::unique_ptr<int> ptr = std::make_unique<int>(10);
+*ptr = 20;
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 8,
+    'title_level': 'Seguridad y Buenas Prácticas',
+    'topic': 'Buenas Prácticas de Codificación',
+    'subtopic': 'Estilo de Código Consistente',
+    'definition': '''
+Mantener un estilo de código consistente no es cuestión de estética: ayuda a leer, entender, revisar y mantener el código a largo plazo. En equipos grandes, esto se vuelve aún más crítico, ya que cada desarrollador tiene sus propias preferencias.
+
+Seguramente has visto proyectos donde cada archivo parece escrito por una persona diferente. Leer eso es un caos. Por eso se recomienda definir reglas claras desde el inicio y seguirlas siempre.
+
+Buenas prácticas incluyen:
+- Usar nombres descriptivos y coherentes.
+- Indentar de forma uniforme.
+- Elegir un estilo de llaves y respetarlo.
+- Evitar líneas demasiado largas o anidadas.
+
+Puedes usar herramientas como `clang-format` o `astyle` para automatizar la aplicación de estas reglas. En muchas empresas, el código no pasa a producción si no está correctamente formateado.
+''',
+    'code_example': r'''
+// Código inconsistente (malo)
+int f( int x ){return x+1;}
+
+// Estilo consistente (bueno)
+int sumarUno(int numero) {
+    return numero + 1;
+}
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 8,
+    'title_level': 'Seguridad y Buenas Prácticas',
+    'topic': 'Buenas Prácticas de Codificación',
+    'subtopic': 'Revisión de Código',
+    'definition': '''
+La revisión de código (code review) es una de las prácticas más valiosas en desarrollo profesional. No solo ayuda a encontrar errores antes de que lleguen a producción, también mejora la calidad general del proyecto y promueve el aprendizaje dentro del equipo.
+
+¿Crees que tu código está perfecto? Puede ser. Pero otro par de ojos siempre ve cosas que se te escaparon.
+
+Una buena revisión:
+- Verifica que el código cumpla con los estándares del proyecto.
+- Evalúa claridad, mantenibilidad y posibles bugs.
+- Puede incluir sugerencias sobre nombres, estructura o lógica.
+
+Herramientas como GitHub, GitLab o Bitbucket tienen flujos integrados de revisión a través de pull/merge requests. Y aunque toma tiempo, casi siempre vale la pena.
+''',
+    'code_example': r'''
+// Ejemplo de comentario útil en revisión:
+void procesarUsuario(std::string id) {
+    // ¿Qué pasa si id está vacío?
+    // ¿Debería usar const std::string& para evitar copia?
+}
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 8,
+    'title_level': 'Seguridad y Buenas Prácticas',
+    'topic': 'Buenas Prácticas de Codificación',
+    'subtopic': 'Documentación Clara y Concisa',
+    'definition': '''
+La documentación clara y concisa es el mejor regalo que le puedes dejar a tu yo del futuro... y a cualquier otra persona que tenga que leer tu código. No se trata de escribir un libro, sino de explicar lo justo y necesario para entender qué hace el código y cómo se usa.
+
+Vamos a ser honestos: nadie disfruta mantener código mal documentado. Es frustrante, lento, y lleva a errores que se podrían evitar.
+
+Tips útiles:
+- Comenta el *por qué*, no solo el *qué*.
+- Usa bloques descriptivos en funciones y clases.
+- Mantén actualizada la documentación (evita que quede obsoleta).
+- Apóyate en herramientas como Doxygen.
+
+Una buena documentación puede ser la diferencia entre una biblioteca abandonada y una adoptada por miles.
+''',
+    'code_example': r'''
+/**
+ * Calcula el total de impuestos para una compra.
+ * @param precioBase El precio sin impuestos.
+ * @param tasaImpuesto El porcentaje de impuesto (0-1).
+ * @return Total con impuestos aplicados.
+ */
+double calcularImpuesto(double precioBase, double tasaImpuesto) {
+    return precioBase * (1 + tasaImpuesto);
+}
+  ''',
+  });
+
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 8,
+    'title_level': 'Seguridad y Buenas Prácticas',
+    'topic': 'Cumplimiento de Estándares',
+    'subtopic': 'MISRA C++',
+    'definition': '''
+MISRA C++ es un conjunto de reglas y directrices pensadas para escribir código más seguro y confiable, especialmente en sistemas críticos como los del sector automotriz, aeroespacial o médico. Está basado en buenas prácticas que limitan ciertas construcciones del lenguaje que pueden ser problemáticas o propensas a errores.
+
+¿Te estás preguntando si esto aplica fuera de un avión o un coche autónomo? Sí, aunque no lo creas, estas reglas ayudan a reducir errores graves también en software común.
+
+MISRA no es un compilador, ni un lenguaje nuevo. Es un estándar que te dice: “mejor evita esto”, “haz esto otro”, y “verifica esto aquí”. Por ejemplo:
+- Evita el uso de funciones como `malloc` sin control.
+- Prohíbe el uso de `goto`.
+- Restringe el uso de herencia múltiple y polimorfismo innecesario.
+
+Lo bueno es que muchas herramientas (como cppcheck, clang-tidy o PC-lint) permiten verificar si tu código cumple con MISRA. Si trabajas con sistemas embebidos o software de alta integridad, aprender estas reglas es más que recomendable.
+''',
+    'code_example': r'''
+// Violación de MISRA C++: uso de goto (prohibido)
+int process(int a) {
+    if (a < 0) goto error; // regla violada
+    return a * 2;
+error:
+    return -1;
+}
+
+// Cumpliendo con MISRA C++:
+int process(int a) {
+    if (a < 0) {
+        return -1;
+    }
+    return a * 2;
+}
+  ''',
+  });
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 8,
+    'title_level': 'Seguridad y Buenas Prácticas',
+    'topic': 'Cumplimiento de Estándares',
+    'subtopic': 'CERT C++',
+    'definition': '''
+El estándar CERT C++ está enfocado en la seguridad. A diferencia de otros como MISRA, que se centran en confiabilidad general, CERT busca evitar vulnerabilidades concretas como desbordamientos de búfer, uso de punteros nulos, fugas de memoria y condiciones de carrera.
+
+¿No sé tú, pero yo antes pensaba que esas fallas eran raras...? Hasta que ves que aparecen en software real y causan problemas serios. Desde pérdidas de datos hasta brechas de seguridad.
+
+CERT C++ tiene una colección de reglas como:
+- Siempre inicializa tus variables.
+- Nunca uses `strcpy` sin validar tamaños.
+- No ignores los valores de retorno de funciones críticas.
+
+Su objetivo es que escribas C++ de manera defensiva, pensando en lo que podría salir mal. Grandes compañías como Cisco, Intel o Siemens aplican estas reglas en sus procesos de revisión de código.
+
+Además, herramientas como Clang Static Analyzer o SonarQube pueden ayudarte a detectar automáticamente violaciones al estándar.
+''',
+    'code_example': r'''
+// Violación del estándar CERT: uso inseguro de strcpy
+char buffer[10];
+strcpy(buffer, "Este string es demasiado largo"); // posible overflow
+
+// Cumple CERT C++: uso seguro con strncpy y verificación
+char buffer[10];
+strncpy(buffer, "Hola", sizeof(buffer) - 1);
+buffer[sizeof(buffer) - 1] = '\0'; // aseguramos terminación
+  ''',
+  });
+  await db.insert('programming_content', {
+    'language': 'C++',
+    'module': 'Sr',
+    'level': 8,
+    'title_level': 'Seguridad y Buenas Prácticas',
+    'topic': 'Cumplimiento de Estándares',
+    'subtopic': 'Normativas de la Industria',
+    'definition': '''
+En el desarrollo profesional, no basta con que el código funcione. También debe seguir ciertas **normativas y estándares** que garanticen seguridad, portabilidad y calidad. Estas normativas varían según el sector: lo que se exige en un videojuego no es lo mismo que en un software de control médico.
+
+¿Te preguntas si estas normas son “obligatorias”? En muchos casos, sí. Y en otros, te dan una ventaja enorme a nivel profesional.
+
+Algunas de las más reconocidas:
+- **ISO/IEC 26262**: para sistemas automotrices.
+- **DO-178C**: para software en aeronáutica.
+- **IEC 62304**: para software médico.
+- **SEI CERT** y **MISRA**: para sistemas embebidos y críticos.
+
+Aplicar estas normas implica escribir documentación, hacer análisis estático, cumplir con estándares de codificación y a veces hasta someter tu software a auditorías externas.
+
+Aunque parezca mucho trabajo, estas prácticas elevan el nivel de calidad del código y reducen el riesgo de errores catastróficos. Y sí, muchas empresas piden esto como parte de sus procesos de certificación.
+''',
+    'code_example': r'''
+// Ejemplo: regla de ISO 26262 — evitar múltiples responsabilidades por función
+
+// No recomendable (violación de principio de responsabilidad única)
+void processAndLog(int a) {
+    // procesamiento de datos
+    int result = a * 2;
+    // logging
+    std::cout << "Resultado: " << result << std::endl;
+}
+
+// Recomendado: separación clara de responsabilidades
+int process(int a) {
+    return a * 2;
+}
+
+void log(int result) {
+    std::cout << "Resultado: " << result << std::endl;
+}
+  ''',
+  });
+}

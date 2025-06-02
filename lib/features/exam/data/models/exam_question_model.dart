@@ -3,6 +3,7 @@ class ExamQuestionModel {
   final String questionText;
   final List<String> options;
   final String correctAnswer;
+  final String language;
   final String moduleId;
 
   ExamQuestionModel({
@@ -10,6 +11,7 @@ class ExamQuestionModel {
     required this.questionText,
     required this.options,
     required this.correctAnswer,
+    required this.language,
     required this.moduleId,
   });
 
@@ -18,8 +20,9 @@ class ExamQuestionModel {
     return ExamQuestionModel(
       id: map['id'],
       questionText: map['questionText'],
-      options: (map['options'] as String).split(','), // Convertir String a List
+      options: (map['options'] as String).split(','),
       correctAnswer: map['correctAnswer'],
+      language: map['language'],
       moduleId: map['moduleId'],
     );
   }
@@ -29,8 +32,9 @@ class ExamQuestionModel {
     return {
       'id': id,
       'questionText': questionText,
-      'options': options.join(','), // Convertir List a String
+      'options': options.join(','),
       'correctAnswer': correctAnswer,
+      'language': language,
       'moduleId': moduleId,
     };
   }

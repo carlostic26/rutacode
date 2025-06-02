@@ -10,7 +10,6 @@ class SubtopicRepositoryImpl implements SubtopicRepository {
   Future<Database> get _database async => await _dbHelper.getDatabase();
 
   @override
-  @override
   Future<List<DetailContentModel>> getSubtopicsByTopic(
     String language,
     String module,
@@ -22,20 +21,30 @@ class SubtopicRepositoryImpl implements SubtopicRepository {
       'programming_content',
       where: 'language = ? AND module = ? AND level = ? AND topic = ?',
       whereArgs: [language, module, level, topic],
+      // Ordenar por subtopic para consistencia
+      orderBy: 'subtopic ASC',
     );
 
-    return List.generate(maps.length, (i) {
-      return DetailContentModel(
-        id: maps[i]['id'] as int,
-        language: maps[i]['language'] as String,
-        module: maps[i]['module'] as String,
-        level: maps[i]['level'] as int,
-        titleLevel: maps[i]['tittle_level'] as String,
-        topic: maps[i]['topic'] as String,
-        subtopic: maps[i]['subtopic'] as String,
-        definition: maps[i]['definition'] as String,
-        codeExample: maps[i]['code_example'] as String,
-      );
-    });
+    // Usar LinkedHashMap para mantener el orden de inserción
+    final uniqueSubtopics = <String, DetailContentModel>{};
+
+    for (final map in maps) {
+      final subtopic = map['subtopic'] as String;
+      uniqueSubtopics.putIfAbsent(
+          subtopic,
+          () => DetailContentModel(
+                id: map['id'] as int,
+                language: map['language'] as String,
+                module: map['module'] as String,
+                level: map['level'] as int,
+                titleLevel: map['tittle_level'] as String,
+                topic: map['topic'] as String,
+                subtopic: subtopic,
+                definition: map['definition'] as String,
+                codeExample: map['code_example'] as String,
+              ));
+    }
+
+    return uniqueSubtopics.values.toList();
   }
 }

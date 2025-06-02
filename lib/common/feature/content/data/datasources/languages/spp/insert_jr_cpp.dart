@@ -5,7 +5,7 @@ Future<void> insertJrLevel1DataCpp(Database db) async {
     'language': 'C++',
     'module': 'Jr',
     'level': 1,
-    'title_level': 'Fundamentos del Lenguaje y Entorno',
+    'tittle_level': 'Fundamentos del Lenguaje y Entorno',
     'topic': 'Introducción a C++',
     'subtopic': '¿Qué es C++?',
     'definition': '''
@@ -41,7 +41,7 @@ o no usan el 'std::' namespace, lo que puede causar errores de compilación.
     'language': 'C++',
     'module': 'Jr',
     'level': 1,
-    'title_level': 'Fundamentos del Lenguaje y Entorno',
+    'tittle_level': 'Fundamentos del Lenguaje y Entorno',
     'topic': 'Introducción a C++',
     'subtopic': 'Historia y evolución del lenguaje',
     'definition': '''
@@ -74,7 +74,7 @@ Imagina la evolución: desde un simple conjunto de mejoras a C, se convirtió en
     'language': 'C++',
     'module': 'Jr',
     'level': 1,
-    'title_level': 'Fundamentos del Lenguaje y Entorno',
+    'tittle_level': 'Fundamentos del Lenguaje y Entorno',
     'topic': 'Introducción a C++',
     'subtopic': 'Diferencias entre C y C++',
     'definition': '''
@@ -140,7 +140,7 @@ Además, 'std::cout' es el equivalente de 'printf' en C++ para imprimir en conso
     'language': 'C++',
     'module': 'Jr',
     'level': 1,
-    'title_level': 'Fundamentos del Lenguaje y Entorno',
+    'tittle_level': 'Fundamentos del Lenguaje y Entorno',
     'topic': 'Introducción a C++',
     'subtopic': 'Aplicaciones comunes de C++',
     'definition': '''
@@ -190,7 +190,7 @@ class Enemy : public GameObject {
     'language': 'C++',
     'module': 'Jr',
     'level': 1,
-    'title_level': 'Fundamentos del Lenguaje y Entorno',
+    'tittle_level': 'Fundamentos del Lenguaje y Entorno',
     'topic': 'Configuración del Entorno de Desarrollo',
     'subtopic': 'Instalación de compiladores (GCC, Clang, MSVC)',
     'definition': '''
@@ -227,7 +227,7 @@ Los más populares son GCC (GNU Compiler Collection), Clang y MSVC (Microsoft Vi
     'language': 'C++',
     'module': 'Jr',
     'level': 1,
-    'title_level': 'Fundamentos del Lenguaje y Entorno',
+    'tittle_level': 'Fundamentos del Lenguaje y Entorno',
     'topic': 'Configuración del Entorno de Desarrollo',
     'subtopic':
         'Elección de editores e IDEs (VSCode, Code::Blocks, Visual Studio)',
@@ -267,7 +267,7 @@ Pues bien, la elección entre un editor y un IDE, o entre diferentes opciones de
     'language': 'C++',
     'module': 'Jr',
     'level': 1,
-    'title_level': 'Fundamentos del Lenguaje y Entorno',
+    'tittle_level': 'Fundamentos del Lenguaje y Entorno',
     'topic': 'Configuración del Entorno de Desarrollo',
     'subtopic': 'Primer programa: "Hola Mundo"',
     'definition': '''
@@ -313,7 +313,7 @@ int main() { // La función principal donde empieza la ejecución del programa
     'language': 'C++',
     'module': 'Jr',
     'level': 1,
-    'title_level': 'Fundamentos del Lenguaje y Entorno',
+    'tittle_level': 'Fundamentos del Lenguaje y Entorno',
     'topic': 'Configuración del Entorno de Desarrollo',
     'subtopic': 'Compilación y ejecución desde la línea de comandos',
     'definition': '''
@@ -359,7 +359,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 1,
-    'title_level': 'Fundamentos del Lenguaje y Entorno',
+    'tittle_level': 'Fundamentos del Lenguaje y Entorno',
     'topic': 'Herramientas de Desarrollo',
     'subtopic': 'Uso de la terminal y comandos básicos',
     'definition': '''
@@ -404,7 +404,7 @@ Pensemos por un momento en ella como una interfaz de texto que te permite intera
     'language': 'C++',
     'module': 'Jr',
     'level': 1,
-    'title_level': 'Fundamentos del Lenguaje y Entorno',
+    'tittle_level': 'Fundamentos del Lenguaje y Entorno',
     'topic': 'Herramientas de Desarrollo',
     'subtopic': 'Sistemas de control de versiones (introducción a Git)',
     'definition': '''
@@ -445,7 +445,7 @@ Git es una herramienta que te permite rastrear los cambios en tu código a lo la
     'language': 'C++',
     'module': 'Jr',
     'level': 1,
-    'title_level': 'Fundamentos del Lenguaje y Entorno',
+    'tittle_level': 'Fundamentos del Lenguaje y Entorno',
     'topic': 'Herramientas de Desarrollo',
     'subtopic': 'Depuración básica y uso de breakpoints',
     'definition': '''
@@ -497,7 +497,7 @@ Future<void> insertJrLevel2DataCpp(Database db) async {
     'language': 'C++',
     'module': 'Jr',
     'level': 2,
-    'title_level': 'Tipos de Datos, Variables y Operadores',
+    'tittle_level': 'Tipos de Datos, Variables y Operadores',
     'topic': 'Tipos de Datos y Variables',
     'subtopic': 'Tipos de datos primitivos (int, float, char, bool)',
     'definition': '''
@@ -542,7 +542,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 2,
-    'title_level': 'Tipos de Datos, Variables y Operadores',
+    'tittle_level': 'Tipos de Datos, Variables y Operadores',
     'topic': 'Tipos de Datos y Variables',
     'subtopic': 'Declaración e inicialización de variables',
     'definition': '''
@@ -590,7 +590,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 2,
-    'title_level': 'Tipos de Datos, Variables y Operadores',
+    'tittle_level': 'Tipos de Datos, Variables y Operadores',
     'topic': 'Tipos de Datos y Variables',
     'subtopic': 'Conversión de tipos y casting',
     'definition': '''
@@ -646,7 +646,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 2,
-    'title_level': 'Tipos de Datos, Variables y Operadores',
+    'tittle_level': 'Tipos de Datos, Variables y Operadores',
     'topic': 'Operadores',
     'subtopic': 'Operadores aritméticos',
     'definition': '''
@@ -707,7 +707,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 2,
-    'title_level': 'Tipos de Datos, Variables y Operadores',
+    'tittle_level': 'Tipos de Datos, Variables y Operadores',
     'topic': 'Operadores',
     'subtopic': 'Operadores de asignación',
     'definition': '''
@@ -762,7 +762,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 2,
-    'title_level': 'Tipos de Datos, Variables y Operadores',
+    'tittle_level': 'Tipos de Datos, Variables y Operadores',
     'topic': 'Operadores',
     'subtopic': 'Operadores de comparación',
     'definition': '''
@@ -818,7 +818,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 2,
-    'title_level': 'Tipos de Datos, Variables y Operadores',
+    'tittle_level': 'Tipos de Datos, Variables y Operadores',
     'topic': 'Operadores',
     'subtopic': 'Operadores lógicos',
     'definition': '''
@@ -878,7 +878,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 2,
-    'title_level': 'Tipos de Datos, Variables y Operadores',
+    'tittle_level': 'Tipos de Datos, Variables y Operadores',
     'topic': 'Operadores',
     'subtopic': 'Precedencia y asociatividad de operadores',
     'definition': '''
@@ -945,7 +945,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 2,
-    'title_level': 'Tipos de Datos, Variables y Operadores',
+    'tittle_level': 'Tipos de Datos, Variables y Operadores',
     'topic': 'Constantes y Enumeraciones',
     'subtopic': 'Definición y uso de constantes (const, constexpr)',
     'definition': '''
@@ -1004,7 +1004,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 2,
-    'title_level': 'Tipos de Datos, Variables y Operadores',
+    'tittle_level': 'Tipos de Datos, Variables y Operadores',
     'topic': 'Constantes y Enumeraciones',
     'subtopic': 'Enumeraciones (enum, enum class)',
     'definition': '''
@@ -1082,7 +1082,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 2,
-    'title_level': 'Tipos de Datos, Variables y Operadores',
+    'tittle_level': 'Tipos de Datos, Variables y Operadores',
     'topic': 'Constantes y Enumeraciones',
     'subtopic': 'Ventajas de las enumeraciones',
     'definition': '''
@@ -1172,7 +1172,7 @@ Future<void> insertJrLevel3DataCpp(Database db) async {
     'language': 'C++',
     'module': 'Jr',
     'level': 3,
-    'title_level': 'Control de Flujo',
+    'tittle_level': 'Control de Flujo',
     'topic': 'Estructuras Condicionales',
     'subtopic': 'if, else if, else',
     'definition': '''
@@ -1240,7 +1240,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 3,
-    'title_level': 'Control de Flujo',
+    'tittle_level': 'Control de Flujo',
     'topic': 'Estructuras Condicionales',
     'subtopic': 'switch-case',
     'definition': '''
@@ -1330,7 +1330,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 3,
-    'title_level': 'Control de Flujo',
+    'tittle_level': 'Control de Flujo',
     'topic': 'Estructuras Condicionales',
     'subtopic': 'Operador ternario',
     'definition': '''
@@ -1390,7 +1390,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 3,
-    'title_level': 'Control de Flujo',
+    'tittle_level': 'Control de Flujo',
     'topic': 'Bucles y Estructuras de Repetición',
     'subtopic': 'while, do-while',
     'definition': '''
@@ -1452,7 +1452,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 3,
-    'title_level': 'Control de Flujo',
+    'tittle_level': 'Control de Flujo',
     'topic': 'Bucles y Estructuras de Repetición',
     'subtopic': 'for',
     'definition': '''
@@ -1516,7 +1516,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 3,
-    'title_level': 'Control de Flujo',
+    'tittle_level': 'Control de Flujo',
     'topic': 'Bucles y Estructuras de Repetición',
     'subtopic': 'break y continue',
     'definition': '''
@@ -1584,7 +1584,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 3,
-    'title_level': 'Control de Flujo',
+    'tittle_level': 'Control de Flujo',
     'topic': 'Manejo de Errores Básico',
     'subtopic': 'Introducción a las excepciones',
     'definition': '''
@@ -1638,7 +1638,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 3,
-    'title_level': 'Control de Flujo',
+    'tittle_level': 'Control de Flujo',
     'topic': 'Manejo de Errores Básico',
     'subtopic': 'Uso de try-catch',
     'definition': '''
@@ -1709,7 +1709,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 3,
-    'title_level': 'Control de Flujo',
+    'tittle_level': 'Control de Flujo',
     'topic': 'Manejo de Errores Básico',
     'subtopic': 'throw y tipos de excepciones estándar',
     'definition': '''
@@ -1802,7 +1802,7 @@ Future<void> insertJrLevel4DataCpp(Database db) async {
     'language': 'C++',
     'module': 'Jr',
     'level': 4,
-    'title_level': 'Funciones y Modularización',
+    'tittle_level': 'Funciones y Modularización',
     'topic': 'Funciones',
     'subtopic': 'Declaración y definición',
     'definition': '''
@@ -1871,7 +1871,7 @@ double calcularAreaCirculo(double radio) {
     'language': 'C++',
     'module': 'Jr',
     'level': 4,
-    'title_level': 'Funciones y Modularización',
+    'tittle_level': 'Funciones y Modularización',
     'topic': 'Funciones',
     'subtopic': 'Parámetros y argumentos',
     'definition': '''
@@ -1928,7 +1928,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 4,
-    'title_level': 'Funciones y Modularización',
+    'tittle_level': 'Funciones y Modularización',
     'topic': 'Funciones',
     'subtopic': 'Valor de retorno',
     'definition': '''
@@ -2003,7 +2003,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 4,
-    'title_level': 'Funciones y Modularización',
+    'tittle_level': 'Funciones y Modularización',
     'topic': 'Funciones',
     'subtopic': 'Ámbito de variables',
     'definition': '''
@@ -2074,7 +2074,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 4,
-    'title_level': 'Funciones y Modularización',
+    'tittle_level': 'Funciones y Modularización',
     'topic': 'Técnicas Avanzadas en Funciones',
     'subtopic': 'Sobrecarga de funciones',
     'definition': '''
@@ -2146,7 +2146,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 4,
-    'title_level': 'Funciones y Modularización',
+    'tittle_level': 'Funciones y Modularización',
     'topic': 'Técnicas Avanzadas en Funciones',
     'subtopic': 'Funciones inline',
     'definition': '''
@@ -2213,7 +2213,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 4,
-    'title_level': 'Funciones y Modularización',
+    'tittle_level': 'Funciones y Modularización',
     'topic': 'Técnicas Avanzadas en Funciones',
     'subtopic': 'Parámetros por defecto',
     'definition': '''
@@ -2274,7 +2274,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 4,
-    'title_level': 'Funciones y Modularización',
+    'tittle_level': 'Funciones y Modularización',
     'topic': 'Técnicas Avanzadas en Funciones',
     'subtopic': 'Recursividad',
     'definition': '''
@@ -2364,7 +2364,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 4,
-    'title_level': 'Funciones y Modularización',
+    'tittle_level': 'Funciones y Modularización',
     'topic': 'Organización del Código',
     'subtopic': 'Archivos de encabezado (.h) y de implementación (.cpp)',
     'definition': '''
@@ -2440,7 +2440,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 4,
-    'title_level': 'Funciones y Modularización',
+    'tittle_level': 'Funciones y Modularización',
     'topic': 'Organización del Código',
     'subtopic': 'Directivas de preprocesador (#include, #define)',
     'definition': '''
@@ -2506,7 +2506,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 4,
-    'title_level': 'Funciones y Modularización',
+    'tittle_level': 'Funciones y Modularización',
     'topic': 'Organización del Código',
     'subtopic': 'Uso de namespaces',
     'definition': '''
@@ -2591,7 +2591,7 @@ Future<void> insertJrLevel5DataCpp(Database db) async {
     'language': 'C++',
     'module': 'Jr',
     'level': 5,
-    'title_level': 'Arreglos y Cadenas de Caracteres',
+    'tittle_level': 'Arreglos y Cadenas de Caracteres',
     'topic': 'Arreglos (Arrays)',
     'subtopic': 'Declaración e inicialización',
     'definition': '''
@@ -2666,7 +2666,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 5,
-    'title_level': 'Arreglos y Cadenas de Caracteres',
+    'tittle_level': 'Arreglos y Cadenas de Caracteres',
     'topic': 'Arreglos (Arrays)',
     'subtopic': 'Acceso y modificación de elementos',
     'definition': '''
@@ -2731,7 +2731,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 5,
-    'title_level': 'Arreglos y Cadenas de Caracteres',
+    'tittle_level': 'Arreglos y Cadenas de Caracteres',
     'topic': 'Arreglos (Arrays)',
     'subtopic': 'Iteración sobre arreglos',
     'definition': '''
@@ -2816,7 +2816,7 @@ return 0;
     'language': 'C++',
     'module': 'Jr',
     'level': 5,
-    'title_level': 'Arreglos y Cadenas de Caracteres',
+    'tittle_level': 'Arreglos y Cadenas de Caracteres',
     'topic': 'Cadenas de Caracteres (Strings)',
     'subtopic': 'Cadenas estilo C (char arrays)',
     'definition': '''
@@ -2891,7 +2891,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 5,
-    'title_level': 'Arreglos y Cadenas de Caracteres',
+    'tittle_level': 'Arreglos y Cadenas de Caracteres',
     'topic': 'Cadenas de Caracteres (Strings)',
     'subtopic': 'Clase std::string',
     'definition': '''
@@ -2984,7 +2984,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 5,
-    'title_level': 'Arreglos y Cadenas de Caracteres',
+    'tittle_level': 'Arreglos y Cadenas de Caracteres',
     'topic': 'Cadenas de Caracteres (Strings)',
     'subtopic': 'Operaciones comunes (concatenación, búsqueda, longitud)',
     'definition': '''
@@ -3110,7 +3110,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 5,
-    'title_level': 'Arreglos y Cadenas de Caracteres',
+    'tittle_level': 'Arreglos y Cadenas de Caracteres',
     'topic': 'Cadenas de Caracteres (Strings)',
     'subtopic': 'Operaciones comunes (concatenación, búsqueda, longitud)',
     'definition': '''
@@ -3222,7 +3222,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 5,
-    'title_level': 'Arreglos y Cadenas de Caracteres',
+    'tittle_level': 'Arreglos y Cadenas de Caracteres',
     'topic': 'Vectores (std::vector)',
     'subtopic': 'Introducción a vectores',
     'definition': '''
@@ -3303,7 +3303,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 5,
-    'title_level': 'Arreglos y Cadenas de Caracteres',
+    'tittle_level': 'Arreglos y Cadenas de Caracteres',
     'topic': 'Vectores (std::vector)',
     'subtopic': 'Métodos comunes (push_back, size, clear)',
     'definition': '''
@@ -3397,7 +3397,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 5,
-    'title_level': 'Arreglos y Cadenas de Caracteres',
+    'tittle_level': 'Arreglos y Cadenas de Caracteres',
     'topic': 'Vectores (std::vector)',
     'subtopic': 'Iteración y acceso a elementos',
     'definition': '''
@@ -3514,7 +3514,7 @@ Future<void> insertJrLevel6DataCpp(Database db) async {
     'language': 'C++',
     'module': 'Jr',
     'level': 6,
-    'title_level': 'Punteros y Referencias',
+    'tittle_level': 'Punteros y Referencias',
     'topic': 'Punteros',
     'subtopic': 'Declaración e inicialización',
     'definition': '''
@@ -3603,7 +3603,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 6,
-    'title_level': 'Punteros y Referencias',
+    'tittle_level': 'Punteros y Referencias',
     'topic': 'Punteros',
     'subtopic': 'Operadores * y &',
     'definition': '''
@@ -3678,7 +3678,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 6,
-    'title_level': 'Punteros y Referencias',
+    'tittle_level': 'Punteros y Referencias',
     'topic': 'Punteros',
     'subtopic': 'Punteros y arreglos',
     'definition': '''
@@ -3771,7 +3771,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 6,
-    'title_level': 'Punteros y Referencias',
+    'tittle_level': 'Punteros y Referencias',
     'topic': 'Punteros',
     'subtopic': 'Punteros a funciones',
     'definition': '''
@@ -3889,7 +3889,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 6,
-    'title_level': 'Punteros y Referencias',
+    'tittle_level': 'Punteros y Referencias',
     'topic': 'Referencias',
     'subtopic': 'Referencias como alias',
     'definition': '''
@@ -3968,7 +3968,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 6,
-    'title_level': 'Punteros y Referencias',
+    'tittle_level': 'Punteros y Referencias',
     'topic': 'Referencias',
     'subtopic': 'Paso por referencia a funciones',
     'definition': '''
@@ -4061,7 +4061,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 6,
-    'title_level': 'Punteros y Referencias',
+    'tittle_level': 'Punteros y Referencias',
     'topic': 'Referencias',
     'subtopic': 'Diferencias entre punteros y referencias',
     'definition': '''
@@ -4185,7 +4185,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 6,
-    'title_level': 'Punteros y Referencias',
+    'tittle_level': 'Punteros y Referencias',
     'topic': 'Punteros Inteligentes',
     'subtopic': 'Concepto de punteros inteligentes',
     'definition': '''
@@ -4258,7 +4258,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 6,
-    'title_level': 'Punteros y Referencias',
+    'tittle_level': 'Punteros y Referencias',
     'topic': 'Punteros Inteligentes',
     'subtopic': 'Uso básico de std::unique_ptr y std::shared_ptr',
     'definition': '''
@@ -4344,7 +4344,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 6,
-    'title_level': 'Punteros y Referencias',
+    'tittle_level': 'Punteros y Referencias',
     'topic': 'Punteros Inteligentes',
     'subtopic': 'Ventajas sobre punteros crudos',
     'definition': '''
@@ -4464,7 +4464,7 @@ Future<void> insertJrLevel7DataCpp(Database db) async {
     'language': 'C++',
     'module': 'Jr',
     'level': 7,
-    'title_level': 'Estructuras de Datos Básicas',
+    'tittle_level': 'Estructuras de Datos Básicas',
     'topic': 'Estructuras (struct)',
     'subtopic': 'Declaración y uso',
     'definition': '''
@@ -4540,7 +4540,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 7,
-    'title_level': 'Estructuras de Datos Básicas',
+    'tittle_level': 'Estructuras de Datos Básicas',
     'topic': 'Estructuras (struct)',
     'subtopic': 'Acceso a miembros',
     'definition': '''
@@ -4615,7 +4615,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 7,
-    'title_level': 'Estructuras de Datos Básicas',
+    'tittle_level': 'Estructuras de Datos Básicas',
     'topic': 'Estructuras (struct)',
     'subtopic': 'Anidamiento de estructuras',
     'definition': '''
@@ -4723,7 +4723,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 7,
-    'title_level': 'Estructuras de Datos Básicas',
+    'tittle_level': 'Estructuras de Datos Básicas',
     'topic': 'Uniones (union)',
     'subtopic': 'Declaración y uso',
     'definition': '''
@@ -4805,7 +4805,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 7,
-    'title_level': 'Estructuras de Datos Básicas',
+    'tittle_level': 'Estructuras de Datos Básicas',
     'topic': 'Uniones (union)',
     'subtopic': 'Diferencias con struct',
     'definition': '''
@@ -4892,7 +4892,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 7,
-    'title_level': 'Estructuras de Datos Básicas',
+    'tittle_level': 'Estructuras de Datos Básicas',
     'topic': 'Uniones (union)',
     'subtopic': 'Casos de uso comunes',
     'definition': '''
@@ -4995,7 +4995,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 7,
-    'title_level': 'Estructuras de Datos Básicas',
+    'tittle_level': 'Estructuras de Datos Básicas',
     'topic': 'Enumeraciones Avanzadas',
     'subtopic': 'Uso avanzado de enum class',
     'definition': '''
@@ -5092,7 +5092,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 7,
-    'title_level': 'Estructuras de Datos Básicas',
+    'tittle_level': 'Estructuras de Datos Básicas',
     'topic': 'Enumeraciones Avanzadas',
     'subtopic': 'Conversión entre enums y tipos primitivos',
     'definition': '''
@@ -5174,7 +5174,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 7,
-    'title_level': 'Estructuras de Datos Básicas',
+    'tittle_level': 'Estructuras de Datos Básicas',
     'topic': 'Enumeraciones Avanzadas',
     'subtopic': 'Buenas prácticas',
     'definition': '''
@@ -5279,7 +5279,7 @@ Future<void> insertJrLevel8DataCpp(Database db) async {
     'language': 'C++',
     'module': 'Jr',
     'level': 8,
-    'title_level': 'Buenas Prácticas y Estilo de Código',
+    'tittle_level': 'Buenas Prácticas y Estilo de Código',
     'topic': 'Convenciones de Nomenclatura',
     'subtopic': 'Estilos comunes (CamelCase, snake_case)',
     'definition': '''
@@ -5368,7 +5368,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 8,
-    'title_level': 'Buenas Prácticas y Estilo de Código',
+    'tittle_level': 'Buenas Prácticas y Estilo de Código',
     'topic': 'Convenciones de Nomenclatura',
     'subtopic': 'Nombres significativos y legibilidad',
     'definition': '''
@@ -5486,7 +5486,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 8,
-    'title_level': 'Buenas Prácticas y Estilo de Código',
+    'tittle_level': 'Buenas Prácticas y Estilo de Código',
     'topic': 'Comentarios y Documentación',
     'subtopic': 'Comentarios en línea y de bloque',
     'definition': '''
@@ -5587,7 +5587,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 8,
-    'title_level': 'Buenas Prácticas y Estilo de Código',
+    'tittle_level': 'Buenas Prácticas y Estilo de Código',
     'topic': 'Comentarios y Documentación',
     'subtopic': 'Uso de herramientas como Doxygen',
     'definition': '''
@@ -5685,7 +5685,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 8,
-    'title_level': 'Buenas Prácticas y Estilo de Código',
+    'tittle_level': 'Buenas Prácticas y Estilo de Código',
     'topic': 'Comentarios y Documentación',
     'subtopic': 'Importancia de la documentación',
     'definition': '''
@@ -5799,7 +5799,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 8,
-    'title_level': 'Buenas Prácticas y Estilo de Código',
+    'tittle_level': 'Buenas Prácticas y Estilo de Código',
     'topic': 'Organización y Estructura del Código',
     'subtopic': 'Separación de responsabilidades',
     'definition': '''
@@ -5925,7 +5925,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 8,
-    'title_level': 'Buenas Prácticas y Estilo de Código',
+    'tittle_level': 'Buenas Prácticas y Estilo de Código',
     'topic': 'Organización y Estructura del Código',
     'subtopic': 'Modularización',
     'definition': '''
@@ -6039,7 +6039,7 @@ int main() {
     'language': 'C++',
     'module': 'Jr',
     'level': 8,
-    'title_level': 'Buenas Prácticas y Estilo de Código',
+    'tittle_level': 'Buenas Prácticas y Estilo de Código',
     'topic': 'Organización y Estructura del Código',
     'subtopic': 'Reutilización de código y funciones genéricas',
     'definition': '''

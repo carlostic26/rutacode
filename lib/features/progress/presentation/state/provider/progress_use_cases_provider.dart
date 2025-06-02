@@ -1,75 +1,38 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rutacode/features/progress/data/datasources/progress_local_database.dart';
 import 'package:rutacode/features/progress/data/repository/progress_repository_impl.dart';
 import 'package:rutacode/features/progress/domain/repositories/progress_repository.dart';
-import 'package:rutacode/features/progress/domain/use_cases/create_progress_by_subtopic_use_case.dart';
-import 'package:rutacode/features/progress/domain/use_cases/get_circular_progress_percentage_by_module_use_case.dart';
-import 'package:rutacode/features/progress/domain/use_cases/get_level_progress_use_case.dart';
-import 'package:rutacode/features/progress/domain/use_cases/get_scores_progress_by_module_use_case.dart';
-import 'package:rutacode/features/progress/domain/use_cases/get_total_score_by_level.dart';
-import 'package:rutacode/features/progress/domain/use_cases/get_user_score_by_module_use_case.dart';
-import 'package:rutacode/features/progress/domain/use_cases/is_subtopic_completed_use_case.dart';
-import 'package:rutacode/features/progress/domain/use_cases/is_topic_completed_use_case.dart';
 import 'package:rutacode/features/list_items/presentation/state/provider/get_subtopic_use_case_provider.dart';
 import 'package:rutacode/features/list_items/presentation/state/provider/get_topic_use_case_provider.dart';
+import 'package:rutacode/features/progress/domain/use_cases/progress_use_cases.dart';
+
+final progressUseCasesProvider = Provider<ProgressUseCases>((ref) {
+  final repository = ref.read(progressRepositoryProvider);
+  return ProgressUseCases(repository);
+});
+
+/* ASI SE USA LO DE ARRIBA
+
+final useCases = ref.read(progressUseCasesProvider);
+await useCases.createProgressBySubtopic(...);
+final completed = await useCases.isTopicCompleted(...);
+
+*/
 
 /// Proveedor del repositorio de progreso que centraliza el acceso a datos
 final progressRepositoryProvider = Provider<ProgressRepository>((ref) {
   final subtopicRepository = ref.read(subtopicRepositoryProvider);
   final topicRepository = ref.read(topicRepositoryProvider);
-  return ProgressRepositoryImpl(subtopicRepository, topicRepository);
+  final ProgressLocalContentDatabaseHelper dbHelper =
+      ProgressLocalContentDatabaseHelper(); // Make sure this provider exists
+  return ProgressRepositoryImpl(
+    dbHelper: dbHelper,
+    subtopicRepository: subtopicRepository,
+    topicRepository: topicRepository,
+  );
 });
 
-/* ************************************************************************
- *                     PROVEEDORES DE CASOS DE USO                        *
- ************************************************************************ */
-
-final createProgressBySubtopicUseCaseProvider =
-    Provider<CreateProgressBySubtopicUseCase>((ref) {
-  final repository = ref.read(progressRepositoryProvider);
-  return CreateProgressBySubtopicUseCase(repository);
-});
-
-final isSubtopicCompletedUseCaseProvider = Provider<IsSubtopicCompletedUseCase>(
-  (ref) => IsSubtopicCompletedUseCase(ref.read(progressRepositoryProvider)),
-);
-
-final isTopicCompletedUseCaseProvider =
-    Provider<IsTopicCompletedUseCase>((ref) {
-  final progressRepository = ref.read(progressRepositoryProvider);
-  return IsTopicCompletedUseCase(progressRepository);
-});
-
-/* ************************************************************************
- *                     PROVEEDORES RELACIONADOS A SCORE                   *
- ************************************************************************ */
-
-final getUserTotalScoreByModuleUseCaseProvider =
-    Provider<GetUserTotalScoreByModuleUseCase>((ref) {
-  final progressRepository = ref.read(progressRepositoryProvider);
-  return GetUserTotalScoreByModuleUseCase(progressRepository);
-});
-
-final getScoresByModuleProvider = Provider<GetScoresByModule>((ref) {
-  final repository = ref.read(progressRepositoryProvider);
-  return GetScoresByModule(repository);
-});
-
-final getTotalScoreByLevelProvider = Provider<GetTotalScoreByLevel>((ref) {
-  final repository = ref.read(progressRepositoryProvider);
-  return GetTotalScoreByLevel(repository);
-});
-
-final getLevelProgressProvider = Provider<GetLevelProgress>((ref) {
-  final repository = ref.read(progressRepositoryProvider);
-  return GetLevelProgress(repository);
-});
-
-final getCircularProgressPercentageByModuleUseCaseProvider =
-    Provider<GetCircularProgressPercentageByModuleUseCase>((ref) {
-  final progressRepository = ref.read(progressRepositoryProvider);
-  return GetCircularProgressPercentageByModuleUseCase(progressRepository);
-});
-
+/* 
 /* ************************************************************************
  *           STATENOTIFIERS Y PROVEEDORES PARA MÓDULOS                   *
  ************************************************************************ */
@@ -179,3 +142,4 @@ final midCompletedSubtopicsProvider = Provider<List<String>>(
 
 final srCompletedSubtopicsProvider = Provider<List<String>>(
     (ref) => ref.watch(completedSubtopicsProvider('Sr')));
+ */
