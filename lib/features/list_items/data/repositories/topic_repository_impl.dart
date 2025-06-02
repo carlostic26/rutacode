@@ -20,7 +20,7 @@ class TopicRepositoryImpl implements TopicRepository {
         language, 
         module, 
         level, 
-        tittle_level, 
+        title_level, 
         topic,
         GROUP_CONCAT(subtopic) as subtopics
       FROM programming_content
@@ -42,7 +42,7 @@ class TopicRepositoryImpl implements TopicRepository {
         language: map['language'] as String,
         module: map['module'] as String,
         level: map['level'] as int,
-        titleLevel: map['tittle_level'] as String,
+        titleLevel: map['title_level'] as String,
         topic: map['topic'] as String,
         subtopic: map['subtopics']
             as String, // Aquí tendrás todos los subtopics concatenados

@@ -37,7 +37,7 @@ class SubtopicRepositoryImpl implements SubtopicRepository {
                 language: map['language'] as String,
                 module: map['module'] as String,
                 level: map['level'] as int,
-                titleLevel: map['tittle_level'] as String,
+                titleLevel: map['title_level'] as String,
                 topic: map['topic'] as String,
                 subtopic: subtopic,
                 definition: map['definition'] as String,

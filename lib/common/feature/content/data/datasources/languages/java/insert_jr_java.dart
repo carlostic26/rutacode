@@ -6,7 +6,7 @@ Future<void> insertJrLevel1Data(Database db) async {
     'language': 'Java',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Java',
+    'title_level': 'Fundamentos de Java',
     'topic': 'Sintaxis Básica',
     'subtopic': 'Estructura de un programa Java',
     'definition': '''
@@ -29,7 +29,7 @@ public class MiPrograma {
     'language': 'Java',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Java',
+    'title_level': 'Fundamentos de Java',
     'topic': 'Sintaxis Básica',
     'subtopic': 'Comentarios',
     'definition': '''
@@ -56,7 +56,7 @@ de múltiples líneas
     'language': 'Java',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Java',
+    'title_level': 'Fundamentos de Java',
     'topic': 'Sintaxis Básica',
     'subtopic': 'Puntos y comas',
     'definition': '''
@@ -77,7 +77,7 @@ int numero = 5 // Incorrecto: falta el punto y coma
     'language': 'Java',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Java',
+    'title_level': 'Fundamentos de Java',
     'topic': 'Sintaxis Básica',
     'subtopic': 'Bloques de código',
     'definition': '''
@@ -99,7 +99,7 @@ if (condicion) {
     'language': 'Java',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Java',
+    'title_level': 'Fundamentos de Java',
     'topic': 'Tipos de Datos y Variables',
     'subtopic': 'Tipos primitivos',
     'definition': '''
@@ -126,7 +126,7 @@ char inicial = 'J';
     'language': 'Java',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Java',
+    'title_level': 'Fundamentos de Java',
     'topic': 'Tipos de Datos y Variables',
     'subtopic': 'Tipos de referencia',
     'definition': '''
@@ -151,7 +151,7 @@ MiClase objeto = new MiClase();
     'language': 'Java',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Java',
+    'title_level': 'Fundamentos de Java',
     'topic': 'Tipos de Datos y Variables',
     'subtopic': 'Declaración e inicialización de variables',
     'definition': '''
@@ -179,7 +179,7 @@ altura = 170; // Inicialización posterior
     'language': 'Java',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Java',
+    'title_level': 'Fundamentos de Java',
     'topic': 'Tipos de Datos y Variables',
     'subtopic': 'Ámbito de variables',
     'definition': '''
@@ -213,7 +213,7 @@ public class EjemploAmbito {
     'language': 'Java',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Java',
+    'title_level': 'Fundamentos de Java',
     'topic': 'Operadores',
     'subtopic': 'Operadores aritméticos (+, -, *, /, %)',
     'definition': '''
@@ -244,7 +244,7 @@ int modulo = a % b;      // Resultado: 1
     'language': 'Java',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Java',
+    'title_level': 'Fundamentos de Java',
     'topic': 'Operadores',
     'subtopic': 'Operadores de comparación (==, !=, >, <, etc.)',
     'definition': '''
@@ -277,7 +277,7 @@ System.out.println(a <= b); // true
     'language': 'Java',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Java',
+    'title_level': 'Fundamentos de Java',
     'topic': 'Operadores',
     'subtopic': 'Operadores lógicos (&&, ||, !)',
     'definition': '''
@@ -304,7 +304,7 @@ System.out.println(!a);     // false
     'language': 'Java',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Java',
+    'title_level': 'Fundamentos de Java',
     'topic': 'Operadores',
     'subtopic': 'Operadores de asignación (=, +=, -=, etc.)',
     'definition': '''
@@ -335,7 +335,7 @@ a %= 5; // a = a % 5; Resultado: 1
     'language': 'Java',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Java',
+    'title_level': 'Fundamentos de Java',
     'topic': 'Estructuras de control',
     'subtopic': 'Sentencias condicionales (if, else if, else)',
     'definition': '''
@@ -365,7 +365,7 @@ if (numero > 0) {
     'language': 'Java',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Java',
+    'title_level': 'Fundamentos de Java',
     'topic': 'Estructuras de control',
     'subtopic': 'Sentencia switch-case',
     'definition': '''
@@ -408,7 +408,7 @@ System.out.println("El día es: " + nombreDia);
     'language': 'Java',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Java',
+    'title_level': 'Fundamentos de Java',
     'topic': 'Estructuras de control',
     'subtopic': 'Bucles (for, while, do-while)',
     'definition': '''
@@ -447,7 +447,7 @@ do {
     'language': 'Java',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Java',
+    'title_level': 'Fundamentos de Java',
     'topic': 'Estructuras de control',
     'subtopic': 'Break y continue',
     'definition': '''
@@ -494,7 +494,7 @@ Future<void> insertJrLevel2Data(Database db) async {
     'language': 'Java',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos (POO)',
+    'title_level': 'Programación Orientada a Objetos (POO)',
     'topic': 'Clases y Objetos',
     'subtopic': 'Definición de clases',
     'definition': '''
@@ -522,7 +522,7 @@ public class Persona {
     'language': 'Java',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos (POO)',
+    'title_level': 'Programación Orientada a Objetos (POO)',
     'topic': 'Clases y Objetos',
     'subtopic': 'Creación de objetos',
     'definition': '''
@@ -546,7 +546,7 @@ persona1.saludar(); // Salida: Hola, mi nombre es Juan
     'language': 'Java',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos (POO)',
+    'title_level': 'Programación Orientada a Objetos (POO)',
     'topic': 'Clases y Objetos',
     'subtopic': 'Atributos y métodos',
     'definition': '''
@@ -574,7 +574,7 @@ public class Coche {
     'language': 'Java',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos (POO)',
+    'title_level': 'Programación Orientada a Objetos (POO)',
     'topic': 'Clases y Objetos',
     'subtopic': 'Constructores',
     'definition': '''
@@ -603,7 +603,7 @@ public class Persona {
     'language': 'Java',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos (POO)',
+    'title_level': 'Programación Orientada a Objetos (POO)',
     'topic': 'Prilares de la POO',
     'subtopic': 'Encapsulamiento (modificadores de acceso)',
     'definition': '''
@@ -645,7 +645,7 @@ System.out.println(cuenta.getSaldo()); // Salida: 1500.0
     'language': 'Java',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos (POO)',
+    'title_level': 'Programación Orientada a Objetos (POO)',
     'topic': 'Prilares de la POO',
     'subtopic': 'Herencia (extends, super)',
     'definition': '''
@@ -681,7 +681,7 @@ miPerro.hacerSonido(); // Salida: Guau
     'language': 'Java',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos (POO)',
+    'title_level': 'Programación Orientada a Objetos (POO)',
     'topic': 'Prilares de la POO',
     'subtopic': 'Polimorfismo (sobrecarga y sobrescritura)',
     'definition': '''
@@ -729,7 +729,7 @@ for (Animal animal : animales) {
     'language': 'Java',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos (POO)',
+    'title_level': 'Programación Orientada a Objetos (POO)',
     'topic': 'Prilares de la POO',
     'subtopic': 'Abstracción (clases abstractas)',
     'definition': '''
@@ -786,7 +786,7 @@ System.out.println(figura2.calcularArea()); // Salida: 24.0
     'language': 'Java',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos (POO)',
+    'title_level': 'Programación Orientada a Objetos (POO)',
     'topic': 'Conceptos Avanzados',
     'subtopic': 'Interfaces',
     'definition': '''
@@ -824,7 +824,7 @@ figura.imprimir();  // Salida: Imprimiendo dibujo...
     'language': 'Java',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos (POO)',
+    'title_level': 'Programación Orientada a Objetos (POO)',
     'topic': 'Conceptos Avanzados',
     'subtopic': 'Clases anidadas',
     'definition': '''
@@ -867,7 +867,7 @@ estatica.mostrarMensaje(); // Salida: Hola desde clase anidada estática
     'language': 'Java',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos (POO)',
+    'title_level': 'Programación Orientada a Objetos (POO)',
     'topic': 'Conceptos Avanzados',
     'subtopic': 'Enums',
     'definition': '''
@@ -910,7 +910,7 @@ System.out.println(hoy.getDescripcion()); // Salida: Inicio de semana
     'language': 'Java',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos (POO)',
+    'title_level': 'Programación Orientada a Objetos (POO)',
     'topic': 'Conceptos Avanzados',
     'subtopic': 'Records (Java 14+)',
     'definition': '''
@@ -937,7 +937,7 @@ System.out.println(punto);     // Salida: Punto[x=3, y=5]
     'language': 'Java',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos (POO)',
+    'title_level': 'Programación Orientada a Objetos (POO)',
     'topic': 'Conceptos Avanzados',
     'subtopic': 'Métodos estáticos',
     'definition': '''
@@ -968,7 +968,7 @@ Future<void> insertJrLevel3Data(Database db) async {
     'language': 'Java',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Arrays y Colecciones',
     'subtopic': 'Arrays unidimensionales y multidimensionales',
     'definition': '''
@@ -1006,7 +1006,7 @@ System.out.println("Primera calificación del segundo estudiante: " + calificaci
     'language': 'Java',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Arrays y Colecciones',
     'subtopic': 'ArrayList vs Array',
     'definition': '''
@@ -1042,7 +1042,7 @@ System.out.println("Primera tarea: " + tareas.get(0));
     'language': 'Java',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Arrays y Colecciones',
     'subtopic': 'LinkedList',
     'definition': '''
@@ -1074,7 +1074,7 @@ System.out.println("Último nombre: " + nombres.getLast());
     'language': 'Java',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Arrays y Colecciones',
     'subtopic': 'HashSet, TreeSet',
     'definition': '''
@@ -1109,7 +1109,7 @@ System.out.println("TreeSet: " + treeSet);
     'language': 'Java',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Arrays y Colecciones',
     'subtopic': 'HashMap, TreeMap',
     'definition': '''
@@ -1144,7 +1144,7 @@ System.out.println("TreeMap: " + treeMap);
     'language': 'Java',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Strings y Manipulación',
     'subtopic': 'Clase String y sus métodos',
     'definition': '''
@@ -1169,7 +1169,7 @@ System.out.println("Reemplazo: " + texto.replace("Mundo", "Java"));
     'language': 'Java',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Strings y Manipulación',
     'subtopic': 'StringBuilder y StringBuffer',
     'definition': '''
@@ -1196,7 +1196,7 @@ System.out.println(sbf.toString()); // Salida: Hola Java
     'language': 'Java',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Strings y Manipulación',
     'subtopic': 'Formateo de Strings',
     'definition': '''
@@ -1220,7 +1220,7 @@ System.out.println(resultado); // Salida: Nombre: Ana | Edad: 30 | Salario: 1234
     'language': 'Java',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Strings y Manipulación',
     'subtopic': 'Expresiones regulares básicas',
     'definition': '''
@@ -1250,7 +1250,7 @@ while (matcher.find()) {
     'language': 'Java',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Manejo de Archivos',
     'subtopic': 'Clases File, FileReader, FileWriter',
     'definition': '''
@@ -1297,7 +1297,7 @@ public class EjemploArchivo {
     'language': 'Java',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Manejo de Archivos',
     'subtopic': 'BufferedReader/BufferedWriter',
     'definition': '''
@@ -1347,7 +1347,7 @@ public class EjemploBuffered {
     'language': 'Java',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Manejo de Archivos',
     'subtopic': 'InputStream/OutputStream',
     'definition': '''
@@ -1391,7 +1391,7 @@ Future<void> insertJrLevel4Data(Database db) async {
     'language': 'Java',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Manejo de Excepciones',
+    'title_level': 'Manejo de Excepciones',
     'topic': 'Tipos de Excepciones',
     'subtopic': 'Excepciones verificadas vs no verificadas',
     'definition': '''
@@ -1435,7 +1435,7 @@ public class EjemploUnchecked {
     'language': 'Java',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Manejo de Excepciones',
+    'title_level': 'Manejo de Excepciones',
     'topic': 'Tipos de Excepciones',
     'subtopic': 'Jerarquía de excepciones',
     'definition': '''
@@ -1470,7 +1470,7 @@ public class JerarquiaExcepciones {
     'language': 'Java',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Manejo de Excepciones',
+    'title_level': 'Manejo de Excepciones',
     'topic': 'Tipos de Excepciones',
     'subtopic':
         'Excepciones comunes (NullPointerException, ArrayIndexOutOfBoundsException, etc.)',
@@ -1521,7 +1521,7 @@ public class EjemploArithmetic {
     'language': 'Java',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Manejo de Excepciones',
+    'title_level': 'Manejo de Excepciones',
     'topic': 'Manejo de Errores',
     'subtopic': 'Try-catch-finally',
     'definition': '''
@@ -1569,7 +1569,7 @@ public class EjemploTryCatchFinally {
     'language': 'Java',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Manejo de Excepciones',
+    'title_level': 'Manejo de Excepciones',
     'topic': 'Manejo de Errores',
     'subtopic': 'Multi-catch',
     'definition': '''
@@ -1600,7 +1600,7 @@ public class EjemploMultiCatch {
     'language': 'Java',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Manejo de Excepciones',
+    'title_level': 'Manejo de Excepciones',
     'topic': 'Manejo de Errores',
     'subtopic': 'Try-with-resources',
     'definition': '''
@@ -1634,7 +1634,7 @@ public class EjemploTryWithResources {
     'language': 'Java',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Manejo de Excepciones',
+    'title_level': 'Manejo de Excepciones',
     'topic': 'Manejo de Errores',
     'subtopic': 'Creación de excepciones personalizadas',
     'definition': '''
@@ -1683,7 +1683,7 @@ Future<void> insertJrLevel5Data(Database db) async {
     'language': 'Java',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Entorno de Desarrollo',
     'subtopic': 'Instalación de JDK',
     'definition': '''
@@ -1710,7 +1710,7 @@ java -version
     'language': 'Java',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Entorno de Desarrollo',
     'subtopic': 'Configuración de variables de entorno',
     'definition': '''
@@ -1737,7 +1737,7 @@ Este proceso varía ligeramente según el sistema operativo, pero en Windows, pu
     'language': 'Java',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Entorno de Desarrollo',
     'subtopic': 'Uso de IDE (IntelliJ IDEA, Eclipse)',
     'definition': '''
@@ -1767,7 +1767,7 @@ La elección depende de tus preferencias y necesidades específicas del proyecto
     'language': 'Java',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Entorno de Desarrollo',
     'subtopic': 'Compilación y ejecución desde terminal',
     'definition': '''
@@ -1801,7 +1801,7 @@ Este método es especialmente útil para scripts simples o cuando trabajas en en
     'language': 'Java',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Control de Versiones',
     'subtopic': 'Introducción a Git',
     'definition': '''
@@ -1833,7 +1833,7 @@ git push origin main
     'language': 'Java',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Control de Versiones',
     'subtopic': 'Comandos básicos (init, add, commit, push, pull)',
     'definition': '''
@@ -1876,7 +1876,7 @@ git pull origin main
     'language': 'Java',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Control de Versiones',
     'subtopic': 'Creación de repositorios en GitHub',
     'definition': '''
@@ -1923,7 +1923,7 @@ Ahora puedes subir tu código a este repositorio usando Git desde la terminal o 
     'language': 'Java',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Pruebas Unitarias',
     'subtopic': 'Introducción a JUnit',
     'definition': '''
@@ -1964,7 +1964,7 @@ class Calculadora {
     'language': 'Java',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Pruebas Unitarias',
     'subtopic': 'Anotaciones básicas (@Test, @Before, @After)',
     'definition': '''
@@ -2010,7 +2010,7 @@ public class BaseDeDatosTest {
     'language': 'Java',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Pruebas Unitarias',
     'subtopic': 'Assertions',
     'definition': '''

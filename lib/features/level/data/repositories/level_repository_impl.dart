@@ -14,7 +14,7 @@ class LevelRepositoryImpl implements LevelRepository {
     final db = await _database;
 
     final maps = await db.rawQuery('''
-      SELECT MIN(id) as id, language, module, level, tittle_level, topic, subtopic, definition, code_example
+      SELECT MIN(id) as id, language, module, level, title_level, topic, subtopic, definition, code_example
       FROM programming_content
       WHERE language = ? AND module = ?
       GROUP BY level
@@ -27,7 +27,7 @@ class LevelRepositoryImpl implements LevelRepository {
         language: maps[i]['language'] as String,
         module: maps[i]['module'] as String,
         level: maps[i]['level'] as int,
-        titleLevel: maps[i]['tittle_level'] as String,
+        titleLevel: maps[i]['title_level'] as String,
         topic: maps[i]['topic'] as String,
         subtopic: maps[i]['subtopic'] as String,
         definition: maps[i]['definition'] as String,

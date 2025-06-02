@@ -5,7 +5,7 @@ Future<void> insertJsJrLevel1Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de JavaScript',
+    'title_level': 'Fundamentos de JavaScript',
     'topic': 'Introducción a JavaScript',
     'subtopic': '¿Qué es JavaScript?',
     'definition': '''
@@ -34,7 +34,7 @@ document.getElementById('miBoton').addEventListener('click', function() {
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de JavaScript',
+    'title_level': 'Fundamentos de JavaScript',
     'topic': 'Introducción a JavaScript',
     'subtopic': 'Historia de JavaScript',
     'definition': '''
@@ -62,7 +62,7 @@ simularVersionAntigua();
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de JavaScript',
+    'title_level': 'Fundamentos de JavaScript',
     'topic': 'Introducción a JavaScript',
     'subtopic': 'Versiones de ECMAScript',
     'definition': '''
@@ -94,7 +94,7 @@ console.log('Suma moderno:', sumarModerno(2, 3));
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de JavaScript',
+    'title_level': 'Fundamentos de JavaScript',
     'topic': 'Introducción a JavaScript',
     'subtopic': 'Cómo ejecutar JavaScript',
     'definition': '''
@@ -139,7 +139,7 @@ console.log("Hola desde un archivo JavaScript externo");
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de JavaScript',
+    'title_level': 'Fundamentos de JavaScript',
     'topic': 'Declaración de Variables',
     'subtopic': 'Palabra clave var',
     'definition': '''
@@ -174,7 +174,7 @@ console.log(edad); // Salida: 31
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de JavaScript',
+    'title_level': 'Fundamentos de JavaScript',
     'topic': 'Declaración de Variables',
     'subtopic': 'Palabra clave let',
     'definition': '''
@@ -207,7 +207,7 @@ console.log(pais); // Salida: "Perú"
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de JavaScript',
+    'title_level': 'Fundamentos de JavaScript',
     'topic': 'Declaración de Variables',
     'subtopic': 'Palabra clave const',
     'definition': '''
@@ -234,7 +234,7 @@ console.log(usuario); // Salida: { nombre: "Juan", edad: 26 }
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de JavaScript',
+    'title_level': 'Fundamentos de JavaScript',
     'topic': 'Declaración de Variables',
     'subtopic': 'Reglas de nombramiento de variables',
     'definition': r'''
@@ -263,7 +263,7 @@ let n = 10; // Mal nombre, poco descriptivo (evitar a menos que sea un contador 
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de JavaScript',
+    'title_level': 'Fundamentos de JavaScript',
     'topic': 'Declaración de Variables',
     'subtopic': 'Ámbito de variables (block, function, global)',
     'definition': '''
@@ -324,7 +324,7 @@ incrementar();
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de JavaScript',
+    'title_level': 'Fundamentos de JavaScript',
     'topic': 'Declaración de Variables',
     'subtopic': 'Hoisting',
     'definition': '''
@@ -378,7 +378,7 @@ Future<void> insertJsJrLevel2Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Tipos de Datos y Conversión',
+    'title_level': 'Tipos de Datos y Conversión',
     'topic': 'Tipos de Datos',
     'subtopic': 'Tipo string',
     'definition': r'''
@@ -423,7 +423,7 @@ console.log(fraseCompleta); // Salida: Hola Mundo
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Tipos de Datos y Conversión',
+    'title_level': 'Tipos de Datos y Conversión',
     'topic': 'Tipos de Datos',
     'subtopic': 'Tipo number',
     'definition': '''
@@ -473,7 +473,7 @@ console.log(dividiendoPorCero); // Salida: Infinity
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Tipos de Datos y Conversión',
+    'title_level': 'Tipos de Datos y Conversión',
     'topic': 'Tipos de Datos',
     'subtopic': 'Tipo boolean',
     'definition': '''
@@ -523,7 +523,7 @@ if (0) { // 0 es falsy
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Tipos de Datos y Conversión',
+    'title_level': 'Tipos de Datos y Conversión',
     'topic': 'Tipos de Datos',
     'subtopic': 'Tipo null',
     'definition': '''
@@ -564,7 +564,7 @@ console.log(typeof null); // Salida: "object" (un error histórico en JavaScript
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Tipos de Datos y Conversión',
+    'title_level': 'Tipos de Datos y Conversión',
     'topic': 'Tipos de Datos',
     'subtopic': 'Tipo undefined',
     'definition': '''
@@ -607,7 +607,7 @@ console.log(null == undefined);      // Salida: true (misma "ausencia de valor" 
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Tipos de Datos y Conversión',
+    'title_level': 'Tipos de Datos y Conversión',
     'topic': 'Tipos de Datos',
     'subtopic': 'Tipo bigint',
     'definition': r'''
@@ -650,7 +650,7 @@ console.log(10n == 10);  // Salida: true (comparación laxa, coercion de tipo)
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Tipos de Datos y Conversión',
+    'title_level': 'Tipos de Datos y Conversión',
     'topic': 'Tipos de Datos',
     'subtopic': 'Tipo symbol',
     'definition': '''
@@ -698,7 +698,7 @@ console.log(iterator.next()); // Salida: { value: 1, done: false }
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Tipos de Datos y Conversión',
+    'title_level': 'Tipos de Datos y Conversión',
     'topic': 'Tipos de Datos',
     'subtopic': 'Tipo object',
     'definition': '''
@@ -749,7 +749,7 @@ console.log(typeof miCoche);   // Salida: object
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Tipos de Datos y Conversión',
+    'title_level': 'Tipos de Datos y Conversión',
     'topic': 'Tipos de Datos',
     'subtopic': 'Operador typeof',
     'definition': '''
@@ -802,7 +802,7 @@ procesarEntrada(true);   // Salida: Tipo de dato desconocido: boolean
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Tipos de Datos y Conversión',
+    'title_level': 'Tipos de Datos y Conversión',
     'topic': 'Conversión de Tipos',
     'subtopic': 'Conversión implícita (coerción)',
     'definition': '''
@@ -850,7 +850,7 @@ console.log(`a + b = ${c}, a - b = ${d}`);
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Tipos de Datos y Conversión',
+    'title_level': 'Tipos de Datos y Conversión',
     'topic': 'Conversión de Tipos',
     'subtopic': 'Conversión explícita',
     'definition': '''
@@ -906,7 +906,7 @@ console.log(boolDesdeString2, typeof boolDesdeString2); // Salida: true "boolean
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Tipos de Datos y Conversión',
+    'title_level': 'Tipos de Datos y Conversión',
     'topic': 'Conversión de Tipos',
     'subtopic': 'Conversión de string a número',
     'definition': '''
@@ -971,7 +971,7 @@ console.log(n11, typeof n11); // Salida: 400 "number"
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Tipos de Datos y Conversión',
+    'title_level': 'Tipos de Datos y Conversión',
     'topic': 'Conversión de Tipos',
     'subtopic': 'Conversión de booleanos',
     'definition': '''
@@ -1033,7 +1033,7 @@ while (contador) { // 'contador' (0) es falsy, el bucle no se ejecuta
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Tipos de Datos y Conversión',
+    'title_level': 'Tipos de Datos y Conversión',
     'topic': 'Conversión de Tipos',
     'subtopic': 'Conversión de objetos',
     'definition': '''
@@ -1091,7 +1091,7 @@ Future<void> insertJsJrLevel3Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Estructuras de Control',
+    'title_level': 'Estructuras de Control',
     'topic': 'Condicionales',
     'subtopic': 'Sentencia if',
     'definition': '''
@@ -1142,7 +1142,7 @@ if (puntos) { // 0 es falsy, este bloque NO se ejecutará
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Estructuras de Control',
+    'title_level': 'Estructuras de Control',
     'topic': 'Condicionales',
     'subtopic': 'Sentencia if...else',
     'definition': '''
@@ -1190,7 +1190,7 @@ if (calificacion >= 90) {
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Estructuras de Control',
+    'title_level': 'Estructuras de Control',
     'topic': 'Condicionales',
     'subtopic': 'Sentencia switch',
     'definition': '''
@@ -1263,7 +1263,7 @@ switch (numero) {
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Estructuras de Control',
+    'title_level': 'Estructuras de Control',
     'topic': 'Manejo de Errores',
     'subtopic': 'Sentencia try...catch',
     'definition': '''
@@ -1309,7 +1309,7 @@ try {
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Estructuras de Control',
+    'title_level': 'Estructuras de Control',
     'topic': 'Manejo de Errores',
     'subtopic': 'Bloque finally',
     'definition': '''
@@ -1373,7 +1373,7 @@ console.log(procesarArchivo("archivo_inexistente.txt"));
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Estructuras de Control',
+    'title_level': 'Estructuras de Control',
     'topic': 'Manejo de Errores',
     'subtopic': 'Palabra clave throw',
     'definition': '''
@@ -1435,7 +1435,7 @@ try {
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Estructuras de Control',
+    'title_level': 'Estructuras de Control',
     'topic': 'Manejo de Errores',
     'subtopic': 'Objetos Error',
     'definition': '''
@@ -1508,7 +1508,7 @@ Future<void> insertJsJrLevel4Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Bucles e Iteraciones',
+    'title_level': 'Bucles e Iteraciones',
     'topic': 'Bucles Comunes',
     'subtopic': 'Bucle for',
     'definition': '''
@@ -1568,7 +1568,7 @@ for (; contador < 3; contador++) { // Inicialización fuera
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Bucles e Iteraciones',
+    'title_level': 'Bucles e Iteraciones',
     'topic': 'Bucles Comunes',
     'subtopic': 'Bucle while',
     'definition': '''
@@ -1629,7 +1629,7 @@ if (intentoContrasena !== contrasenaCorrecta) {
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Bucles e Iteraciones',
+    'title_level': 'Bucles e Iteraciones',
     'topic': 'Bucles Comunes',
     'subtopic': 'Bucle do...while',
     'definition': '''
@@ -1687,7 +1687,7 @@ console.log("¡Contraseña correcta! Acceso concedido.");
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Bucles e Iteraciones',
+    'title_level': 'Bucles e Iteraciones',
     'topic': 'Bucles Modernos',
     'subtopic': 'Bucle for...of',
     'definition': '''
@@ -1761,7 +1761,7 @@ for (const key of Object.keys(miObjeto)) {
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Bucles e Iteraciones',
+    'title_level': 'Bucles e Iteraciones',
     'topic': 'Bucles Modernos',
     'subtopic': 'Bucle for...in',
     'definition': '''
@@ -1827,7 +1827,7 @@ for (const prop in miPerro) {
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Bucles e Iteraciones',
+    'title_level': 'Bucles e Iteraciones',
     'topic': 'Control de Flujo en Bucles',
     'subtopic': 'Uso de break',
     'definition': '''
@@ -1900,7 +1900,7 @@ for (const producto of productos) {
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Bucles e Iteraciones',
+    'title_level': 'Bucles e Iteraciones',
     'topic': 'Control de Flujo en Bucles',
     'subtopic': 'Uso de continue',
     'definition': '''
@@ -1970,7 +1970,7 @@ Future<void> insertJsJrLevel5Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Operadores y Expresiones',
+    'title_level': 'Operadores y Expresiones',
     'topic': 'Tipos de Operadores',
     'subtopic': 'Operadores aritméticos (+, -, *, /, %)',
     'definition': '''
@@ -2028,7 +2028,7 @@ console.log(-10 / 0); // Salida: -Infinity
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Operadores y Expresiones',
+    'title_level': 'Operadores y Expresiones',
     'topic': 'Tipos de Operadores',
     'subtopic': 'Operadores de asignación (=, +=, -=, etc.)',
     'definition': '''
@@ -2090,7 +2090,7 @@ console.log(`base después de **=: ${base}`); // Salida: base después de **=: 8
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Operadores y Expresiones',
+    'title_level': 'Operadores y Expresiones',
     'topic': 'Tipos de Operadores',
     'subtopic': 'Operadores lógicos (&&, ||, !)',
     'definition': '''
@@ -2161,7 +2161,7 @@ console.log(`Resultado OR2: ${resultadoOR2}`); // Salida: Resultado OR2: Valor p
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Operadores y Expresiones',
+    'title_level': 'Operadores y Expresiones',
     'topic': 'Tipos de Operadores',
     'subtopic': 'Operadores de comparación (>, <, <=, >=)',
     'definition': r'''
@@ -2224,7 +2224,7 @@ console.log(`10 !== "10": ${num1 !== strNum}`); // Salida: true (son diferentes 
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Operadores y Expresiones',
+    'title_level': 'Operadores y Expresiones',
     'topic': 'Tipos de Operadores',
     'subtopic': 'Operadores bit a bit',
     'definition': '''
@@ -2303,7 +2303,7 @@ console.log(`-5 >>> 1 = ${resultadoUnsignedShiftRight}`); // Salida: 2147483645 
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Operadores y Expresiones',
+    'title_level': 'Operadores y Expresiones',
     'topic': 'Tipos de Operadores',
     'subtopic': 'Operador coma (,)',
     'definition': '''
@@ -2354,7 +2354,7 @@ console.log("Resultado final:", resultado);
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Operadores y Expresiones',
+    'title_level': 'Operadores y Expresiones',
     'topic': 'Tipos de Operadores',
     'subtopic': 'Operadores de strings',
     'definition': r'''
@@ -2404,7 +2404,7 @@ console.log(`Info producto: ${infoProducto}`);
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Operadores y Expresiones',
+    'title_level': 'Operadores y Expresiones',
     'topic': 'Tipos de Operadores',
     'subtopic': 'Operador unario (+, -, !)',
     'definition': '''
@@ -2477,7 +2477,7 @@ console.log(`!"texto": ${esVacio}, tipo: ${typeof esVacio}`); // Salida: false, 
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Operadores y Expresiones',
+    'title_level': 'Operadores y Expresiones',
     'topic': 'Tipos de Operadores',
     'subtopic': 'Operador typeof',
     'definition': '''
@@ -2530,7 +2530,7 @@ procesarEntrada(true);   // Salida: Tipo de dato desconocido: boolean
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Operadores y Expresiones',
+    'title_level': 'Operadores y Expresiones',
     'topic': 'Tipos de Operadores',
     'subtopic': 'Operador instanceof',
     'definition': '''
@@ -2593,7 +2593,7 @@ console.log(`Array.isArray(objetoLiteral): ${Array.isArray(objetoLiteral)}`); //
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Operadores y Expresiones',
+    'title_level': 'Operadores y Expresiones',
     'topic': 'Comparaciones de Igualdad',
     'subtopic': 'Comparación con ==',
     'definition': '''
@@ -2647,7 +2647,7 @@ console.log(`obj1 == obj3: ${obj1 == obj3}`); // Salida: true (misma referencia)
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Operadores y Expresiones',
+    'title_level': 'Operadores y Expresiones',
     'topic': 'Comparaciones de Igualdad',
     'subtopic': 'Comparación con ===',
     'definition': '''
@@ -2707,7 +2707,7 @@ console.log(`strA === strB: ${strA === strB}`); // Salida: true
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Operadores y Expresiones',
+    'title_level': 'Operadores y Expresiones',
     'topic': 'Comparaciones de Igualdad',
     'subtopic': 'Comparación con Object.is()',
     'definition': '''
@@ -2756,7 +2756,7 @@ console.log(`5 === new Number(5): ${5 === new Number(5)}`);               // Sal
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Operadores y Expresiones',
+    'title_level': 'Operadores y Expresiones',
     'topic': 'Comparaciones de Igualdad',
     'subtopic': 'Algoritmo isLooselyEqual',
     'definition': '''
@@ -2812,7 +2812,7 @@ console.log(`[] == null: ${[] == null}`);         // false
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Operadores y Expresiones',
+    'title_level': 'Operadores y Expresiones',
     'topic': 'Comparaciones de Igualdad',
     'subtopic': 'Algoritmo isStrictlyEqual',
     'definition': '''
@@ -2875,7 +2875,7 @@ console.log(`{} === {}: ${{} === {}}`);         // false (dos objetos literales 
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Operadores y Expresiones',
+    'title_level': 'Operadores y Expresiones',
     'topic': 'Comparaciones de Igualdad',
     'subtopic': 'Algoritmo SameValue',
     'definition': '''
@@ -2924,7 +2924,7 @@ console.log(`SameValue(objX, objZ): ${Object.is(objX, objZ)}`); // Salida: true
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Operadores y Expresiones',
+    'title_level': 'Operadores y Expresiones',
     'topic': 'Comparaciones de Igualdad',
     'subtopic': 'Algoritmo SameValueZero',
     'definition': '''
@@ -2994,7 +2994,7 @@ Future<void> insertJsJrLevel6Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 6,
-    'tittle_level': 'Funciones',
+    'title_level': 'Funciones',
     'topic': 'Fundamentos de Funciones',
     'subtopic': 'Declaración de funciones',
     'definition': '''
@@ -3047,7 +3047,7 @@ calcularYMostrar(7, 2); // Salida: La suma calculada es: 9
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 6,
-    'tittle_level': 'Funciones',
+    'title_level': 'Funciones',
     'topic': 'Fundamentos de Funciones',
     'subtopic': 'Expresiones de funciones',
     'definition': '''
@@ -3113,7 +3113,7 @@ console.log(ejecutarOperacion(division, 10, 0)); // Salida: Error: División por
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 6,
-    'tittle_level': 'Funciones',
+    'title_level': 'Funciones',
     'topic': 'Fundamentos de Funciones',
     'subtopic': 'Parámetros y argumentos',
     'definition': '''
@@ -3174,7 +3174,7 @@ infoPersona("Pedro", 25);
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 6,
-    'tittle_level': 'Funciones',
+    'title_level': 'Funciones',
     'topic': 'Fundamentos de Funciones',
     'subtopic': 'Parámetros por defecto',
     'definition': '''
@@ -3235,7 +3235,7 @@ infoProducto("Manzanas", undefined, 50); // Se usa undefined para usar el valor 
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 6,
-    'tittle_level': 'Funciones',
+    'title_level': 'Funciones',
     'topic': 'Fundamentos de Funciones',
     'subtopic': 'Parámetro rest',
     'definition': '''
@@ -3303,7 +3303,7 @@ saludarVarios("Hola", "Alice", "Bob", "Charlie");
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 6,
-    'tittle_level': 'Funciones',
+    'title_level': 'Funciones',
     'topic': 'Fundamentos de Funciones',
     'subtopic': 'Objeto arguments',
     'definition': '''
@@ -3377,7 +3377,7 @@ funcionFlecha(1, 2, 3); // Salida: Parámetro rest: 1,2,3
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 6,
-    'tittle_level': 'Funciones',
+    'title_level': 'Funciones',
     'topic': 'Estilos y Comportamientos',
     'subtopic': 'Funciones flecha',
     'definition': '''
@@ -3466,7 +3466,7 @@ funcionSinArguments(1, 2, 3); // Salida: Argumentos con flecha (parámetro rest)
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 6,
-    'tittle_level': 'Funciones',
+    'title_level': 'Funciones',
     'topic': 'Estilos y Comportamientos',
     'subtopic': 'IIFE (Immediately Invoked Function Expression)',
     'definition': '''
@@ -3536,7 +3536,7 @@ console.log(`Cuenta actual: ${contador.obtenerCuenta()}`); // Salida: Cuenta act
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 6,
-    'tittle_level': 'Funciones',
+    'title_level': 'Funciones',
     'topic': 'Estilos y Comportamientos',
     'subtopic': 'Stack de llamadas',
     'definition': '''
@@ -3634,7 +3634,7 @@ try {
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 6,
-    'tittle_level': 'Funciones',
+    'title_level': 'Funciones',
     'topic': 'Estilos y Comportamientos',
     'subtopic': 'Contexto de ejecución',
     'definition': '''
@@ -3731,7 +3731,7 @@ miObjeto.funcionFlecha();
     'language': 'JavaScript',
     'module': 'Jr',
     'level': 6,
-    'tittle_level': 'Funciones',
+    'title_level': 'Funciones',
     'topic': 'Estilos y Comportamientos',
     'subtopic': 'Funciones nativas (eval, isNaN, etc.)',
     'definition': '''

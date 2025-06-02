@@ -25,7 +25,6 @@ class InsertCppData {
     await insertMidLevel1DataCpp(db);
     await insertMidLevel2DataCpp(db);
     await insertMidLevel3DataCpp(db);
-    //await insertMidLevel4DataCpp(db);
     await insertMidLevel4DataCpp(db);
     await insertMidLevel5DataCpp(db);
     await insertMidLevel6DataCpp(db);
@@ -39,5 +38,8 @@ class InsertCppData {
     await insertSrLevel3DataCpp(db);
     await insertSrLevel4DataCpp(db);
     await insertSrLevel5DataCpp(db);
+    await insertSrLevel6DataCpp(db);
+    await insertSrLevel7DataCpp(db);
+    await insertSrLevel8DataCpp(db);
   }
 }

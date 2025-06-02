@@ -5,7 +5,7 @@ Future<void> insertJsSrLevel1Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Clases y Prototipos',
+    'title_level': 'Clases y Prototipos',
     'topic': 'Prototipos en JavaScript',
     'subtopic': 'Delegación de propiedades',
     'definition': '''
@@ -39,7 +39,7 @@ gato.haceSonido();
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Clases y Prototipos',
+    'title_level': 'Clases y Prototipos',
     'topic': 'Prototipos en JavaScript',
     'subtopic': '__proto__ vs Object.getPrototypeOf()',
     'definition': '''
@@ -70,7 +70,7 @@ console.log(Object.getPrototypeOf(obj)); // null - funciona correctamente
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Clases y Prototipos',
+    'title_level': 'Clases y Prototipos',
     'topic': 'Prototipos en JavaScript',
     'subtopic': 'Añadir propiedades al prototipo',
     'definition': '''
@@ -105,7 +105,7 @@ obj.miMetodo(); // Funciona, pero contamina todo el prototipo Object
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Clases y Prototipos',
+    'title_level': 'Clases y Prototipos',
     'topic': 'Herencia Prototípica',
     'subtopic': 'Enlace entre objetos',
     'definition': '''
@@ -142,7 +142,7 @@ console.log(vehiculo.arrancar()); // "¡Motor encendido!" (sin cambios)
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Clases y Prototipos',
+    'title_level': 'Clases y Prototipos',
     'topic': 'Herencia Prototípica',
     'subtopic': 'Reutilización de métodos',
     'definition': '''
@@ -182,7 +182,7 @@ console.log(persona2.intereses); // ["programación"] - ¡compartido!
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Clases y Prototipos',
+    'title_level': 'Clases y Prototipos',
     'topic': 'Herencia Prototípica',
     'subtopic': 'Prototypal inheritance pattern',
     'definition': r'''
@@ -239,7 +239,7 @@ class Perro extends Animal {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Clases y Prototipos',
+    'title_level': 'Clases y Prototipos',
     'topic': 'Clases (ES6+)',
     'subtopic': 'Declaración con class',
     'definition': '''
@@ -282,7 +282,7 @@ RectanguloFunc.prototype.calcularArea = function() {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Clases y Prototipos',
+    'title_level': 'Clases y Prototipos',
     'topic': 'Clases (ES6+)',
     'subtopic': 'Herencia con extends',
     'definition': '''
@@ -328,7 +328,7 @@ console.log(Object.getPrototypeOf(Perro.prototype) === Animal.prototype); // tru
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Clases y Prototipos',
+    'title_level': 'Clases y Prototipos',
     'topic': 'Clases (ES6+)',
     'subtopic': 'Uso de super',
     'definition': '''
@@ -380,7 +380,7 @@ console.log(instancia.metodo()); // "Padre + Hijo"
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Clases y Prototipos',
+    'title_level': 'Clases y Prototipos',
     'topic': 'Métodos estáticos y privados',
     'subtopic': 'Declaración con static',
     'definition': '''
@@ -424,7 +424,7 @@ try {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Clases y Prototipos',
+    'title_level': 'Clases y Prototipos',
     'topic': 'Métodos estáticos y privados',
     'subtopic': 'Encapsulamiento con #',
     'definition': '''
@@ -468,7 +468,7 @@ contador.intentarAccederExternamente(); // "Acceso denegado a campo privado"
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Clases y Prototipos',
+    'title_level': 'Clases y Prototipos',
     'topic': 'Métodos estáticos y privados',
     'subtopic': 'Acceso interno y externo',
     'definition': '''
@@ -525,7 +525,7 @@ Future<void> insertJsSrLevel2Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Módulos en JavaScript',
+    'title_level': 'Módulos en JavaScript',
     'topic': 'Módulos CommonJS',
     'subtopic': 'require',
     'definition': '''
@@ -554,7 +554,7 @@ console.log(saludar('Carlos')); // Hola, Carlos
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Módulos en JavaScript',
+    'title_level': 'Módulos en JavaScript',
     'topic': 'Módulos CommonJS',
     'subtopic': 'module.exports',
     'definition': '''
@@ -585,7 +585,7 @@ console.log(math.suma(3, 2)); // 5
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Módulos en JavaScript',
+    'title_level': 'Módulos en JavaScript',
     'topic': 'Módulos CommonJS',
     'subtopic': 'Contexto de ejecución',
     'definition': '''
@@ -609,7 +609,7 @@ const secreto = 'abcd'; // no entra en conflicto con uno.js
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Módulos en JavaScript',
+    'title_level': 'Módulos en JavaScript',
     'topic': 'Módulos ECMAScript (ESM)',
     'subtopic': 'Importación con import',
     'definition': '''
@@ -636,7 +636,7 @@ console.log(saludar('Lucía')); // Hola, Lucía
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Módulos en JavaScript',
+    'title_level': 'Módulos en JavaScript',
     'topic': 'Módulos ECMAScript (ESM)',
     'subtopic': 'Exportación con export',
     'definition': '''
@@ -664,7 +664,7 @@ export default function saludo() {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Módulos en JavaScript',
+    'title_level': 'Módulos en JavaScript',
     'topic': 'Módulos ECMAScript (ESM)',
     'subtopic': 'Importaciones por defecto y nombradas',
     'definition': '''
@@ -696,7 +696,7 @@ console.log(PI);          // 3.1416
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Módulos en JavaScript',
+    'title_level': 'Módulos en JavaScript',
     'topic': 'Módulos dinámicos',
     'subtopic': 'import()',
     'definition': '''
@@ -721,7 +721,7 @@ cargarModulo();
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Módulos en JavaScript',
+    'title_level': 'Módulos en JavaScript',
     'topic': 'Módulos dinámicos',
     'subtopic': 'Carga condicional de módulos',
     'definition': '''
@@ -751,7 +751,7 @@ inicializar();
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Módulos en JavaScript',
+    'title_level': 'Módulos en JavaScript',
     'topic': 'Módulos dinámicos',
     'subtopic': 'Módulos asincrónicos',
     'definition': '''
@@ -777,7 +777,7 @@ obtenerDatos();
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Módulos en JavaScript',
+    'title_level': 'Módulos en JavaScript',
     'topic': 'Ámbito de los módulos',
     'subtopic': 'Encapsulamiento',
     'definition': '''
@@ -819,7 +819,7 @@ console.log(modulo.obtenerContador()); // 1
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Módulos en JavaScript',
+    'title_level': 'Módulos en JavaScript',
     'topic': 'Ámbito de los módulos',
     'subtopic': 'Variables privadas',
     'definition': '''
@@ -872,7 +872,7 @@ console.log(c.obtener()); // 1
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Módulos en JavaScript',
+    'title_level': 'Módulos en JavaScript',
     'topic': 'Ámbito de los módulos',
     'subtopic': 'Separación de responsabilidades',
     'definition': '''
@@ -922,7 +922,7 @@ Future<void> insertJsSrLevel3Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Iteradores y Generadores',
+    'title_level': 'Iteradores y Generadores',
     'topic': 'Iteradores personalizados',
     'subtopic': 'Protocolo iterable',
     'definition': '''
@@ -965,7 +965,7 @@ for (const valor of miIterable) {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Iteradores y Generadores',
+    'title_level': 'Iteradores y Generadores',
     'topic': 'Iteradores personalizados',
     'subtopic': 'Implementación de [Symbol.iterator]()',
     'definition': '''
@@ -1011,7 +1011,7 @@ for (const num of contador) {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Iteradores y Generadores',
+    'title_level': 'Iteradores y Generadores',
     'topic': 'Iteradores personalizados',
     'subtopic': 'Iteración manual con .next()',
     'definition': '''
@@ -1042,7 +1042,7 @@ console.log(iterador.next()); // { value: undefined, done: true }
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Iteradores y Generadores',
+    'title_level': 'Iteradores y Generadores',
     'topic': 'Generadores (function*)',
     'subtopic': 'Declaración y uso básico',
     'definition': '''
@@ -1076,7 +1076,7 @@ for (const valor of iterador) {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Iteradores y Generadores',
+    'title_level': 'Iteradores y Generadores',
     'topic': 'Generadores (function*)',
     'subtopic': 'Uso del yield',
     'definition': '''
@@ -1107,7 +1107,7 @@ console.log(iterador.next().done);  // true
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Iteradores y Generadores',
+    'title_level': 'Iteradores y Generadores',
     'topic': 'Generadores (function*)',
     'subtopic': 'Comunicación con generadores',
     'definition': '''
@@ -1137,7 +1137,7 @@ console.log(iterador.next(30).value);       // "Hola, Carlos. Tienes 30 años."
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Iteradores y Generadores',
+    'title_level': 'Iteradores y Generadores',
     'topic': 'Iteración avanzada',
     'subtopic': 'Composición de generadores',
     'definition': '''
@@ -1178,7 +1178,7 @@ for (const numero of generarSecuenciaCompleta()) {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Iteradores y Generadores',
+    'title_level': 'Iteradores y Generadores',
     'topic': 'Iteración avanzada',
     'subtopic': 'Delegación con yield*',
     'definition': '''
@@ -1219,7 +1219,7 @@ for (const valor of generarCaracteres()) {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Iteradores y Generadores',
+    'title_level': 'Iteradores y Generadores',
     'topic': 'Iteración avanzada',
     'subtopic': 'Iteradores con for...of',
     'definition': '''
@@ -1251,7 +1251,7 @@ for (const numero of generarNumeros()) {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Iteradores y Generadores',
+    'title_level': 'Iteradores y Generadores',
     'topic': 'Async Generators',
     'subtopic': 'async function*',
     'definition': '''
@@ -1287,7 +1287,7 @@ async function* obtenerDatos() {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Iteradores y Generadores',
+    'title_level': 'Iteradores y Generadores',
     'topic': 'Async Generators',
     'subtopic': 'Uso de for await...of',
     'definition': '''
@@ -1323,7 +1323,7 @@ async function* obtenerDatos() {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Iteradores y Generadores',
+    'title_level': 'Iteradores y Generadores',
     'topic': 'Async Generators',
     'subtopic': 'Control asincrónico por lotes',
     'definition': '''
@@ -1366,7 +1366,7 @@ Future<void> insertJsSrLevel4Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Gestión de Memoria y Rendimiento',
+    'title_level': 'Gestión de Memoria y Rendimiento',
     'topic': 'Modelo de memoria en JS',
     'subtopic': 'Stack vs Heap',
     'definition': '''
@@ -1401,7 +1401,7 @@ function processData() {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Gestión de Memoria y Rendimiento',
+    'title_level': 'Gestión de Memoria y Rendimiento',
     'topic': 'Modelo de memoria en JS',
     'subtopic': 'Asignación y liberación automática',
     'definition': '''
@@ -1432,7 +1432,7 @@ function processWithLeak(data) {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Gestión de Memoria y Rendimiento',
+    'title_level': 'Gestión de Memoria y Rendimiento',
     'topic': 'Modelo de memoria en JS',
     'subtopic': 'Variables primitivas vs referencias',
     'definition': '''
@@ -1465,7 +1465,7 @@ let obj4 = JSON.parse(JSON.stringify(obj1)); // Copia profunda (con limitaciones
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Gestión de Memoria y Rendimiento',
+    'title_level': 'Gestión de Memoria y Rendimiento',
     'topic': 'Recolección de basura (Garbage Collection)',
     'subtopic': 'Algoritmos de GC',
     'definition': '''
@@ -1500,7 +1500,7 @@ function createWithReuse() {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Gestión de Memoria y Rendimiento',
+    'title_level': 'Gestión de Memoria y Rendimiento',
     'topic': 'Recolección de basura (Garbage Collection)',
     'subtopic': 'Identificación de objetos inalcanzables',
     'definition': '''
@@ -1539,7 +1539,7 @@ function createCircularReference() {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Gestión de Memoria y Rendimiento',
+    'title_level': 'Gestión de Memoria y Rendimiento',
     'topic': 'Recolección de basura (Garbage Collection)',
     'subtopic': 'WeakMap y WeakSet como solución a leaks',
     'definition': '''
@@ -1579,7 +1579,7 @@ function processCached(element) {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Gestión de Memoria y Rendimiento',
+    'title_level': 'Gestión de Memoria y Rendimiento',
     'topic': 'Detección de memory leaks',
     'subtopic': 'Uso de herramientas del navegador',
     'definition': '''
@@ -1615,7 +1615,7 @@ button.remove();
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Gestión de Memoria y Rendimiento',
+    'title_level': 'Gestión de Memoria y Rendimiento',
     'topic': 'Detección de memory leaks',
     'subtopic': 'Puntos comunes de fuga de memoria',
     'definition': '''
@@ -1654,7 +1654,7 @@ startCounter();
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Gestión de Memoria y Rendimiento',
+    'title_level': 'Gestión de Memoria y Rendimiento',
     'topic': 'Detección de memory leaks',
     'subtopic': 'Técnicas de profiling',
     'definition': '''
@@ -1689,7 +1689,7 @@ Usar estas técnicas no solo mejora el rendimiento, también ayuda a que el usua
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Gestión de Memoria y Rendimiento',
+    'title_level': 'Gestión de Memoria y Rendimiento',
     'topic': 'Optimización de performance',
     'subtopic': 'debounce y throttle',
     'definition': '''
@@ -1742,7 +1742,7 @@ function throttle(fn, limit) {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Gestión de Memoria y Rendimiento',
+    'title_level': 'Gestión de Memoria y Rendimiento',
     'topic': 'Optimización de performance',
     'subtopic': 'Medición con performance.now()',
     'definition': '''
@@ -1771,7 +1771,7 @@ console.log(`La tarea tomó ${fin - inicio} milisegundos.`);
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Gestión de Memoria y Rendimiento',
+    'title_level': 'Gestión de Memoria y Rendimiento',
     'topic': 'Optimización de performance',
     'subtopic': 'Minimización del trabajo en el main thread',
     'definition': '''
@@ -1814,7 +1814,7 @@ Future<void> insertJsSrLevel5Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 5,
-    'tittle_level': 'JavaScript Seguro y Robusto',
+    'title_level': 'JavaScript Seguro y Robusto',
     'topic': 'Seguridad en ejecución',
     'subtopic': 'Ataques XSS en scripts',
     'definition': '''
@@ -1848,7 +1848,7 @@ document.getElementById('safe-area').innerHTML = clean;
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 5,
-    'tittle_level': 'JavaScript Seguro y Robusto',
+    'title_level': 'JavaScript Seguro y Robusto',
     'topic': 'Seguridad en ejecución',
     'subtopic': 'Escapado de inputs',
     'definition': '''
@@ -1886,7 +1886,7 @@ document.getElementById('output').innerHTML = escapeHtml(userInput); // También
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 5,
-    'tittle_level': 'JavaScript Seguro y Robusto',
+    'title_level': 'JavaScript Seguro y Robusto',
     'topic': 'Seguridad en ejecución',
     'subtopic': 'Sanitización de datos',
     'definition': '''
@@ -1924,7 +1924,7 @@ let cleaned = sanitizeHtml(dirty, {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 5,
-    'tittle_level': 'JavaScript Seguro y Robusto',
+    'title_level': 'JavaScript Seguro y Robusto',
     'topic': 'Inmutabilidad y protección de datos',
     'subtopic': 'Uso de Object.freeze()',
     'definition': '''
@@ -1970,7 +1970,7 @@ function deepFreeze(obj) {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 5,
-    'tittle_level': 'JavaScript Seguro y Robusto',
+    'title_level': 'JavaScript Seguro y Robusto',
     'topic': 'Inmutabilidad y protección de datos',
     'subtopic': 'Object.seal() y Object.preventExtensions()',
     'definition': '''
@@ -2017,7 +2017,7 @@ Object.freeze(obj);
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 5,
-    'tittle_level': 'JavaScript Seguro y Robusto',
+    'title_level': 'JavaScript Seguro y Robusto',
     'topic': 'Inmutabilidad y protección de datos',
     'subtopic': 'Deep vs shallow freeze',
     'definition': '''
@@ -2074,7 +2074,7 @@ const nextState = produce(currentState, draft => {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Avances en ECMAScript',
+    'title_level': 'Avances en ECMAScript',
     'topic': 'Nuevas formas de control de flujo',
     'subtopic': 'Etiquetas (label)',
     'definition': '''
@@ -2102,7 +2102,7 @@ for (let i = 0; i < 3; i++) {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Avances en ECMAScript',
+    'title_level': 'Avances en ECMAScript',
     'topic': 'Nuevas formas de control de flujo',
     'subtopic': 'Operador in en condiciones',
     'definition': '''
@@ -2131,7 +2131,7 @@ console.log(5 in arreglo); // false (índice 5 no existe)
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Avances en ECMAScript',
+    'title_level': 'Avances en ECMAScript',
     'topic': 'Nuevas formas de control de flujo',
     'subtopic': 'do expressions (propuesta)',
     'definition': '''
@@ -2163,7 +2163,7 @@ Future<void> insertJsSrLevel6Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Avances en ECMAScript',
+    'title_level': 'Avances en ECMAScript',
     'topic': 'Nuevas características del lenguaje (ES2020+)',
     'subtopic': 'Optional chaining (?.)',
     'definition': '''
@@ -2192,7 +2192,7 @@ console.log(usuario.perfil?.telefono?.numero); // undefined, sin error
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Avances en ECMAScript',
+    'title_level': 'Avances en ECMAScript',
     'topic': 'Nuevas características del lenguaje (ES2020+)',
     'subtopic': 'Nullish coalescing (??)',
     'definition': '''
@@ -2217,7 +2217,7 @@ console.log(resultado2); // 5, se reemplaza porque valor es undefined
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Avances en ECMAScript',
+    'title_level': 'Avances en ECMAScript',
     'topic': 'Nuevas características del lenguaje (ES2020+)',
     'subtopic': 'Operadores lógicos compuestos (&&=, ||=, ??=)',
     'definition': '''
@@ -2248,7 +2248,7 @@ console.log(edad); // 18
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Avances en ECMAScript',
+    'title_level': 'Avances en ECMAScript',
     'topic': 'Métodos recientes de arrays y objetos',
     'subtopic': 'Object.entries(), Object.values()',
     'definition': '''
@@ -2277,7 +2277,7 @@ console.log(Object.values(persona));
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Avances en ECMAScript',
+    'title_level': 'Avances en ECMAScript',
     'topic': 'Métodos recientes de arrays y objetos',
     'subtopic': 'Array.flat() y Array.flatMap()',
     'definition': '''
@@ -2302,7 +2302,7 @@ console.log(palabras); // ['Hola', 'mundo', 'JavaScript', 'es', 'genial']
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Avances en ECMAScript',
+    'title_level': 'Avances en ECMAScript',
     'topic': 'Métodos recientes de arrays y objetos',
     'subtopic': 'Array.at()',
     'definition': '''
@@ -2325,7 +2325,7 @@ console.log(numeros.at(-2)); // 40, penúltimo elemento
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Avances en ECMAScript',
+    'title_level': 'Avances en ECMAScript',
     'topic': 'Nuevas formas de control de flujo',
     'subtopic': 'Etiquetas (label)',
     'definition': '''
@@ -2353,7 +2353,7 @@ for (let i = 0; i < 3; i++) {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Avances en ECMAScript',
+    'title_level': 'Avances en ECMAScript',
     'topic': 'Nuevas formas de control de flujo',
     'subtopic': 'Operador in en condiciones',
     'definition': '''
@@ -2382,7 +2382,7 @@ console.log(5 in arreglo); // false (índice 5 no existe)
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Avances en ECMAScript',
+    'title_level': 'Avances en ECMAScript',
     'topic': 'Nuevas formas de control de flujo',
     'subtopic': 'do expressions (propuesta)',
     'definition': '''
@@ -2414,7 +2414,7 @@ Future<void> insertJsSrLevel7Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 7,
-    'tittle_level': 'Programación Funcional en JavaScript',
+    'title_level': 'Programación Funcional en JavaScript',
     'topic': 'Principios funcionales',
     'subtopic': 'Funciones puras',
     'definition': '''
@@ -2449,7 +2449,7 @@ console.log(incrementar()); // 2
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 7,
-    'tittle_level': 'Programación Funcional en JavaScript',
+    'title_level': 'Programación Funcional en JavaScript',
     'topic': 'Principios funcionales',
     'subtopic': 'Inmutabilidad',
     'definition': '''
@@ -2477,7 +2477,7 @@ console.log(nuevoUsuario); // { nombre: 'Ana', edad: 26 }
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 7,
-    'tittle_level': 'Programación Funcional en JavaScript',
+    'title_level': 'Programación Funcional en JavaScript',
     'topic': 'Principios funcionales',
     'subtopic': 'Transparencia referencial',
     'definition': '''
@@ -2513,7 +2513,7 @@ const resultado2 = multiplicar(4); // 12
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 7,
-    'tittle_level': 'Programación Funcional en JavaScript',
+    'title_level': 'Programación Funcional en JavaScript',
     'topic': 'Métodos funcionales comunes',
     'subtopic': 'map, filter, reduce, some, every',
     'definition': '''
@@ -2552,7 +2552,7 @@ console.log(todosPositivos); // true
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 7,
-    'tittle_level': 'Programación Funcional en JavaScript',
+    'title_level': 'Programación Funcional en JavaScript',
     'topic': 'Métodos funcionales comunes',
     'subtopic': 'Composición de funciones',
     'definition': '''
@@ -2584,7 +2584,7 @@ console.log(duplicarEIncrementar2(3)); // 7
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 7,
-    'tittle_level': 'Programación Funcional en JavaScript',
+    'title_level': 'Programación Funcional en JavaScript',
     'topic': 'Métodos funcionales comunes',
     'subtopic': 'Currying y partial application',
     'definition': '''
@@ -2621,7 +2621,7 @@ console.log(sumarCinco(10)); // 15
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 7,
-    'tittle_level': 'Programación Funcional en JavaScript',
+    'title_level': 'Programación Funcional en JavaScript',
     'topic': 'Funciones de orden superior',
     'subtopic': 'Qué son y cómo se usan',
     'definition': '''
@@ -2659,7 +2659,7 @@ console.log(duplicar(4)); // 8
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 7,
-    'tittle_level': 'Programación Funcional en JavaScript',
+    'title_level': 'Programación Funcional en JavaScript',
     'topic': 'Funciones de orden superior',
     'subtopic': 'Uso con callbacks y APIs',
     'definition': '''
@@ -2693,7 +2693,7 @@ setTimeout(function() {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 7,
-    'tittle_level': 'Programación Funcional en JavaScript',
+    'title_level': 'Programación Funcional en JavaScript',
     'topic': 'Funciones de orden superior',
     'subtopic': 'Composición dinámica de comportamiento',
     'definition': '''
@@ -2731,7 +2731,7 @@ Future<void> insertJsSrLevel8Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 8,
-    'tittle_level': 'Internacionalización y Localización',
+    'title_level': 'Internacionalización y Localización',
     'topic': 'API Intl',
     'subtopic': 'Intl.NumberFormat',
     'definition': '''
@@ -2763,7 +2763,7 @@ console.log(formatoPorcentaje.format(porcentaje)); // "75%"
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 8,
-    'tittle_level': 'Internacionalización y Localización',
+    'title_level': 'Internacionalización y Localización',
     'topic': 'API Intl',
     'subtopic': 'Intl.DateTimeFormat',
     'definition': '''
@@ -2791,7 +2791,7 @@ console.log(formatoFecha.format(fecha));
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 8,
-    'tittle_level': 'Internacionalización y Localización',
+    'title_level': 'Internacionalización y Localización',
     'topic': 'API Intl',
     'subtopic': 'Intl.Collator',
     'definition': '''
@@ -2814,7 +2814,7 @@ console.log(ordenadas); // ["ábaco", "árbol", "zanahoria", "zapato"]
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 8,
-    'tittle_level': 'Internacionalización y Localización',
+    'title_level': 'Internacionalización y Localización',
     'topic': 'Soporte de diferentes idiomas',
     'subtopic': 'Adaptación de formatos de fecha y moneda',
     'definition': '''
@@ -2848,7 +2848,7 @@ console.log(formatoMoneda.format(numero)); // "$1.234.567,89"
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 8,
-    'tittle_level': 'Internacionalización y Localización',
+    'title_level': 'Internacionalización y Localización',
     'topic': 'Soporte de diferentes idiomas',
     'subtopic': 'Estrategias de localización',
     'definition': '''
@@ -2885,7 +2885,7 @@ console.log(traducir('en', 'despedida')); // "Goodbye"
     'language': 'JavaScript',
     'module': 'Sr',
     'level': 8,
-    'tittle_level': 'Internacionalización y Localización',
+    'title_level': 'Internacionalización y Localización',
     'topic': 'Soporte de diferentes idiomas',
     'subtopic': 'Detección del idioma del navegador',
     'definition': '''

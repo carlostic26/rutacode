@@ -5,7 +5,11 @@ Future<void> insertMidLevel1DataCpp(Database db) async {
     'language': 'C++',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Programación Orientada a Objetos (OOP)',
+<<<<<<< HEAD
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+=======
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+>>>>>>> origin/junior
     'topic': 'Clases y Objetos',
     'subtopic': 'Declaración y definición de clases',
     'definition': '''
@@ -145,7 +149,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Programación Orientada a Objetos (OOP)',
+<<<<<<< HEAD
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+=======
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+>>>>>>> origin/junior
     'topic': 'Clases y Objetos',
     'subtopic': 'Constructores y destructores',
     'definition': '''
@@ -244,7 +252,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Programación Orientada a Objetos (OOP)',
+<<<<<<< HEAD
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+=======
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+>>>>>>> origin/junior
     'topic': 'Clases y Objetos',
     'subtopic': 'Encapsulamiento y acceso a miembros',
     'definition': '''
@@ -351,7 +363,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Programación Orientada a Objetos (OOP)',
+<<<<<<< HEAD
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+=======
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+>>>>>>> origin/junior
     'topic': 'Herencia',
     'subtopic': 'Herencia simple y múltiple',
     'definition': '''
@@ -480,7 +496,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Programación Orientada a Objetos (OOP)',
+<<<<<<< HEAD
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+=======
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+>>>>>>> origin/junior
     'topic': 'Herencia',
     'subtopic': 'Herencia virtual',
     'definition': '''
@@ -614,7 +634,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Programación Orientada a Objetos (OOP)',
+<<<<<<< HEAD
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+=======
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+>>>>>>> origin/junior
     'topic': 'Herencia',
     'subtopic': 'Problema del diamante',
     'definition': '''
@@ -758,7 +782,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Programación Orientada a Objetos (OOP)',
+<<<<<<< HEAD
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+=======
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+>>>>>>> origin/junior
     'topic': 'Polimorfismo',
     'subtopic': 'Funciones virtuales y sobreescritura',
     'definition': '''
@@ -903,7 +931,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Programación Orientada a Objetos (OOP)',
+<<<<<<< HEAD
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+=======
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+>>>>>>> origin/junior
     'topic': 'Polimorfismo',
     'subtopic': 'Clases abstractas y funciones puramente virtuales',
     'definition': '''
@@ -1058,7 +1090,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Programación Orientada a Objetos (OOP)',
+<<<<<<< HEAD
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+=======
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+>>>>>>> origin/junior
     'topic': 'Polimorfismo',
     'subtopic': 'Polimorfismo en tiempo de ejecución',
     'definition': '''
@@ -1199,7 +1235,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Programación Orientada a Objetos (OOP)',
+<<<<<<< HEAD
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+=======
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+>>>>>>> origin/junior
     'topic': 'Abstracción y Encapsulamiento',
     'subtopic': 'Interfaces y clases base',
     'definition': '''
@@ -1304,7 +1344,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Programación Orientada a Objetos (OOP)',
+<<<<<<< HEAD
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+=======
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+>>>>>>> origin/junior
     'topic': 'Abstracción y Encapsulamiento',
     'subtopic': 'Ocultamiento de información',
     'definition': '''
@@ -1431,7 +1475,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Programación Orientada a Objetos (OOP)',
+<<<<<<< HEAD
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+=======
+    'title_level': 'Programación Orientada a Objetos (OOP)',
+>>>>>>> origin/junior
     'topic': 'Abstracción y Encapsulamiento',
     'subtopic': 'Buenas prácticas de diseño',
     'definition': '''
@@ -1577,7 +1625,11 @@ Future<void> insertMidLevel2DataCpp(Database db) async {
     'language': 'C++',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Templates y Programación Genérica',
+<<<<<<< HEAD
+    'title_level': 'Templates y Programación Genérica',
+=======
+    'title_level': 'Templates y Programación Genérica',
+>>>>>>> origin/junior
     'topic': 'Templates de Función y Clase',
     'subtopic': 'Definición y uso de templates',
     'definition': '''
@@ -1683,7 +1735,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Templates y Programación Genérica',
+<<<<<<< HEAD
+    'title_level': 'Templates y Programación Genérica',
+=======
+    'title_level': 'Templates y Programación Genérica',
+>>>>>>> origin/junior
     'topic': 'Templates de Función y Clase',
     'subtopic': 'Especialización de templates',
     'definition': '''
@@ -1785,7 +1841,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Templates y Programación Genérica',
+<<<<<<< HEAD
+    'title_level': 'Templates y Programación Genérica',
+=======
+    'title_level': 'Templates y Programación Genérica',
+>>>>>>> origin/junior
     'topic': 'Templates de Función y Clase',
     'subtopic': 'Templates y sobrecarga de funciones',
     'definition': '''
@@ -1891,7 +1951,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Templates y Programación Genérica',
+<<<<<<< HEAD
+    'title_level': 'Templates y Programación Genérica',
+=======
+    'title_level': 'Templates y Programación Genérica',
+>>>>>>> origin/junior
     'topic': 'Técnicas Avanzadas con Templates',
     'subtopic': 'SFINAE (Substitution Failure Is Not An Error)',
     'definition': '''
@@ -2006,7 +2070,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Templates y Programación Genérica',
+<<<<<<< HEAD
+    'title_level': 'Templates y Programación Genérica',
+=======
+    'title_level': 'Templates y Programación Genérica',
+>>>>>>> origin/junior
     'topic': 'Técnicas Avanzadas con Templates',
     'subtopic': 'Traits y metaprogramación básica',
     'definition': '''
@@ -2104,7 +2172,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Templates y Programación Genérica',
+<<<<<<< HEAD
+    'title_level': 'Templates y Programación Genérica',
+=======
+    'title_level': 'Templates y Programación Genérica',
+>>>>>>> origin/junior
     'topic': 'Técnicas Avanzadas con Templates',
     'subtopic': 'Variadic templates',
     'definition': '''
@@ -2195,7 +2267,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Templates y Programación Genérica',
+<<<<<<< HEAD
+    'title_level': 'Templates y Programación Genérica',
+=======
+    'title_level': 'Templates y Programación Genérica',
+>>>>>>> origin/junior
     'topic': 'Conceptos en C++20',
     'subtopic': 'Introducción a concepts',
     'definition': '''
@@ -2278,7 +2354,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Templates y Programación Genérica',
+<<<<<<< HEAD
+    'title_level': 'Templates y Programación Genérica',
+=======
+    'title_level': 'Templates y Programación Genérica',
+>>>>>>> origin/junior
     'topic': 'Conceptos en C++20',
     'subtopic': 'Restricciones y validaciones en templates',
     'definition': '''
@@ -2375,7 +2455,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Templates y Programación Genérica',
+<<<<<<< HEAD
+    'title_level': 'Templates y Programación Genérica',
+=======
+    'title_level': 'Templates y Programación Genérica',
+>>>>>>> origin/junior
     'topic': 'Conceptos en C++20',
     'subtopic': 'Mejora de la legibilidad y mantenibilidad',
     'definition': '''
@@ -2493,7 +2577,11 @@ Future<void> insertMidLevel3DataCpp(Database db) async {
     'language': 'C++',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Manejo de Memoria y Recursos',
+<<<<<<< HEAD
+    'title_level': 'Manejo de Memoria y Recursos',
+=======
+    'title_level': 'Manejo de Memoria y Recursos',
+>>>>>>> origin/junior
     'topic': 'Gestión de Memoria Dinámica',
     'subtopic': 'Operadores new y delete',
     'definition': '''
@@ -2578,7 +2666,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Manejo de Memoria y Recursos',
+<<<<<<< HEAD
+    'title_level': 'Manejo de Memoria y Recursos',
+=======
+    'title_level': 'Manejo de Memoria y Recursos',
+>>>>>>> origin/junior
     'topic': 'Gestión de Memoria Dinámica',
     'subtopic': 'Fugas de memoria y cómo evitarlas',
     'definition': '''
@@ -2687,7 +2779,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Manejo de Memoria y Recursos',
+<<<<<<< HEAD
+    'title_level': 'Manejo de Memoria y Recursos',
+=======
+    'title_level': 'Manejo de Memoria y Recursos',
+>>>>>>> origin/junior
     'topic': 'Gestión de Memoria Dinámica',
     'subtopic': 'Herramientas para detección de errores (Valgrind)',
     'definition': '''
@@ -2774,7 +2870,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Manejo de Memoria y Recursos',
+<<<<<<< HEAD
+    'title_level': 'Manejo de Memoria y Recursos',
+=======
+    'title_level': 'Manejo de Memoria y Recursos',
+>>>>>>> origin/junior
     'topic': 'Punteros Inteligentes',
     'subtopic': 'std::unique_ptr, std::shared_ptr, std::weak_ptr',
     'definition': '''
@@ -2925,7 +3025,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Manejo de Memoria y Recursos',
+<<<<<<< HEAD
+    'title_level': 'Manejo de Memoria y Recursos',
+=======
+    'title_level': 'Manejo de Memoria y Recursos',
+>>>>>>> origin/junior
     'topic': 'Punteros Inteligentes',
     'subtopic': 'Ciclo de vida y gestión automática de recursos',
     'definition': '''
@@ -3070,7 +3174,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Manejo de Memoria y Recursos',
+<<<<<<< HEAD
+    'title_level': 'Manejo de Memoria y Recursos',
+=======
+    'title_level': 'Manejo de Memoria y Recursos',
+>>>>>>> origin/junior
     'topic': 'Punteros Inteligentes',
     'subtopic': 'Comparación con punteros crudos',
     'definition': '''
@@ -3195,7 +3303,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Manejo de Memoria y Recursos',
+<<<<<<< HEAD
+    'title_level': 'Manejo de Memoria y Recursos',
+=======
+    'title_level': 'Manejo de Memoria y Recursos',
+>>>>>>> origin/junior
     'topic': 'RAII (Resource Acquisition Is Initialization)',
     'subtopic': 'Principios de RAII',
     'definition': '''
@@ -3328,7 +3440,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Manejo de Memoria y Recursos',
+<<<<<<< HEAD
+    'title_level': 'Manejo de Memoria y Recursos',
+=======
+    'title_level': 'Manejo de Memoria y Recursos',
+>>>>>>> origin/junior
     'topic': 'RAII (Resource Acquisition Is Initialization)',
     'subtopic': 'Aplicación en manejo de recursos',
     'definition': '''
@@ -3451,7 +3567,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Manejo de Memoria y Recursos',
+<<<<<<< HEAD
+    'title_level': 'Manejo de Memoria y Recursos',
+=======
+    'title_level': 'Manejo de Memoria y Recursos',
+>>>>>>> origin/junior
     'topic': 'RAII (Resource Acquisition Is Initialization)',
     'subtopic': 'Ejemplos prácticos',
     'definition': '''
@@ -3593,7 +3713,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Manejo de Memoria y Recursos',
+<<<<<<< HEAD
+    'title_level': 'Manejo de Memoria y Recursos',
+=======
+    'title_level': 'Manejo de Memoria y Recursos',
+>>>>>>> origin/junior
     'topic': 'Move Semantics y Rvalue References',
     'subtopic': 'Constructores y operadores de movimiento',
     'definition': '''
@@ -3766,7 +3890,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Manejo de Memoria y Recursos',
+<<<<<<< HEAD
+    'title_level': 'Manejo de Memoria y Recursos',
+=======
+    'title_level': 'Manejo de Memoria y Recursos',
+>>>>>>> origin/junior
     'topic': 'Move Semantics y Rvalue References',
     'subtopic': 'Eficiencia en la transferencia de recursos',
     'definition': '''
@@ -3958,7 +4086,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Manejo de Memoria y Recursos',
+<<<<<<< HEAD
+    'title_level': 'Manejo de Memoria y Recursos',
+=======
+    'title_level': 'Manejo de Memoria y Recursos',
+>>>>>>> origin/junior
     'topic': 'Move Semantics y Rvalue References',
     'subtopic': 'Evitar copias innecesarias',
     'definition': r'''
@@ -4146,7 +4278,11 @@ Future<void> insertMidLevel4DataCpp(Database db) async {
     'language': 'C++',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Excepciones y Manejo de Errores',
+<<<<<<< HEAD
+    'title_level': 'Excepciones y Manejo de Errores',
+=======
+    'title_level': 'Excepciones y Manejo de Errores',
+>>>>>>> origin/junior
     'topic': 'Manejo de Excepciones',
     'subtopic': 'try, catch, throw',
     'definition': '''
@@ -4254,7 +4390,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Excepciones y Manejo de Errores',
+<<<<<<< HEAD
+    'title_level': 'Excepciones y Manejo de Errores',
+=======
+    'title_level': 'Excepciones y Manejo de Errores',
+>>>>>>> origin/junior
     'topic': 'Manejo de Excepciones',
     'subtopic': 'Jerarquía de excepciones estándar',
     'definition': '''
@@ -4387,7 +4527,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Excepciones y Manejo de Errores',
+<<<<<<< HEAD
+    'title_level': 'Excepciones y Manejo de Errores',
+=======
+    'title_level': 'Excepciones y Manejo de Errores',
+>>>>>>> origin/junior
     'topic': 'Manejo de Excepciones',
     'subtopic': 'Creación de excepciones personalizadas',
     'definition': '''
@@ -4558,7 +4702,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Excepciones y Manejo de Errores',
+<<<<<<< HEAD
+    'title_level': 'Excepciones y Manejo de Errores',
+=======
+    'title_level': 'Excepciones y Manejo de Errores',
+>>>>>>> origin/junior
     'topic': 'Buenas Prácticas en Excepciones',
     'subtopic': 'Excepciones vs códigos de error',
     'definition': '''
@@ -4664,7 +4812,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Excepciones y Manejo de Errores',
+<<<<<<< HEAD
+    'title_level': 'Excepciones y Manejo de Errores',
+=======
+    'title_level': 'Excepciones y Manejo de Errores',
+>>>>>>> origin/junior
     'topic': 'Buenas Prácticas en Excepciones',
     'subtopic': 'Garantías de excepción (strong, basic, no-throw)',
     'definition': '''
@@ -4840,7 +4992,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Excepciones y Manejo de Errores',
+<<<<<<< HEAD
+    'title_level': 'Excepciones y Manejo de Errores',
+=======
+    'title_level': 'Excepciones y Manejo de Errores',
+>>>>>>> origin/junior
     'topic': 'Buenas Prácticas en Excepciones',
     'subtopic': 'Uso adecuado de RAII con excepciones',
     'definition': '''
@@ -5006,7 +5162,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Excepciones y Manejo de Errores',
+<<<<<<< HEAD
+    'title_level': 'Excepciones y Manejo de Errores',
+=======
+    'title_level': 'Excepciones y Manejo de Errores',
+>>>>>>> origin/junior
     'topic': 'Excepciones en Constructores y Destructores',
     'subtopic': 'Consideraciones especiales',
     'definition': '''
@@ -5179,7 +5339,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Excepciones y Manejo de Errores',
+<<<<<<< HEAD
+    'title_level': 'Excepciones y Manejo de Errores',
+=======
+    'title_level': 'Excepciones y Manejo de Errores',
+>>>>>>> origin/junior
     'topic': 'Excepciones en Constructores y Destructores',
     'subtopic': 'Prevención de fugas de recursos',
     'definition': '''
@@ -5381,7 +5545,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Excepciones y Manejo de Errores',
+<<<<<<< HEAD
+    'title_level': 'Excepciones y Manejo de Errores',
+=======
+    'title_level': 'Excepciones y Manejo de Errores',
+>>>>>>> origin/junior
     'topic': 'Excepciones en Constructores y Destructores',
     'subtopic': 'Técnicas de manejo seguro',
     'definition': '''
@@ -5558,7 +5726,11 @@ Future<void> insertMidLevel5DataCpp(Database db) async {
     'language': 'C++',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'STL (Standard Template Library)',
+<<<<<<< HEAD
+    'title_level': 'STL (Standard Template Library)',
+=======
+    'title_level': 'STL (Standard Template Library)',
+>>>>>>> origin/junior
     'topic': 'Contenedores',
     'subtopic': 'vector, list, deque, set, map, unordered_map',
     'definition': '''
@@ -5634,7 +5806,11 @@ Future<void> insertMidLevel5DataCpp(Database db) async {
     'language': 'C++',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'STL (Standard Template Library)',
+<<<<<<< HEAD
+    'title_level': 'STL (Standard Template Library)',
+=======
+    'title_level': 'STL (Standard Template Library)',
+>>>>>>> origin/junior
     'topic': 'Contenedores',
     'subtopic': 'Características y casos de uso',
     'definition': '''
@@ -5793,7 +5969,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'STL (Standard Template Library)',
+<<<<<<< HEAD
+    'title_level': 'STL (Standard Template Library)',
+=======
+    'title_level': 'STL (Standard Template Library)',
+>>>>>>> origin/junior
     'topic': 'Contenedores',
     'subtopic': 'Comparación entre contenedores',
     'definition': '''
@@ -5937,7 +6117,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'STL (Standard Template Library)',
+<<<<<<< HEAD
+    'title_level': 'STL (Standard Template Library)',
+=======
+    'title_level': 'STL (Standard Template Library)',
+>>>>>>> origin/junior
     'topic': 'Iteradores y Algoritmos',
     'subtopic': 'Tipos de iteradores',
     'definition': '''
@@ -6045,7 +6229,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'STL (Standard Template Library)',
+<<<<<<< HEAD
+    'title_level': 'STL (Standard Template Library)',
+=======
+    'title_level': 'STL (Standard Template Library)',
+>>>>>>> origin/junior
     'topic': 'Iteradores y Algoritmos',
     'subtopic': 'Algoritmos estándar (sort, find, accumulate, etc.)',
     'definition': '''
@@ -6173,7 +6361,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'STL (Standard Template Library)',
+<<<<<<< HEAD
+    'title_level': 'STL (Standard Template Library)',
+=======
+    'title_level': 'STL (Standard Template Library)',
+>>>>>>> origin/junior
     'topic': 'Iteradores y Algoritmos',
     'subtopic': 'Uso eficiente de algoritmos con contenedores',
     'definition': '''
@@ -6311,7 +6503,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'STL (Standard Template Library)',
+<<<<<<< HEAD
+    'title_level': 'STL (Standard Template Library)',
+=======
+    'title_level': 'STL (Standard Template Library)',
+>>>>>>> origin/junior
     'topic': 'Adaptadores y Funciones Lambda',
     'subtopic': 'stack, queue, priority_queue',
     'definition': '''
@@ -6436,7 +6632,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'STL (Standard Template Library)',
+<<<<<<< HEAD
+    'title_level': 'STL (Standard Template Library)',
+=======
+    'title_level': 'STL (Standard Template Library)',
+>>>>>>> origin/junior
     'topic': 'Adaptadores y Funciones Lambda',
     'subtopic': 'Funciones lambda y su integración con STL',
     'definition': '''
@@ -6542,7 +6742,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'STL (Standard Template Library)',
+<<<<<<< HEAD
+    'title_level': 'STL (Standard Template Library)',
+=======
+    'title_level': 'STL (Standard Template Library)',
+>>>>>>> origin/junior
     'topic': 'Adaptadores y Funciones Lambda',
     'subtopic': 'Captura de variables y closures',
     'definition': '''
@@ -6667,7 +6871,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'STL (Standard Template Library)',
+<<<<<<< HEAD
+    'title_level': 'STL (Standard Template Library)',
+=======
+    'title_level': 'STL (Standard Template Library)',
+>>>>>>> origin/junior
     'topic': 'Funciones y Objetos Funcionales',
     'subtopic': 'std::function, std::bind',
     'definition': '''
@@ -6823,7 +7031,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'STL (Standard Template Library)',
+<<<<<<< HEAD
+    'title_level': 'STL (Standard Template Library)',
+=======
+    'title_level': 'STL (Standard Template Library)',
+>>>>>>> origin/junior
     'topic': 'Funciones y Objetos Funcionales',
     'subtopic': 'Predicados y funciones como objetos',
     'definition': '''
@@ -6993,7 +7205,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'STL (Standard Template Library)',
+<<<<<<< HEAD
+    'title_level': 'STL (Standard Template Library)',
+=======
+    'title_level': 'STL (Standard Template Library)',
+>>>>>>> origin/junior
     'topic': 'Funciones y Objetos Funcionales',
     'subtopic': 'Flexibilidad en la programación funcional',
     'definition': '''
@@ -7141,7 +7357,11 @@ Future<void> insertMidLevel6DataCpp(Database db) async {
     'language': 'C++',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'Concurrencia y Programación Multihilo',
+<<<<<<< HEAD
+    'title_level': 'Concurrencia y Programación Multihilo',
+=======
+    'title_level': 'Concurrencia y Programación Multihilo',
+>>>>>>> origin/junior
     'topic': 'Hilos en C++',
     'subtopic': 'std::thread y su uso básico',
     'definition': '''
@@ -7246,7 +7466,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'Concurrencia y Programación Multihilo',
+<<<<<<< HEAD
+    'title_level': 'Concurrencia y Programación Multihilo',
+=======
+    'title_level': 'Concurrencia y Programación Multihilo',
+>>>>>>> origin/junior
     'topic': 'Hilos en C++',
     'subtopic': 'Paso de argumentos a hilos',
     'definition': '''
@@ -7373,7 +7597,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'Concurrencia y Programación Multihilo',
+<<<<<<< HEAD
+    'title_level': 'Concurrencia y Programación Multihilo',
+=======
+    'title_level': 'Concurrencia y Programación Multihilo',
+>>>>>>> origin/junior
     'topic': 'Hilos en C++',
     'subtopic': 'Gestión del ciclo de vida de hilos',
     'definition': '''
@@ -7547,7 +7775,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'Concurrencia y Programación Multihilo',
+<<<<<<< HEAD
+    'title_level': 'Concurrencia y Programación Multihilo',
+=======
+    'title_level': 'Concurrencia y Programación Multihilo',
+>>>>>>> origin/junior
     'topic': 'Sincronización',
     'subtopic': 'std::mutex, std::lock_guard, std::unique_lock',
     'definition': '''
@@ -7657,7 +7889,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'Concurrencia y Programación Multihilo',
+<<<<<<< HEAD
+    'title_level': 'Concurrencia y Programación Multihilo',
+=======
+    'title_level': 'Concurrencia y Programación Multihilo',
+>>>>>>> origin/junior
     'topic': 'Sincronización',
     'subtopic': 'Condiciones de carrera y cómo evitarlas',
     'definition': '''
@@ -7810,7 +8046,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'Concurrencia y Programación Multihilo',
+<<<<<<< HEAD
+    'title_level': 'Concurrencia y Programación Multihilo',
+=======
+    'title_level': 'Concurrencia y Programación Multihilo',
+>>>>>>> origin/junior
     'topic': 'Sincronización',
     'subtopic': 'std::condition_variable y comunicación entre hilos',
     'definition': '''
@@ -7940,7 +8180,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'Concurrencia y Programación Multihilo',
+<<<<<<< HEAD
+    'title_level': 'Concurrencia y Programación Multihilo',
+=======
+    'title_level': 'Concurrencia y Programación Multihilo',
+>>>>>>> origin/junior
     'topic': 'Herramientas Avanzadas de Concurrencia',
     'subtopic': 'std::future, std::promise, std::async',
     'definition': r'''
@@ -8011,7 +8255,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'Concurrencia y Programación Multihilo',
+<<<<<<< HEAD
+    'title_level': 'Concurrencia y Programación Multihilo',
+=======
+    'title_level': 'Concurrencia y Programación Multihilo',
+>>>>>>> origin/junior
     'topic': 'Herramientas Avanzadas de Concurrencia',
     'subtopic': 'Atomicidad y std::atomic',
     'definition': r'''
@@ -8075,7 +8323,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'Concurrencia y Programación Multihilo',
+<<<<<<< HEAD
+    'title_level': 'Concurrencia y Programación Multihilo',
+=======
+    'title_level': 'Concurrencia y Programación Multihilo',
+>>>>>>> origin/junior
     'topic': 'Herramientas Avanzadas de Concurrencia',
     'subtopic': 'Consideraciones de rendimiento y deadlocks',
     'definition': r'''
@@ -8182,7 +8434,11 @@ Future<void> insertMidLevel7DataCpp(Database db) async {
     'language': 'C++',
     'module': 'Mid',
     'level': 7,
-    'tittle_level': 'Entrada/Salida y Serialización',
+<<<<<<< HEAD
+    'title_level': 'Entrada/Salida y Serialización',
+=======
+    'title_level': 'Entrada/Salida y Serialización',
+>>>>>>> origin/junior
     'topic': 'Flujo de Entrada/Salida',
     'subtopic': 'std::cin, std::cout, std::cerr',
     'definition': r'''
@@ -8247,7 +8503,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 7,
-    'tittle_level': 'Entrada/Salida y Serialización',
+<<<<<<< HEAD
+    'title_level': 'Entrada/Salida y Serialización',
+=======
+    'title_level': 'Entrada/Salida y Serialización',
+>>>>>>> origin/junior
     'topic': 'Flujo de Entrada/Salida',
     'subtopic': 'Formateo y manipulación de flujo',
     'definition': r'''
@@ -8322,7 +8582,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 7,
-    'tittle_level': 'Entrada/Salida y Serialización',
+<<<<<<< HEAD
+    'title_level': 'Entrada/Salida y Serialización',
+=======
+    'title_level': 'Entrada/Salida y Serialización',
+>>>>>>> origin/junior
     'topic': 'Flujo de Entrada/Salida',
     'subtopic': 'Archivos y std::fstream',
     'definition': r'''
@@ -8405,7 +8669,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 7,
-    'tittle_level': 'Entrada/Salida y Serialización',
+<<<<<<< HEAD
+    'title_level': 'Entrada/Salida y Serialización',
+=======
+    'title_level': 'Entrada/Salida y Serialización',
+>>>>>>> origin/junior
     'topic': 'Serialización de Datos',
     'subtopic': 'Serialización binaria y en texto',
     'definition': r'''
@@ -8521,7 +8789,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 7,
-    'tittle_level': 'Entrada/Salida y Serialización',
+<<<<<<< HEAD
+    'title_level': 'Entrada/Salida y Serialización',
+=======
+    'title_level': 'Entrada/Salida y Serialización',
+>>>>>>> origin/junior
     'topic': 'Serialización de Datos',
     'subtopic': 'Uso de bibliotecas como Boost.Serialization',
     'definition': r'''
@@ -8639,7 +8911,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 7,
-    'tittle_level': 'Entrada/Salida y Serialización',
+<<<<<<< HEAD
+    'title_level': 'Entrada/Salida y Serialización',
+=======
+    'title_level': 'Entrada/Salida y Serialización',
+>>>>>>> origin/junior
     'topic': 'Serialización de Datos',
     'subtopic': 'Consideraciones de compatibilidad y versión',
     'definition': r'''
@@ -8798,7 +9074,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 7,
-    'tittle_level': 'Entrada/Salida y Serialización',
+<<<<<<< HEAD
+    'title_level': 'Entrada/Salida y Serialización',
+=======
+    'title_level': 'Entrada/Salida y Serialización',
+>>>>>>> origin/junior
     'topic': 'Manejo de Archivos Avanzado',
     'subtopic': 'Lectura y escritura eficiente',
     'definition': r'''
@@ -8899,7 +9179,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 7,
-    'tittle_level': 'Entrada/Salida y Serialización',
+<<<<<<< HEAD
+    'title_level': 'Entrada/Salida y Serialización',
+=======
+    'title_level': 'Entrada/Salida y Serialización',
+>>>>>>> origin/junior
     'topic': 'Manejo de Archivos Avanzado',
     'subtopic': 'Manejo de errores en operaciones de archivo',
     'definition': r'''
@@ -9012,7 +9296,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 7,
-    'tittle_level': 'Entrada/Salida y Serialización',
+<<<<<<< HEAD
+    'title_level': 'Entrada/Salida y Serialización',
+=======
+    'title_level': 'Entrada/Salida y Serialización',
+>>>>>>> origin/junior
     'topic': 'Manejo de Archivos Avanzado',
     'subtopic': 'Acceso aleatorio y mapeo de archivos',
     'definition': r'''
@@ -9166,7 +9454,11 @@ Future<void> insertMidLevel8DataCpp(Database db) async {
     'language': 'C++',
     'module': 'Mid',
     'level': 8,
-    'tittle_level': 'Buenas Prácticas y Estilo de Código',
+<<<<<<< HEAD
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+=======
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+>>>>>>> origin/junior
     'topic': 'Estándares de Codificación',
     'subtopic': 'Convenciones de nomenclatura',
     'definition': r'''
@@ -9245,7 +9537,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 8,
-    'tittle_level': 'Buenas Prácticas y Estilo de Código',
+<<<<<<< HEAD
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+=======
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+>>>>>>> origin/junior
     'topic': 'Estándares de Codificación',
     'subtopic': 'Organización de archivos y proyectos',
     'definition': r'''
@@ -9360,7 +9656,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 8,
-    'tittle_level': 'Buenas Prácticas y Estilo de Código',
+<<<<<<< HEAD
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+=======
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+>>>>>>> origin/junior
     'topic': 'Estándares de Codificación',
     'subtopic': 'Comentarios y documentación',
     'definition': r'''
@@ -9470,7 +9770,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 8,
-    'tittle_level': 'Buenas Prácticas y Estilo de Código',
+<<<<<<< HEAD
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+=======
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+>>>>>>> origin/junior
     'topic': 'Herramientas de Análisis Estático',
     'subtopic': 'Uso de linters y formatters (clang-tidy, cpplint)',
     'definition': r'''
@@ -9568,7 +9872,11 @@ your_file.cpp:35:19: warning: do not use magic numbers [readability/magic_number
     'language': 'C++',
     'module': 'Mid',
     'level': 8,
-    'tittle_level': 'Buenas Prácticas y Estilo de Código',
+<<<<<<< HEAD
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+=======
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+>>>>>>> origin/junior
     'topic': 'Herramientas de Análisis Estático',
     'subtopic': 'Integración en el flujo de trabajo',
     'definition': r'''
@@ -9678,7 +9986,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 8,
-    'tittle_level': 'Buenas Prácticas y Estilo de Código',
+<<<<<<< HEAD
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+=======
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+>>>>>>> origin/junior
     'topic': 'Herramientas de Análisis Estático',
     'subtopic': 'Mejora continua del código',
     'definition': r'''
@@ -9788,7 +10100,11 @@ int main() {
     'language': 'C++',
     'module': 'Mid',
     'level': 8,
-    'tittle_level': 'Buenas Prácticas y Estilo de Código',
+<<<<<<< HEAD
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+=======
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+>>>>>>> origin/junior
     'topic': 'Testing y Depuración',
     'subtopic': 'Frameworks de testing (Google Test, Catch2)',
     'definition': r'''
@@ -9932,7 +10248,11 @@ All tests passed (6 assertions in 2 test cases)
     'language': 'C++',
     'module': 'Mid',
     'level': 8,
-    'tittle_level': 'Buenas Prácticas y Estilo de Código',
+<<<<<<< HEAD
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+=======
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+>>>>>>> origin/junior
     'topic': 'Testing y Depuración',
     'subtopic': 'Técnicas de depuración (gdb, lldb)',
     'definition': r'''
@@ -10049,7 +10369,11 @@ Programa terminado.
     'language': 'C++',
     'module': 'Mid',
     'level': 8,
-    'tittle_level': 'Buenas Prácticas y Estilo de Código',
+<<<<<<< HEAD
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+=======
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+>>>>>>> origin/junior
     'topic': 'Testing y Depuración',
     'subtopic': 'Estrategias de pruebas unitarias y de integración',
     'definition': r'''
@@ -10205,7 +10529,11 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 8,
-    'tittle_level': 'Buenas Prácticas y Estilo de Código',
+<<<<<<< HEAD
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+=======
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+>>>>>>> origin/junior
     'topic': 'Gestión de Dependencias y Build Systems',
     'subtopic': 'Uso de CMake y Makefiles',
     'definition': r'''
@@ -10325,7 +10653,11 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 8,
-    'tittle_level': 'Buenas Prácticas y Estilo de Código',
+<<<<<<< HEAD
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+=======
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+>>>>>>> origin/junior
     'topic': 'Gestión de Dependencias y Build Systems',
     'subtopic': 'Gestión de paquetes (vcpkg, Conan)',
     'definition': r'''
@@ -10460,7 +10792,11 @@ int main() {
     'language': 'C++',
     'module': 'Sr',
     'level': 8,
-    'tittle_level': 'Buenas Prácticas y Estilo de Código',
+<<<<<<< HEAD
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+=======
+    'title_level': 'Buenas Prácticas y Estilo de Código',
+>>>>>>> origin/junior
     'topic': 'Gestión de Dependencias y Build Systems',
     'subtopic': 'Automatización del proceso de construcción',
     'definition': r'''
@@ -10561,3 +10897,4 @@ int main() {
 '''
   });
 }
+

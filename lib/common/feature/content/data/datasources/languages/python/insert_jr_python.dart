@@ -5,7 +5,7 @@ Future<void> insertPythonJrLevel1Data(Database db) async {
     'language': 'Python',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Python',
+    'title_level': 'Fundamentos de Python',
     'topic': 'Sintaxis Básica',
     'subtopic': 'Estructura de un programa Python',
     'definition': '''
@@ -43,7 +43,7 @@ print("El resultado es:", numero)
     'language': 'Python',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Python',
+    'title_level': 'Fundamentos de Python',
     'topic': 'Sintaxis Básica',
     'subtopic': 'Comentarios (#, """)',
     'definition': '''
@@ -80,7 +80,7 @@ def mi_funcion(parametro):
     'language': 'Python',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Python',
+    'title_level': 'Fundamentos de Python',
     'topic': 'Sintaxis Básica',
     'subtopic': 'Indentación',
     'definition': '''
@@ -109,7 +109,7 @@ print("Esta línea no está indentada, está fuera de la función")
     'language': 'Python',
     'module': 'Jr',
     'level': 1,
-    'tittle_level': 'Fundamentos de Python',
+    'title_level': 'Fundamentos de Python',
     'topic': 'Sintaxis Básica',
     'subtopic': 'Bloques de código',
     'definition': '''
@@ -148,7 +148,7 @@ for i in range(3):
       'language': 'Python',
       'module': 'Jr',
       'level': 1,
-      'tittle_level': 'Fundamentos de Python',
+      'title_level': 'Fundamentos de Python',
       'topic': 'Tipos de Datos y Variables',
       'subtopic': 'Tipos básicos (int, float, bool, str)',
       'definition': '''
@@ -184,7 +184,7 @@ saludo = "Hola, " + nombre  # Concatenación
       'language': 'Python',
       'module': 'Jr',
       'level': 1,
-      'tittle_level': 'Fundamentos de Python',
+      'title_level': 'Fundamentos de Python',
       'topic': 'Tipos de Datos y Variables',
       'subtopic': 'Tipos complejos (list, tuple, set, dict)',
       'definition': '''
@@ -217,7 +217,7 @@ mi_lista[0] = 10      # Modificar un elemento
       'language': 'Python',
       'module': 'Jr',
       'level': 1,
-      'tittle_level': 'Fundamentos de Python',
+      'title_level': 'Fundamentos de Python',
       'topic': 'Tipos de Datos y Variables',
       'subtopic': 'Declaración e inicialización de variables',
       'definition': '''
@@ -255,7 +255,7 @@ miVariable1 = 30
       'language': 'Python',
       'module': 'Jr',
       'level': 1,
-      'tittle_level': 'Fundamentos de Python',
+      'title_level': 'Fundamentos de Python',
       'topic': 'Tipos de Datos y Variables',
       'subtopic': 'Ámbito de variables (global, local)',
       'definition': '''
@@ -295,7 +295,7 @@ print(variable_global)
       'language': 'Python',
       'module': 'Jr',
       'level': 1,
-      'tittle_level': 'Fundamentos de Python',
+      'title_level': 'Fundamentos de Python',
       'topic': 'Operadores',
       'subtopic': 'Operadores aritméticos (+, -, *, /, %, **, //)',
       'definition': '''
@@ -337,7 +337,7 @@ else:
       'language': 'Python',
       'module': 'Jr',
       'level': 1,
-      'tittle_level': 'Fundamentos de Python',
+      'title_level': 'Fundamentos de Python',
       'topic': 'Operadores',
       'subtopic': 'Operadores de comparación (==, !=, >, <, >=, <=)',
       'definition': '''
@@ -378,7 +378,7 @@ else:
       'language': 'Python',
       'module': 'Jr',
       'level': 1,
-      'tittle_level': 'Fundamentos de Python',
+      'title_level': 'Fundamentos de Python',
       'topic': 'Operadores',
       'subtopic': 'Operadores lógicos (and, or, not)',
       'definition': '''
@@ -419,7 +419,7 @@ else:
       'language': 'Python',
       'module': 'Jr',
       'level': 1,
-      'tittle_level': 'Fundamentos de Python',
+      'title_level': 'Fundamentos de Python',
       'topic': 'Operadores',
       'subtopic': 'Operadores de asignación (=, +=, -=, *=, /=, %=, **=, //=)',
       'definition': '''
@@ -453,7 +453,7 @@ x //= 7    # x es ahora 5.0 (x = x // 7)
       'language': 'Python',
       'module': 'Jr',
       'level': 1,
-      'tittle_level': 'Fundamentos de Python',
+      'title_level': 'Fundamentos de Python',
       'topic': 'Estructuras de Control',
       'subtopic': 'Sentencias if-elif-else',
       'definition': '''
@@ -499,7 +499,7 @@ else:
       'language': 'Python',
       'module': 'Jr',
       'level': 1,
-      'tittle_level': 'Fundamentos de Python',
+      'title_level': 'Fundamentos de Python',
       'topic': 'Estructuras de Control',
       'subtopic': 'Bucles (for, while)',
       'definition': '''
@@ -539,7 +539,7 @@ while contador < 5:
       'language': 'Python',
       'module': 'Jr',
       'level': 1,
-      'tittle_level': 'Fundamentos de Python',
+      'title_level': 'Fundamentos de Python',
       'topic': 'Estructuras de Control',
       'subtopic': 'Break y continue',
       'definition': '''
@@ -585,7 +585,7 @@ else:
       'language': 'Python',
       'module': 'Jr',
       'level': 1,
-      'tittle_level': 'Fundamentos de Python',
+      'title_level': 'Fundamentos de Python',
       'topic': 'Estructuras de Control',
       'subtopic': 'Pass statement',
       'definition': '''
@@ -626,7 +626,7 @@ Future<void> insertPythonJrLevel2Data(Database db) async {
       'language': 'Python',
       'module': 'Jr',
       'level': 2,
-      'tittle_level': 'Programación Orientada a Objetos',
+      'title_level': 'Programación Orientada a Objetos',
       'topic': 'Clases y Objetos',
       'subtopic': 'Definición de clases (class)',
       'definition': '''
@@ -676,7 +676,7 @@ class Persona:
       'language': 'Python',
       'module': 'Jr',
       'level': 2,
-      'tittle_level': 'Programación Orientada a Objetos',
+      'title_level': 'Programación Orientada a Objetos',
       'topic': 'Clases y Objetos',
       'subtopic': 'Creación de objetos',
       'definition': '''
@@ -720,7 +720,7 @@ mi_coche1.arrancar()  # Imprime "El coche Toyota Corolla está arrancando"
       'language': 'Python',
       'module': 'Jr',
       'level': 2,
-      'tittle_level': 'Programación Orientada a Objetos',
+      'title_level': 'Programación Orientada a Objetos',
       'topic': 'Clases y Objetos',
       'subtopic': 'Atributos y métodos',
       'definition': '''
@@ -779,7 +779,7 @@ mi_coche.frenar(20)
       'language': 'Python',
       'module': 'Jr',
       'level': 2,
-      'tittle_level': 'Programación Orientada a Objetos',
+      'title_level': 'Programación Orientada a Objetos',
       'topic': 'Clases y Objetos',
       'subtopic': 'Constructores (init)',
       'definition': '''
@@ -827,7 +827,7 @@ animal.hacer_sonido()
     'language': 'Python',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos',
+    'title_level': 'Programación Orientada a Objetos',
     'topic': 'Pilares de la POO',
     'subtopic': 'Encapsulamiento (convención _ y __)',
     'definition': '''
@@ -872,7 +872,7 @@ print(cuenta._CuentaBancaria__numero_cuenta)  # Salida: 123456789
     'language': 'Python',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos',
+    'title_level': 'Programación Orientada a Objetos',
     'topic': 'Pilares de la POO',
     'subtopic': 'Herencia (super())',
     'definition': '''
@@ -915,7 +915,7 @@ perro.hablar()
     'language': 'Python',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos',
+    'title_level': 'Programación Orientada a Objetos',
     'topic': 'Pilares de la POO',
     'subtopic': 'Polimorfismo',
     'definition': '''
@@ -957,7 +957,7 @@ for animal in animales:
     'language': 'Python',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos',
+    'title_level': 'Programación Orientada a Objetos',
     'topic': 'Pilares de la POO',
     'subtopic': 'Métodos especiales (str, repr, etc.)',
     'definition': '''
@@ -994,7 +994,7 @@ print(repr(persona))  # Salida: Persona('Ana', 30)
     'language': 'Python',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos',
+    'title_level': 'Programación Orientada a Objetos',
     'topic': 'Conceptos Avanzados',
     'subtopic': 'Decoradores (@)',
     'definition': '''
@@ -1030,7 +1030,7 @@ funcion_principal()
     'language': 'Python',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos',
+    'title_level': 'Programación Orientada a Objetos',
     'topic': 'Conceptos Avanzados',
     'subtopic': 'Properties',
     'definition': '''
@@ -1073,7 +1073,7 @@ print(c.area)  # Salida: 314.1592653589793
     'language': 'Python',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos',
+    'title_level': 'Programación Orientada a Objetos',
     'topic': 'Conceptos Avanzados',
     'subtopic': 'Clases abstractas (abc module)',
     'definition': '''
@@ -1113,7 +1113,7 @@ print(gato.hacer_sonido())  # Salida: Miau
     'language': 'Python',
     'module': 'Jr',
     'level': 2,
-    'tittle_level': 'Programación Orientada a Objetos',
+    'title_level': 'Programación Orientada a Objetos',
     'topic': 'Conceptos Avanzados',
     'subtopic': 'Dataclasses (Python 3.7+)',
     'definition': '''
@@ -1145,7 +1145,7 @@ Future<void> insertPythonJrLevel3Data(Database db) async {
     'language': 'Python',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Estructuras de Datos',
     'subtopic': 'Listas y operaciones',
     'definition': '''
@@ -1196,7 +1196,7 @@ print(numeros)  # Salida: [9, 6, 5, 4, 3, 2, 1]
     'language': 'Python',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Estructuras de Datos',
     'subtopic': 'Tuplas (inmutables)',
     'definition': '''
@@ -1227,7 +1227,7 @@ print(f"Coordenadas: x={x}, y={y}")  # Salida: Coordenadas: x=10, y=20
     'language': 'Python',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Estructuras de Datos',
     'subtopic': 'Conjuntos (sets)',
     'definition': '''
@@ -1261,7 +1261,7 @@ print(frutas)  # Salida: {'manzana', 'naranja', 'cereza'}
     'language': 'Python',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Estructuras de Datos',
     'subtopic': 'Diccionarios y operaciones',
     'definition': '''
@@ -1308,7 +1308,7 @@ for clave, valor in persona.items():
     'language': 'Python',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Strings y Manipulación',
     'subtopic': 'Métodos de strings',
     'definition': '''
@@ -1355,7 +1355,7 @@ print(nueva_cadena)  # Salida: "Hola-Mundo"
     'language': 'Python',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Strings y Manipulación',
     'subtopic': 'Formateo (f-strings, .format())',
     'definition': '''
@@ -1390,7 +1390,7 @@ print(f"El valor de pi es aproximadamente {pi:.2f}")  # Salida: El valor de pi e
     'language': 'Python',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Strings y Manipulación',
     'subtopic': 'Expresiones regulares básicas (re module)',
     'definition': '''
@@ -1427,7 +1427,7 @@ print(f"Números encontrados: {telefonos}")  # Salida: Números encontrados: ['1
     'language': 'Python',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Manejo de Archivos',
     'subtopic': 'open(), read(), write()',
     'definition': '''
@@ -1462,7 +1462,7 @@ archivo.close()
     'language': 'Python',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Manejo de Archivos',
     'subtopic': 'Context managers (with)',
     'definition': '''
@@ -1490,7 +1490,7 @@ with open('salida.txt', 'w') as archivo:
     'language': 'Python',
     'module': 'Jr',
     'level': 3,
-    'tittle_level': 'Manejo de Datos',
+    'title_level': 'Manejo de Datos',
     'topic': 'Manejo de Archivos',
     'subtopic': 'CSV, JSON básico',
     'definition': '''
@@ -1538,7 +1538,7 @@ Future<void> insertPythonJrLevel4Data(Database db) async {
     'language': 'Python',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Manejo de Excepciones',
+    'title_level': 'Manejo de Excepciones',
     'topic': 'Tipos de Excepciones',
     'subtopic': 'Jerarquía de excepciones',
     'definition': '''
@@ -1569,7 +1569,7 @@ except Exception as e:
     'language': 'Python',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Manejo de Excepciones',
+    'title_level': 'Manejo de Excepciones',
     'topic': 'Tipos de Excepciones',
     'subtopic': 'Common exceptions (ValueError, TypeError, etc.)',
     'definition': '''
@@ -1605,7 +1605,7 @@ except IndexError:
     'language': 'Python',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Manejo de Excepciones',
+    'title_level': 'Manejo de Excepciones',
     'topic': 'Tipos de Excepciones',
     'subtopic': 'Excepciones personalizadas',
     'definition': '''
@@ -1633,7 +1633,7 @@ except ErrorPersonalizado as e:
     'language': 'Python',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Manejo de Excepciones',
+    'title_level': 'Manejo de Excepciones',
     'topic': 'Manejo de Errores',
     'subtopic': 'Try-except-else-finally',
     'definition': '''
@@ -1670,7 +1670,7 @@ finally:
     'language': 'Python',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Manejo de Excepciones',
+    'title_level': 'Manejo de Excepciones',
     'topic': 'Manejo de Errores',
     'subtopic': 'Raise exceptions',
     'definition': '''
@@ -1716,7 +1716,7 @@ except ErrorDeValidacion as e:
     'language': 'Python',
     'module': 'Jr',
     'level': 4,
-    'tittle_level': 'Manejo de Excepciones',
+    'title_level': 'Manejo de Excepciones',
     'topic': 'Manejo de Errores',
     'subtopic': 'Tracebacks',
     'definition': '''
@@ -1765,7 +1765,7 @@ Future<void> insertPythonJrLevel5Data(Database db) async {
     'language': 'Python',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Entorno de Desarrollo',
     'subtopic': 'Instalación de Python',
     'definition': '''
@@ -1795,7 +1795,7 @@ Después de la instalación, puedes verificar que todo esté correcto abriendo l
     'language': 'Python',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Entorno de Desarrollo',
     'subtopic': 'PIP y entornos virtuales (venv)',
     'definition': '''
@@ -1829,7 +1829,7 @@ Para crear un entorno virtual, se utiliza el módulo `venv`. Una vez activado, `
     'language': 'Python',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Entorno de Desarrollo',
     'subtopic': 'IDEs (PyCharm, VSCode)',
     'definition': '''
@@ -1858,7 +1858,7 @@ Ambos IDEs son excelentes opciones, y la elección entre uno u otro a menudo dep
     'language': 'Python',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Entorno de Desarrollo',
     'subtopic': 'Ejecución desde terminal',
     'definition': '''
@@ -1889,7 +1889,7 @@ También puedes pasar argumentos al script a través de la línea de comandos, q
     'language': 'Python',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Control de Versiones',
     'subtopic': 'Git básico',
     'definition': '''
@@ -1925,7 +1925,7 @@ Algunos comandos básicos de Git incluyen `init` (para inicializar un nuevo repo
     'language': 'Python',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Control de Versiones',
     'subtopic': 'GitHub',
     'definition': '''
@@ -1957,7 +1957,7 @@ Para usar GitHub, necesitas crear una cuenta y luego puedes crear repositorios, 
     'language': 'Python',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Control de Versiones',
     'subtopic': '.gitignore para Python',
     'definition': '''
@@ -1997,7 +1997,7 @@ config.ini
     'language': 'Python',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Pruebas Unitarias',
     'subtopic': 'unittest module',
     'definition': '''
@@ -2035,7 +2035,7 @@ if __name__ == '__main__':
     'language': 'Python',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Pruebas Unitarias',
     'subtopic': 'pytest básico',
     'definition': '''
@@ -2067,7 +2067,7 @@ def test_division():
     'language': 'Python',
     'module': 'Jr',
     'level': 5,
-    'tittle_level': 'Herramientas Básicas',
+    'title_level': 'Herramientas Básicas',
     'topic': 'Pruebas Unitarias',
     'subtopic': 'Assertions',
     'definition': '''

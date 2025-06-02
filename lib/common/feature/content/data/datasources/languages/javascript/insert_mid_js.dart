@@ -5,7 +5,7 @@ Future<void> insertJsMidLevel1Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Estructuras de Datos',
+    'title_level': 'Estructuras de Datos',
     'topic': 'Objetos',
     'subtopic': 'Propiedades y valores',
     'definition': '''
@@ -80,7 +80,7 @@ console.log(`Autor: ${libro["autor-principal"]}`);
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Estructuras de Datos',
+    'title_level': 'Estructuras de Datos',
     'topic': 'Objetos',
     'subtopic': 'Acceso a propiedades (dot notation, bracket notation)',
     'definition': '''
@@ -146,7 +146,7 @@ console.log(`Tipo de rueda: ${coche["tipo de rueda"]}`);
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Estructuras de Datos',
+    'title_level': 'Estructuras de Datos',
     'topic': 'Objetos',
     'subtopic': 'Métodos en objetos',
     'definition': '''
@@ -225,7 +225,7 @@ console.log(`20 - 7 = ${resultadoResta}`); // Salida: 20 - 7 = 13
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Estructuras de Datos',
+    'title_level': 'Estructuras de Datos',
     'topic': 'JSON',
     'subtopic': 'Sintaxis de JSON',
     'definition': '''
@@ -320,7 +320,7 @@ const invalidJson = `
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Estructuras de Datos',
+    'title_level': 'Estructuras de Datos',
     'topic': 'JSON',
     'subtopic': 'Conversión con JSON.stringify()',
     'definition': '''
@@ -468,7 +468,7 @@ console.log(datosMixtosJSON);
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Estructuras de Datos',
+    'title_level': 'Estructuras de Datos',
     'topic': 'JSON',
     'subtopic': 'Conversión con JSON.parse()',
     'definition': '''
@@ -570,7 +570,7 @@ console.log(productoFiltrado); // Salida: { nombre: 'Laptop', precio: 1200 }
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Estructuras de Datos',
+    'title_level': 'Estructuras de Datos',
     'topic': 'Arrays',
     'subtopic': 'Declaración de arrays',
     'definition': '''
@@ -662,7 +662,7 @@ console.log(variosElementos); // Salida: [ 1, 2, 'tres' ]
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Estructuras de Datos',
+    'title_level': 'Estructuras de Datos',
     'topic': 'Arrays',
     'subtopic': 'Métodos comunes: push, pop, shift, unshift, splice',
     'definition': '''
@@ -745,7 +745,7 @@ console.log("Después de splice(2):", copiaColores); // Salida: [ 'rojo', 'verde
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Estructuras de Datos',
+    'title_level': 'Estructuras de Datos',
     'topic': 'Arrays',
     'subtopic': 'Iteración: forEach, map, filter, reduce',
     'definition': '''
@@ -854,7 +854,7 @@ console.log(`Usuario de mayor edad (reduce):`, usuarioMayor);
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Estructuras de Datos',
+    'title_level': 'Estructuras de Datos',
     'topic': 'Arrays',
     'subtopic': 'Arrays multidimensionales',
     'definition': '''
@@ -967,7 +967,7 @@ console.log(`Elemento en (0, 1, 1): ${cubo[0][1][1]}`); // Salida: 4
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Estructuras de Datos',
+    'title_level': 'Estructuras de Datos',
     'topic': 'Typed Arrays',
     'subtopic': 'Introducción a typed arrays',
     'definition': '''
@@ -1060,7 +1060,7 @@ console.log(subInt16View);
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Estructuras de Datos',
+    'title_level': 'Estructuras de Datos',
     'topic': 'Typed Arrays',
     'subtopic': 'Tipos: Int8Array, Uint8Array, etc.',
     'definition': '''
@@ -1170,7 +1170,7 @@ console.log(`int8Arr reflejando cambios en el float64:`, int8Arr);
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Estructuras de Datos',
+    'title_level': 'Estructuras de Datos',
     'topic': 'Typed Arrays',
     'subtopic': 'Buffers y performance',
     'definition': '''
@@ -1284,7 +1284,7 @@ console.log(`Suma Typed: ${sumTyped}`);
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Estructuras de Datos',
+    'title_level': 'Estructuras de Datos',
     'topic': 'Map y Set',
     'subtopic': 'Creación de Map',
     'definition': '''
@@ -1396,7 +1396,7 @@ console.log(`mapaReferencia.get(objCompartido): ${mapaReferencia.get(objComparti
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Estructuras de Datos',
+    'title_level': 'Estructuras de Datos',
     'topic': 'Map y Set',
     'subtopic': 'Acceso y manipulación en Map',
     'definition': '''
@@ -1505,7 +1505,7 @@ console.log(`Tamaño: ${usuariosOnline.size}`); // Salida: Tamaño: 0
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Estructuras de Datos',
+    'title_level': 'Estructuras de Datos',
     'topic': 'Map y Set',
     'subtopic': 'Uso de Set para unicidad',
     'definition': '''
@@ -1613,7 +1613,7 @@ console.log(`Tamaño: ${numerosUnicos.size}`);       // Salida: 0
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 1,
-    'tittle_level': 'Estructuras de Datos',
+    'title_level': 'Estructuras de Datos',
     'topic': 'Map y Set',
     'subtopic': 'Diferencias con WeakMap y WeakSet',
     'definition': '''
@@ -1754,7 +1754,7 @@ Future<void> insertJsMidLevel2Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Funciones Avanzadas y this',
+    'title_level': 'Funciones Avanzadas y this',
     'topic': 'Closures',
     'subtopic': 'Qué son y cómo se crean',
     'definition': r'''
@@ -1808,7 +1808,7 @@ Future<void> insertJsMidLevel2Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Funciones Avanzadas y this',
+    'title_level': 'Funciones Avanzadas y this',
     'topic': 'Closures',
     'subtopic': 'Ventajas de los closures',
     'definition': r'''
@@ -1844,7 +1844,7 @@ Future<void> insertJsMidLevel2Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Funciones Avanzadas y this',
+    'title_level': 'Funciones Avanzadas y this',
     'topic': 'Closures',
     'subtopic': 'Riesgos y malas prácticas',
     'definition': r'''
@@ -1883,7 +1883,7 @@ Future<void> insertJsMidLevel2Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Funciones Avanzadas y this',
+    'title_level': 'Funciones Avanzadas y this',
     'topic': 'Lexical Scope',
     'subtopic': 'Ámbitos de variables',
     'definition': r'''
@@ -1962,7 +1962,7 @@ ejemploBlockScope();
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Funciones Avanzadas y this',
+    'title_level': 'Funciones Avanzadas y this',
     'topic': 'Lexical Scope',
     'subtopic': 'Lexical environment',
     'definition': r'''
@@ -2061,7 +2061,7 @@ contador1(); // Salida: 3
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Funciones Avanzadas y this',
+    'title_level': 'Funciones Avanzadas y this',
     'topic': 'Lexical Scope',
     'subtopic': 'Nested functions',
     'definition': r'''
@@ -2179,7 +2179,7 @@ console.log("Tareas actuales:", miGestor.obtener()); // Salida: [ 'Pagar factura
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Funciones Avanzadas y this',
+    'title_level': 'Funciones Avanzadas y this',
     'topic': 'this en distintos contextos',
     'subtopic': 'En funciones normales',
     'definition': r'''
@@ -2286,7 +2286,7 @@ Mi nombre completo es Carlos (¡Solucionado!)
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Funciones Avanzadas y this',
+    'title_level': 'Funciones Avanzadas y this',
     'topic': 'this en distintos contextos',
     'subtopic': 'En funciones flecha',
     'definition': r'''
@@ -2376,7 +2376,7 @@ entrenador.contratarEquipo("Barcelona");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Funciones Avanzadas y this',
+    'title_level': 'Funciones Avanzadas y this',
     'topic': 'this en distintos contextos',
     'subtopic': 'En métodos de objetos',
     'definition': r'''
@@ -2451,7 +2451,7 @@ vehiculo.arrancar(); // Salida: Arrancando el undefined (incorrecto)
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Funciones Avanzadas y this',
+    'title_level': 'Funciones Avanzadas y this',
     'topic': 'this en distintos contextos',
     'subtopic': 'En eventos del DOM',
     'definition': r'''
@@ -2540,7 +2540,7 @@ botonesItem.forEach(boton => {
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Funciones Avanzadas y this',
+    'title_level': 'Funciones Avanzadas y this',
     'topic': 'Manipulación de contexto',
     'subtopic': 'Uso de call()',
     'definition': r'''
@@ -2637,7 +2637,7 @@ mostrarThis.call(null);
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Funciones Avanzadas y this',
+    'title_level': 'Funciones Avanzadas y this',
     'topic': 'Manipulación de contexto',
     'subtopic': 'Uso de apply()',
     'definition': r'''
@@ -2730,7 +2730,7 @@ infoPersonal.apply(personaje, ["Madrid", "Doctora"]); // Argumentos en un array
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 2,
-    'tittle_level': 'Funciones Avanzadas y this',
+    'title_level': 'Funciones Avanzadas y this',
     'topic': 'Manipulación de contexto',
     'subtopic': 'Enlace permanente con bind()',
     'definition': r'''
@@ -2815,7 +2815,7 @@ Future<void> insertJsMidLevel3Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Asincronía',
+    'title_level': 'Asincronía',
     'topic': 'Event Loop',
     'subtopic': 'Call stack',
     'definition': r'''
@@ -2926,7 +2926,7 @@ console.log("¡Programa sigue (si no se bloqueó antes)!");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Asincronía',
+    'title_level': 'Asincronía',
     'topic': 'Event Loop',
     'subtopic': 'Callback queue',
     'definition': r'''
@@ -3024,7 +3024,7 @@ Output en consola (aproximado, el fetch puede variar):
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Asincronía',
+    'title_level': 'Asincronía',
     'topic': 'Event Loop',
     'subtopic': 'Microtasks y macrotasks',
     'definition': r'''
@@ -3167,7 +3167,7 @@ Macrotask Anidada por Microtask 1
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Asincronía',
+    'title_level': 'Asincronía',
     'topic': 'Temporizadores',
     'subtopic': 'setTimeout()',
     'definition': r'''
@@ -3247,7 +3247,7 @@ function mostrarNotificacion(mensaje, duracionMs) {
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Asincronía',
+    'title_level': 'Asincronía',
     'topic': 'Temporizadores',
     'subtopic': 'setInterval()',
     'definition': r'''
@@ -3330,7 +3330,7 @@ console.log("Fin del script síncrono. Los intervalos se ejecutan en segundo pla
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Asincronía',
+    'title_level': 'Asincronía',
     'topic': 'Temporizadores',
     'subtopic': 'Diferencias de comportamiento',
     'definition': r'''
@@ -3475,7 +3475,7 @@ Esto es a menudo preferible para tareas pesadas porque evita que se superpongan 
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Asincronía',
+    'title_level': 'Asincronía',
     'topic': 'Callbacks',
     'subtopic': 'Estructura de un callback',
     'definition': r'''
@@ -3578,7 +3578,7 @@ leerArchivo("archivo_inexistente.txt", procesarContenido);
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Asincronía',
+    'title_level': 'Asincronía',
     'topic': 'Callbacks',
     'subtopic': 'Callback hell',
     'definition': r'''
@@ -3687,7 +3687,7 @@ obtenerUsuario(1, (errorUsuario, usuario) => {
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Asincronía',
+    'title_level': 'Asincronía',
     'topic': 'Callbacks',
     'subtopic': 'Técnicas para evitarlo',
     'definition': r'''
@@ -3857,7 +3857,7 @@ procesarDatosConAsyncAwait(1); // Ejemplo exitoso
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Asincronía',
+    'title_level': 'Asincronía',
     'topic': 'Promesas',
     'subtopic': 'Creación de promesas',
     'definition': r'''
@@ -3962,7 +3962,7 @@ console.log("Fin del script.");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Asincronía',
+    'title_level': 'Asincronía',
     'topic': 'Promesas',
     'subtopic': 'Encadenamiento con .then()',
     'definition': r'''
@@ -4085,7 +4085,7 @@ console.log("Fin del script síncrono.");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Asincronía',
+    'title_level': 'Asincronía',
     'topic': 'Promesas',
     'subtopic': 'Manejo de errores con .catch()',
     'definition': r'''
@@ -4214,7 +4214,7 @@ console.log("Fin del script síncrono general.");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Asincronía',
+    'title_level': 'Asincronía',
     'topic': 'async/await',
     'subtopic': 'Sintaxis básica',
     'definition': r'''
@@ -4315,7 +4315,7 @@ console.log("Fin del script síncrono principal.");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Asincronía',
+    'title_level': 'Asincronía',
     'topic': 'async/await',
     'subtopic': 'Flujo con await',
     'definition': r'''
@@ -4435,7 +4435,7 @@ console.log("Fin del script síncrono principal.");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 3,
-    'tittle_level': 'Asincronía',
+    'title_level': 'Asincronía',
     'topic': 'async/await',
     'subtopic': 'Errores con try/catch',
     'definition': r'''
@@ -4554,7 +4554,7 @@ Future<void> insertJsMidLevel4Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Modo Estricto y Buenas Prácticas',
+    'title_level': 'Modo Estricto y Buenas Prácticas',
     'topic': "'use strict' en distintos contextos",
     'subtopic': "En funciones",
     'definition': r'''
@@ -4639,7 +4639,7 @@ console.log("Variable global creada por función no estricta:", typeof variableG
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Modo Estricto y Buenas Prácticas',
+    'title_level': 'Modo Estricto y Buenas Prácticas',
     'topic': "'use strict' en distintos contextos",
     'subtopic': "A nivel global",
     'definition': r'''
@@ -4722,7 +4722,7 @@ console.log("Fin del script.");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Modo Estricto y Buenas Prácticas',
+    'title_level': 'Modo Estricto y Buenas Prácticas',
     'topic': "'use strict' en distintos contextos",
     'subtopic': "En clases",
     'definition': r'''
@@ -4815,7 +4815,7 @@ console.log("\nFin del script.");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Modo Estricto y Buenas Prácticas',
+    'title_level': 'Modo Estricto y Buenas Prácticas',
     'topic': "Errores comunes evitados por 'use strict'",
     'subtopic': "Asignación accidental a variables no declaradas",
     'definition': r'''
@@ -4893,7 +4893,7 @@ console.log("¿PropiedadEnGlobalEstricta existe globalmente?:", typeof propiedad
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Modo Estricto y Buenas Prácticas',
+    'title_level': 'Modo Estricto y Buenas Prácticas',
     'topic': "Errores comunes evitados por 'use strict'",
     'subtopic': "Escritura sobre propiedades no configurables",
     'definition': r'''
@@ -4984,7 +4984,7 @@ console.log("Math.PI después de intentar cambiar (no estricto):", Math.PI); // 
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Modo Estricto y Buenas Prácticas',
+    'title_level': 'Modo Estricto y Buenas Prácticas',
     'topic': "Errores comunes evitados por 'use strict'",
     'subtopic': "Duplicación de parámetros",
     'definition': r'''
@@ -5078,7 +5078,7 @@ console.log("\nFin del script.");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Modo Estricto y Buenas Prácticas',
+    'title_level': 'Modo Estricto y Buenas Prácticas',
     'topic': "Estilo y convenciones de código",
     'subtopic': "Nombrado de variables",
     'definition': r'''
@@ -5189,7 +5189,7 @@ console.log("\nFin del script.");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Modo Estricto y Buenas Prácticas',
+    'title_level': 'Modo Estricto y Buenas Prácticas',
     'topic': "Estilo y convenciones de código",
     'subtopic': "Sangría y estructura",
     'definition': r'''
@@ -5323,7 +5323,7 @@ console.log("\nFin del script.");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 4,
-    'tittle_level': 'Modo Estricto y Buenas Prácticas',
+    'title_level': 'Modo Estricto y Buenas Prácticas',
     'topic': "Estilo y convenciones de código",
     'subtopic': "Linters (eslint)",
     'definition': r'''
@@ -5449,7 +5449,7 @@ Future<void> insertJsMidLevel5Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'DOM y Herramientas del Navegador',
+    'title_level': 'DOM y Herramientas del Navegador',
     'topic': 'DOM básico',
     'subtopic': 'Selección de elementos (getElementById, querySelector)',
     'definition': r'''
@@ -5538,7 +5538,7 @@ console.log("\nFin de la selección de elementos.");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'DOM y Herramientas del Navegador',
+    'title_level': 'DOM y Herramientas del Navegador',
     'topic': 'DOM básico',
     'subtopic': 'Manipulación de texto y atributos',
     'definition': r'''
@@ -5658,7 +5658,7 @@ function ejecutarManipulacion() {
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'DOM y Herramientas del Navegador',
+    'title_level': 'DOM y Herramientas del Navegador',
     'topic': 'DOM básico',
     'subtopic': 'Inserción y eliminación de nodos',
     'definition': r'''
@@ -5791,7 +5791,7 @@ function ejecutarNodos() {
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'DOM y Herramientas del Navegador',
+    'title_level': 'DOM y Herramientas del Navegador',
     'topic': 'Eventos del DOM',
     'subtopic': 'Manejadores de eventos',
     'definition': r'''
@@ -5889,7 +5889,7 @@ console.log("\nFin de manejadores de eventos.");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'DOM y Herramientas del Navegador',
+    'title_level': 'DOM y Herramientas del Navegador',
     'topic': 'Eventos del DOM',
     'subtopic': 'Delegación de eventos',
     'definition': r'''
@@ -5993,7 +5993,7 @@ console.log("\nFin de la delegación de eventos.");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'DOM y Herramientas del Navegador',
+    'title_level': 'DOM y Herramientas del Navegador',
     'topic': 'Eventos del DOM',
     'subtopic': 'Eventos del teclado, ratón, formularios',
     'definition': r'''
@@ -6153,7 +6153,7 @@ console.log("\nFin de los eventos del teclado, ratón y formularios.");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'DOM y Herramientas del Navegador',
+    'title_level': 'DOM y Herramientas del Navegador',
     'topic': 'DevTools del navegador',
     'subtopic': 'Consola y breakpoints',
     'definition': r'''
@@ -6249,7 +6249,7 @@ console.log("\nFin del script. Explora la Consola y la pestaña Sources en DevTo
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'DOM y Herramientas del Navegador',
+    'title_level': 'DOM y Herramientas del Navegador',
     'topic': 'DevTools del navegador',
     'subtopic': 'Análisis de performance',
     'definition': r'''
@@ -6362,7 +6362,7 @@ console.log("\nPara analizar el rendimiento, usa la pestaña 'Performance' (Rend
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 5,
-    'tittle_level': 'DOM y Herramientas del Navegador',
+    'title_level': 'DOM y Herramientas del Navegador',
     'topic': 'DevTools del navegador',
     'subtopic': 'Inspector de red',
     'definition': r'''
@@ -6477,7 +6477,7 @@ Future<void> insertJsMidLevel6Data(Database db) async {
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'APIs Web y Fetch',
+    'title_level': 'APIs Web y Fetch',
     'topic': 'Comunicación HTTP con fetch',
     'subtopic': 'Sintaxis básica de fetch()',
     'definition': r'''
@@ -6586,7 +6586,7 @@ console.log("\nFin de la sintaxis básica de fetch().");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'APIs Web y Fetch',
+    'title_level': 'APIs Web y Fetch',
     'topic': 'Comunicación HTTP con fetch',
     'subtopic': 'Headers y métodos (GET, POST, etc.)',
     'definition': r'''
@@ -6744,7 +6744,7 @@ console.log("\nFin de Headers y Métodos HTTP con fetch().");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'APIs Web y Fetch',
+    'title_level': 'APIs Web y Fetch',
     'topic': 'Comunicación HTTP con fetch',
     'subtopic': 'Manejo de respuestas (json(), text())',
     'definition': r'''
@@ -6871,7 +6871,7 @@ console.log("\nFin del manejo de respuestas con fetch().");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'APIs Web y Fetch',
+    'title_level': 'APIs Web y Fetch',
     'topic': 'Manejo de errores en peticiones',
     'subtopic': 'Códigos de estado',
     'definition': r'''
@@ -6984,7 +6984,7 @@ console.log("\nFin del manejo de errores por códigos de estado.");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'APIs Web y Fetch',
+    'title_level': 'APIs Web y Fetch',
     'topic': 'Manejo de errores en peticiones',
     'subtopic': 'Errores de red',
     'definition': r'''
@@ -7072,7 +7072,7 @@ console.log("\nFin del manejo de errores de red. ¡Desconecta tu internet para p
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'APIs Web y Fetch',
+    'title_level': 'APIs Web y Fetch',
     'topic': 'Manejo de errores en peticiones',
     'subtopic': 'Uso de try/catch con async/await',
     'definition': r'''
@@ -7198,7 +7198,7 @@ console.log("\nFin del uso de try/catch con async/await para manejo de errores."
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'APIs Web y Fetch',
+    'title_level': 'APIs Web y Fetch',
     'topic': 'XMLHttpRequest',
     'subtopic': 'Creación manual',
     'definition': r'''
@@ -7315,7 +7315,7 @@ console.log("\nFin de la creación manual de XMLHttpRequest.");
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'APIs Web y Fetch',
+    'title_level': 'APIs Web y Fetch',
     'topic': 'XMLHttpRequest',
     'subtopic': 'Comparación con fetch()',
     'definition': r'''
@@ -7460,7 +7460,7 @@ console.log("\nObserva la diferencia en la concisión y el manejo de errores ent
     'language': 'JavaScript',
     'module': 'Mid',
     'level': 6,
-    'tittle_level': 'APIs Web y Fetch',
+    'title_level': 'APIs Web y Fetch',
     'topic': 'XMLHttpRequest',
     'subtopic': 'Manejo de eventos de respuesta',
     'definition': r'''

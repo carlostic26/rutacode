@@ -5,7 +5,7 @@ Future<void> insertPythonSrLevel1Data(Database db) async {
     'language': 'Java',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Patrones de Diseño',
+    'title_level': 'Patrones de Diseño',
     'topic': 'Patrones Creacionales',
     'subtopic': 'Singleton',
     'definition': '''
@@ -53,7 +53,7 @@ public static DatabaseConnection getInstance() {
     'language': 'Java',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Patrones de Diseño',
+    'title_level': 'Patrones de Diseño',
     'topic': 'Patrones Creacionales',
     'subtopic': 'Factory Method',
     'definition': '''
@@ -123,7 +123,7 @@ logistica.planificarEntrega(); // Crea y usa un Camion
     'language': 'Java',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Patrones de Diseño',
+    'title_level': 'Patrones de Diseño',
     'topic': 'Patrones Creacionales',
     'subtopic': 'Abstract Factory',
     'definition': '''
@@ -198,7 +198,7 @@ btn.render();
     'language': 'Java',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Patrones de Diseño',
+    'title_level': 'Patrones de Diseño',
     'topic': 'Patrones Creacionales',
     'subtopic': 'Builder',
     'definition': '''
@@ -272,7 +272,7 @@ Pizza pizza = cocina.hacerPizza(builder);
     'language': 'Java',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Patrones de Diseño',
+    'title_level': 'Patrones de Diseño',
     'topic': 'Patrones Estructurales',
     'subtopic': 'Adapter',
     'definition': '''
@@ -332,7 +332,7 @@ reproductor.reproducir("mp3", "cancion.mp3"); // Ahora funciona con tu interfaz
     'language': 'Java',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Patrones de Diseño',
+    'title_level': 'Patrones de Diseño',
     'topic': 'Patrones Estructurales',
     'subtopic': 'Decorator',
     'definition': '''
@@ -410,7 +410,7 @@ System.out.println(miCafe.getDescripcion() + ": " + miCafe.getCosto());
     'language': 'Java',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Patrones de Diseño',
+    'title_level': 'Patrones de Diseño',
     'topic': 'Patrones Estructurales',
     'subtopic': 'Facade',
     'definition': '''
@@ -481,7 +481,7 @@ byte[] archivo = sistema.cargarArchivoSeguro("datos.txt");
     'language': 'Java',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Patrones de Diseño',
+    'title_level': 'Patrones de Diseño',
     'topic': 'Patrones Estructurales',
     'subtopic': 'Proxy',
     'definition': '''
@@ -558,7 +558,7 @@ imagen.mostrar(); // Aquí se carga y muestra
     'language': 'Java',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Patrones de Diseño',
+    'title_level': 'Patrones de Diseño',
     'topic': 'Patrones de Comportamiento',
     'subtopic': 'Strategy',
     'definition': '''
@@ -645,7 +645,7 @@ carrito.pagar(75.25);
     'language': 'Java',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Patrones de Diseño',
+    'title_level': 'Patrones de Diseño',
     'topic': 'Patrones de Comportamiento',
     'subtopic': 'Observer',
     'definition': '''
@@ -725,7 +725,7 @@ blog.nuevoPost("¡Nuevo patrón de diseño publicado!");
     'language': 'Java',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Patrones de Diseño',
+    'title_level': 'Patrones de Diseño',
     'topic': 'Patrones de Comportamiento',
     'subtopic': 'Command',
     'definition': '''
@@ -813,7 +813,7 @@ control.presionarDeshacer(); // Apaga la luz
     'language': 'Java',
     'module': 'Sr',
     'level': 1,
-    'tittle_level': 'Patrones de Diseño',
+    'title_level': 'Patrones de Diseño',
     'topic': 'Patrones de Comportamiento',
     'subtopic': 'Template Method',
     'definition': '''
@@ -915,7 +915,7 @@ Future<void> insertPythonSrLevel2Data(Database db) async {
     'language': 'Java',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Rendimiento y Optimización',
+    'title_level': 'Rendimiento y Optimización',
     'topic': 'JVM Internals',
     'subtopic': 'Modelo de memoria de Java',
     'definition': '''
@@ -951,7 +951,7 @@ public class MemoryProblem {
     'language': 'Java',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Rendimiento y Optimización',
+    'title_level': 'Rendimiento y Optimización',
     'topic': 'JVM Internals',
     'subtopic': 'Recolectores de basura (GC)',
     'definition': '''
@@ -992,7 +992,7 @@ public class GCProblem {
     'language': 'Java',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Rendimiento y Optimización',
+    'title_level': 'Rendimiento y Optimización',
     'topic': 'JVM Internals',
     'subtopic': 'JIT compilation',
     'definition': '''
@@ -1041,7 +1041,7 @@ public class JITProblem {
     'language': 'Java',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Rendimiento y Optimización',
+    'title_level': 'Rendimiento y Optimización',
     'topic': 'JVM Internals',
     'subtopic': 'Herramientas de monitoreo (jvisualvm, jconsole)',
     'definition': '''
@@ -1081,7 +1081,7 @@ public class JMXEnabledApp {
     'language': 'Java',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Rendimiento y Optimización',
+    'title_level': 'Rendimiento y Optimización',
     'topic': 'Optimización',
     'subtopic': 'Benchmarking con JMH',
     'definition': '''
@@ -1121,7 +1121,7 @@ public class StringConcatBenchmark {
     'language': 'Java',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Rendimiento y Optimización',
+    'title_level': 'Rendimiento y Optimización',
     'topic': 'Optimización',
     'subtopic': 'Memory leaks',
     'definition': '''
@@ -1162,7 +1162,7 @@ public class FixedClass {
     'language': 'Java',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Rendimiento y Optimización',
+    'title_level': 'Rendimiento y Optimización',
     'topic': 'Optimización',
     'subtopic': 'Optimización de colecciones',
     'definition': '''
@@ -1207,7 +1207,7 @@ public class BadCollectionChoice {
     'language': 'Java',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Rendimiento y Optimización',
+    'title_level': 'Rendimiento y Optimización',
     'topic': 'Optimización',
     'subtopic': 'Caching strategies',
     'definition': '''
@@ -1249,7 +1249,7 @@ public class AdvancedCache {
     'language': 'Java',
     'module': 'Sr',
     'level': 2,
-    'tittle_level': 'Rendimiento y Optimización',
+    'title_level': 'Rendimiento y Optimización',
     'topic': 'Optimización',
     'subtopic': 'Memory leaks',
     'definition': '''
@@ -1292,7 +1292,7 @@ Future<void> insertPythonSrLevel3Data(Database db) async {
     'language': 'Java',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Spring Framework',
+    'title_level': 'Spring Framework',
     'topic': 'Spring Core',
     'subtopic': 'Inversión de Control (IoC)',
     'definition': '''
@@ -1329,7 +1329,7 @@ public class UserService {
     'language': 'Java',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Spring Framework',
+    'title_level': 'Spring Framework',
     'topic': 'Spring Core',
     'subtopic': 'Inyección de Dependencias (DI)',
     'definition': '''
@@ -1380,7 +1380,7 @@ public class UserController {
     'language': 'Java',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Spring Framework',
+    'title_level': 'Spring Framework',
     'topic': 'Spring Core',
     'subtopic': 'Anotaciones (@Component, @Service, @Repository)',
     'definition': '''
@@ -1429,7 +1429,7 @@ public class UserDao {
     'language': 'Java',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Spring Framework',
+    'title_level': 'Spring Framework',
     'topic': 'Spring Core',
     'subtopic': 'Configuración (XML vs Anotaciones vs Java Config)',
     'definition': '''
@@ -1475,7 +1475,7 @@ public class UserService {
     'language': 'Java',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Spring Framework',
+    'title_level': 'Spring Framework',
     'topic': 'Spring Boot',
     'subtopic': 'Auto-configuración',
     'definition': '''
@@ -1518,7 +1518,7 @@ public class MyApp {
     'language': 'Java',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Spring Framework',
+    'title_level': 'Spring Framework',
     'topic': 'Spring Boot',
     'subtopic': 'Spring Boot Starters',
     'definition': '''
@@ -1570,7 +1570,7 @@ La convención de nombres es simple: spring-boot-starter-{nombre}. Esto hace ext
     'language': 'Java',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Spring Framework',
+    'title_level': 'Spring Framework',
     'topic': 'Spring Boot',
     'subtopic': 'Configuración de propiedades',
     'definition': '''
@@ -1628,7 +1628,7 @@ public class PaymentService {
     'language': 'Java',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Spring Framework',
+    'title_level': 'Spring Framework',
     'topic': 'Spring Boot',
     'subtopic': 'Spring Boot Actuator',
     'definition': '''
@@ -1673,7 +1673,7 @@ management.endpoint.env.enabled=true  // Expone configuraciones sensibles
     'language': 'Java',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Spring Framework',
+    'title_level': 'Spring Framework',
     'topic': 'Spring Data',
     'subtopic': 'Repositorios JPA',
     'definition': '''
@@ -1705,7 +1705,7 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     'language': 'Java',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Spring Framework',
+    'title_level': 'Spring Framework',
     'topic': 'Spring Data',
     'subtopic': 'Consultas derivadas de métodos',
     'definition': '''
@@ -1739,7 +1739,7 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     'language': 'Java',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Spring Framework',
+    'title_level': 'Spring Framework',
     'topic': 'Spring Data',
     'subtopic': '@Query personalizadas',
     'definition': '''
@@ -1769,7 +1769,7 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
     'language': 'Java',
     'module': 'Sr',
     'level': 3,
-    'tittle_level': 'Spring Framework',
+    'title_level': 'Spring Framework',
     'topic': 'Spring Data',
     'subtopic': 'Auditoría',
     'definition': '''
@@ -1819,7 +1819,7 @@ Future<void> insertPythonSrLevel4Data(Database db) async {
     'language': 'Java',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Arquitectura Avanzada',
+    'title_level': 'Arquitectura Avanzada',
     'topic': 'Microservicios',
     'subtopic': 'Principios de microservicios',
     'definition': '''
@@ -1844,7 +1844,7 @@ La idea es que al dividir una aplicación en servicios pequeños, podés escalar
     'language': 'Java',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Arquitectura Avanzada',
+    'title_level': 'Arquitectura Avanzada',
     'topic': 'Microservicios',
     'subtopic': 'Spring Cloud',
     'definition': '''
@@ -1875,7 +1875,7 @@ spring.cloud.config.server.git.uri=https://github.com/tu-org/config-repo
     'language': 'Java',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Arquitectura Avanzada',
+    'title_level': 'Arquitectura Avanzada',
     'topic': 'Microservicios',
     'subtopic': 'Service discovery (Eureka)',
     'definition': '''
@@ -1910,7 +1910,7 @@ public class ProductoService {
     'language': 'Java',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Arquitectura Avanzada',
+    'title_level': 'Arquitectura Avanzada',
     'topic': 'Microservicios',
     'subtopic': 'API Gateway (Spring Cloud Gateway)',
     'definition': '''
@@ -1945,7 +1945,7 @@ spring:
     'language': 'Java',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Arquitectura Avanzada',
+    'title_level': 'Arquitectura Avanzada',
     'topic': 'Seguridad',
     'subtopic': 'Spring Security',
     'definition': '''
@@ -2015,7 +2015,7 @@ public class InsecureConfig {
     'language': 'Java',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Arquitectura Avanzada',
+    'title_level': 'Arquitectura Avanzada',
     'topic': 'Seguridad',
     'subtopic': 'Autenticación (JWT, OAuth2)',
     'definition': '''
@@ -2094,7 +2094,7 @@ spring:
     'language': 'Java',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Arquitectura Avanzada',
+    'title_level': 'Arquitectura Avanzada',
     'topic': 'Seguridad',
     'subtopic': 'Autorización',
     'definition': '''
@@ -2168,7 +2168,7 @@ public class InsecureService {
     'language': 'Java',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Arquitectura Avanzada',
+    'title_level': 'Arquitectura Avanzada',
     'topic': 'Seguridad',
     'subtopic': 'CSRF y CORS',
     'definition': '''
@@ -2237,7 +2237,7 @@ public CorsConfigurationSource insecureCorsConfig() {
     'language': 'Java',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Arquitectura Avanzada',
+    'title_level': 'Arquitectura Avanzada',
     'topic': 'Eventos y Mensajería',
     'subtopic': 'Spring Events',
     'definition': '''
@@ -2305,7 +2305,7 @@ public class OrderEventListener {
     'language': 'Java',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Arquitectura Avanzada',
+    'title_level': 'Arquitectura Avanzada',
     'topic': 'Eventos y Mensajería',
     'subtopic': 'RabbitMQ',
     'definition': '''
@@ -2389,7 +2389,7 @@ public class OrderCreatedListener {
     'language': 'Java',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Arquitectura Avanzada',
+    'title_level': 'Arquitectura Avanzada',
     'topic': 'Eventos y Mensajería',
     'subtopic': 'Kafka',
     'definition': '''
@@ -2482,7 +2482,7 @@ public class OrderEventListener {
     'language': 'Java',
     'module': 'Sr',
     'level': 4,
-    'tittle_level': 'Arquitectura Avanzada',
+    'title_level': 'Arquitectura Avanzada',
     'topic': 'Eventos y Mensajería',
     'subtopic': 'Patrón Event Sourcing',
     'definition': '''
@@ -2578,7 +2578,7 @@ Future<void> insertPythonSrLevel5Data(Database db) async {
     'language': 'Java',
     'module': 'Sr',
     'level': 5,
-    'tittle_level': 'DevOps para Java',
+    'title_level': 'DevOps para Java',
     'topic': 'CI/CD',
     'subtopic': 'GitHub Actions para Java',
     'definition': '''
@@ -2616,7 +2616,7 @@ jobs:
     'language': 'Java',
     'module': 'Sr',
     'level': 5,
-    'tittle_level': 'DevOps para Java',
+    'title_level': 'DevOps para Java',
     'topic': 'CI/CD',
     'subtopic': 'Jenkins pipelines',
     'definition': '''
@@ -2659,7 +2659,7 @@ pipeline {
     'language': 'Java',
     'module': 'Sr',
     'level': 5,
-    'tittle_level': 'DevOps para Java',
+    'title_level': 'DevOps para Java',
     'topic': 'CI/CD',
     'subtopic': 'SonarQube para análisis estático',
     'definition': '''
@@ -2693,7 +2693,7 @@ stage('SonarQube Analysis') {
     'language': 'Java',
     'module': 'Sr',
     'level': 5,
-    'tittle_level': 'DevOps para Java',
+    'title_level': 'DevOps para Java',
     'topic': 'CI/CD',
     'subtopic': 'Dockerización de aplicaciones Java',
     'definition': '''
@@ -2721,7 +2721,7 @@ ENTRYPOINT ["java","-jar","/app.jar"]
     'language': 'Java',
     'module': 'Sr',
     'level': 5,
-    'tittle_level': 'DevOps para Java',
+    'title_level': 'DevOps para Java',
     'topic': 'Cloud',
     'subtopic': 'Despliegue en AWS (Elastic Beanstalk, ECS)',
     'definition': '''
@@ -2753,7 +2753,7 @@ Ambas opciones se integran bien con CI/CD, y son compatibles con apps Spring Boo
     'language': 'Java',
     'module': 'Sr',
     'level': 5,
-    'tittle_level': 'DevOps para Java',
+    'title_level': 'DevOps para Java',
     'topic': 'Cloud',
     'subtopic': 'Azure App Service',
     'definition': '''
@@ -2781,7 +2781,7 @@ App Service te permite eso. Solo subís tu `.jar`, `.war` o imagen Docker, y Azu
     'language': 'Java',
     'module': 'Sr',
     'level': 5,
-    'tittle_level': 'DevOps para Java',
+    'title_level': 'DevOps para Java',
     'topic': 'Cloud',
     'subtopic': 'Google App Engine',
     'definition': '''
@@ -2806,7 +2806,7 @@ entrypoint: java -jar target/miapp.jar
     'language': 'Java',
     'module': 'Sr',
     'level': 5,
-    'tittle_level': 'DevOps para Java',
+    'title_level': 'DevOps para Java',
     'topic': 'Cloud',
     'subtopic': 'Serverless (AWS Lambda)',
     'definition': '''
@@ -2845,7 +2845,7 @@ Future<void> insertPythonSrLevel6Data(Database db) async {
     'language': 'Java',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Tópicos Avanzados',
+    'title_level': 'Tópicos Avanzados',
     'topic': 'Java Reactive',
     'subtopic': '¿Qué es la programación reactiva?',
     'definition': '''
@@ -2881,7 +2881,7 @@ flujo.subscribe(
     'language': 'Java',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Tópicos Avanzados',
+    'title_level': 'Tópicos Avanzados',
     'topic': 'Java Reactive',
     'subtopic': 'RxJava',
     'definition': '''
@@ -2913,7 +2913,7 @@ numeros
     'language': 'Java',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Tópicos Avanzados',
+    'title_level': 'Tópicos Avanzados',
     'topic': 'Java Reactive',
     'subtopic': 'Project Reactor',
     'definition': '''
@@ -2944,7 +2944,7 @@ flujo
     'language': 'Java',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Tópicos Avanzados',
+    'title_level': 'Tópicos Avanzados',
     'topic': 'Java Reactive',
     'subtopic': 'Spring WebFlux',
     'definition': '''
@@ -2974,7 +2974,7 @@ public class UsuarioControlador {
     'language': 'Java',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Tópicos Avanzados',
+    'title_level': 'Tópicos Avanzados',
     'topic': 'Java Reactive',
     'subtopic': 'R2DBC (Reactive Relational Database Connectivity)',
     'definition': '''
@@ -2999,7 +2999,7 @@ public interface UsuarioRepositorio extends ReactiveCrudRepository<Usuario, Long
     'language': 'Java',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Tópicos Avanzados',
+    'title_level': 'Tópicos Avanzados',
     'topic': 'Native Image',
     'subtopic': 'GraalVM',
     'definition': '''
@@ -3034,7 +3034,7 @@ public class MiAplicacion {
     'language': 'Java',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Tópicos Avanzados',
+    'title_level': 'Tópicos Avanzados',
     'topic': 'Native Image',
     'subtopic': 'Compilación nativa con Spring Native',
     'definition': '''
@@ -3100,7 +3100,7 @@ public class MiAplicacionSpring {
     'language': 'Java',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Tópicos Avanzados',
+    'title_level': 'Tópicos Avanzados',
     'topic': 'Native Image',
     'subtopic': 'Ventajas y limitaciones',
     'definition': '''
@@ -3166,7 +3166,7 @@ public class ReflexionEjemplo {
     'language': 'Java',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Tópicos Avanzados',
+    'title_level': 'Tópicos Avanzados',
     'topic': 'Java en la Nube',
     'subtopic': 'Características de Java para la nube',
     'definition': '''
@@ -3193,7 +3193,7 @@ public class AplicacionNube {
     'language': 'Java',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Tópicos Avanzados',
+    'title_level': 'Tópicos Avanzados',
     'topic': 'Java en la Nube',
     'subtopic': 'Contenedores y orquestación',
     'definition': '''
@@ -3218,7 +3218,7 @@ ENTRYPOINT ["java", "-jar", "miapp.jar"]
     'language': 'Java',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Tópicos Avanzados',
+    'title_level': 'Tópicos Avanzados',
     'topic': 'Java en la Nube',
     'subtopic': 'Microservicios y arquitecturas desacopladas',
     'definition': '''
@@ -3248,7 +3248,7 @@ public class SaludoControlador {
     'language': 'Java',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Tópicos Avanzados',
+    'title_level': 'Tópicos Avanzados',
     'topic': 'Java en la Nube',
     'subtopic': 'Integración con servicios en la nube',
     'definition': '''
@@ -3272,7 +3272,7 @@ s3.putObject("mi-bucket", "archivo.txt", new File("archivo.txt"));
     'language': 'Java',
     'module': 'Sr',
     'level': 6,
-    'tittle_level': 'Tópicos Avanzados',
+    'title_level': 'Tópicos Avanzados',
     'topic': 'Java en la Nube',
     'subtopic': 'Desafíos y consideraciones',
     'definition': '''

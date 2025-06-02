@@ -35,7 +35,7 @@ class LocalContentDatabaseHelper {
             language TEXT,
             module TEXT,
             level INTEGER,
-            tittle_level TEXT,
+            title_level TEXT,
             topic TEXT,
             subtopic TEXT,
             definition TEXT,

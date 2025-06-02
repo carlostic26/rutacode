@@ -26,7 +26,7 @@ class DetailRepositoryImpl implements DetailRepository {
       language: maps[0]['language'] as String,
       module: maps[0]['module'] as String,
       level: maps[0]['level'] as int,
-      titleLevel: maps[0]['tittle_level'] as String,
+      titleLevel: maps[0]['title_level'] as String,
       topic: maps[0]['topic'] as String,
       subtopic: maps[0]['subtopic'] as String,
       definition: maps[0]['definition'] as String,
