@@ -12,16 +12,16 @@ class ExamRepositoryImpl implements ExamRepository {
 
   @override
   Future<List<ExamQuestion>> getFinalExamQuestionsByModule(
-      String language, String moduleId) async {
+      String language, String module) async {
     final rawQuestions = await _localDataSource.query(
       'exam_questions',
-      where: 'language = ? AND moduleId = ?',
-      whereArgs: [language, moduleId],
+      where: 'language = ? AND module = ?',
+      whereArgs: [language, module],
     );
 
     if (rawQuestions.isEmpty) {
       debugPrint(
-          'No se encontraron preguntas en la base de datos para el módulo: $moduleId');
+          'No se encontraron preguntas en la base de datos para el módulo: $module');
       return [];
     }
 
@@ -32,6 +32,8 @@ class ExamRepositoryImpl implements ExamRepository {
         questionText: map['questionText'],
         options: List<String>.from((map['options'] as String).split(',')),
         correctAnswer: map['correctAnswer'],
+        language: map['language'],
+        module: map['module'],
       );
     }).toList();
 

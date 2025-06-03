@@ -65,7 +65,15 @@ class _ExamScreenState extends ConsumerState<ExamScreen> {
 
     if (examState.questions.isEmpty) {
       return Scaffold(
-        appBar: AppBar(title: const Text('Examen Final')),
+        appBar: AppBar(
+            title: const Text('Examen Final'),
+            leading: IconButton(
+              icon: const Icon(Icons.arrow_back_ios, color: Colors.white),
+              onPressed: () {
+                ref.read(examStateProvider.notifier).resetExamState();
+                Navigator.pop(context);
+              },
+            )),
         body: const Center(child: Text('No hay preguntas disponibles.')),
       );
     }

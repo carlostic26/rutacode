@@ -1,10 +1,12 @@
+import 'package:rutacode/features/exam/data/datasources/preload_java_questions.dart';
+import 'package:rutacode/features/exam/data/datasources/preload_js_questions.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import '../models/exam_question_model.dart';
 
 class LocalExamDataSource {
   static const String _tableName = 'exam_questions';
-  static const String _dbName = 'final_exam4.db';
+  static const int _dbVersion = 2;
+  static const String _dbName = 'final_exam$_dbVersion.db';
   Database? _database;
 
   // Inicializar la base de datos
@@ -34,7 +36,7 @@ class LocalExamDataSource {
       options TEXT,
       correctAnswer TEXT,
       language TEXT,
-      moduleId TEXT
+      module TEXT
     )
   ''');
 
@@ -46,50 +48,20 @@ class LocalExamDataSource {
     )
   ''');
 
-    await _preloadQuestions(db);
+    await preloadJavaQuestions(db);
+    await preloadJavScriptQuestions(db);
   }
 
-  Future<void> _preloadQuestions(Database db) async {
-    final preloadedJavaQuestions = [
-      // Preguntas para el módulo Jr
+  Future<void> preloadJavaQuestions(Database db) async {
+    preloadJavaJrQuestions(db, _tableName);
+    preloadJavaMidQuestions(db, _tableName);
+    preloadJavaSrQuestions(db, _tableName);
+  }
 
-      ExamQuestionModel(
-        id: '1',
-        questionText:
-            'En Dart, ¿qué palabra clave se usa para declarar una variable inmutable que se asigna en tiempo de compilación?',
-        options: ['A) var', 'B) final', 'C) const', 'D) static'],
-        correctAnswer: 'C',
-        language: 'Java',
-        moduleId: 'Jr',
-      ),
-
-      // Preguntas para el módulo Mid
-      ExamQuestionModel(
-        id: '1',
-        questionText:
-            '¿Cuál de estos NO es un tipo de dato incorporado en Dart?',
-        options: ['A) List', 'B) Map', 'C) Tuple', 'D) Set'],
-        correctAnswer: 'C',
-        language: 'Java',
-        moduleId: 'Jr',
-      ),
-
-      // Preguntas para el módulo Sr
-      ExamQuestionModel(
-        id: '1',
-        questionText:
-            '¿Cuál de estos NO es un tipo de dato incorporado en Dart?',
-        options: ['A) List', 'B) Map', 'C) Tuple', 'D) Set'],
-        correctAnswer: 'C',
-        language: 'Java',
-        moduleId: 'Jr',
-      ),
-    ];
-
-    // Insertar las preguntas en la base de datos
-    for (final question in preloadedJavaQuestions) {
-      await db.insert(_tableName, question.toMap());
-    }
+  Future<void> preloadJavScriptQuestions(Database db) async {
+    preloadJavaScriptJrQuestions(db, _tableName);
+    preloadJavaScriptMidQuestions(db, _tableName);
+    preloadJavaScriptSrQuestions(db, _tableName);
   }
 
 /*   Future<void> printAllQuestions() async {
