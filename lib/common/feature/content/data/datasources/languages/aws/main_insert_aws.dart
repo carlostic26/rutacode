@@ -36,6 +36,11 @@ class InsertAWSData {
 
   static Future<void> _insertMidLevelData(Database db) async {
     await insertMidLevel1AwsData(db);
+    await insertMidLevel2AwsData(db);
+    await insertMidLevel3AwsData(db);
+    await insertMidLevel4AwsData(db);
+    await insertMidLevel5AwsData(db);
+    await insertMidLevel6AwsData(db);
   }
 
   static Future<void> _insertSrLevelData(Database db) async {
