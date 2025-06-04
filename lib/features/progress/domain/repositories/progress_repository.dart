@@ -21,6 +21,13 @@ abstract class ProgressRepository {
   });
 
   // Consultas de progreso
+
+  Future<double> getLevelProgressPercentage({
+    required String language,
+    required String module,
+    required int level,
+  });
+
   Future<List<ProgressModel>> getProgressByLanguage(String language);
 
   Future<List<ProgressModel>> getProgressByModule(

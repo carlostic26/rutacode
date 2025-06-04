@@ -76,9 +76,24 @@ class _DetailPageState extends ConsumerState<DetailPage> {
         if (mounted) {
           // ✅ Ya estás dentro del primer frame, es seguro mostrar el SnackBar
           ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('¡+2 puntos acumulados! Sigue repasando.'),
-              duration: Duration(seconds: 3),
+            SnackBar(
+              backgroundColor: Colors.indigo,
+              content: SizedBox(
+                height: MediaQuery.of(context).size.height * 0.025,
+                child: ListTile(
+                  minVerticalPadding: 1,
+                  minTileHeight: MediaQuery.of(context).size.height * 0.025,
+                  leading: const Icon(
+                    Icons.check_circle,
+                    color: Colors.green,
+                  ),
+                  title: const Text(
+                    '¡+2 puntos acumulados! Sigue repasando.',
+                    style: TextStyle(color: Colors.white, fontSize: 14),
+                  ),
+                ),
+              ),
+              duration: const Duration(seconds: 3),
             ),
           );
         }

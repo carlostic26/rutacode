@@ -94,7 +94,7 @@ class _TimerWidgetState extends ConsumerState<TimerWidget> {
             child: CircularProgressIndicator(
               value: progress,
               backgroundColor: Colors.grey[300],
-              valueColor: const AlwaysStoppedAnimation<Color>(Colors.blue),
+              valueColor: const AlwaysStoppedAnimation<Color>(Colors.indigo),
               strokeWidth: 8,
             ),
           ),

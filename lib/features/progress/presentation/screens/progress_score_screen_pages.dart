@@ -47,7 +47,7 @@ class ProgressScoreScreen extends ConsumerWidget {
           builder: (context, ref, child) {
             final index = ref.watch(progressScorePageIndexProvider);
             return Text(
-              index == 0 ? 'Elegir lenguaje' : 'Mis puntajes',
+              index == 0 ? 'Progresos' : 'Mis puntajes',
               style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Inter',

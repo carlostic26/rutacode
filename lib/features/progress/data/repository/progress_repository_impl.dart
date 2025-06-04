@@ -94,6 +94,31 @@ class ProgressRepositoryImpl implements ProgressRepository {
   // ========== Consultas de progreso ==========
 
   @override
+  Future<double> getLevelProgressPercentage({
+    required String language,
+    required String module,
+    required int level,
+  }) async {
+    // Obtener subtemas completados en este nivel
+    final completed = await countSubtopicsCompletedByLevel(
+      language: language,
+      module: module,
+      level: level,
+    );
+
+    // Obtener total de subtemas en este nivel
+    final totalSubtopics = await _countTotalSubtopicsInLevel(
+      language: language,
+      module: module,
+      level: level,
+    );
+
+    if (totalSubtopics == 0) return 0.0;
+
+    return completed / totalSubtopics;
+  }
+
+  @override
   Future<List<ProgressModel>> getProgressByLanguage(String language) async {
     final db = await _dbProgressHelper.getDatabase();
     final maps = await db.query(
@@ -264,19 +289,6 @@ class ProgressRepositoryImpl implements ProgressRepository {
     return true;
   }
 
-/*   @override
-  Future<int> countAllSubtopicsByModule(String language, String module) async {
-    final db = await _dbProgressHelper.getDatabase();
-
-    final result = await db.rawQuery('''
-      SELECT COUNT(subtopic) as total 
-      FROM progress 
-      WHERE language = ? AND module = ?
-      ''', [language, module]);
-
-    return result.first['total'] as int? ?? 0;
-  } */
-
   @override
   Future<void> deleteAllUserProgress() async {
     final db = await _dbProgressHelper.getDatabase();
@@ -321,6 +333,27 @@ class ProgressRepositoryImpl implements ProgressRepository {
       return result.length;
     } catch (e) {
       debugPrint('Error counting distinct subtopics: $e');
+      return 0;
+    }
+  }
+
+  Future<int> _countTotalSubtopicsInLevel({
+    required String language,
+    required String module,
+    required int level,
+  }) async {
+    try {
+      final db = await _dbLocalHelper.getDatabase();
+      final result = await db.query(
+        'programming_content',
+        distinct: true,
+        columns: ['subtopic'],
+        where: 'language = ? AND module = ? AND level = ?',
+        whereArgs: [language, module, level],
+      );
+      return result.length;
+    } catch (e) {
+      debugPrint('Error counting subtopics in level: $e');
       return 0;
     }
   }

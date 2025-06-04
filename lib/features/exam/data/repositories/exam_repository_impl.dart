@@ -119,7 +119,7 @@ class ExamRepositoryImpl implements ExamRepository {
 
       if (rawQuestions.isEmpty) {
         debugPrint(
-            'No se encontraron preguntas en la base de datos para: $language - $module');
+            'No se encontraron preguntas en la base de datos para: $language - $moduleId');
         return [];
       }
 

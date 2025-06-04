@@ -5,7 +5,7 @@ import 'package:rutacode/features/home/presentation/screens/impostor_screen.dart
 import 'package:rutacode/features/home/presentation/screens/app_support.dart';
 import 'package:rutacode/features/home/presentation/screens/delete_progress.dart';
 import 'package:rutacode/features/home/presentation/screens/usability_screen.dart';
-import 'package:rutacode/features/progress/presentation/screens/progress_score_screen.dart';
+import 'package:rutacode/features/progress/presentation/screens/progress_score_screen_pages.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class HomeDrawer extends StatelessWidget {
