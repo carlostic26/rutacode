@@ -1,7 +1,7 @@
 import 'package:sqflite_common/sqlite_api.dart';
 
 Future<void> insertSrLevel1DataLinux(Database db) async {
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 1,
@@ -147,7 +147,7 @@ ab -n 1000 -c 100 http://miapp.local/
 # Con esta info se puede estimar cuánto aguanta tu servidor actual y si es hora de escalar.
 ''',
   });
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 1,
@@ -312,7 +312,7 @@ spec:
 ''',
   });
 
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 1,
@@ -435,7 +435,7 @@ systemctl restart sshd
 ''',
   });
 
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 1,
@@ -571,12 +571,10 @@ tar -czf /backups/$fecha.tar.gz /backups/$fecha
 find /backups/ -type d -mtime +7 -exec rm -rf {} \;
 ''',
   });
-
-
 }
 
 Future<void> insertSrLevel2DataLinux(Database db) async {
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 2,
@@ -713,7 +711,7 @@ La elección entre estas herramientas dependerá de las necesidades específicas
 # Nota: La elección dependerá de los requisitos específicos del proyecto y del equipo.
 ''',
   });
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 2,
@@ -830,7 +828,7 @@ tflint main.tf
 ''',
   });
 
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 2,
@@ -944,7 +942,7 @@ spec:
         experience: "LATENCY"
 ''',
   });
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 2,
@@ -1065,11 +1063,10 @@ spec:
     - pagos-api
 ''',
   });
-
 }
 
 Future<void> insertSrLevel3DataLinux(Database db) async {
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 3,
@@ -1167,7 +1164,7 @@ sudo apt install iozone3
 iozone -a -g 2G -i 0 -i 1 -i 2
 ''',
   });
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 3,
@@ -1267,7 +1264,7 @@ sudo chkrootkit
 sudo rkhunter --check
 ''',
   });
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 3,
@@ -1402,7 +1399,7 @@ La elección entre estas tecnologías dependerá de los requisitos específicos 
 | Casos de uso         | Modernización de aplicaciones legadas | Serverless, microservicios | Aplicaciones embebidas, IoT |
 ''',
   });
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 3,
@@ -1545,11 +1542,10 @@ for anomaly in anomalies:
     aiops.respond_to_anomaly(anomaly_id=anomaly.id)
 ''',
   });
-
 }
 
 Future<void> insertSrLevel4DataLinux(Database db) async {
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 4,
@@ -1647,7 +1643,7 @@ Esto tiene una lógica muy clara: al eliminar silos entre equipos y fomentar una
 ''',
   });
 
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 4,
@@ -1775,7 +1771,7 @@ Esto tiene una lógica muy clara: al establecer presupuestos técnicos precisos,
 }
 ''',
   });
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 4,
@@ -1891,7 +1887,7 @@ Esto tiene una lógica muy clara: al reunir a miembros de la comunidad, se forta
 - OpenSouthCode: Evento en Málaga que reúne a comunidades de software libre y hardware abierto.
 ''',
   });
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 4,
@@ -1982,11 +1978,10 @@ Esto tiene una lógica muy clara: al adoptar la transformación digital, las org
 4. Cultura digital: Fomentar una mentalidad abierta al cambio y la innovación tecnológica entre los empleados.
 ''',
   });
-
 }
 
 Future<void> insertSrLevel5DataLinux(Database db) async {
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 5,
@@ -2123,7 +2118,7 @@ Esto tiene una explicación, y es porque al minimizar las posibles vías de ataq
    lynis audit system
 ''',
   });
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 5,
@@ -2246,7 +2241,7 @@ cat datos.txt | grep "error" | sort | uniq -c | sort -nr > resumen_errores.txt
 # permitiendo una gestión flexible del almacenamiento.
 ''',
   });
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 5,
@@ -2375,7 +2370,7 @@ Kubernetes en el edge se refiere a la implementación y gestión de clústeres d
 # facilitando la integración y visualización de datos en entornos industriales.
 ''',
   });
-await db.insert('programming_content', {
+  await db.insert('programming_content', {
     'language': 'Linux',
     'module': 'Sr',
     'level': 5,
@@ -2513,9 +2508,7 @@ srun ./mi_aplicacion
 # Este script solicita 4 tareas (procesos) para ejecutar 'mi_aplicacion' durante un máximo de 1 hora en la partición 'general'.
 ''',
   });
-
 }
-
 
 Future<void> insertSrLevel6DataLinux(Database db) async {
   await db.insert('programming_content', {

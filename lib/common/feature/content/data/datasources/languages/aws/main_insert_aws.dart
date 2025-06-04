@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:rutacode/common/feature/content/data/datasources/languages/aws/insert_jr_aws.dart';
-import 'package:rutacode/common/feature/content/data/datasources/languages/aws/insert_mid_aws.dart';
 import 'package:rutacode/common/feature/content/data/datasources/languages/aws/insert_sr_aws.dart';
 
 import 'package:sqflite/sqflite.dart';
@@ -25,16 +23,16 @@ class InsertJavaData {
     }
   }
 
-  static Future<void> _insertJrLevelData(Database db) async {
-    await insertJrLevel1AwsData(db);
-    await insertJrLevel2AwsData(db);
-  }
+  static Future<void> _insertJrLevelData(Database db) async {}
 
-  static Future<void> _insertMidLevelData(Database db) async {
-    await insertMidLevel1AwsData(db);
-  }
+  static Future<void> _insertMidLevelData(Database db) async {}
 
   static Future<void> _insertSrLevelData(Database db) async {
-    await insertPythonSrLevel1AwsData(db);
+    await insertSrLevel1AwsData(db);
+    await insertSrLevel2AwsData(db);
+    await insertSrLevel3AwsData(db);
+    await insertSrLevel4AwsData(db);
+    await insertSrLevel5AwsData(db);
+    await insertSrLevel6AwsData(db);
   }
 }
