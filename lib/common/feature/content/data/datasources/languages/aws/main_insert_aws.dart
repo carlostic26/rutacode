@@ -5,7 +5,7 @@ import 'package:rutacode/common/feature/content/data/datasources/languages/aws/i
 
 import 'package:sqflite/sqflite.dart';
 
-class InsertAWSData {
+class InsertAwsData {
   static Future<void> insertAwsData(Database db) async {
     try {
       await _insertJrLevelData(db);
@@ -44,6 +44,6 @@ class InsertAWSData {
   }
 
   static Future<void> _insertSrLevelData(Database db) async {
-    await insertPythonSrLevel1AwsData(db);
+    await insertSrLevel1AwsData(db);
   }
 }

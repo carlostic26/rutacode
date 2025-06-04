@@ -1,3 +1,3 @@
 import 'package:sqflite_common/sqlite_api.dart';
 
-Future<void> insertPythonSrLevel1AwsData(Database db) async {}
+Future<void> insertSrLevel1AwsData(Database db) async {}
