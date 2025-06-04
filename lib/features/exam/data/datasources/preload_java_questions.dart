@@ -4,8 +4,6 @@ import 'package:sqflite/sqflite.dart';
 Future<void> preloadJavaJrQuestions(Database db, tableName) async {
   final preloadedJavaJrQuestions = [
     // Preguntas para el módulo Jr
-
-    // Sintaxis Básica
     ExamQuestionModel(
       id: '1',
       questionText:

@@ -45,7 +45,7 @@ void main() async {
   await MobileAds.instance.initialize();
   LocalContentDatabaseHelper().getDatabase();
   ProgressLocalContentDatabaseHelper().getDatabase;
-  LocalExamDataSource().getDatabase;
+  LocalExamDataSource().getDatabase();
 
   await dotenv.load(fileName: '.env');
 
@@ -59,12 +59,12 @@ void main() async {
     }
   });
 
-  runApp(ProviderScope(
-/*     overrides: [
+  runApp(const ProviderScope(
+    overrides: [
       // Sobrescribir el SharedPreferencesProvider con la instancia de SharedPreferences
-      sharedPreferencesProvider.overrideWithValue(sharedPreferences),
-    ], */
-    child: const MyApp(),
+      //sharedPreferencesProvider.overrideWithValue(sharedPreferences),
+    ],
+    child: MyApp(),
   ));
 }
 
