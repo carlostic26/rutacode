@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:rutacode/common/feature/content/data/datasources/languages/aws/insert_jr_aws.dart';
 import 'package:rutacode/common/feature/content/data/datasources/languages/aws/insert_mid_aws.dart';
 import 'package:rutacode/common/feature/content/data/datasources/languages/aws/insert_sr_aws.dart';
-
 import 'package:sqflite/sqflite.dart';
 
 class InsertAwsData {
