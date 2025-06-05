@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rutacode/core/ads/banner/ad_banner_provider_home.dart';
 import 'package:rutacode/features/detail/presentation/state/detail_sections_state.dart';
-import 'package:rutacode/features/exam/presentation/screens/choose_exam_screen.dart';
 import 'package:rutacode/features/exam/presentation/screens/start_exam_screen.dart';
 import 'package:rutacode/features/home/presentation/provider/language_providers.dart';
 import 'package:rutacode/features/modules/presentation/providers/navigation_home_page_state.dart';
@@ -11,8 +10,6 @@ import 'package:rutacode/features/modules/presentation/widgets/module_widget.dar
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
 import 'package:rutacode/features/level/presentation/pages/generate_route_path_widget.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:rutacode/features/progress/presentation/pages/score_info_page.dart';
-import 'package:rutacode/features/progress/presentation/screens/progress_score_screen_pages.dart';
 import 'package:rutacode/features/progress/presentation/screens/result_progress_screen_single.dart';
 
 class ModuleScreen extends ConsumerStatefulWidget {
@@ -71,7 +68,7 @@ class _ModuleScreenState extends ConsumerState<ModuleScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const ResultProgressScreen(),
+                  builder: (context) => const ResultProgressScreenSingle(),
                 ),
               );
             },

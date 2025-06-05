@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:rutacode/core/ads/banner/ad_banner_provider_detail.dart';
+import 'package:rutacode/core/ads/banner/ad_banner_provider_list_items.dart';
 import 'package:rutacode/features/detail/presentation/pages/detail_page.dart';
 import 'package:rutacode/features/detail/presentation/widgets/appbar_detail_widget.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
@@ -34,7 +34,7 @@ class _ListContentScreenState extends ConsumerState<ListContentScreen> {
     super.didChangeDependencies();
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!_adLoaded) {
-        ref.read(adBannerProviderDetail.notifier)
+        ref.read(adBannerProviderListItems.notifier)
           ..disposeCurrentAd()
           ..loadAdaptiveAd(context, screenId: 'listItems')
               .then((_) => _adLoaded = true);
@@ -49,7 +49,7 @@ class _ListContentScreenState extends ConsumerState<ListContentScreen> {
     _pageController.dispose();
 
     try {
-      ref.read(adBannerProviderDetail.notifier).disposeCurrentAd();
+      ref.read(adBannerProviderListItems.notifier).disposeCurrentAd();
     } catch (e) {
       debugPrint('Error al eliminar el anuncio: $e');
     }
@@ -57,7 +57,7 @@ class _ListContentScreenState extends ConsumerState<ListContentScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final adState = ref.watch(adBannerProviderDetail);
+    final adState = ref.watch(adBannerProviderListItems);
     final size = MediaQuery.of(context).size;
 
     final levelTitle = ref.watch(levelTitleProvider);
@@ -169,7 +169,7 @@ class _ListContentScreenState extends ConsumerState<ListContentScreen> {
     }
   }
 
-  Widget _buildAdBanner(AdBannerStateDetail adState) {
+  Widget _buildAdBanner(AdBannerStateListItems adState) {
     // Solo mostrar el banner si es para esta pantalla
     if (adState.currentScreen == 'listItems' &&
         adState.bannerAd != null &&

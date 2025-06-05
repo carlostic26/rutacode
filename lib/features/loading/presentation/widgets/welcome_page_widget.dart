@@ -15,7 +15,7 @@ class WelcomePageWidget extends StatelessWidget {
     return Column(
       children: [
         SizedBox(
-          height: heightScreen * 0.28,
+          height: heightScreen * 0.35,
           child: Stack(
             fit: StackFit.expand,
             children: [
@@ -100,7 +100,8 @@ class WelcomePageWidget extends StatelessWidget {
                 const Divider(color: Colors.white24, height: 20),
                 _buildFeatureItem('🧭', 'Rutas adaptadas a tu nivel actual'),
                 const Divider(color: Colors.white24, height: 20),
-                _buildFeatureItem('🚦', 'Contenido para Junior, Mid y Senior'),
+                _buildFeatureItem(
+                    '🚦', 'Contenido para Junior, Middle y Senior'),
                 const Divider(color: Colors.white24, height: 20),
                 _buildFeatureItem(
                     '💡', 'Aprende, practica y evalúa tu conocimiento'),
