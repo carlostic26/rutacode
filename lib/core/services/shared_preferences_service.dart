@@ -5,11 +5,11 @@ class SharedPreferencesService {
 
   SharedPreferencesService(this._prefs);
 
-  Future<void> markExamAsCompleted(String examName) async {
-    await _prefs.setBool('$examName-completed', true);
+  Future<void> markExamAsCompleted(String language, String module) async {
+    await _prefs.setBool('$language-$module-completed', true);
   }
 
-  Future<bool> isExamCompleted(String examName) async {
-    return _prefs.getBool('$examName-completed') ?? false;
+  Future<bool> isExamCompleted(String language, String module) async {
+    return _prefs.getBool('$language-$module-completed') ?? false;
   }
 }

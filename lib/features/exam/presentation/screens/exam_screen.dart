@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:rutacode/core/ads/banner/ad_banner_provider_exam.dart';
+import 'package:rutacode/core/services/shared_preferences_service.dart';
 import 'package:rutacode/features/exam/presentation/screens/result_screen.dart';
 import 'package:rutacode/features/exam/presentation/screens/start_exam_screen.dart';
 import 'package:rutacode/features/exam/presentation/state/provider/exam_providers.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../widgets/question_widget.dart';
 import '../widgets/timer_widget.dart';
 
@@ -35,6 +37,7 @@ class _ExamScreenState extends ConsumerState<ExamScreen> {
   @override
   void initState() {
     super.initState();
+
     _pageController = PageController();
     ref
         .read(examStateProvider.notifier)
@@ -42,6 +45,8 @@ class _ExamScreenState extends ConsumerState<ExamScreen> {
 
     // Inicializar el banner después de que el widget esté construido
     WidgetsBinding.instance.addPostFrameCallback((_) {
+      setDataExam();
+
       ref.read(adBannerProviderExam.notifier).loadAdaptiveAd(
             context,
             screenId: 'examScreen',
@@ -49,11 +54,19 @@ class _ExamScreenState extends ConsumerState<ExamScreen> {
     });
   }
 
+  void setDataExam() {
+    //aqui registro los datos o parametros de guardado
+    ref.read(examLanguageSelectedProvider.notifier).state = widget.language;
+    ref.read(examModuleSelectedProvider.notifier).state = widget.module;
+  }
+
   @override
   void dispose() {
+    if (mounted) {
+      ref.read(examStateProvider.notifier).resetExamState();
+      ref.read(adBannerProviderExam.notifier).disposeCurrentAd();
+    }
     _pageController.dispose();
-    ref.read(examStateProvider.notifier).resetExamState();
-    ref.read(adBannerProviderExam.notifier).disposeCurrentAd();
     super.dispose();
   }
 
@@ -89,7 +102,7 @@ class _ExamScreenState extends ConsumerState<ExamScreen> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            widget.module,
+            '${widget.language} - ${widget.module}',
             style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
           ),
           leading: IconButton(
@@ -104,7 +117,7 @@ class _ExamScreenState extends ConsumerState<ExamScreen> {
               children: [
                 Container(
                   height: 8,
-                  width: screenSize.width * 0.57,
+                  width: screenSize.width * 0.42,
                   decoration: BoxDecoration(
                     color: Colors.grey[200],
                     borderRadius: BorderRadius.circular(10),
@@ -212,6 +225,15 @@ class _ExamScreenState extends ConsumerState<ExamScreen> {
 
     if (examState.currentQuestionIndex + 1 == examState.questions.length) {
       ref.read(examStateProvider.notifier).finishExamEarly();
+
+      final prefs = await SharedPreferences.getInstance();
+      final sharedPrefsService = SharedPreferencesService(prefs);
+      await sharedPrefsService.markExamAsCompleted(
+          widget.language, widget.module);
+
+      ref.read(examLanguageSelectedProvider.notifier).state = widget.language;
+      ref.read(examModuleSelectedProvider.notifier).state = widget.module;
+
       if (mounted) {
         Navigator.pushReplacement(
           context,

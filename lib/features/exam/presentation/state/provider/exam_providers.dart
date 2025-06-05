@@ -21,6 +21,10 @@ final examStateProvider = StateNotifierProvider<ExamNotifier, ExamState>((ref) {
   return ExamNotifier(repository);
 });
 
+//providers para marcar estado de examen completado
+final examLanguageSelectedProvider = StateProvider<String>((ref) => 'none');
+final examModuleSelectedProvider = StateProvider<String>((ref) => 'none');
+
 // Estado del examen
 class ExamState {
   final List<ExamQuestion> questions;

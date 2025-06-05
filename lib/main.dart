@@ -8,10 +8,8 @@ import 'package:rutacode/core/ads/ads_manager.dart';
 import 'package:rutacode/core/theme/theme_manager.dart';
 import 'package:rutacode/core/theme/theme_notifier.dart';
 import 'package:rutacode/features/exam/data/datasources/local_exam_data_source.dart';
-import 'package:rutacode/features/level/presentation/state/completed_levels_shp_provider.dart';
 import 'package:rutacode/features/loading/presentation/screens/loading_screen.dart';
 import 'package:rutacode/features/progress/data/datasources/progress_local_database.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 AppOpenAd? openAd;
 bool isAdLoaded = false;
@@ -49,8 +47,6 @@ void main() async {
 
   await dotenv.load(fileName: '.env');
 
-  final sharedPreferences = await SharedPreferences.getInstance();
-
   await loadOpenAd();
 
   Timer(const Duration(seconds: 12), () async {
@@ -60,10 +56,6 @@ void main() async {
   });
 
   runApp(const ProviderScope(
-    overrides: [
-      // Sobrescribir el SharedPreferencesProvider con la instancia de SharedPreferences
-      //sharedPreferencesProvider.overrideWithValue(sharedPreferences),
-    ],
     child: MyApp(),
   ));
 }

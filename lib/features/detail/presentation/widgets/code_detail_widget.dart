@@ -89,7 +89,7 @@ class _CodeDetailWidgetState extends ConsumerState<CodeDetailWidget> {
                     scrollDirection: Axis.vertical,
                     child: HighlightView(
                       code,
-                      language: 'dart',
+                      language: widget.detail.language, //language: 'dart',
                       theme: theme,
                       padding: const EdgeInsets.all(12),
                       textStyle: TextStyle(

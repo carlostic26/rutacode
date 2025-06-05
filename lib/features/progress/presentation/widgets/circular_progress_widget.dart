@@ -13,13 +13,13 @@ class CircularProgressWidget extends StatelessWidget {
         alignment: Alignment.center,
         children: [
           SizedBox(
-            height: height * 0.10,
-            width: height * 0.10,
+            height: height * 0.12,
+            width: height * 0.12,
             child: CircularProgressIndicator(
               value: progress / 100,
-              backgroundColor: Colors.grey[300],
+              backgroundColor: Colors.grey.shade600,
               valueColor: const AlwaysStoppedAnimation<Color>(Colors.indigo),
-              strokeWidth: 5,
+              strokeWidth: 10,
             ),
           ),
           Text(

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rutacode/core/ads/banner/ad_banner_provider_home.dart';
 import 'package:rutacode/features/detail/presentation/state/detail_sections_state.dart';
 import 'package:rutacode/features/exam/presentation/screens/choose_exam_screen.dart';
+import 'package:rutacode/features/exam/presentation/screens/start_exam_screen.dart';
 import 'package:rutacode/features/home/presentation/provider/language_providers.dart';
 import 'package:rutacode/features/modules/presentation/providers/navigation_home_page_state.dart';
 import 'package:rutacode/features/home/presentation/widgets/home_drawer_widget.dart';
@@ -65,12 +66,12 @@ class _ModuleScreenState extends ConsumerState<ModuleScreen> {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.checklist),
+            icon: const Icon(Icons.emoji_events),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const ChooseExamScreen(),
+                  builder: (context) => const ResultProgressScreen(),
                 ),
               );
             },
@@ -95,31 +96,21 @@ class _ModuleScreenState extends ConsumerState<ModuleScreen> {
         ),
         actions: [
           IconButton(
-            icon: const Icon(Icons.emoji_events),
-            onPressed: () {
-              /*      Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ResultProgressScreen(
-                      language: actualLanguage),
-                ),
-              ); */
-
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ResultProgressScreen(),
-                ),
-              );
-            },
-          ),
-          IconButton(
             icon: const Icon(Icons.checklist),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const ChooseExamScreen(),
+                  builder: (context) => StartExamScreen(
+                    language: actualLanguage,
+                    module: actualModule == 'Jr'
+                        ? 'Junior'
+                        : actualModule == 'Mid'
+                            ? 'Middle'
+                            : actualModule == 'Sr'
+                                ? 'Senior'
+                                : actualModule,
+                  ),
                 ),
               );
             },

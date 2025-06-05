@@ -137,12 +137,12 @@ class ExamRepositoryImpl implements ExamRepository {
         );
       }).toList();
 
-      if (allQuestions.length <= 12) {
+      if (allQuestions.length <= 10) {
         return allQuestions;
       }
 
       allQuestions.shuffle();
-      return allQuestions.take(12).toList();
+      return allQuestions.take(10).toList();
     } catch (e) {
       debugPrint('Error al obtener preguntas: $e');
       return [];

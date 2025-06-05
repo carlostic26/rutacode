@@ -121,7 +121,7 @@ import 'package:path/path.dart';
 
 class LocalExamDataSource {
   static const String _tableName = 'exam_questions';
-  static const int _dbVersion = 8;
+  static const int _dbVersion = 10;
   static const String _dbName = 'final_exam$_dbVersion.db';
   Database? _database;
 

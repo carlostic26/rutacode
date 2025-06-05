@@ -61,7 +61,7 @@ class _DetailPageState extends ConsumerState<DetailPage> {
 
     if (isSubtopicCompleted) return;
 
-    _timer = Timer(const Duration(seconds: 2), () async {
+    _timer = Timer(const Duration(seconds: 10), () async {
       try {
         //guardar progreso 2 puntos
         await progressUseCases.setScoreBySubtopic(
