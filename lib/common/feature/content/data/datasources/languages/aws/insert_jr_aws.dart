@@ -2,7 +2,7 @@ import 'package:sqflite_common/sqlite_api.dart';
 
 Future<void> insertJrLevel1AwsData(Database db) async {
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 1,
     'title_level': 'Fundamentos de AWS',
@@ -48,7 +48,7 @@ Aquí te va la aclaración: el Cloud Computing elimina esa necesidad. En vez de 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 1,
     'title_level': 'Fundamentos de AWS',
@@ -113,7 +113,7 @@ La elección del modelo depende de tus necesidades: si quieres control total, Ia
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 1,
     'title_level': 'Fundamentos de AWS',
@@ -181,7 +181,7 @@ Comprender estos modelos te ayuda a tomar decisiones informadas sobre dónde y c
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 1,
     'title_level': 'Fundamentos de AWS',
@@ -276,7 +276,7 @@ En resumen, AWS te da la potencia, la flexibilidad y la seguridad para innovar y
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 1,
     'title_level': 'Fundamentos de AWS',
@@ -356,7 +356,7 @@ Durante el proceso, también se te pedirá un número de teléfono para verifica
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 1,
     'title_level': 'Fundamentos de AWS',
@@ -431,7 +431,7 @@ Cada servicio de AWS tiene su propia lógica de precios. Por ejemplo, en Amazon 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 1,
     'title_level': 'Fundamentos de AWS',
@@ -496,7 +496,7 @@ Es crucial entender los límites de cada servicio dentro del Free Tier. Si los e
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 1,
     'title_level': 'Fundamentos de AWS',
@@ -573,7 +573,7 @@ Usar ambas herramientas de manera conjunta es la estrategia ganadora. Primero, u
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 1,
     'title_level': 'Fundamentos de AWS',
@@ -630,7 +630,7 @@ En resumen, las Regiones te permiten elegir la ubicación geográfica de tus dat
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 1,
     'title_level': 'Fundamentos de AWS',
@@ -697,7 +697,7 @@ En resumen, las Edge Locations y Global Accelerator trabajan juntos para asegura
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 1,
     'title_level': 'Fundamentos de AWS',
@@ -755,7 +755,7 @@ En esencia, te permiten extender tu nube de AWS a ubicaciones más periféricas 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 1,
     'title_level': 'Fundamentos de AWS',
@@ -819,7 +819,7 @@ Esto es posible porque los dispositivos 5G se conectan a un Wavelength Zone (que
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 1,
     'title_level': 'Fundamentos de AWS',
@@ -885,7 +885,7 @@ La consola está diseñada para ser amigable, incluso para principiantes. Puedes
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 1,
     'title_level': 'Fundamentos de AWS',
@@ -948,7 +948,7 @@ Aunque al principio puede parecer un poco intimidante si no estás familiarizado
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 1,
     'title_level': 'Fundamentos de AWS',
@@ -1041,7 +1041,7 @@ public class Ec2Lister {
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 1,
     'title_level': 'Fundamentos de AWS',
@@ -1107,7 +1107,7 @@ Es importante recordar que, por seguridad, la Mobile App tiene limitaciones. No 
 
 Future<void> insertJrLevel2AwsData(Database db) async {
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 2,
     'title_level': 'Servicios Básicos de Computación',
@@ -1166,7 +1166,7 @@ Elegir el tipo de instancia correcto es crucial para el rendimiento y el costo d
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 2,
     'title_level': 'Servicios Básicos de Computación',
@@ -1221,7 +1221,7 @@ Pensemos por un momento en una empresa como Netflix. Ellos no configuran cada se
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 2,
     'title_level': 'Servicios Básicos de Computación',
@@ -1291,7 +1291,7 @@ Además, los Security Groups actúan a nivel de instancia, lo que significa que 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 2,
     'title_level': 'Servicios Básicos de Computación',
@@ -1353,7 +1353,7 @@ Para instancias Linux, el Key Pair se usa para la autenticación SSH. Para insta
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 2,
     'title_level': 'Servicios Básicos de Computación',
@@ -1425,7 +1425,7 @@ Elegir el tipo correcto de Load Balancer es crucial para el rendimiento, la disp
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 2,
     'title_level': 'Servicios Básicos de Computación',
@@ -1508,7 +1508,7 @@ Una vez que estos componentes están configurados, el ELB comenzará a distribui
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 2,
     'title_level': 'Servicios Básicos de Computación',
@@ -1585,7 +1585,7 @@ app.get('/status', (req, res) => {
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 2,
     'title_level': 'Servicios Básicos de Computación',
@@ -1644,7 +1644,7 @@ Habilitar el Cross-zone load balancing mejora la elasticidad de tu aplicación y
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 2,
     'title_level': 'Servicios Básicos de Computación',
@@ -1702,7 +1702,7 @@ Pensemos por un momento en una tienda online en el Black Friday. El tráfico se 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 2,
     'title_level': 'Servicios Básicos de Computación',
@@ -1789,7 +1789,7 @@ La elección de la política de escalado adecuada depende de la naturaleza de tu
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 2,
     'title_level': 'Servicios Básicos de Computación',
@@ -1862,7 +1862,7 @@ Al usar Launch Templates, te aseguras de que todas las instancias que lanza tu A
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 2,
     'title_level': 'Servicios Básicos de Computación',
@@ -1957,7 +1957,7 @@ def lambda_handler(event, context):
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 2,
     'title_level': 'Servicios Básicos de Computación',
@@ -2014,7 +2014,7 @@ solo cuando llega una solicitud.
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 2,
     'title_level': 'Servicios Básicos de Computación',
@@ -2090,7 +2090,7 @@ El 'lambda_handler' es el punto de entrada que AWS Lambda invoca.
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 2,
     'title_level': 'Servicios Básicos de Computación',
@@ -2157,7 +2157,7 @@ Tu código de Lambda procesaría la información dentro de este 'event' para sab
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 2,
     'title_level': 'Servicios Básicos de Computación',
@@ -2201,7 +2201,7 @@ Esta es una representación de los parámetros que se ajustarían al configurar 
 
 Future<void> insertJrLevel3AwsData(Database db) async {
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 3,
     'title_level': 'Almacenamiento en AWS',
@@ -2264,7 +2264,7 @@ except s3.exceptions.ClientError as e:
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 3,
     'title_level': 'Almacenamiento en AWS',
@@ -2335,7 +2335,7 @@ except Exception as e:
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 3,
     'title_level': 'Almacenamiento en AWS',
@@ -2406,7 +2406,7 @@ for version in response.get('Versions', []):
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 3,
     'title_level': 'Almacenamiento en AWS',
@@ -2478,7 +2478,7 @@ Además de estas, existen las "Listas de Control de Acceso (ACLs)" y "Query Stri
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 3,
     'title_level': 'Almacenamiento en AWS',
@@ -2537,7 +2537,7 @@ Elegir el tipo de volumen EBS correcto es una decisión importante que impactar�
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 3,
     'title_level': 'Almacenamiento en AWS',
@@ -2585,7 +2585,7 @@ Cuando creas un snapshot, no detiene tu instancia EC2 ni desmonta el volumen, lo
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 3,
     'title_level': 'Almacenamiento en AWS',
@@ -2638,7 +2638,7 @@ Puedes cifrar un volumen EBS al crearlo, o incluso cifrar un snapshot y luego re
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 3,
     'title_level': 'Almacenamiento en AWS',
@@ -2686,7 +2686,7 @@ El rendimiento de un volumen EBS depende de varios factores: el tipo de volumen 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 3,
     'title_level': 'Almacenamiento en AWS',
@@ -2742,7 +2742,7 @@ La elasticidad de EFS es una de sus mayores ventajas. Puedes empezar con gigabyt
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 3,
     'title_level': 'Almacenamiento en AWS',
@@ -2795,7 +2795,7 @@ Luego, viene la parte crucial de la conectividad: las "targets de montaje" y los
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 3,
     'title_level': 'Almacenamiento en AWS',
@@ -2864,7 +2864,7 @@ if app_config:
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 3,
     'title_level': 'Almacenamiento en AWS',
@@ -2923,7 +2923,7 @@ Finalmente, a nivel de acceso, puedes usar "Políticas de IAM" para controlar qu
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 3,
     'title_level': 'Almacenamiento en AWS',
@@ -2979,7 +2979,7 @@ Elegir el tipo de gateway correcto es fundamental para alinear tus necesidades d
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 3,
     'title_level': 'Almacenamiento en AWS',
@@ -3022,7 +3022,7 @@ Luego, viene la asignación de recursos locales. Necesitas designar discos local
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 3,
     'title_level': 'Almacenamiento en AWS',
@@ -3072,7 +3072,7 @@ En resumen, AWS Storage Gateway es perfecto para escenarios híbridos donde nece
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 3,
     'title_level': 'Almacenamiento en AWS',
@@ -3143,7 +3143,7 @@ Para un Volume Gateway en modo de volúmenes en caché, tus datos de bloques se 
 
 Future<void> insertJrLevel4AwsData(Database db) async {
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 4,
     'title_level': 'Bases de Datos en AWS',
@@ -3197,7 +3197,7 @@ La flexibilidad de elegir el motor de base de datos adecuado te permite aprovech
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 4,
     'title_level': 'Bases de Datos en AWS',
@@ -3243,7 +3243,7 @@ También definirás el "almacenamiento" para tu base de datos, incluyendo su tam
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 4,
     'title_level': 'Bases de Datos en AWS',
@@ -3293,7 +3293,7 @@ Aquí te va la aclaración: cuando configuras una instancia RDS como Multi-AZ, A
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 4,
     'title_level': 'Bases de Datos en AWS',
@@ -3347,7 +3347,7 @@ Aquí te va la aclaración: un snapshot de RDS es una copia de seguridad complet
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 4,
     'title_level': 'Bases de Datos en AWS',
@@ -3409,7 +3409,7 @@ Aquí te va la aclaración: "NoSQL" no significa "sin SQL", sino "no solo SQL". 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 4,
     'title_level': 'Bases de Datos en AWS',
@@ -3481,7 +3481,7 @@ El buen diseño de tablas e índices es la clave para desbloquear el rendimiento
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 4,
     'title_level': 'Bases de Datos en AWS',
@@ -3538,7 +3538,7 @@ La elección entre estos dos modelos se basa en el patrón de tráfico de tu apl
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 4,
     'title_level': 'Bases de Datos en AWS',
@@ -3640,7 +3640,7 @@ El uso de `GetItem` y `Query` es siempre preferible a `Scan` para operaciones de
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 4,
     'title_level': 'Bases de Datos en AWS',
@@ -3707,7 +3707,7 @@ En resumen, si necesitas funcionalidades avanzadas, persistencia de datos o estr
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 4,
     'title_level': 'Bases de Datos en AWS',
@@ -3782,7 +3782,7 @@ En resumen, si tu aplicación sufre de latencia, si tus bases de datos están so
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 4,
     'title_level': 'Bases de Datos en AWS',
@@ -3843,7 +3843,7 @@ También configurarás el "número de nodos" en tu clúster. Para Redis, puedes 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 4,
     'title_level': 'Bases de Datos en AWS',
@@ -3899,7 +3899,7 @@ Finalmente, las "políticas de IAM" también juegan un papel importante para con
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 4,
     'title_level': 'Bases de Datos en AWS',
@@ -4003,7 +4003,7 @@ Vamos a ver de qué se trata todo esto:
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 4,
     'title_level': 'Bases de Datos en AWS',
@@ -4081,7 +4081,7 @@ Una vez que estos tres componentes están configurados, inicias la tarea de repl
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 4,
     'title_level': 'Bases de Datos en AWS',
@@ -4131,7 +4131,7 @@ Aquí te va la aclaración: cuando configuras una tarea de DMS con replicación 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 4,
     'title_level': 'Bases de Datos en AWS',
@@ -4185,7 +4185,7 @@ Aquí te va la aclaración: la validación de datos en DMS se asegura de que los
 
 Future<void> insertJrLevel5AwsData(Database db) async {
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 5,
     'title_level': 'Redes y Seguridad Básica',
@@ -4259,7 +4259,7 @@ La correcta configuración de tus subredes y tablas de ruteo es la base para ase
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 5,
     'title_level': 'Redes y Seguridad Básica',
@@ -4311,7 +4311,7 @@ Es importante entender que el Internet Gateway no es un firewall ni un dispositi
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 5,
     'title_level': 'Redes y Seguridad Básica',
@@ -4370,7 +4370,7 @@ Si tus instancias privadas necesitan acceder a Internet, pero no ser accesibles 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 5,
     'title_level': 'Redes y Seguridad Básica',
@@ -4438,7 +4438,7 @@ Es importante destacar que el VPC Peering no es transitivo. Si la VPC A tiene Pe
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 5,
     'title_level': 'Redes y Seguridad Básica',
@@ -4504,7 +4504,7 @@ Entender cómo interactúan estos componentes es la base para construir una estr
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 5,
     'title_level': 'Redes y Seguridad Básica',
@@ -4568,7 +4568,7 @@ Aquí te va la aclaración: una política IAM es una declaración formal de perm
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 5,
     'title_level': 'Redes y Seguridad Básica',
@@ -4657,7 +4657,7 @@ El uso de AWS Organizations es una de las mejores prácticas para empresas que o
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 5,
     'title_level': 'Redes y Seguridad Básica',
@@ -4719,7 +4719,7 @@ Aquí te va la aclaración: AWS Shield Standard es un servicio de protección co
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 5,
     'title_level': 'Redes y Seguridad Básica',
@@ -4794,7 +4794,7 @@ El concepto fundamental es que estás extendiendo tu red local a la VPC de AWS c
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 5,
     'title_level': 'Redes y Seguridad Básica',
@@ -4846,7 +4846,7 @@ Estos beneficios hacen de AWS Direct Connect una opción atractiva para empresas
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 5,
     'title_level': 'Redes y Seguridad Básica',
@@ -4914,7 +4914,7 @@ La configuración básica de Direct Connect es un proceso que requiere coordinac
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 5,
     'title_level': 'Redes y Seguridad Básica',
@@ -4999,7 +4999,7 @@ En resumen, elige VPN para menor costo, implementaciones rápidas, y cuando el r
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 5,
     'title_level': 'Redes y Seguridad Básica',
@@ -5056,7 +5056,7 @@ La combinación de AWS WAF (para vulnerabilidades L7) y AWS Shield (para DDoS L3
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 5,
     'title_level': 'Redes y Seguridad Básica',
@@ -5160,7 +5160,7 @@ El orden de las reglas en un Web ACL es importante, ya que se evalúan en secuen
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 5,
     'title_level': 'Redes y Seguridad Básica',
@@ -5209,7 +5209,7 @@ Una vez asociado, WAF intercepta el tráfico que llega al ALB, evalúa cada soli
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 5,
     'title_level': 'Redes y Seguridad Básica',
@@ -5269,7 +5269,7 @@ AWS Shield Advanced es una inversión significativa, pero para negocios donde la
 
 Future<void> insertJrLevel6AwsData(Database db) async {
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 6,
     'title_level': 'Monitoreo y Gestión',
@@ -5325,7 +5325,7 @@ Estas métricas son publicadas a CloudWatch cada cierto tiempo (por defecto, cad
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 6,
     'title_level': 'Monitoreo y Gestión',
@@ -5399,7 +5399,7 @@ Configurar alarmas es crucial para la observabilidad y la gestión proactiva de 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 6,
     'title_level': 'Monitoreo y Gestión',
@@ -5490,7 +5490,7 @@ Los dashboards son una herramienta poderosa para la observabilidad. Te ayudan a 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 6,
     'title_level': 'Monitoreo y Gestión',
@@ -5560,7 +5560,7 @@ La gestión de logs es un componente vital de cualquier estrategia de monitoreo 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 6,
     'title_level': 'Monitoreo y Gestión',
@@ -5626,7 +5626,7 @@ CloudTrail está habilitado por defecto en tu cuenta de AWS, pero solo registra 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 6,
     'title_level': 'Monitoreo y Gestión',
@@ -5694,7 +5694,7 @@ La configuración básica de un trail de CloudTrail es un paso fundamental para 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 6,
     'title_level': 'Monitoreo y Gestión',
@@ -5762,7 +5762,7 @@ Es crucial configurar correctamente la política de bucket S3 para asegurar que 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 6,
     'title_level': 'Monitoreo y Gestión',
@@ -5845,7 +5845,7 @@ El análisis básico de CloudTrail es crucial para mantener la seguridad y el cu
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 6,
     'title_level': 'Monitoreo y Gestión',
@@ -5900,7 +5900,7 @@ Para que Session Manager funcione, tus instancias EC2 deben tener el agente de S
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 6,
     'title_level': 'Monitoreo y Gestión',
@@ -5967,7 +5967,7 @@ Para usar Run Command, al igual que Session Manager, tus instancias deben tener 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 6,
     'title_level': 'Monitoreo y Gestión',
@@ -6045,7 +6045,7 @@ Muchos servicios de AWS (como Lambda, ECS, EC2) pueden integrarse directamente c
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 6,
     'title_level': 'Monitoreo y Gestión',
@@ -6118,7 +6118,7 @@ Para configurar una Maintenance Window, defines la duración, la frecuencia (ej.
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 6,
     'title_level': 'Monitoreo y Gestión',
@@ -6167,7 +6167,7 @@ Trusted Advisor te presenta estas recomendaciones en un panel fácil de entender
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 6,
     'title_level': 'Monitoreo y Gestión',
@@ -6231,7 +6231,7 @@ Entender estas categorías te permite tener una visión holística de la salud d
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 6,
     'title_level': 'Monitoreo y Gestión',
@@ -6298,7 +6298,7 @@ La implementación continua de las recomendaciones de Trusted Advisor es parte d
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Jr',
     'level': 6,
     'title_level': 'Monitoreo y Gestión',

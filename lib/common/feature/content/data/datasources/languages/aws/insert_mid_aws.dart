@@ -2,7 +2,7 @@ import 'package:sqflite_common/sqlite_api.dart';
 
 Future<void> insertMidLevel1AwsData(Database db) async {
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 1,
     'title_level': 'Arquitectura Avanzada',
@@ -82,7 +82,7 @@ El cuarto pilar es la **Eficiencia del Rendimiento**. Aquí, la clave es usar lo
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 1,
     'title_level': 'Arquitectura Avanzada',
@@ -130,7 +130,7 @@ Lo interesante de esta herramienta es que te permite hacer un seguimiento de tu 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 1,
     'title_level': 'Arquitectura Avanzada',
@@ -199,7 +199,7 @@ Estos patrones te ayudan a implementar los pilares del Well-Architected Framewor
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 1,
     'title_level': 'Arquitectura Avanzada',
@@ -270,7 +270,7 @@ Otra estrategia es aprovechar las **Instancias Spot**, que son capacidad de EC2 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 1,
     'title_level': 'Arquitectura Avanzada',
@@ -328,7 +328,7 @@ También encontramos el concepto de **distribución de carga**, donde el tráfic
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 1,
     'title_level': 'Arquitectura Avanzada',
@@ -406,7 +406,7 @@ Un ejemplo clásico es Amazon RDS (Relational Database Service). Al crear una in
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 1,
     'title_level': 'Arquitectura Avanzada',
@@ -476,7 +476,7 @@ La gran ventaja de esto es que, si algo sale mal con la nueva versión en "Green
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 1,
     'title_level': 'Arquitectura Avanzada',
@@ -541,7 +541,7 @@ Este método es excelente para reducir el riesgo en despliegues, especialmente e
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 1,
     'title_level': 'Arquitectura Avanzada',
@@ -605,7 +605,7 @@ Por otro lado, el **escalado horizontal** (también conocido como "scale out") e
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 1,
     'title_level': 'Arquitectura Avanzada',
@@ -669,7 +669,7 @@ La escalabilidad es casi automática con serverless. Si de repente tienes un pic
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 1,
     'title_level': 'Arquitectura Avanzada',
@@ -746,7 +746,7 @@ Esto introduce un fuerte **desacoplamiento** entre los componentes, lo que signi
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 1,
     'title_level': 'Arquitectura Avanzada',
@@ -806,7 +806,7 @@ Existen diferentes estrategias de caching, como el **Cache-Aside**, donde la apl
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 1,
     'title_level': 'Arquitectura Avanzada',
@@ -881,7 +881,7 @@ La elección de la estrategia de DR adecuada depende de la criticidad de tu apli
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 1,
     'title_level': 'Arquitectura Avanzada',
@@ -951,7 +951,7 @@ Cuando ocurre un desastre (por ejemplo, tu base de datos principal se corrompe o
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 1,
     'title_level': 'Arquitectura Avanzada',
@@ -1013,7 +1013,7 @@ Cuando ocurre un desastre en la región principal, el plan de DR implica dos pas
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 1,
     'title_level': 'Arquitectura Avanzada',
@@ -1080,7 +1080,7 @@ Cuando ocurre un desastre en tu región principal, el proceso de failover es má
 
 Future<void> insertMidLevel2AwsData(Database db) async {
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 2,
     'title_level': 'Seguridad Avanzada',
@@ -1161,7 +1161,7 @@ Dominar las políticas personalizadas es fundamental para implementar el princip
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 2,
     'title_level': 'Seguridad Avanzada',
@@ -1233,7 +1233,7 @@ La gran ventaja es que estos permisos pueden definir quién puede acceder al rec
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 2,
     'title_level': 'Seguridad Avanzada',
@@ -1305,7 +1305,7 @@ Las condiciones se definen usando bloques `Condition` dentro de una declaración
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 2,
     'title_level': 'Seguridad Avanzada',
@@ -1377,7 +1377,7 @@ Esto es increíblemente útil por varias razones: Primero, centraliza la gestió
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 2,
     'title_level': 'Seguridad Avanzada',
@@ -1457,7 +1457,7 @@ Lo más importante de KMS es que tus claves nunca salen del servicio sin cifrar.
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 2,
     'title_level': 'Seguridad Avanzada',
@@ -1551,7 +1551,7 @@ Tener control sobre tus CMKs te da un nivel superior de seguridad y cumplimiento
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 2,
     'title_level': 'Seguridad Avanzada',
@@ -1634,7 +1634,7 @@ Por otro lado, la **encriptación en reposo** es como asegurar el paquete una ve
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 2,
     'title_level': 'Seguridad Avanzada',
@@ -1697,7 +1697,7 @@ Una vez que un certificado es emitido por ACM, puedes asociarlo fácilmente con 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 2,
     'title_level': 'Seguridad Avanzada',
@@ -1768,7 +1768,7 @@ No necesitas desplegar agentes en tus instancias ni hacer configuraciones comple
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 2,
     'title_level': 'Seguridad Avanzada',
@@ -1821,7 +1821,7 @@ Pero AWS Config va más allá del simple registro. También te permite definir "
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 2,
     'title_level': 'Seguridad Avanzada',
@@ -1888,7 +1888,7 @@ La magia de Inspector es su capacidad para automatizar las evaluaciones. Puedes 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 2,
     'title_level': 'Seguridad Avanzada',
@@ -1956,7 +1956,7 @@ Además de agregar, Security Hub te ayuda a priorizar. Evalúa continuamente tu 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 2,
     'title_level': 'Seguridad Avanzada',
@@ -1995,7 +1995,7 @@ Además de los informes, en Artifact también encontrarás acuerdos de cumplimie
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 2,
     'title_level': 'Seguridad Avanzada',
@@ -2056,7 +2056,7 @@ Lo importante es que estas son directrices prácticas, no teóricas. Puedes usar
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 2,
     'title_level': 'Seguridad Avanzada',
@@ -2131,7 +2131,7 @@ AWS, como proveedor de la infraestructura, es compatible con PCI DSS y tiene sus
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 2,
     'title_level': 'Seguridad Avanzada',
@@ -2209,7 +2209,7 @@ AWS, como proveedor de la infraestructura, es compatible con HIPAA y ofrece un B
 
 Future<void> insertMidLevel3AwsData(Database db) async {
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 3,
     'title_level': 'Contenedores y Serverless',
@@ -2293,7 +2293,7 @@ Con ECS, te olvidas de las complejidades de Kubernetes si lo prefieres, y obtien
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 3,
     'title_level': 'Contenedores y Serverless',
@@ -2374,7 +2374,7 @@ Las Task Definitions son inmutables una vez que se registran. Si necesitas cambi
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 3,
     'title_level': 'Contenedores y Serverless',
@@ -2446,7 +2446,7 @@ La elección del tipo de lanzamiento depende de tus necesidades: Fargate es idea
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 3,
     'title_level': 'Contenedores y Serverless',
@@ -2548,7 +2548,7 @@ Al automatizar el escalado, tus aplicaciones mantienen un buen rendimiento duran
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 3,
     'title_level': 'Contenedores y Serverless',
@@ -2629,7 +2629,7 @@ Kubernetes es una plataforma poderosa que te ofrece una abstracción completa so
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 3,
     'title_level': 'Contenedores y Serverless',
@@ -2708,7 +2708,7 @@ Los nodos de trabajo son críticos porque es donde reside tu aplicación. La cor
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 3,
     'title_level': 'Contenedores y Serverless',
@@ -2787,7 +2787,7 @@ Instalar el Dashboard requiere algunos pasos, incluyendo la configuración de un
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 3,
     'title_level': 'Contenedores y Serverless',
@@ -2868,7 +2868,7 @@ Implementar el Auto Scaling correctamente es fundamental para la optimización d
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 3,
     'title_level': 'Contenedores y Serverless',
@@ -2944,7 +2944,7 @@ Fargate es ideal para microservicios, aplicaciones web, trabajos de procesamient
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 3,
     'title_level': 'Contenedores y Serverless',
@@ -3030,7 +3030,7 @@ La belleza de esta combinación es que ECS se encarga de la orquestación de alt
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 3,
     'title_level': 'Contenedores y Serverless',
@@ -3101,7 +3101,7 @@ Fargate es una excelente opción para Pods que necesitan un alto aislamiento de 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 3,
     'title_level': 'Contenedores y Serverless',
@@ -3202,7 +3202,7 @@ Dominar la optimización de costos en Fargate te permite aprovechar su flexibili
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 3,
     'title_level': 'Contenedores y Serverless',
@@ -3316,7 +3316,7 @@ Es una herramienta poderosa para construir aplicaciones distribuidas y automatiz
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 3,
     'title_level': 'Contenedores y Serverless',
@@ -3422,7 +3422,7 @@ La belleza de EventBridge es que desacopla tus componentes, haciéndolos más re
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 3,
     'title_level': 'Contenedores y Serverless',
@@ -3549,7 +3549,7 @@ Es la arquitectura de referencia para construir backends escalables, eficientes 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 3,
     'title_level': 'Contenedores y Serverless',
@@ -3655,7 +3655,7 @@ Integrar X-Ray en tus funciones Lambda o contenedores es relativamente sencillo.
 
 Future<void> insertMidLevel4AwsData(Database db) async {
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 4,
     'title_level': 'DevOps en AWS',
@@ -3748,7 +3748,7 @@ CodePipeline te da visibilidad en cada paso del proceso, y puedes configurar apr
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 4,
     'title_level': 'DevOps en AWS',
@@ -3814,7 +3814,7 @@ CodeBuild se integra de forma nativa con AWS CodePipeline para automatizar todo 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 4,
     'title_level': 'DevOps en AWS',
@@ -3875,7 +3875,7 @@ CodeDeploy se integra perfectamente con AWS CodePipeline para automatizar la fas
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 4,
     'title_level': 'DevOps en AWS',
@@ -3970,7 +3970,7 @@ Esta integración te permite mantener el código en tu plataforma preferida (Git
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 4,
     'title_level': 'DevOps en AWS',
@@ -4048,7 +4048,7 @@ Es una herramienta fundamental para la automatización, la estandarización y la
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 4,
     'title_level': 'DevOps en AWS',
@@ -4152,7 +4152,7 @@ Estas plantillas son el corazón de la Infraestructura como Código. Permiten a 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 4,
     'title_level': 'DevOps en AWS',
@@ -4218,7 +4218,7 @@ Una vez que has revisado el Change Set y estás satisfecho con los cambios propu
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 4,
     'title_level': 'DevOps en AWS',
@@ -4305,7 +4305,7 @@ Las Stack Policies son una capa de seguridad adicional crucial para la infraestr
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 4,
     'title_level': 'DevOps en AWS',
@@ -4366,7 +4366,7 @@ OpsWorks maneja el aprovisionamiento de instancias EC2, la instalación del sist
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 4,
     'title_level': 'DevOps en AWS',
@@ -4442,7 +4442,7 @@ Al usar Chef o Puppet en AWS, ya sea con OpsWorks o auto-gestionando tus servido
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 4,
     'title_level': 'DevOps en AWS',
@@ -4538,7 +4538,7 @@ AppConfig es especialmente útil para gestionar feature flags, umbrales de servi
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 4,
     'title_level': 'DevOps en AWS',
@@ -4610,7 +4610,7 @@ AWS AppConfig es un servicio excelente para gestionar Feature Flags a escala, ya
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 4,
     'title_level': 'DevOps en AWS',
@@ -4670,7 +4670,7 @@ Puedes usar Logs Insights con logs de casi cualquier servicio de AWS que envíe 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 4,
     'title_level': 'DevOps en AWS',
@@ -4774,7 +4774,7 @@ Al usar CloudWatch Alarms avanzadas, puedes construir un sistema de monitoreo ro
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 4,
     'title_level': 'DevOps en AWS',
@@ -4845,7 +4845,7 @@ Cada vez que un canario se ejecuta, registra información como capturas de panta
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 4,
     'title_level': 'DevOps en AWS',
@@ -4927,7 +4927,7 @@ Al tener logs, métricas y trazas correlacionadas en un solo panel, ServiceLens 
 
 Future<void> insertMidLevel5AwsData(Database db) async {
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 5,
     'title_level': 'Bases de Datos Avanzadas',
@@ -4993,7 +4993,7 @@ Esta arquitectura innovadora es lo que permite a Aurora ofrecer un rendimiento q
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 5,
     'title_level': 'Bases de Datos Avanzadas',
@@ -5071,7 +5071,7 @@ Esta arquitectura de cluster y réplicas permite que tu base de datos escale el 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 5,
     'title_level': 'Bases de Datos Avanzadas',
@@ -5154,7 +5154,7 @@ Aurora Serverless es una excelente opción para desarrolladores y empresas que b
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 5,
     'title_level': 'Bases de Datos Avanzadas',
@@ -5257,7 +5257,7 @@ La migración a Aurora, especialmente con DMS, está diseñada para ser lo más 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 5,
     'title_level': 'Bases de Datos Avanzadas',
@@ -5346,7 +5346,7 @@ Servicios como Amazon Redshift están diseñados específicamente para ser data 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 5,
     'title_level': 'Bases de Datos Avanzadas',
@@ -5416,7 +5416,7 @@ Puedes elegir diferentes tipos de nodos (como DC2 o RA3) que varían en CPU, mem
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 5,
     'title_level': 'Bases de Datos Avanzadas',
@@ -5505,7 +5505,7 @@ Redshift Spectrum es una extensión poderosa de tu data warehouse, que te permit
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 5,
     'title_level': 'Bases de Datos Avanzadas',
@@ -5585,7 +5585,7 @@ Al implementar estrategias de WLM y, si es necesario, utilizar la Concurrencia E
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 5,
     'title_level': 'Bases de Datos Avanzadas',
@@ -5624,7 +5624,7 @@ Una base de datos de grafos, como Amazon Neptune, no solo almacena tus datos com
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 5,
     'title_level': 'Bases de Datos Avanzadas',
@@ -5656,7 +5656,7 @@ Piensa también en los sistemas de recomendación. Si a un usuario le gustaron c
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 5,
     'title_level': 'Bases de Datos Avanzadas',
@@ -5690,7 +5690,7 @@ No sé tú, pero a mí esto al principio me costó entender cómo se "piensan" l
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 5,
     'title_level': 'Bases de Datos Avanzadas',
@@ -5730,7 +5730,7 @@ La potencia de SPARQL reside en su capacidad para expresar consultas complejas s
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 5,
     'title_level': 'Bases de Datos Avanzadas',
@@ -5770,7 +5770,7 @@ A diferencia de una base de datos relacional o NoSQL convencional, donde los dat
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 5,
     'title_level': 'Bases de Datos Avanzadas',
@@ -5804,7 +5804,7 @@ La inmutabilidad por sí sola significa que no puedes reescribir el historial. L
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 5,
     'title_level': 'Bases de Datos Avanzadas',
@@ -5839,7 +5839,7 @@ Imagina una aplicación para gestionar la cadena de suministro, donde necesitas 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 5,
     'title_level': 'Bases de Datos Avanzadas',
@@ -5875,7 +5875,7 @@ Por otro lado, Amazon QLDB es un ledger **centralizado** y **controlado por una 
 
 Future<void> insertMidLevel6AwsData(Database db) async {
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 6,
     'title_level': 'Big Data y Machine Learning',
@@ -5921,7 +5921,7 @@ Con S3 Select, puedes recuperar solo el subconjunto de datos que realmente neces
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 6,
     'title_level': 'Big Data y Machine Learning',
@@ -5973,7 +5973,7 @@ S3 Batch Operations es una característica que te permite realizar operaciones a
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 6,
     'title_level': 'Big Data y Machine Learning',
@@ -6030,7 +6030,7 @@ S3 Access Points te permiten crear puntos de acceso de red dedicados para un buc
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 6,
     'title_level': 'Big Data y Machine Learning',
@@ -6085,7 +6085,7 @@ S3 Object Lambda te permite añadir tu propio código de AWS Lambda para procesa
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 6,
     'title_level': 'Big Data y Machine Learning',
@@ -6172,7 +6172,7 @@ job.commit()
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 6,
     'title_level': 'Big Data y Machine Learning',
@@ -6213,7 +6213,7 @@ El Data Catalog es un repositorio de metadatos persistente y gestionado por AWS.
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 6,
     'title_level': 'Big Data y Machine Learning',
@@ -6259,7 +6259,7 @@ Un AWS Glue Crawler es un programa que puedes configurar para conectarse a un or
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 6,
     'title_level': 'Big Data y Machine Learning',
@@ -6315,7 +6315,7 @@ La combinación de Jobs y Triggers te permite construir pipelines ETL robustos y
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 6,
     'title_level': 'Big Data y Machine Learning',
@@ -6365,7 +6365,7 @@ var training_data = [
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 6,
     'title_level': 'Big Data y Machine Learning',
@@ -6411,7 +6411,7 @@ import matplotlib.pyplot as plt
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 6,
     'title_level': 'Big Data y Machine Learning',
@@ -6477,7 +6477,7 @@ Los algoritmos built-in de SageMaker son algoritmos de ML populares (como XGBoos
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 6,
     'title_level': 'Big Data y Machine Learning',
@@ -6534,7 +6534,7 @@ El despliegue de modelos es el proceso de tomar tu modelo entrenado y ponerlo a 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 6,
     'title_level': 'Big Data y Machine Learning',
@@ -6589,7 +6589,7 @@ Kinesis Data Streams es un servicio que te permite capturar, almacenar y procesa
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 6,
     'title_level': 'Big Data y Machine Learning',
@@ -6640,7 +6640,7 @@ Mientras Kinesis Data Streams te da un control muy granular para construir tus p
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 6,
     'title_level': 'Big Data y Machine Learning',
@@ -6692,7 +6692,7 @@ Kinesis Data Analytics te permite procesar y analizar datos de streaming en tiem
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Mid',
     'level': 6,
     'title_level': 'Big Data y Machine Learning',

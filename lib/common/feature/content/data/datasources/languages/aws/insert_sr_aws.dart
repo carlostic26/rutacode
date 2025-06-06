@@ -2,7 +2,7 @@ import 'package:sqflite_common/sqlite_api.dart';
 
 Future<void> insertSrLevel1AwsData(Database db) async {
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -52,7 +52,7 @@ Este servicio te permite agrupar tus servidores en aplicaciones, lo que es super
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -109,7 +109,7 @@ Este servicio utiliza agentes ligeros que instalas en tus servidores o un conect
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -187,7 +187,7 @@ Avanzado, DMS ofrece capacidades como la validación de datos para asegurar la i
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -251,7 +251,7 @@ SMS automatiza la replicación incremental de tus máquinas virtuales. Esto sign
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -301,7 +301,7 @@ Control Tower automatiza la configuración de una landing zone que sigue las mej
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -359,7 +359,7 @@ Con AWS Organizations avanzado, puedes crear Unidades Organizacionales (OUs) par
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -438,7 +438,7 @@ Los SCPs son increíblemente potentes para aplicar gobernanza y seguridad a nive
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -500,7 +500,7 @@ Este proceso generalmente se implementa a través de servicios como AWS Control 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -555,7 +555,7 @@ Transit Gateway elimina esta complejidad. Conecta tus VPCs, tus VPNs de sitio a 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -624,7 +624,7 @@ Los VPC endpoints se dividen en dos tipos: de interfaz y de puerta de enlace. Lo
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -675,7 +675,7 @@ PrivateLink resuelve esto creando un punto de enlace de interfaz (un tipo de VPC
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -717,7 +717,7 @@ En un nivel avanzado, AWS Direct Connect ofrece características como el uso de 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -790,7 +790,7 @@ ORDER BY
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -873,7 +873,7 @@ Las **Reserved Instances (RIs)** te permiten comprometerte con un tipo de instan
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -948,7 +948,7 @@ Para usar Spot Instances de forma efectiva, necesitas implementar ciertas estrat
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -1028,7 +1028,7 @@ El Rightsizing implica monitorear métricas clave como el uso de CPU, memoria, d
 
 Future<void> insertSrLevel2AwsData(Database db) async {
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 2,
     'title_level': 'Seguridad a Nivel Empresarial',
@@ -1105,7 +1105,7 @@ AWS SSO simplifica esto al integrarse con tu directorio existente (como AWS Dire
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 2,
     'title_level': 'Seguridad a Nivel Empresarial',
@@ -1168,7 +1168,7 @@ El proceso implica configurar tu IdP para que confíe en AWS como un SP y config
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 2,
     'title_level': 'Seguridad a Nivel Empresarial',
@@ -1247,7 +1247,7 @@ async function signInUser(username, password) {
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 2,
     'title_level': 'Seguridad a Nivel Empresarial',
@@ -1333,7 +1333,7 @@ def lambda_handler(event, context):
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 2,
     'title_level': 'Seguridad Híbrida',
@@ -1389,7 +1389,7 @@ AWS Directory Service ofrece varias opciones. La más común para entornos híbr
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 2,
     'title_level': 'Seguridad Híbrida',
@@ -1468,7 +1468,7 @@ def get_secret(secret_name):
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 2,
     'title_level': 'Seguridad Híbrida',
@@ -1537,7 +1537,7 @@ def get_ssm_parameter(parameter_name, with_decryption=False):
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 2,
     'title_level': 'Seguridad Híbrida',
@@ -1597,7 +1597,7 @@ Amazon Route 53 es el servicio DNS web escalable y de alta disponibilidad de AWS
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 2,
     'title_level': 'Seguridad a Nivel Empresarial',
@@ -1644,7 +1644,7 @@ Network Firewall te permite definir políticas de firewall centralizadas y aplic
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 2,
     'title_level': 'Seguridad a Nivel Empresarial',
@@ -1700,7 +1700,7 @@ GWLB simplifica esto al combinar las funciones de un balanceador de carga transp
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 2,
     'title_level': 'Seguridad a Nivel Empresarial',
@@ -1768,7 +1768,7 @@ LIMIT 100;
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 2,
     'title_level': 'Seguridad a Nivel Empresarial',
@@ -1842,7 +1842,7 @@ Network Access Analyzer te permite especificar un recurso de origen y un recurso
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 2,
     'title_level': 'Seguridad a Nivel Empresarial',
@@ -1902,7 +1902,7 @@ Audit Manager te permite seleccionar un marco de cumplimiento predefinido (ej. C
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 2,
     'title_level': 'Seguridad a Nivel Empresarial',
@@ -1974,7 +1974,7 @@ Control Tower automatiza la configuración de una landing zone que sigue las mej
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 2,
     'title_level': 'Seguridad a Nivel Empresarial',
@@ -2061,7 +2061,7 @@ def lambda_handler(event, context):
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 2,
     'title_level': 'Seguridad a Nivel Empresarial',
@@ -2136,7 +2136,7 @@ mainSteps:
 
 Future<void> insertSrLevel3AwsData(Database db) async {
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -2164,7 +2164,7 @@ aws migrationhub describe-migration-task \
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 1,
     'title_level': 'Arquitectura Empresarial',
@@ -2191,7 +2191,7 @@ aws discovery describe-continuous-exports \
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 3,
     'title_level': 'Arquitecturas Distribuidas',
@@ -2235,7 +2235,7 @@ Con ECS/EKS, cada microservicio vive en su propio contenedor con recursos aislad
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 3,
     'title_level': 'Arquitecturas Distribuidas',
@@ -2272,7 +2272,7 @@ VirtualNode:
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 3,
     'title_level': 'Arquitecturas Distribuidas',
@@ -2309,7 +2309,7 @@ Try.ofSupplier(decoratedSupplier)
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 3,
     'title_level': 'Arquitecturas Distribuidas',
@@ -2351,7 +2351,7 @@ ServiceDiscovery:
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 3,
     'title_level': 'Arquitecturas Distribuidas',
@@ -2395,7 +2395,7 @@ aws events put-targets \
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 3,
     'title_level': 'Arquitecturas Distribuidas',
@@ -2436,7 +2436,7 @@ aws sns publish \
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 3,
     'title_level': 'Arquitecturas Distribuidas',
@@ -2480,7 +2480,7 @@ aws lambda create-event-source-mapping \
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 3,
     'title_level': 'Arquitecturas Distribuidas',
@@ -2537,7 +2537,7 @@ Step Functions es ideal para Sagas orquestadas, permitiendo definir flujos como 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 3,
     'title_level': 'Arquitecturas Distribuidas',
@@ -2598,7 +2598,7 @@ def lambda_handler(event, context):
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 3,
     'title_level': 'Arquitecturas Distribuidas',
@@ -2646,7 +2646,7 @@ Aquí te va la aclaración: Provisioned Concurrency te permite especificar un n�
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 3,
     'title_level': 'Arquitecturas Distribuidas',
@@ -2704,7 +2704,7 @@ exports.handler = async (event) => {
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 3,
     'title_level': 'Arquitecturas Distribuidas',
@@ -2771,7 +2771,7 @@ exports.handler = async (event) => {
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 3,
     'title_level': 'Arquitecturas Distribuidas',
@@ -2849,7 +2849,7 @@ public class ElastiCacheAdvancedExample {
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 3,
     'title_level': 'Arquitecturas Distribuidas',
@@ -2922,7 +2922,7 @@ public class DaxForDynamoDBExample {
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 3,
     'title_level': 'Arquitecturas Distribuidas',
@@ -3006,7 +3006,7 @@ public class CacheInvalidationExample {
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 3,
     'title_level': 'Arquitecturas Distribuidas',
@@ -3085,7 +3085,7 @@ class Product {
 
 Future<void> insertSrLevel4AwsData(Database db) async {
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 4,
     'title_level': 'DevOps Avanzado',
@@ -3152,7 +3152,7 @@ Resources:
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 4,
     'title_level': 'DevOps Avanzado',
@@ -3236,7 +3236,7 @@ export class MyAppStack extends cdk.Stack {
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 4,
     'title_level': 'DevOps Avanzado',
@@ -3293,7 +3293,7 @@ resource "aws_s3_bucket" "my_bucket" {
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 4,
     'title_level': 'DevOps Avanzado',
@@ -3350,7 +3350,7 @@ spec:
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 4,
     'title_level': 'DevOps Avanzado',
@@ -3432,7 +3432,7 @@ module "web_app_eu" {
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 4,
     'title_level': 'DevOps Avanzado',
@@ -3495,7 +3495,7 @@ Aquí te va la aclaración: Los despliegues canary te permiten mitigar ese riesg
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 4,
     'title_level': 'DevOps Avanzado',
@@ -3557,7 +3557,7 @@ Aquí te va la aclaración: Una vez que el entorno "Green" ha sido probado y ver
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 4,
     'title_level': 'DevOps Avanzado',
@@ -5009,7 +5009,7 @@ job.commit()
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 5,
     'title_level': 'Data Engineering',
@@ -5071,7 +5071,7 @@ public class KinesisProducer {
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 5,
     'title_level': 'Data Engineering',
@@ -5126,7 +5126,7 @@ public class BasicFlinkKinesisApp {
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 5,
     'title_level': 'Data Engineering',
@@ -5185,7 +5185,7 @@ public class KafkaProducerExample {
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 5,
     'title_level': 'Data Engineering',
@@ -5254,7 +5254,7 @@ function formatTimestamp(timestamp, format):
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 5,
     'title_level': 'Data Engineering',
@@ -5315,7 +5315,7 @@ ORDER BY
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 5,
     'title_level': 'Data Engineering',
@@ -5375,7 +5375,7 @@ En un nivel avanzado, Amazon QuickSight te ofrece capacidades mucho más potente
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 5,
     'title_level': 'Data Engineering',
@@ -5449,7 +5449,7 @@ async function getEmbeddedDashboardUrl(dashboardId, userArn) {
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 5,
     'title_level': 'Data Engineering',
@@ -5536,7 +5536,7 @@ En el contexto de AWS, tienes varias herramientas para integrar ML en tu pipelin
 
 Future<void> insertSrLevel6AwsData(Database db) async {
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 6,
     'title_level': 'Innovación y Tendencias',
@@ -5603,7 +5603,7 @@ linear_learner.set_hyperparameters(predictor_type='regressor', mini_batch_size='
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 6,
     'title_level': 'Innovación y Tendencias',
@@ -5673,7 +5673,7 @@ except Exception as e:
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 6,
     'title_level': 'Innovación y Tendencias',
@@ -5768,7 +5768,7 @@ pipeline = Pipeline(
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 6,
     'title_level': 'Innovación y Tendencias',
@@ -5842,7 +5842,7 @@ Con AWS, Amazon SageMaker Edge Manager es el servicio principal que te permite o
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 6,
     'title_level': 'Innovación y Tendencias',
@@ -5928,7 +5928,7 @@ finally:
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 6,
     'title_level': 'Innovación y Tendencias',
@@ -6016,7 +6016,7 @@ Con AWS IoT Greengrass, puedes desplegar funciones de AWS Lambda directamente en
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 6,
     'title_level': 'Innovación y Tendencias',
@@ -6102,7 +6102,7 @@ AWS IoT Analytics es un servicio totalmente administrado de AWS que facilita el 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 6,
     'title_level': 'Innovación y Tendencias',
@@ -6187,7 +6187,7 @@ AWS ofrece un conjunto robusto de servicios para abordar la seguridad en IoT. **
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 6,
     'title_level': 'Innovación y Tendencias',
@@ -6256,7 +6256,7 @@ def create_network_member(member_name, member_id, invitation_id):
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 6,
     'title_level': 'Innovación y Tendencias',
@@ -6344,7 +6344,7 @@ async function invokeChaincode(orgName, walletPath, userId, channelName, chainco
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 6,
     'title_level': 'Innovación y Tendencias',
@@ -6432,7 +6432,7 @@ async function interactWithContract() {
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 6,
     'title_level': 'Innovación y Tendencias',
@@ -6510,7 +6510,7 @@ Existen varios ejemplos claros de cómo las empresas están utilizando blockchai
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 6,
     'title_level': 'Innovación y Tendencias',
@@ -6575,7 +6575,7 @@ def quantum_circuit(x):
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 6,
     'title_level': 'Innovación y Tendencias',
@@ -6638,7 +6638,7 @@ El concepto más fundamental es el **Qubit**. Un qubit no solo puede ser 0 o 1, 
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 6,
     'title_level': 'Innovación y Tendencias',
@@ -6705,7 +6705,7 @@ counts = result.get_counts(qc)
   });
 
   await db.insert('programming_content', {
-    'language': 'AWS',
+    'language': 'Aws',
     'module': 'Sr',
     'level': 6,
     'title_level': 'Innovación y Tendencias',
