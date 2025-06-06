@@ -16,6 +16,7 @@ class LeanguageCardWidget extends StatelessWidget {
       onTap: onTap,
       child: Card(
         elevation: 4,
+        //color: Colors.black,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(12),
         ),

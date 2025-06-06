@@ -13,8 +13,7 @@ class RutaAdsIds {
   String interstitial_adUnitId = dotenv.env["INTERSTITIAL_AD_UNIT_ID_TEST"]!;
 
   String reward_adUnitId = dotenv.env["REWARD_AD_UNIT_ID_TEST"]!;
-}   
-  
+}    
 
 /* class RutaAdsIds {
   String banner_adUnitId = dotenv.env["BANNER_AD_UNIT_ID"]!;

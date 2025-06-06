@@ -1,12 +1,283 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rutacode/common/core/services/shared_preferences_service.dart';
 import 'package:rutacode/features/progress/domain/use_cases/progress_use_cases.dart';
 import 'package:rutacode/features/progress/presentation/state/provider/progress_use_cases_provider.dart';
 import 'package:rutacode/features/progress/presentation/state/start_exam_provider.dart';
 import 'package:rutacode/features/progress/presentation/widgets/circular_progress_widget.dart';
 import 'package:rutacode/features/progress/presentation/widgets/statics_score_widget.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-final completedLevelListProvider = StateProvider<List<int>>((ref) {
+class ScoreInfoWidget extends ConsumerWidget {
+  final String module;
+  final String language;
+
+  const ScoreInfoWidget({
+    super.key,
+    required this.language,
+    required this.module,
+  });
+
+  Future<bool> _isExamCompleted() async {
+    String moduleFixed = '';
+    if (module == 'Jr') {
+      moduleFixed = 'Junior';
+    }
+
+    if (module == 'Mid') {
+      moduleFixed = 'Middle';
+    }
+
+    if (module == 'Sr') {
+      moduleFixed = 'Senior';
+    }
+    final prefs = await SharedPreferences.getInstance();
+    final sharedPrefsService = SharedPreferencesService(prefs);
+    return await sharedPrefsService.isExamCompleted(language, moduleFixed);
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    /*  final examProvider = ref.watch(examProviderSelector(module));
+    final isExamStarted = ref.watch(examProvider); */
+    final progressUseCases = ref.watch(progressUseCasesProvider);
+
+    return FutureBuilder<double>(
+      future: progressUseCases.getProgressPercentageByModule(
+          language: language, module: module),
+      builder: (context, progressSnapshot) {
+        if (progressSnapshot.connectionState == ConnectionState.waiting) {
+          return const Center(child: CircularProgressIndicator());
+        } else if (progressSnapshot.hasError) {
+          debugPrint('Error en progreso: ${progressSnapshot.error}');
+          return Center(child: Text('Error: ${progressSnapshot.error}'));
+        }
+
+        final progressPercentage = progressSnapshot.data ?? 0.0;
+
+        return FutureBuilder<List<double>>(
+          future: _getLevelsProgressByModule(language, module, ref),
+          builder: (context, progressSnapshot) {
+            if (progressSnapshot.connectionState == ConnectionState.waiting) {
+              return const Center(child: CircularProgressIndicator());
+            } else if (progressSnapshot.hasError) {
+              debugPrint(
+                  'Error en progreso por nivel: ${progressSnapshot.error}');
+              return Center(child: Text('Error: ${progressSnapshot.error}'));
+            }
+
+            final progressList = progressSnapshot.data ?? [];
+
+            return FutureBuilder<Map<String, int>>(
+              future: _countScoresByModule(language, module, progressUseCases),
+              builder: (context, scoreSnapshot) {
+                if (scoreSnapshot.connectionState == ConnectionState.waiting) {
+                  return const Center(child: CircularProgressIndicator());
+                } else if (scoreSnapshot.hasError) {
+                  debugPrint('Error en puntos: ${scoreSnapshot.error}');
+                  return Center(child: Text('Error: ${scoreSnapshot.error}'));
+                }
+
+                final scoreData =
+                    scoreSnapshot.data ?? {'userScore': 0, 'maxScore': 0};
+                final userScore = scoreData['userScore']!;
+                final maxScore = scoreData['maxScore']!;
+
+                return Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(left: 30),
+                              child: Text(
+                                '👨🏼‍💻 $module',
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 20),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.fromLTRB(30, 10, 20, 10),
+                              child: SizedBox(
+                                height: 150,
+                                child: StatisticsScoreWidget(
+                                  progressListScores: progressList,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  const EdgeInsets.fromLTRB(30, 10, 30, 10),
+                              child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    const Text(
+                                      'Examen final:',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12),
+                                    ),
+                                    FutureBuilder<bool>(
+                                      future: _isExamCompleted(),
+                                      builder: (context, snapshot) {
+                                        if (snapshot.connectionState ==
+                                            ConnectionState.waiting) {
+                                          return const Text('Verificando...',
+                                              style: TextStyle(fontSize: 10));
+                                        } else if (snapshot.hasError) {
+                                          return const Text(
+                                              'Error al verificar',
+                                              style: TextStyle(fontSize: 10));
+                                        }
+
+                                        final isCompleted =
+                                            snapshot.data ?? false;
+                                        return Text(
+                                          isCompleted
+                                              ? 'Finalizado'
+                                              : 'No iniciado',
+                                          style: const TextStyle(fontSize: 10),
+                                        );
+                                      },
+                                    ),
+                                    const SizedBox(height: 10),
+                                    const Text(
+                                      'Puntos acumulados:',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 12),
+                                    ),
+                                    Text(
+                                      '$userScore/$maxScore',
+                                      style: const TextStyle(fontSize: 10),
+                                    ),
+                                  ]),
+                            ),
+                            const Divider(),
+                          ],
+                        ),
+                        const Spacer(),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 10, right: 25),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              const Text(
+                                'Progreso',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 19),
+                              ),
+                              const SizedBox(height: 15),
+                              CircularProgressWidget(
+                                  progress: progressPercentage),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    const Divider(
+                      color: Colors.grey,
+                    )
+                  ],
+                );
+              },
+            );
+          },
+        );
+      },
+    );
+  }
+
+  Future<Map<String, int>> _countScoresByModule(
+    String language,
+    String module,
+    ProgressUseCases useCases,
+  ) async {
+    try {
+      final userScore = await useCases.countTotalScoreByModule(
+        language: language,
+        module: module,
+      );
+
+      final totalSubtopics =
+          await useCases.countTotalSubtopicsByModuleInProgrammingContent(
+        language,
+        module,
+      );
+
+      return {
+        'userScore': userScore,
+        'maxScore': totalSubtopics *
+            2, //este campo es el de puntos maximos de mis puntajes, lo que eel usuario debe alcanzar
+      };
+    } catch (e) {
+      debugPrint('Error en _getAccumulatedPoints: $e');
+      return {'userScore': 0, 'maxScore': 0};
+    }
+  }
+
+  Future<List<double>> _getLevelsProgressByModule(
+      String language, String module, WidgetRef ref) async {
+    final useCases = ref.read(progressUseCasesProvider);
+    final progressList = <double>[];
+
+    // Obtener el número de niveles del módulo
+    final totalLevels =
+        await useCases.countTotalLevelsByModuleInProgrammingContent(
+            language: language, module: module);
+
+    debugPrint(
+        '*** NUMERO DE NIVELES EN PROTG CONTENT en $module: $totalLevels');
+
+    // Obtener progreso para cada nivel
+    for (int level = 1; level <= totalLevels; level++) {
+      final progress = await useCases.getLevelProgressPercentage(
+        language: language,
+        module: module,
+        level: level,
+      );
+      progressList.add(progress);
+      debugPrint('Progreso nivel $level: $progress');
+    }
+
+    return progressList;
+  }
+
+  Future<List<int>> _getAllExistingLevelsByModule(
+      String language, String module, WidgetRef ref) async {
+    final useCases = ref.read(progressUseCasesProvider);
+    final listNumberOfLevels = <int>[];
+
+    // Obtener el número de niveles del módulo
+    final totalLevels =
+        await useCases.countTotalLevelsByModuleInProgrammingContent(
+            language: language, module: module);
+
+    debugPrint(
+        '*** NUMERO DE NIVELES EN PROTG CONTENT en $module: $totalLevels');
+
+    // Iterar sobre los niveles y obtener el progreso
+    for (int level = 1; level <= totalLevels; level++) {
+      listNumberOfLevels.add(level);
+    }
+
+    //establecer niveles completados
+    //final completedLevelList = _getLevelsProgressByModule(language, module, ref);
+
+    //ref.read(completedLevelListProvider.notifier).state =  await completedLevelList;
+
+    return listNumberOfLevels;
+  }
+}
+
+/* final completedLevelListProvider = StateProvider<List<int>>((ref) {
   return [];
 });
 
@@ -43,7 +314,7 @@ class ScoreInfoWidget extends ConsumerWidget {
 
         final progressPercentage = progressSnapshot.data ?? 0.0;
 
-        return FutureBuilder<List<int>>(
+        return FutureBuilder<List<double>>(
           future: _getAllExistingLevelsByModule(language, module, ref),
           builder: (context, levelsSnapshot) {
             if (levelsSnapshot.connectionState == ConnectionState.waiting) {
@@ -55,8 +326,8 @@ class ScoreInfoWidget extends ConsumerWidget {
 
             final progressList = levelsSnapshot.data ?? [];
 
-            return FutureBuilder<List<int>>(
-              future: _getCompletedLevelsByModule(language, module, ref),
+            return FutureBuilder<List<double>>(
+              future: _getLevelsProgressByModule(language, module, ref),
               builder: (context, completedSnapshot) {
                 if (completedSnapshot.connectionState ==
                     ConnectionState.waiting) {
@@ -105,7 +376,7 @@ class ScoreInfoWidget extends ConsumerWidget {
                             height: 150,
                             child: StatisticsScoreWidget(
                               progressListScores: progressList,
-                              completedLevelList: completedList,
+                              // completedLevelList: completedList,
                             ),
                           ),
                         ),
@@ -215,10 +486,10 @@ Future<Map<String, int>> _countScoresByModule(
 
 // Método en UI para obtener el progreso de cada nivel
 // No son los niveles completados sino el numero de niveles de cada módulo
-Future<List<int>> _getAllExistingLevelsByModule(
+Future<List<double>> _getAllExistingLevelsByModule(
     String language, String module, WidgetRef ref) async {
   final useCases = ref.read(progressUseCasesProvider);
-  final listNumberOfLevels = <int>[];
+  final listNumberOfLevels = <double>[];
 
   // Obtener el número de niveles del módulo
   final totalLevels =
@@ -229,19 +500,18 @@ Future<List<int>> _getAllExistingLevelsByModule(
 
   // Iterar sobre los niveles y obtener el progreso
   for (int level = 1; level <= totalLevels; level++) {
-    listNumberOfLevels.add(level);
+    listNumberOfLevels.add(level.toDouble());
   }
 
   //establecer niveles completados
-  final completedLevelList = _getCompletedLevelsByModule(language, module, ref);
+  //final completedLevelList = _getLevelsProgressByModule(language, module, ref);
 
-  ref.read(completedLevelListProvider.notifier).state =
-      await completedLevelList;
+  //ref.read(completedLevelListProvider.notifier).state =  await completedLevelList;
 
   return listNumberOfLevels;
 }
 
-Future<List<int>> _getCompletedLevelsByModule(
+/* Future<List<int>> _getCompletedLevelsByModule( //change name to _getProgressLevelByModule
     String language, String module, WidgetRef ref) async {
   final useCases = ref.read(progressUseCasesProvider);
   final listCompletedLevelIndexes = <int>[];
@@ -252,7 +522,7 @@ Future<List<int>> _getCompletedLevelsByModule(
           language: language, module: module);
 
   for (int i = 0; i < totalLevels; i++) {
-    final levelId = i + 1; // ID real del nivel
+    final levelId = i + 1;
     final isLevelCompleted = await useCases.isLevelCompleted(
       language: language,
       module: module,
@@ -266,7 +536,30 @@ Future<List<int>> _getCompletedLevelsByModule(
 
   return listCompletedLevelIndexes;
 }
+ */
 
+Future<List<double>> _getLevelsProgressByModule(
+    String language, String module, WidgetRef ref) async {
+  final useCases = ref.read(progressUseCasesProvider);
+  final progressList = <double>[];
+
+  // Obtener el número de niveles del módulo
+  final totalLevels =
+      await useCases.countTotalLevelsByModuleInProgrammingContent(
+          language: language, module: module);
+
+  // Obtener progreso para cada nivel
+  for (int level = 1; level <= totalLevels; level++) {
+    final progress = await useCases.getLevelProgressPercentage(
+      language: language,
+      module: module,
+      level: level,
+    );
+    progressList.add(progress);
+  }
+
+  return progressList;
+}
 
 
 // Método para obtener el progreso de cada nivel
@@ -320,4 +613,5 @@ Future<Map<String, int>> _getAccumulatedPoints(
   };
 }
 
+ */
  */

@@ -3,7 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:lottie/lottie.dart';
 import 'package:rutacode/common/core/ads/banner/ad_banner_provider_result.dart';
+import 'package:rutacode/common/core/services/shared_preferences_service.dart';
 import 'package:rutacode/features/exam/presentation/state/provider/exam_providers.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import '../widgets/result_item_widget.dart';
 
 class ResultsScreen extends ConsumerStatefulWidget {
@@ -28,14 +30,18 @@ class _ResultsScreenState extends ConsumerState<ResultsScreen> {
             context,
             screenId: 'resultScreen',
           );
+
+      _setExamCompleted();
     });
   }
 
   @override
   void dispose() {
     _loadingFuture.ignore();
-    ref.read(examStateProvider.notifier).resetExamState();
-    ref.read(adBannerProviderResult.notifier).disposeCurrentAd();
+    if (mounted) {
+      ref.read(examStateProvider.notifier).resetExamState();
+      ref.read(adBannerProviderResult.notifier).disposeCurrentAd();
+    }
     super.dispose();
   }
 
@@ -61,6 +67,16 @@ class _ResultsScreenState extends ConsumerState<ResultsScreen> {
       debugPrint('Error calculando resultados: $e');
       return false;
     }
+  }
+
+  Future<void> _setExamCompleted() async {
+    final language = ref.watch(examLanguageSelectedProvider);
+    final module = ref.watch(examModuleSelectedProvider);
+
+    final prefs = await SharedPreferences.getInstance();
+    final sharedPrefsService = SharedPreferencesService(prefs);
+
+    sharedPrefsService.markExamAsCompleted(language, module);
   }
 
   @override

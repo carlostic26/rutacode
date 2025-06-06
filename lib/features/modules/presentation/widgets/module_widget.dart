@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rutacode/features/modules/presentation/providers/navigation_home_page_state.dart';
-import 'package:rutacode/features/level/presentation/state/completed_levels_shp_provider.dart';
-import 'package:rutacode/features/level/presentation/state/module_status_provider.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
 
 class ModuleWidget extends ConsumerWidget {
@@ -17,11 +15,6 @@ class ModuleWidget extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-/*     final jrModuleStatus = ref.watch(jrModuleStatusProvider);
-    final middleModuleStatus = ref.watch(middleModuleStatusProvider);
-
-    ref.watch(completedLevelsProvider);
- */
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -99,7 +92,7 @@ class ModuleWidget extends ConsumerWidget {
             ),
             child: Center(
               child: Container(
-                height: widthScreen * 0.3,
+                height: double.infinity,
                 width: heightScreen * 0.15,
                 decoration: BoxDecoration(
                   color: Colors.black.withOpacity(0.3),
@@ -111,65 +104,6 @@ class ModuleWidget extends ConsumerWidget {
                   size: 60,
                 ),
               ),
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildLoadingModule({
-    required String title,
-    required String imagePath,
-  }) {
-    return Column(
-      children: [
-        Text(
-          title,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        const SizedBox(height: 10),
-        Container(
-          width: widthScreen * 0.5,
-          height: heightScreen * 0.15,
-          decoration: BoxDecoration(
-            color: Colors.black.withOpacity(0.5),
-            borderRadius: BorderRadius.circular(25),
-          ),
-          child: const Center(child: CircularProgressIndicator()),
-        ),
-      ],
-    );
-  }
-
-  Widget _buildErrorModule({
-    required String title,
-    required String imagePath,
-  }) {
-    return Column(
-      children: [
-        Text(
-          title,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 18,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        const SizedBox(height: 10),
-        Container(
-          width: widthScreen * 0.5,
-          height: heightScreen * 0.15,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(25),
-            image: DecorationImage(
-              scale: 0.5,
-              image: AssetImage(imagePath),
-              fit: BoxFit.cover,
             ),
           ),
         ),

@@ -8,6 +8,15 @@ class ProgressUseCases {
 
   // ========== Operaciones básicas de progreso ==========
 
+  Future<double> getLevelProgressPercentage({
+    required String language,
+    required String module,
+    required int level,
+  }) async {
+    return _repository.getLevelProgressPercentage(
+        language: language, module: module, level: level);
+  }
+
   Future<void> setScoreBySubtopic({
     required String language,
     required String module,

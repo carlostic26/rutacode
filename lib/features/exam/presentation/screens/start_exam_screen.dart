@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rutacode/common/core/services/shared_preferences_service.dart';
 import 'package:rutacode/features/exam/presentation/screens/exam_screen.dart';
 import 'package:rutacode/features/progress/presentation/state/start_exam_provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class StartExamScreen extends ConsumerStatefulWidget {
   final String language;
@@ -130,7 +132,7 @@ class _StartExamScreenState extends ConsumerState<StartExamScreen>
                           Padding(
                             padding: const EdgeInsets.only(top: 24),
                             child: CircularProgressIndicator(
-                              color: Colors.blue[300],
+                              color: Colors.indigo[300],
                             ),
                           ),
                       ],

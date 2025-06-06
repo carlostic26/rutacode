@@ -75,6 +75,14 @@ class ChooseExamScreen extends ConsumerWidget {
                       title: Text(
                         module,
                       ),
+                      trailing: const Text(
+                        'Iniciar',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14,
+                          color: Colors.indigo,
+                        ),
+                      ),
                       onTap: () {
                         ref.read(actualLanguageProvider.notifier).state =
                             language.language!;

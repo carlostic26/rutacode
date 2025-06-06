@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rutacode/features/exam/presentation/screens/choose_exam_screen.dart';
 import 'package:rutacode/features/home/presentation/provider/language_providers.dart';
 import 'package:rutacode/features/home/presentation/widgets/leanguage_card_widget.dart';
 import 'package:rutacode/features/modules/presentation/screens/module_screen.dart';
@@ -26,6 +27,19 @@ class HomeLanguageScreen extends ConsumerWidget {
               icon: const Icon(Icons.menu),
             ),
           ),
+
+          actions: [
+            IconButton(
+              icon: const Icon(Icons.checklist),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ChooseExamScreen(),
+                    ));
+              },
+            ),
+          ],
           centerTitle: true,
           foregroundColor: Colors.white,
         ),

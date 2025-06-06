@@ -1,29 +1,24 @@
-class ExamQuestionModel {
-  final String id;
-  final String questionText;
-  final List<String> options;
-  final String correctAnswer;
-  final String language;
-  final String moduleId;
+import 'package:rutacode/features/exam/domain/entities/exam_question.dart';
 
+class ExamQuestionModel extends ExamQuestion {
   ExamQuestionModel({
-    required this.id,
-    required this.questionText,
-    required this.options,
-    required this.correctAnswer,
-    required this.language,
-    required this.moduleId,
+    required super.id,
+    required super.language,
+    required super.module,
+    required super.questionText,
+    required super.options,
+    required super.correctAnswer,
   });
 
   // Convertir un Map a ExamQuestionModel
   factory ExamQuestionModel.fromMap(Map<String, dynamic> map) {
     return ExamQuestionModel(
       id: map['id'],
+      language: map['language'],
+      module: map['module'],
       questionText: map['questionText'],
       options: (map['options'] as String).split(','),
       correctAnswer: map['correctAnswer'],
-      language: map['language'],
-      moduleId: map['moduleId'],
     );
   }
 
@@ -31,11 +26,11 @@ class ExamQuestionModel {
   Map<String, dynamic> toMap() {
     return {
       'id': id,
+      'language': language,
+      'module': module,
       'questionText': questionText,
       'options': options.join(','),
       'correctAnswer': correctAnswer,
-      'language': language,
-      'moduleId': moduleId,
     };
   }
 }
