@@ -1,3 +1,4 @@
+import 'package:rutacode/common/feature/content/data/datasources/languages/aws/main_insert_aws.dart';
 import 'package:rutacode/common/feature/content/data/datasources/languages/java/main_insert_java.dart';
 import 'package:rutacode/common/feature/content/data/datasources/languages/javascript/main_insert_js.dart';
 import 'package:rutacode/common/feature/content/data/datasources/languages/linux/main_insert_linux.dart';
@@ -10,7 +11,7 @@ import 'package:path/path.dart';
 class LocalContentDatabaseHelper {
   final Database? testDatabase;
   Database? _database;
-  int dbVersion = 6;
+  int dbVersion = 11;
 
   LocalContentDatabaseHelper({this.testDatabase});
 
@@ -57,6 +58,7 @@ class LocalContentDatabaseHelper {
         await InsertJsData.insertJsData(db);
         await InsertCppData.insertCppData(db);
         await InsertLinuxData.insertLinuxData(db);
+        await InsertAwsData.insertAwsData(db);
 
         await insertLanguageData(db);
       },

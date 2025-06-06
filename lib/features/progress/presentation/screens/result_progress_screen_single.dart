@@ -80,7 +80,11 @@ class _ResultProgressScreenState
 
   @override
   void dispose() {
-    ref.read(adBannerProviderPuntajes.notifier).disposeCurrentAd();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        ref.read(adBannerProviderPuntajes.notifier).disposeCurrentAd();
+      }
+    });
     super.dispose();
   }
 }

@@ -9,7 +9,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
           '¿Cuál de los siguientes no es un modelo de servicio de Cloud Computing?',
       options: ['A) IaaS', 'B) PaaS', 'C) SaaS', 'D) BaaS'],
       correctAnswer: 'D',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -23,7 +23,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Nube Comunitaria'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -37,7 +37,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Development, Testing, Production'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     // Topic 2: Cuenta y Facturación AWS
@@ -52,7 +52,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) AWS Trusted Advisor'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -66,7 +66,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Billing Dashboard'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     // Topic 3: AWS Global Infrastructure
@@ -80,7 +80,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Áreas para clientes específicos en ubicaciones on-premises.'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -94,7 +94,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) AWS Transit Gateway'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -107,7 +107,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Realizar migraciones de grandes volúmenes de datos.'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     // Topic 4: Interfaz de AWS
@@ -122,7 +122,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) AWS CloudFormation'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -136,7 +136,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) AWS Mobile App'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
 
@@ -153,7 +153,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) EBS Volumes'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -166,7 +166,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Reglas de firewall para proteger instancias EC2.'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     // Topic 2: Elastic Load Balancing
@@ -181,7 +181,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Gateway Load Balancer (GLB)'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -195,7 +195,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Stickiness'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     // Topic 3: Auto Scaling
@@ -210,7 +210,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Lifecycle Hooks'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -224,7 +224,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Instance Types'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     // Topic 4: AWS Lambda
@@ -239,7 +239,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Bases de datos autogestionadas'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -252,7 +252,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Una herramienta para monitorear el rendimiento de Lambda.'
       ],
       correctAnswer: 'A',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
 
@@ -268,7 +268,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Almacenamiento de bases de datos'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -282,7 +282,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) S3 Intelligent-Tiering'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -296,7 +296,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Ciclo de vida'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     // Topic 2: Amazon EBS
@@ -311,7 +311,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Provisioned IOPS SSD (io1/io2)'
       ],
       correctAnswer: 'D',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -325,7 +325,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Backups automáticos'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     // Topic 3: Amazon EFS
@@ -340,7 +340,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) AWS Storage Gateway'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -354,7 +354,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Volúmenes de arranque para instancias EC2.'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
 
@@ -369,7 +369,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Cache Gateway'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -382,7 +382,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Distribuir contenido a nivel mundial.'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
 
@@ -399,7 +399,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Automated Backups'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -408,7 +408,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
           '¿Cuál de los siguientes motores de base de datos no es soportado por Amazon RDS?',
       options: ['A) MySQL', 'B) PostgreSQL', 'C) Oracle', 'D) MongoDB'],
       correctAnswer: 'D',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -422,7 +422,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Logs de transacciones'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     // Topic 2: Amazon DynamoDB
@@ -436,7 +436,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Almacén de datos'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -450,7 +450,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Capacidad Reservada'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -459,7 +459,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
           '¿Qué componente de DynamoDB se utiliza para optimizar las consultas y proporcionar acceso rápido a diferentes patrones de acceso a los datos?',
       options: ['A) Tablas', 'B) Atributos', 'C) Índices', 'D) Particiones'],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     // Topic 3: Amazon ElastiCache
@@ -469,7 +469,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
           '¿Cuál de los siguientes motores de caché es compatible con Amazon ElastiCache y es conocido por su persistencia de datos y estructuras de datos más complejas?',
       options: ['A) Memcached', 'B) Redis', 'C) Varnish', 'D) Nginx'],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -482,7 +482,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Procesamiento de grandes volúmenes de datos para análisis.'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     // Topic 4: AWS Database Migration Service
@@ -497,7 +497,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Migración en caliente'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -511,7 +511,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Schema conversion'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
 
@@ -528,7 +528,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) NAT Gateway'
       ],
       correctAnswer: 'D',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -542,7 +542,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) VPN Connection'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -556,7 +556,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Internet Gateway'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     // Topic 2: Seguridad en AWS
@@ -566,7 +566,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
           '¿Qué entidad de IAM se utiliza para otorgar permisos a servicios de AWS para interactuar con otros servicios en su nombre?',
       options: ['A) Usuarios', 'B) Grupos', 'C) Roles', 'D) Políticas'],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -580,7 +580,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) AWS Security Hub'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -594,7 +594,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Session Policy'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     // Topic 3: AWS Direct Connect
@@ -609,7 +609,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) AWS Global Accelerator'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     // Topic 4: AWS WAF y Shield
@@ -624,7 +624,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) AWS Security Hub'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
 
@@ -640,7 +640,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Dashboards de visualización de datos.'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -649,7 +649,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
           '¿Qué característica de CloudWatch te notifica cuando una métrica supera un umbral especificado?',
       options: ['A) Dashboards', 'B) Logs', 'C) Eventos', 'D) Alarmas'],
       correctAnswer: 'D',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     // Topic 2: AWS CloudTrail
@@ -664,7 +664,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) AWS Systems Manager'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     ExamQuestionModel(
@@ -678,7 +678,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Amazon Glacier'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
     // Topic 3: AWS Systems Manager
@@ -693,7 +693,7 @@ Future<void> preloadAwsJrQuestions(Database db, tableName) async {
         'D) Maintenance Windows'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Jr',
     ),
   ];
@@ -717,7 +717,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Complejidad de Integración'
       ],
       correctAnswer: 'D',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -731,7 +731,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) AWS Audit Manager'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -745,7 +745,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Optimización de Costos'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     // Topic 2: High Availability
@@ -760,7 +760,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Auto Scaling'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -774,7 +774,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Edge Location deployment'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -788,7 +788,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) All-at-once deployment'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     // Topic 3: Escalabilidad
@@ -803,7 +803,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Elasticidad'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -817,7 +817,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Peer-to-Peer'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -831,7 +831,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Database Replication'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     // Topic 4: Disaster Recovery
@@ -846,7 +846,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Multi-site active/active'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -860,7 +860,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Cold standby'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
 
@@ -877,7 +877,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Inline Policies'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -886,7 +886,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
           '¿Qué elemento de las políticas IAM permite especificar condiciones bajo las cuales un permiso es efectivo?',
       options: ['A) Action', 'B) Effect', 'C) Resource', 'D) Conditions'],
       correctAnswer: 'D',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     // Topic 2: Encriptación
@@ -901,7 +901,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) AWS WAF'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -915,7 +915,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) CloudHSM key'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -929,7 +929,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) AWS WAF'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     // Topic 3: Detección de Amenazas
@@ -944,7 +944,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) AWS Security Hub'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -958,7 +958,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) AWS Security Hub'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     // Topic 4: Compliance
@@ -973,7 +973,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) AWS Trusted Advisor'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -987,7 +987,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) CIS AWS Foundations Benchmark'
       ],
       correctAnswer: 'D',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
 
@@ -1004,7 +1004,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Container Instance'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -1017,7 +1017,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Una herramienta para monitorear el rendimiento de los contenedores.'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     // Topic 2: Amazon EKS
@@ -1032,7 +1032,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) AWS App Runner'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -1045,7 +1045,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Los volúmenes de almacenamiento persistente para EKS.'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     // Topic 3: AWS Fargate
@@ -1060,7 +1060,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Amazon EKS'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -1074,7 +1074,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Solo es compatible con aplicaciones monolíticas.'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     // Topic 4: Serverless Avanzado
@@ -1089,7 +1089,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Amazon EventBridge'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -1103,7 +1103,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) AWS Lambda'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -1117,7 +1117,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) AWS Trusted Advisor'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
 
@@ -1134,7 +1134,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) AWS CodeCommit'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -1148,7 +1148,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) AWS CodeCommit'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -1162,7 +1162,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) AWS CodeCommit'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     // Topic 2: Infrastructure as Code
@@ -1177,7 +1177,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) AWS Config'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -1191,7 +1191,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Drift Detection'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     // Topic 3: Configuración Automatizada
@@ -1206,7 +1206,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) AWS AppConfig'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     // Topic 4: Monitoreo Avanzado
@@ -1221,7 +1221,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) CloudWatch Dashboards'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -1235,7 +1235,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) CloudWatch ServiceLens'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
 
@@ -1252,7 +1252,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Se basa en almacenamiento local para todas las copias de los datos.'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -1266,7 +1266,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Aurora Read Replicas'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     // Topic 2: Amazon Redshift
@@ -1280,7 +1280,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Gráfica'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -1294,7 +1294,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Redshift Concurrency Scaling'
       ],
       correctAnswer: 'A',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     // Topic 3: Amazon Neptune
@@ -1308,7 +1308,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Gráfica'
       ],
       correctAnswer: 'D',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -1317,7 +1317,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
           '¿Qué lenguaje de consulta se utiliza comúnmente con Amazon Neptune para grafos de propiedades?',
       options: ['A) SQL', 'B) SPARQL', 'C) Gremlin', 'D) Cypher'],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     // Topic 4: Amazon QLDB
@@ -1332,7 +1332,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Gráfica'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -1346,7 +1346,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Alta disponibilidad'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
 
@@ -1363,7 +1363,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) S3 Storage Lens'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -1377,7 +1377,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) S3 Replication'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     // Topic 2: AWS Glue
@@ -1392,7 +1392,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) AWS Data Pipeline'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     ExamQuestionModel(
@@ -1401,7 +1401,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
           'En AWS Glue, ¿qué componente es un repositorio de metadatos centralizado para descubrir y organizar los datos?',
       options: ['A) Crawlers', 'B) Jobs', 'C) Data Catalog', 'D) Triggers'],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
     // Topic 3: Amazon SageMaker
@@ -1416,7 +1416,7 @@ Future<void> preloadAwsMidQuestions(Database db, tableName) async {
         'D) Amazon Polly'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Mid',
     ),
   ];
@@ -1440,7 +1440,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) AWS Site-to-Site VPN'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1454,7 +1454,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) AWS Client VPN'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1467,7 +1467,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Una VPC que se utiliza exclusivamente para fines de pruebas.'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 2: DNS y Balanceo de Carga Avanzado
@@ -1482,7 +1482,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Geolocation routing'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1496,7 +1496,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Multi-value answer routing'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1510,7 +1510,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Listener rules'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 3: Conectividad Híbrida Avanzada
@@ -1525,7 +1525,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Hosted VIF'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1539,7 +1539,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) AWS Local Zones'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 4: Seguridad de Red Avanzada
@@ -1554,7 +1554,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) AWS Firewall Manager'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1568,7 +1568,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Amazon GuardDuty'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
 
@@ -1585,7 +1585,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Repurchase'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1594,7 +1594,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
           '¿Qué estrategia de migración implica simplemente mover las aplicaciones existentes a la nube sin cambios significativos?',
       options: ['A) Replatform', 'B) Rehost', 'C) Refactor', 'D) Retire'],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 2: Herramientas de Migración
@@ -1609,7 +1609,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) AWS Migration Hub'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1623,7 +1623,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) AWS Transfer Family'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 3: Modernización de Aplicaciones
@@ -1638,7 +1638,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) N-Tier'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1652,7 +1652,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Amazon EC2'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 4: Despliegue de Contenedores Avanzado
@@ -1667,7 +1667,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Nomad'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1676,7 +1676,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
           '¿Qué concepto en Kubernetes representa un conjunto de réplicas de Pods idénticas que se pueden escalar y actualizar de forma controlada?',
       options: ['A) Pod', 'B) Deployment', 'C) Service', 'D) Namespace'],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
 
@@ -1693,7 +1693,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) AWS OpsWorks'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1707,7 +1707,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Automation'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 2: Gestión de Configuración y Cumplimiento
@@ -1722,7 +1722,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) AWS Systems Manager'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1736,7 +1736,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Remediation actions'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 3: Respaldo y Recuperación Avanzada
@@ -1751,7 +1751,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) AWS Snowball'
       ],
       correctAnswer: 'A',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1765,7 +1765,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) La capacidad de un sistema para escalar durante un desastre.'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 4: Observabilidad Avanzada
@@ -1780,7 +1780,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Amazon GuardDuty'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1789,7 +1789,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
           '¿Qué herramienta de código abierto se utiliza a menudo para la visualización de métricas y dashboards, y puede integrarse con Amazon Managed Prometheus?',
       options: ['A) Kibana', 'B) Grafana', 'C) Splunk', 'D) Tableau'],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1803,7 +1803,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Fluentd'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
 
@@ -1820,7 +1820,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Amazon EMR'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1834,7 +1834,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Data Transformation'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 2: ETL Avanzado
@@ -1849,7 +1849,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Glue Interactive Sessions'
       ],
       correctAnswer: 'D',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1863,7 +1863,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Automated transforms'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 3: Streaming Avanzado
@@ -1878,7 +1878,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Kinesis Video Streams'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1892,7 +1892,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Apache Cassandra'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1906,7 +1906,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Amazon MQ'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 4: Analytics Avanzado
@@ -1921,7 +1921,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Views'
       ],
       correctAnswer: 'A',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1935,7 +1935,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) AWS Glue'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
 
@@ -1952,7 +1952,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) SageMaker Canvas'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1966,7 +1966,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) AI Research'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -1980,7 +1980,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Hybrid ML'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 2: IoT
@@ -1995,7 +1995,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) AWS IoT Analytics'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -2009,7 +2009,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) AWS IoT Events'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -2023,7 +2023,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) AWS IoT SiteWise'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 3: Blockchain
@@ -2038,7 +2038,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) AWS Blockchain Explorer'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -2052,7 +2052,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Corda'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 4: Quantum Computing
@@ -2067,7 +2067,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) AWS Quantum Accelerator'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 5: Realidad Virtual/Aumentada
@@ -2082,7 +2082,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Amazon Comprehend'
       ],
       correctAnswer: 'A',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
 
@@ -2099,7 +2099,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Consolidated billing'
       ],
       correctAnswer: 'A',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     ExamQuestionModel(
@@ -2113,7 +2113,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Un tipo de política de seguridad.'
       ],
       correctAnswer: 'B',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 2: AWS Control Tower
@@ -2128,7 +2128,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) AWS Security Hub'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
     // Topic 3: Cost Optimization Avanzada
@@ -2143,7 +2143,7 @@ Future<void> preloadAwsSrQuestions(Database db, tableName) async {
         'D) Savings Plans'
       ],
       correctAnswer: 'C',
-      language: 'AWS',
+      language: 'Aws',
       module: 'Sr',
     ),
   ];
