@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:rutacode/core/app_config.dart';
+import 'package:rutacode/common/core/app_config.dart';
 import 'package:rutacode/features/exam/presentation/screens/choose_exam_screen.dart';
 import 'package:rutacode/features/home/presentation/screens/impostor_screen.dart';
 import 'package:rutacode/features/home/presentation/screens/app_support.dart';

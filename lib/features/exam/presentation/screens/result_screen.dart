@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:lottie/lottie.dart';
-import 'package:rutacode/core/ads/banner/ad_banner_provider_result.dart';
+import 'package:rutacode/common/core/ads/banner/ad_banner_provider_result.dart';
 import 'package:rutacode/features/exam/presentation/state/provider/exam_providers.dart';
 import '../widgets/result_item_widget.dart';
 

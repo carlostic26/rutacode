@@ -1,33 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:rutacode/core/ads/ads_manager.dart';
+import 'package:rutacode/common/core/ads/ads_manager.dart';
 
-final adBannerProviderHome =
-    StateNotifierProvider<AdBannerNotifierHome, AdBannerStateHome>(
-  (ref) => AdBannerNotifierHome(),
+final adBannerProviderDetail =
+    StateNotifierProvider<AdBannerNotifierDetail, AdBannerStateDetail>(
+  (ref) => AdBannerNotifierDetail(),
 );
 
-class AdBannerStateHome {
+class AdBannerStateDetail {
   final BannerAd? bannerAd;
   final bool isLoaded;
   final AnchoredAdaptiveBannerAdSize? adSize;
   final String? currentScreen; // Identificador de pantalla
 
-  AdBannerStateHome({
+  AdBannerStateDetail({
     this.bannerAd,
     this.isLoaded = false,
     this.adSize,
     this.currentScreen,
   });
 
-  AdBannerStateHome copyWith({
+  AdBannerStateDetail copyWith({
     BannerAd? bannerAd,
     bool? isLoaded,
     AnchoredAdaptiveBannerAdSize? adSize,
     String? currentScreen,
   }) {
-    return AdBannerStateHome(
+    return AdBannerStateDetail(
       bannerAd: bannerAd ?? this.bannerAd,
       isLoaded: isLoaded ?? this.isLoaded,
       adSize: adSize ?? this.adSize,
@@ -36,8 +36,8 @@ class AdBannerStateHome {
   }
 }
 
-class AdBannerNotifierHome extends StateNotifier<AdBannerStateHome> {
-  AdBannerNotifierHome() : super(AdBannerStateHome());
+class AdBannerNotifierDetail extends StateNotifier<AdBannerStateDetail> {
+  AdBannerNotifierDetail() : super(AdBannerStateDetail());
 
   final RutaAdsIds adsIds = RutaAdsIds();
   bool _isLoading = false;
@@ -65,7 +65,7 @@ class AdBannerNotifierHome extends StateNotifier<AdBannerStateHome> {
 
       if (adSize == null) {
         debugPrint('No se pudo obtener el tamaño adaptativo');
-        state = AdBannerStateHome(currentScreen: screenId);
+        state = AdBannerStateDetail(currentScreen: screenId);
         return;
       }
 
@@ -76,7 +76,7 @@ class AdBannerNotifierHome extends StateNotifier<AdBannerStateHome> {
         request: const AdRequest(),
         listener: BannerAdListener(
           onAdLoaded: (Ad ad) {
-            state = AdBannerStateHome(
+            state = AdBannerStateDetail(
               bannerAd: ad as BannerAd,
               isLoaded: true,
               adSize: adSize,
@@ -87,26 +87,26 @@ class AdBannerNotifierHome extends StateNotifier<AdBannerStateHome> {
           onAdFailedToLoad: (Ad ad, LoadAdError error) {
             debugPrint('Error al cargar el banner: ${error.message}');
             ad.dispose();
-            state = AdBannerStateHome(currentScreen: screenId);
+            state = AdBannerStateDetail(currentScreen: screenId);
             _isLoading = false;
           },
         ),
       );
 
       // Estado intermedio mientras carga
-      state = AdBannerStateHome(currentScreen: screenId);
+      state = AdBannerStateDetail(currentScreen: screenId);
       await bannerAd.load();
     } catch (e) {
       debugPrint('Error en loadAdaptiveAd: $e');
       _isLoading = false;
-      state = AdBannerStateHome(currentScreen: screenId);
+      state = AdBannerStateDetail(currentScreen: screenId);
     }
   }
 
   void disposeCurrentAd() {
     if (state.bannerAd != null) {
       state.bannerAd!.dispose();
-      state = AdBannerStateHome();
+      state = AdBannerStateDetail();
     }
   }
 

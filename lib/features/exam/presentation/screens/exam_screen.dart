@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:rutacode/core/ads/banner/ad_banner_provider_exam.dart';
+import 'package:rutacode/common/core/ads/banner/ad_banner_provider_exam.dart';
 import 'package:rutacode/features/exam/presentation/screens/result_screen.dart';
 import 'package:rutacode/features/exam/presentation/screens/start_exam_screen.dart';
 import 'package:rutacode/features/exam/presentation/state/provider/exam_providers.dart';

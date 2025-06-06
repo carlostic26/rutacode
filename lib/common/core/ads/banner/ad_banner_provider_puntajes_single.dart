@@ -1,33 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:rutacode/core/ads/ads_manager.dart';
+import 'package:rutacode/common/core/ads/ads_manager.dart';
 
-final adBannerProviderResult =
-    StateNotifierProvider<AdBannerNotifierResult, AdBannerStateResult>(
-  (ref) => AdBannerNotifierResult(),
+final adBannerProviderPuntajesSingle = StateNotifierProvider<
+    AdBannerNotifierPuntajes, AdBannerStatePuntajesSingle>(
+  (ref) => AdBannerNotifierPuntajes(),
 );
 
-class AdBannerStateResult {
+class AdBannerStatePuntajesSingle {
   final BannerAd? bannerAd;
   final bool isLoaded;
   final AnchoredAdaptiveBannerAdSize? adSize;
   final String? currentScreen;
 
-  AdBannerStateResult({
+  AdBannerStatePuntajesSingle({
     this.bannerAd,
     this.isLoaded = false,
     this.adSize,
     this.currentScreen,
   });
 
-  AdBannerStateResult copyWith({
+  AdBannerStatePuntajesSingle copyWith({
     BannerAd? bannerAd,
     bool? isLoaded,
     AnchoredAdaptiveBannerAdSize? adSize,
     String? currentScreen,
   }) {
-    return AdBannerStateResult(
+    return AdBannerStatePuntajesSingle(
       bannerAd: bannerAd ?? this.bannerAd,
       isLoaded: isLoaded ?? this.isLoaded,
       adSize: adSize ?? this.adSize,
@@ -36,8 +36,9 @@ class AdBannerStateResult {
   }
 }
 
-class AdBannerNotifierResult extends StateNotifier<AdBannerStateResult> {
-  AdBannerNotifierResult() : super(AdBannerStateResult());
+class AdBannerNotifierPuntajes
+    extends StateNotifier<AdBannerStatePuntajesSingle> {
+  AdBannerNotifierPuntajes() : super(AdBannerStatePuntajesSingle());
 
   final RutaAdsIds adsIds = RutaAdsIds();
   bool _isLoading = false;
@@ -65,7 +66,7 @@ class AdBannerNotifierResult extends StateNotifier<AdBannerStateResult> {
 
       if (adSize == null) {
         debugPrint('No se pudo obtener el tamaño adaptativo');
-        state = AdBannerStateResult(currentScreen: screenId);
+        state = AdBannerStatePuntajesSingle(currentScreen: screenId);
         return;
       }
 
@@ -76,7 +77,7 @@ class AdBannerNotifierResult extends StateNotifier<AdBannerStateResult> {
         request: const AdRequest(),
         listener: BannerAdListener(
           onAdLoaded: (Ad ad) {
-            state = AdBannerStateResult(
+            state = AdBannerStatePuntajesSingle(
               bannerAd: ad as BannerAd,
               isLoaded: true,
               adSize: adSize,
@@ -87,26 +88,26 @@ class AdBannerNotifierResult extends StateNotifier<AdBannerStateResult> {
           onAdFailedToLoad: (Ad ad, LoadAdError error) {
             debugPrint('Error al cargar el banner: ${error.message}');
             ad.dispose();
-            state = AdBannerStateResult(currentScreen: screenId);
+            state = AdBannerStatePuntajesSingle(currentScreen: screenId);
             _isLoading = false;
           },
         ),
       );
 
       // Estado intermedio mientras carga
-      state = AdBannerStateResult(currentScreen: screenId);
+      state = AdBannerStatePuntajesSingle(currentScreen: screenId);
       await bannerAd.load();
     } catch (e) {
       debugPrint('Error en loadAdaptiveAd: $e');
       _isLoading = false;
-      state = AdBannerStateResult(currentScreen: screenId);
+      state = AdBannerStatePuntajesSingle(currentScreen: screenId);
     }
   }
 
   void disposeCurrentAd() {
     if (state.bannerAd != null) {
       state.bannerAd!.dispose();
-      state = AdBannerStateResult();
+      state = AdBannerStatePuntajesSingle();
     }
   }
 
