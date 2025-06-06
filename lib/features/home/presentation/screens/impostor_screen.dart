@@ -113,7 +113,7 @@ class _ImpostorScreenState extends ConsumerState<ImpostorScreen> {
 
 Widget _buildAdBanner(AdBannerStateImpstr adState) {
   // Solo mostrar el banner si es para esta pantalla
-  if (adState.currentScreen == 'listItems' &&
+  if (adState.currentScreen == 'impstr' &&
       adState.bannerAd != null &&
       adState.isLoaded) {
     return SizedBox(

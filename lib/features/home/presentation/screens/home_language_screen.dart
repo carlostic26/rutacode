@@ -67,7 +67,8 @@ class HomeLanguageScreen extends ConsumerWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                            builder: (context) => const ModuleScreen(),
+                            builder: (context) =>
+                                const ModuleAndPathPageScreen(),
                           ));
                     }
                   },

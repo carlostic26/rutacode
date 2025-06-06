@@ -1,6 +1,95 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:rutacode/common/core/ads/banner/ad_banner_provider_puntajes_single.dart';
+import 'package:rutacode/features/home/presentation/provider/language_providers.dart';
+import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
+import 'package:rutacode/features/progress/presentation/pages/score_info_page.dart';
+
+class ResultProgressScreenSingle extends ConsumerStatefulWidget {
+  const ResultProgressScreenSingle({super.key});
+
+  @override
+  ConsumerState<ResultProgressScreenSingle> createState() =>
+      _ResultProgressScreenState();
+}
+
+class _ResultProgressScreenState
+    extends ConsumerState<ResultProgressScreenSingle> {
+  @override
+  void initState() {
+    super.initState();
+    // Cargar el anuncio después de un pequeño retraso para asegurar que el contexto esté disponible
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      ref.read(adBannerProviderPuntajesSingle.notifier).loadAdaptiveAd(
+            context,
+            screenId: 'progressScoreScreenSingle',
+          );
+    });
+  }
+
+  @override
+  void dispose() {
+    // Limpiar el anuncio al salir de la pantalla
+    ref.read(adBannerProviderPuntajesSingle.notifier).dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final adState = ref.watch(adBannerProviderPuntajesSingle);
+    final language = ref.watch(actualLanguageProvider);
+    final module = ref.watch(actualModuleProvider);
+
+    return Scaffold(
+      appBar: AppBar(
+        scrolledUnderElevation: 0,
+        elevation: 0,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.arrow_back_ios),
+        ),
+        centerTitle: true,
+        title: Text(
+          'Mis puntajes en $language',
+          style: const TextStyle(
+              fontWeight: FontWeight.bold, fontFamily: 'Inter', fontSize: 16),
+        ),
+      ),
+      body: ScoreInfoPage(language: language, module: module),
+      bottomNavigationBar: _buildAdBanner(adState),
+    );
+  }
+
+  Widget _buildAdBanner(AdBannerStatePuntajesSingle adState) {
+    if (adState.bannerAd != null && adState.isLoaded) {
+      return SafeArea(
+        child: Container(
+          color: Colors.transparent,
+          width: adState.bannerAd!.size.width.toDouble(),
+          height: adState.bannerAd!.size.height.toDouble(),
+          alignment: Alignment.center,
+          child: AdWidget(ad: adState.bannerAd!),
+        ),
+      );
+    } else {
+      // Mostrar un placeholder con la altura esperada del banner
+      return const SizedBox(
+        height: 50, // Altura aproximada de un banner
+        child: Center(
+          child: CircularProgressIndicator(),
+        ),
+      );
+    }
+  }
+}
+
+
+/* import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:rutacode/common/core/ads/banner/ad_banner_provider_puntajes_page.dart';
 import 'package:rutacode/common/core/ads/banner/ad_banner_provider_puntajes_single.dart';
 import 'package:rutacode/features/home/presentation/provider/language_providers.dart';
@@ -87,7 +176,7 @@ class _ResultProgressScreenState
     });
     super.dispose();
   }
-}
+} */
 
 /* import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

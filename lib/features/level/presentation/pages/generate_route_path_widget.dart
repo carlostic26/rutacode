@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rutacode/features/detail/data/models/detail_model.dart';
 import 'package:rutacode/features/home/presentation/provider/language_providers.dart';
+import 'package:rutacode/features/home/presentation/screens/app_support.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
 import 'package:rutacode/features/list_items/presentation/screens/list_content_screen.dart';
 import 'package:rutacode/features/progress/domain/use_cases/progress_use_cases.dart';
@@ -300,11 +301,11 @@ class _GenerateLevelsRoutePathWidgetState
               const SizedBox(height: 20),
               Center(
                 child: Padding(
-                  padding: const EdgeInsets.fromLTRB(20, 20, 20, 10),
+                  padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
                   child: Text(
                     content.titleLevel!,
                     style: const TextStyle(
-                      color: Colors.white,
+                      color: Colors.indigoAccent,
                       fontSize: 20.0,
                       fontWeight: FontWeight.bold,
                       fontFamily: 'Poppins',
@@ -312,34 +313,82 @@ class _GenerateLevelsRoutePathWidgetState
                   ),
                 ),
               ),
-              const SizedBox(height: 20),
-              ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor: WidgetStateProperty.all<Color>(moduleColor),
-                ),
-                child: const Text(
-                  'Continuar',
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Poppins',
+              const Center(
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(20, 20, 20, 10),
+                  child: Text(
+                    textAlign: TextAlign.center,
+                    'Entrarás a una lista de temas y subtemas que deberás completar. Los puntos se contarán despues de al menos 10 segundos',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14.0,
+                      fontFamily: 'Poppins',
+                    ),
                   ),
                 ),
-                onPressed: () {
-                  ref.read(actualLevelProvider.notifier).state = content.level!;
-                  ref.read(levelTitleProvider.notifier).state =
-                      content.titleLevel!;
-
-                  //Navigator.of(context).pop(); // Cerrar el diálogo primero
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ListContentScreen(),
+              ),
+              const SizedBox(height: 20),
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          WidgetStateProperty.all<Color>(Colors.grey),
                     ),
-                  ).then((_) =>
-                      onComplete()); // Ejecutar onComplete después de la navegación
-                },
+                    child: const Text(
+                      'Apoyar App',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Poppins',
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const AppSupport(),
+                        ),
+                      );
+                    },
+                  ),
+                  const SizedBox(
+                    width: 10,
+                  ),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          WidgetStateProperty.all<Color>(moduleColor),
+                    ),
+                    child: const Text(
+                      'Continuar',
+                      style: TextStyle(
+                        fontSize: 12,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Poppins',
+                      ),
+                    ),
+                    onPressed: () {
+                      ref.read(actualLevelProvider.notifier).state =
+                          content.level!;
+                      ref.read(levelTitleProvider.notifier).state =
+                          content.titleLevel!;
+
+                      //Navigator.of(context).pop(); // Cerrar el diálogo primero
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ListContentScreen(),
+                        ),
+                      ).then((_) =>
+                          onComplete()); // Ejecutar onComplete después de la navegación
+                    },
+                  ),
+                ],
               ),
             ],
           ),

@@ -135,7 +135,7 @@ class _AppSupportState extends State<AppSupport> {
             Icon(Icons.volunteer_activism, size: 50, color: Colors.blue),
             SizedBox(height: 20),
             Text(
-              'Tu apoyo nos ayuda a seguir mejorando la aplicación.',
+              'Nos ayuda a seguir mejorando RutaCode.',
               style: TextStyle(fontSize: 16),
               textAlign: TextAlign.center,
             ),
