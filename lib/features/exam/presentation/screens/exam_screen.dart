@@ -62,10 +62,12 @@ class _ExamScreenState extends ConsumerState<ExamScreen> {
 
   @override
   void dispose() {
-    if (mounted) {
-      ref.read(examStateProvider.notifier).resetExamState();
-      ref.read(adBannerProviderExam.notifier).disposeCurrentAd();
-    }
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      if (mounted) {
+        ref.read(examStateProvider.notifier).resetExamState();
+        ref.read(adBannerProviderExam.notifier).disposeCurrentAd();
+      }
+    });
     _pageController.dispose();
     super.dispose();
   }

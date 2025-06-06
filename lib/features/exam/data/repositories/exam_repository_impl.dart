@@ -110,6 +110,14 @@ class ExamRepositoryImpl implements ExamRepository {
       moduleId = 'Jr';
     }
 
+    if (module == 'Middle') {
+      moduleId = 'Mid';
+    }
+
+    if (module == 'Senior') {
+      moduleId = 'Sr';
+    }
+
     try {
       final rawQuestions = await _localDataSource.query(
         'exam_questions',
