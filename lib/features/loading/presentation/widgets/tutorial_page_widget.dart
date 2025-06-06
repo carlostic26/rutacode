@@ -20,14 +20,13 @@ class TutorialPageWidget extends StatelessWidget {
           child: Stack(
             fit: StackFit.expand,
             children: [
-              // Imagen de fondo
               Image.asset(
                 'assets/images/logo.jpg',
                 fit: BoxFit.cover,
                 opacity: const AlwaysStoppedAnimation(0.5),
               ),
 
-              // Degradado tipo Netflix
+              // Degradado
               Container(
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(

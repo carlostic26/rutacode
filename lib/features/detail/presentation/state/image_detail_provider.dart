@@ -7,22 +7,18 @@ final randomImageProvider = Provider.autoDispose<String>((ref) {
 });
 
 const List<String> flutterImages = [
-  'https://redwerk.es/wp-content/uploads/2019/10/f-image.png',
-  'https://miro.medium.com/v2/resize:fit:1400/1*-6WdIcd88w3pfphHOYln3Q.png',
-  'https://thinkupsoft.com/blog/wp-content/uploads/2024/04/Blog-Nota-4.png',
-  'https://cdn.prod.website-files.com/5f049e5db08fbfceae4cf2d3/660ee418d8d74186cd2b3085_Desarrollo%20de%20software%20flutter.webp',
-  'https://bs-uploads.toptal.io/blackfish-uploads/components/blog_post_page/4093279/cover_image/retina_1708x683/0722_Flutter_Advantages_and_Benefits_Zara_Newsletter___blog__1_-15db0c4f9f7a5d7390dfd7ee1b66eb71.png',
-  'https://blog.back4app.com/wp-content/uploads/2020/09/flutter-backend.png',
-  'https://redwerk.es/wp-content/uploads/2020/08/f-image.png',
-  'https://www.addevice.io/storage/ckeditor/uploads/images/65f840d316353_mobile.app.development.1920.1080.png',
-  'https://bairesdev.mo.cloudinary.net/blog/2023/10/Steps-of-Mobile-App-Development.jpg?tx=w_1920,q_auto',
-  'https://zd-brightspot.s3.us-east-1.amazonaws.com/wp-content/uploads/2023/10/12122423/mobile-app-development.jpg',
-  'https://www.moolnet.ca/services-img/mobile-app-development.png',
-  'https://media.istockphoto.com/id/1174690086/photo/software-developer-freelancer-working-at-home.jpg?s=612x612&w=0&k=20&c=loFqul06ggwtkwqSmzZnYfA72Vk7nFQOvDSzAN6YbtQ=',
-  'https://www.codemotion.com/magazine/wp-content/uploads/2020/12/altumcode-PuxTq4DwUHE-unsplash-896x504.jpg',
-  'https://raygun.com/blog/images/native-app-development/feature-2023.jpg',
-  'https://d3hfl9xoa8vpcx.cloudfront.net/Understanding%20Android%20SDK.webp',
-  'https://www.qt.io/hs-fs/hubfs/Qt_Phone_Pine_Green2%20(1).webp?width=850&name=Qt_Phone_Pine_Green2%20(1).webp',
-  'https://litslink.com/wp-content/uploads/2019/10/Best-mobile-app-development-blogs.png',
-  'https://cdn.prod.website-files.com/5db35de024bb988f5fb4e168/6616842e14f7fd0044604e2f_61e13fe824a0f7e552684313_what-is-unit-testing-in-mobile-development.jpeg'
+  'https://blogger.googleusercontent.com/img/a/AVvXsEj8GTipvDhyC2StmuQVv1SMsDxAospoGKPRsi7YKP0qiV5pdc9J5aK5qe1YTwQi-zo9Gmi5DmFZSol3MnlCw9B8v7n5dpOOX3KqPEnJiMDPCaVVXDJAEEyDmvniAgNJBM4n7vnh8VPqGInraKFVWazdA2Z51npc3vqYVtNjxEzo4TTbABocgIIbiGRx0Q',
+  'https://blogger.googleusercontent.com/img/a/AVvXsEizvZsJu_sn1yJBJAOtCJRI-Hl2XakO9uz-VzFxJVXTLVrqkTx24pK50KIWCMjYT2793yQL87H6vmbFx0ATZLCPlEDXOzBcdLspwBZUHqfBYF9anKa-zQ3ec3gMMyTN4dqBlyGmWkdwTC0XPI6fTFkyo-st_nuXkWUI-34aOq4MMHJGrn-h1hCVctKX1A',
+  'https://blogger.googleusercontent.com/img/a/AVvXsEj22pCVU3bqdzss2sdGFgfVbq_NxmeHovCzAYI0-qZlFDbQEUlIPXe9cNpn4d1K3JLJHn3wHKB0MD9Xb6doXQksWObhze1Xm5VAEoS4loQcrx0l958UrWcXQcO41xml6UO1KnaZUFhsDglAcSVHl7cM96SqsXbA1JlTmeky3cFRGqOQ1EyVnqJc7zIiIw',
+  'https://blogger.googleusercontent.com/img/a/AVvXsEhR_Srnm1-kiqrgJC94xYYN6MCPoiy_TnBIX0J46ggcPBnTT0NScefmHkbWffs6MnAXhIw_UbkmWRvFvP8S4VbL1fi6X3W_CWDWCNKknqa-AjPJOqnRoUwgz1VyJ_b1M6Ck409xw0tbciwokHzWJjzUKIUSA-ywWtQtL4qQrK90bbagqoEMRJ8i7w-LIg',
+  'https://blogger.googleusercontent.com/img/a/AVvXsEgVK_T8MdYqVn6t-nbCcWHB-T_YrM845PbR71ITz6U8WvBP-5t8TBBWLOjROyR1yQlT7-9GBBoGBBbE7-mKQzV1AFmqSMoa9kP8HvNui88_tpYnEc1CjY84DjuymnFm-mfmHP3vqj2WzxqGNRRFawDoQn244f8V2PP8Jw-aCBwwia0VCu9JRCZnOAGkcQ',
+  'https://blogger.googleusercontent.com/img/a/AVvXsEj84pjvBa2VZYetnCTjRsSSUMF5zNF2DsrCpDHP9O5dhMWD8nLHl7P8vAbnpRxUhnf9nXSCStayZ0Z1rX-OjfFVCaUQdHLS96nMTGikxwHuJ_rSNhwdx4rLSkgNohNkkU4-PmuR0CaWYP5rlNd1lJjbaweuGd6ncvlTLYk3WYPkTWQS4HuSj376P6C1tg',
+  'https://blogger.googleusercontent.com/img/a/AVvXsEihfUrRQe7qrkQPHW3WaowU9yduymp8ZnIvi7nPU7LB6HZnFaZptQjd6QLl3BYHvYmL9OK8Q2VmFHHJq1TU8uue2gQ1JKKTK04qLluzRO-W-vjWpLQvfuOXrLR6nYgn-G3Lm1ZjbEKVRF7RHugnI9rXcniDoeCAGgXU1SM6R6IBa4hy43vvMvbhq4zZGg',
+  'https://blogger.googleusercontent.com/img/a/AVvXsEhva--OTqg_FNsiCoX9c4VfsBe5ZS1mpuoElzqyvac_NHvJBR0d-Bpuwiyws78ap9-xaWQDp5tx3dcObaCUuK1ZwMBg3FF-SJYdL4INAfx0lHbdPmt5JAUpeY7TXPBSiAm21Epn7UWRyumF14ymjMnFrmlumQE9WfqWRXR1HFjh9wvksgh1DKRqrDYR0g',
+  'https://blogger.googleusercontent.com/img/a/AVvXsEg0E4lL0JCzqsIDtDruAu5aGTrMctG972TUpogdIg-M5XPXAxVE79HRuSN68dyZFQAGGtCxea8oeIW3i8gFieAI8NLOMkNt-HrCA_HtHszdXSwgoH9bxHNWcqzkUpPZg3nI-M2rMjMY-PgnaFT4KvfpmX_Yh2hXKJxv0n6BLWFnnbwIKJW44xp2nAhehA',
+  'https://blogger.googleusercontent.com/img/a/AVvXsEiyUZjfri_uLLrrscsrspJ4l1KTlLfbHrqGQCmUlaOWby7IXiKt-LKSXmXZQQeqZ3449ld4ZElmSSEl0wjw3SeTMWqEjJylODGg55IVfl9YG8QxkPCc4Jv4kDO1B7rLuggoHtIe6MmAZ1TL--OAOxMVJUxfZETRdabNatEA66Z3_xwrYhYvqoSJmVRx0A',
+  'https://blogger.googleusercontent.com/img/a/AVvXsEjRWZ4WISrD5rwCj_0uq-qw4h-DGf4k68FUm6fssEAkJasq1k79s43FoHXn-XjVaspVsOWuHeWCBDjtexZf4lb3f-_bBf3w3sVxCHV4mOjKK34P0B3jmp3SyzwGTP_un7QVEWF5xg_v9xWTevkpmnoE7WknsO4eS5EVAmssg58UuMrAVI_hLSNiw7UKQg',
+  'https://blogger.googleusercontent.com/img/a/AVvXsEirCaIMDCbkPQgpPSwyvbDGx_E9xUo0Kzt6MMeeFZg5nVfMtHlub9_0gyS3035SREmGlgJO3YVxa9P10CM9qyzn2ty627C2ArSTk-xTOC0WOl0Wn2-X6fCQcVcRu0lRWyjSCk1i9C-Gq_Xxm7WDRpnH6w-NV3BqNsTRAvxA3Vji60xRSrbJQQ9gGxxIqQ',
+  'https://blogger.googleusercontent.com/img/a/AVvXsEhwVmOgsRFHjNDIBrpS4fI9gNsUhAvN14BHDMFjlk_mcT3aZ8QRZ7USP4wFhUyvnlFMat_MzdANLIaV0gZyTPOR8zw5xDh3K93OZ_2YyYVd6bdprF64MMd-rNXjOzyJ0khkzhbwLr27mqFnM-MN9f-Ihe5QcQOFxTu5c7ZO-LtRqsYrnVpZqJ1VSI_Hiw',
+  'https://blogger.googleusercontent.com/img/a/AVvXsEgPr7L2Op4E5XDSEvVpmoNdxCL-q1W5tT0EyKzRpenwv9X8Yw_fwbSdlCde2IZlFMyHxQPPIJQPZ1ltheQfcTxYEDD_EpoY3dh4uUCkLtTQWpdSat7TAamRa3dACGvtFKNC6KF1pVQlwcE0uP4STmKp1TvseAPxtxmAtCLXEWaAoy4Vp5LLSo4w3JtjOg'
 ];

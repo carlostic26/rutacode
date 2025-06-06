@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:rutacode/features/home/presentation/screens/home_language_screen.dart';
 import 'package:rutacode/features/loading/presentation/state/page_view_state_provider.dart';
+import 'package:rutacode/features/loading/presentation/widgets/message_page_widget.dart';
 import 'package:rutacode/features/loading/presentation/widgets/tutorial_page_widget.dart';
 import 'package:rutacode/features/loading/presentation/widgets/welcome_page_widget.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -31,6 +32,8 @@ class WelcomeScreen extends ConsumerWidget {
                       heightScreen: heightScreen, widthScreen: widthScreen),
                   TutorialPageWidget(
                       heightScreen: heightScreen, widthScreen: widthScreen),
+                  MessagePageWidget(
+                      heightScreen: heightScreen, widthScreen: widthScreen),
                 ]),
           ),
           Padding(
@@ -40,17 +43,17 @@ class WelcomeScreen extends ConsumerWidget {
               child: IconButton(
                 iconSize: 30,
                 onPressed: () async {
-                  if (numberPage == 0) {
+                  if (numberPage <= 1) {
                     nextPage(pageController);
                   }
 
-                  if (numberPage == 1) {
+                  if (numberPage == 2) {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const HomeLanguageScreen()));
 
-                    setFisrtWelcome();
+                    //setFisrtWelcome();
                   }
                 },
                 icon: const Icon(

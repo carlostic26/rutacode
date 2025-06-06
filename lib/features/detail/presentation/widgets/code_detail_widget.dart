@@ -34,13 +34,13 @@ class _CodeDetailWidgetState extends ConsumerState<CodeDetailWidget> {
     String code = widget.detail.codeExample.toString();
     const theme = darculaTheme;
 
-    // Personalización manual del tema como alternativa
+/*     // Personalización manual del tema como alternativa
     final customTheme = {
       ...darculaTheme,
       'root': TextStyle(
           backgroundColor: Colors.grey[900]), // Fondo oscuro garantizado
     };
-
+ */
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.fromLTRB(5, 8, 8, 1),
@@ -89,7 +89,7 @@ class _CodeDetailWidgetState extends ConsumerState<CodeDetailWidget> {
                     scrollDirection: Axis.vertical,
                     child: HighlightView(
                       code,
-                      language: widget.detail.language, //language: 'dart',
+                      language: widget.detail.language,
                       theme: theme,
                       padding: const EdgeInsets.all(12),
                       textStyle: TextStyle(
@@ -101,104 +101,9 @@ class _CodeDetailWidgetState extends ConsumerState<CodeDetailWidget> {
                 ),
               ),
             ),
-
-/*             Expanded(
-              child: Align(
-                alignment: Alignment.topLeft,
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.vertical,
-                  child: HighlightView(
-                    code,
-                    language: 'dart',
-                    theme: theme,
-                    padding: const EdgeInsets.all(12),
-                    textStyle: TextStyle(
-                      fontFamily: 'monospace',
-                      fontSize: _fontSize,
-                    ),
-                  ),
-                ),
-              ),
-            ), */
           ],
         ),
       ),
     );
   }
 }
-
-
-/*
-
-@override
-Widget build(BuildContext context) {
-  String code = widget.detail.codeExample.toString();
-  const theme = darculaTheme;
-
-  final customTheme = {
-    ...darculaTheme,
-    'root': TextStyle(backgroundColor: Colors.grey[900]),
-  };
-
-  return SafeArea(
-    child: Padding(
-      padding: const EdgeInsets.fromLTRB(15, 8, 8, 1),
-      child: Column(
-        children: [
-          // Barra de herramientas
-          Container(
-            color: const Color.fromARGB(66, 35, 35, 35),
-            alignment: Alignment.centerRight,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 8),
-                  child: Text(
-                    'Guía o ejemplo:',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: _fontSize,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                const Spacer(),
-                IconButton(
-                  icon: const Icon(CupertinoIcons.zoom_in),
-                  onPressed: _increaseFontSize,
-                  color: Colors.white,
-                  iconSize: 20,
-                ),
-                IconButton(
-                  icon: const Icon(CupertinoIcons.zoom_out),
-                  onPressed: _decreaseFontSize,
-                  color: Colors.white,
-                  iconSize: 20,
-                ),
-              ],
-            ),
-          ),
-
-          // Área del código con scroll funcional
-          Expanded(
-            child: SingleChildScrollView(
-              scrollDirection: Axis.vertical,
-              padding: const EdgeInsets.all(12),
-              child: HighlightView(
-                code,
-                language: 'dart',
-                theme: customTheme,
-                textStyle: TextStyle(
-                  fontFamily: 'monospace',
-                  fontSize: _fontSize,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    ),
-  );
-}
-*/
