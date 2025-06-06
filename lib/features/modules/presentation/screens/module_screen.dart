@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:rutacode/core/ads/banner/ad_banner_provider_home.dart';
+import 'package:rutacode/common/core/ads/banner/ad_banner_provider_home.dart';
 import 'package:rutacode/features/detail/presentation/state/detail_sections_state.dart';
 import 'package:rutacode/features/exam/presentation/screens/start_exam_screen.dart';
 import 'package:rutacode/features/home/presentation/provider/language_providers.dart';

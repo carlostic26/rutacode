@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:rutacode/core/services/shared_preferences_service.dart';
+import 'package:rutacode/common/core/services/shared_preferences_service.dart';
 import 'package:rutacode/features/progress/domain/use_cases/progress_use_cases.dart';
 import 'package:rutacode/features/progress/presentation/state/provider/progress_use_cases_provider.dart';
 import 'package:rutacode/features/progress/presentation/state/start_exam_provider.dart';

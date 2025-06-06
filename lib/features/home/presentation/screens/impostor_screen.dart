@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:rutacode/core/ads/banner/ad_banner_provider_impstr.dart';
+import 'package:rutacode/common/core/ads/banner/ad_banner_provider_impstr.dart';
 import 'package:rutacode/features/home/presentation/widgets/body_text_impostor_provider_state.dart';
 
 class ImpostorScreen extends ConsumerStatefulWidget {

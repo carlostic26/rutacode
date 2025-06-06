@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:rutacode/core/ads/banner/ad_banner_provider_puntajes_page.dart';
-import 'package:rutacode/core/ads/banner/ad_banner_provider_puntajes_single.dart';
+import 'package:rutacode/common/core/ads/banner/ad_banner_provider_puntajes_page.dart';
+import 'package:rutacode/common/core/ads/banner/ad_banner_provider_puntajes_single.dart';
 import 'package:rutacode/features/home/presentation/provider/language_providers.dart';
 import 'package:rutacode/features/level/presentation/state/provider/get_level_use_case_provider.dart';
 import 'package:rutacode/features/progress/presentation/pages/score_info_page.dart';
