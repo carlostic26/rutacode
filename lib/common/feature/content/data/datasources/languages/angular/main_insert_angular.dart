@@ -21,6 +21,9 @@ class InsertAngularData {
     await insertAngularMidLevel1Data(db);
     await insertAngularMidLevel2Data(db);
     await insertAngularMidLevel3Data(db);
+    await insertAngularMidLevel4Data(db);
+    await insertAngularMidLevel5Data(db);
+    await insertAngularMidLevel6Data(db);
   }
 
   static Future<void> _insertAngularSrLevelData(Database db) async {}
