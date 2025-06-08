@@ -53,7 +53,7 @@ class WelcomeScreen extends ConsumerWidget {
                         MaterialPageRoute(
                             builder: (context) => const HomeLanguageScreen()));
 
-                    //setFisrtWelcome();
+                    setFisrtWelcome();
                   }
                 },
                 icon: const Icon(

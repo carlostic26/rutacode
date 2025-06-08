@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
+import 'package:rutacode/common/core/ads/interstitial/go_to_list_items_interstitial.dart';
 import 'package:rutacode/common/feature/content/data/datasources/db_helper.dart';
 import 'package:rutacode/common/core/ads/ads_manager.dart';
 import 'package:rutacode/common/core/theme/theme_manager.dart';

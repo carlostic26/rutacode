@@ -1,7 +1,9 @@
+import 'dart:async';
 import 'dart:math';
 import 'package:animated_button/animated_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:rutacode/common/core/ads/interstitial/go_to_list_items_interstitial.dart';
 import 'package:rutacode/features/detail/data/models/detail_model.dart';
 import 'package:rutacode/features/home/presentation/provider/language_providers.dart';
 import 'package:rutacode/features/home/presentation/screens/app_support.dart';
@@ -291,6 +293,9 @@ class _GenerateLevelsRoutePathWidgetState
     String moduleSelected, {
     required VoidCallback onComplete,
   }) {
+    // Pre-carga el anuncio cuando se construye el widget
+    ref.read(adInterstitialProvider.notifier).initialize();
+
     showDialog(
       context: context,
       builder: (context) => SimpleDialog(
@@ -318,10 +323,10 @@ class _GenerateLevelsRoutePathWidgetState
                   padding: EdgeInsets.fromLTRB(20, 20, 20, 10),
                   child: Text(
                     textAlign: TextAlign.center,
-                    'Entrarás a una lista de temas y subtemas que deberás completar. Los puntos se contarán despues de al menos 10 segundos',
+                    'Entrarás a una lista de temas y subtemas que deberás completar. Los puntos se contarán despues de al menos 10 segundos. Es probable que veas un corto anuncio.',
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 14.0,
+                      fontSize: 12.0,
                       fontFamily: 'Poppins',
                     ),
                   ),
@@ -372,20 +377,19 @@ class _GenerateLevelsRoutePathWidgetState
                         fontFamily: 'Poppins',
                       ),
                     ),
-                    onPressed: () {
-                      ref.read(actualLevelProvider.notifier).state =
-                          content.level!;
-                      ref.read(levelTitleProvider.notifier).state =
-                          content.titleLevel!;
+                    onPressed: () async {
+                      final random = Random();
+                      final showAd = random.nextInt(100) < 80;
 
-                      //Navigator.of(context).pop(); // Cerrar el diálogo primero
-                      Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const ListContentScreen(),
-                        ),
-                      ).then((_) =>
-                          onComplete()); // Ejecutar onComplete después de la navegación
+                      if (showAd) {
+                        await ref
+                            .read(adInterstitialProvider.notifier)
+                            .showInterstitialAd(context)
+                            .catchError(
+                                (e) => debugPrint('Error showing ad: $e'));
+                      }
+
+                      _navigateToContentScreen(ref, content, onComplete);
                     },
                   ),
                 ],
@@ -395,5 +399,21 @@ class _GenerateLevelsRoutePathWidgetState
         ],
       ),
     );
+  }
+
+  void _navigateToContentScreen(
+    WidgetRef ref,
+    DetailContentModel content,
+    VoidCallback onComplete,
+  ) {
+    ref.read(actualLevelProvider.notifier).state = content.level!;
+    ref.read(levelTitleProvider.notifier).state = content.titleLevel!;
+
+    Navigator.pushReplacement(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const ListContentScreen(),
+      ),
+    ).then((_) => onComplete());
   }
 }
